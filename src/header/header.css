@@ -21,7 +21,7 @@ ul li a:hover {
     text-decoration: underline;
 }
 
-a:visited, a:hover, a:active {
+.header_link {
   color:white;
   text-decoration:none;
 }
