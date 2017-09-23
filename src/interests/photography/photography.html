@@ -1,3 +1,60 @@
-<div>
-  <h2>Photography</h2>
+<div ng-controller='photographyController'>
+
+  <div>
+    <h2>Photography</h2>
+
+    <p>
+      Towards the end of my freshmen year of college, a friend loaned me their
+      Canon T3 DSLR camera to shoot a couple events. This being my first time using
+      a DSLR, the photos came out horrible - so horrible that I won't bother to
+      do a 'before and after' to show my progress.
+    </p>
+
+    <p>
+      After that, I was determined to get a DSLR of my own and learn photography. That
+      summer, I saved my money (in combination with my college refund check) to buy
+      a Canon T5i DSLR of my own. To me the camera was the best thing since sliced bread.
+      It had a touch screen that swiveled out, interchangeable lenses, 60 frame persecond
+      HD video, and more. I spent nearly all of my free time that summer reading the manual,
+      watching YouTube tutorials, and taking photos of leaves and my dog Ceazar outside - I was obsessed.
+    </p>
+
+    <p>
+      Fall 2014, I came back to New Paltz a new man. I was a sophomore, I had a better
+      meal plan, and most importantly, I (thought I) had became a master photographer. I
+      decided to market myself as a freelance photographer to on-campus clubs because I (was broke and) wanted
+      real experience as a photographer.
+    </p>
+
+    <p>
+      Fast-forward 4 years, I now look back and say I have come along way as a photographer.
+      I remember when my camera bag had just the camera body and its stock lens. Now, I have to
+      go through the pain of leaving certain equipment behind so that my camera bag doesn't
+      swell up to the size of a suitecase. I can also say, throughout this journey, I have grown a love-hate
+      relationship with photography. Before my friend's T3, my only other experience with
+      photography was picture day at school and cheap Sony point-and-shoots from Staples.
+    </p>
+
+    <p>
+      Being behind a real camera gives you a new perspective, both figuratively and liteally.
+      As a photographer, you are in
+    </p>
+
+  </div>
+
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  <section id="photos">
+
+    <div ng-repeat="img in images">
+      <img id={{img.src}} class="modal-img" ng-src="{{img.src}}" alt="{{img.cap}}">
+      {{setupModal(img.src)}}
+    </div>
+
+  </section>
+
 </div>

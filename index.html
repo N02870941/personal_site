@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app='app'>
 
   <head>
@@ -8,8 +8,10 @@
     <link rel="stylesheet" type="text/css" href="src/biography/biography.css">
     <link rel="stylesheet" type="text/css" href="src/resume/resume.css">
     <link rel="stylesheet" type="text/css" href="src/interests/interests.css">
+    <link rel="stylesheet" type="text/css" href="src/interests/photography/photography.css">
     <link rel="stylesheet" type="text/css" href="src/contact/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
@@ -19,14 +21,14 @@
     <script src="src/header/header.js"></script>
     <script src="src/contact/contact.js"></script>
     <script src="src/interests/interests.js"></script>
-
+    <script src="src/interests/photography/photography.js"></script>
 
     <title>Jabari Dash</title>
   </head>
 
   <body class='center'>
     <div header></div>
-    <div ng-view class='fade'></div>
+    <div ng-view class='partial fade'></div>
     <div footer></div>
   </body>
 </html>

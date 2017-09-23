@@ -1,5 +1,13 @@
 .center {
   text-align: center;
+
+  font-family: 'Muli', sans-serif;
+}
+
+.partial {
+  display: table;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .fade.ng-enter {
