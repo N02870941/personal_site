@@ -6,22 +6,27 @@
     <link rel="stylesheet" type="text/css" href="src/header/header.css">
     <link rel="stylesheet" type="text/css" href="src/footer/footer.css">
     <link rel="stylesheet" type="text/css" href="src/biography/biography.css">
+    <link rel="stylesheet" type="text/css" href="src/resume/resume.css">
     <link rel="stylesheet" type="text/css" href="src/interests/interests.css">
     <link rel="stylesheet" type="text/css" href="src/contact/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="app.js"></script>
+    <script src="src/header/header.js"></script>
     <script src="src/contact/contact.js"></script>
+    <script src="src/interests/interests.js"></script>
+
 
     <title>Jabari Dash</title>
   </head>
 
   <body class='center'>
     <div header></div>
-    <div ng-view></div>
+    <div ng-view class='fade'></div>
     <div footer></div>
   </body>
 </html>

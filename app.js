@@ -1,5 +1,5 @@
 //Create the module
-var app = angular.module("app", ['ngRoute']);
+var app = angular.module("app", ['ngRoute', 'ngAnimate']);
 
 app.config(function ($routeProvider) {
 
@@ -70,8 +70,6 @@ var footer = function() {
 
 //Create the controller
 var mainController = function ($scope, $location, $log) {
-
-  // TODO - add logic here
 
 }
 

@@ -1,19 +1,13 @@
-<ul>
-  <li><a class='header_link' name='home' href='#!home'>Home</a></li>
-  <li><a class='header_link' name='biography' href='#!biography'>Biography</a></li>
-  <li><a class='header_link' name='resume' href='#!resume'>Resume</a></li>
-  <li><a class='header_link' name='projects' href='#!projects'>Tech Projects</a></li>
+<div ng-controller='headerController'>
+  <ul>
+    <li><a class='header_link' name='home' href='#!home'>Home</a></li>
+    <li><a class='header_link' name='biography' href='#!biography'>Biography</a></li>
+    <li><a class='header_link' name='resume' href='#!resume'>Resume</a></li>
+    <li><a class='header_link' name='projects' href='#!projects'>Tech Projects</a></li>
+    <li>
+      <div interests></div>
+    </li>
 
-
-  <li>
-    <a class='header_link' name='interests' href=''>Interests</a>
-    <ul class="dropdown">
-      <li><a class='header_link' name='travel' href="#!travel">Travel</a></li>
-      <li><a class='header_link' name='photography' href="#!photography">Photography</a></li>
-      <li><a class='header_link' name='fitness' href="#!fitness">Fitness</a></li>
-      <li><a class='header_link' name='hair' href="#!hair">Hair</a></li>
-    </ul>
-  </li>
-
-  <li><a class='header_link' name='contact' href='#!contact'>Contact</a></li>
-</ul>
+    <li><a class='header_link' name='contact' href='#!contact'>Contact</a></li>
+  </ul>
+</div>
