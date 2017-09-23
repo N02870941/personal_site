@@ -47,7 +47,6 @@ app.config(function ($routeProvider) {
 
     .when('/contact', {
       templateUrl: "src/contact/contact.html",
-      controller: "mainController"
     });
 });
 
@@ -77,6 +76,8 @@ var mainController = function ($scope, $location, $log) {
 }
 
 // Register controllers and directives
+//------------------------------------------------------------------------------
+
 app.controller("mainController", mainController);
 app.directive("header", header);
 app.directive("footer", footer);

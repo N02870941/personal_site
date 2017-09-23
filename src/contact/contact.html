@@ -1,12 +1,17 @@
-<div>
-  <h2>Contact Jabari</h2>
-  <a class="email" href="mailto:jabari.dash@gmail.com" target="_top">jabari.dash@gmail.com</a>
-</div>
+<div ng-controller='contactController'>
 
-<!-- 
-<ul>
-  <li><img href="img/" alt="Jabari's Facebook"><img></li>
-  <li><img href="img/" alt="Jabari's Instagram"><img></li>
-  <li><img href="img/" alt="Jabari's LinkedIn"><img></li>
-  <li><img href="img/" alt="Jabari's GitHub"><img></li>
-</ul> -->
+  <div>
+    <h2>Contact Jabari</h2>
+  </div>
+
+  <span ng-repeat="methodOfContact in methodsOfContact">
+    <a class='contact-icon' href="{{methodOfContact.href}}" target="_blank">
+      <i class="{{methodOfContact.iconClass}}"></i>
+    </a>
+
+    <p>
+      {{methodOfContact.text}}
+    </p>
+  </span>
+
+</div>
