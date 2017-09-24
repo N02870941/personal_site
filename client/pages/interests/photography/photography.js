@@ -10,6 +10,9 @@ client.controller('photographyController', function($scope, $http) {
 
 //------------------------------------------------------------------------------
 
+  /**
+   *
+   */
   $scope.showAllText = function(id) {
     var a = document.getElementById(id);
 
