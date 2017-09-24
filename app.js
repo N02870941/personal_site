@@ -41,8 +41,8 @@ app.config(function ($routeProvider) {
       templateUrl: "src/interests/fitness/fitness.html"
     })
 
-    .when('/hair', {
-      templateUrl: "src/interests/hair/hair.html"
+    .when('/culture', {
+      templateUrl: "src/interests/culture/culture.html"
     })
 
     .when('/contact', {
