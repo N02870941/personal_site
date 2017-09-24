@@ -1,14 +1,10 @@
-ul {
-    padding: 0;
-    list-style: none;
-    background: #333;
-}
-ul li {
+ul li[class*='header'] {
     display: inline-block;
     position: relative;
     line-height: 21px;
     text-align: left;
 }
+
 ul li a {
     display: block;
     padding: 14px 21px;
@@ -19,9 +15,4 @@ ul li a {
 ul li a:hover {
     background: #111;
     text-decoration: underline;
-}
-
-.header_link {
-  color:white;
-  text-decoration:none;
 }

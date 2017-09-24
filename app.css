@@ -4,6 +4,11 @@
   font-family: 'Muli', sans-serif;
 }
 
+.left {
+  text-align: left;
+}
+
+
 .partial {
   display: table;
   margin: 0 auto;
@@ -19,3 +24,8 @@
 .fade.ng-enter.ng-enter-active {
   opacity:1;
 }
+
+
+.white_link {
+  color:white;
+  text-decoration:none;

@@ -1,0 +1,8 @@
+.about_me_li {
+  word-wrap: break-word;
+}
+
+
+ul[class*='home'] {
+  list-style-type: none;
+}

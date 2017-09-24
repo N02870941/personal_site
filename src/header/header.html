@@ -1,13 +1,22 @@
 <div ng-controller='headerController'>
-  <ul>
-    <li><a class='header_link' name='home' href='#!home'>Home</a></li>
-    <li><a class='header_link' name='biography' href='#!biography'>Biography</a></li>
-    <li><a class='header_link' name='resume' href='#!resume'>Resume</a></li>
-    <li><a class='header_link' name='projects' href='#!projects'>Tech Projects</a></li>
-    <li>
-      <div interests></div>
-    </li>
 
-    <li><a class='header_link' name='contact' href='#!contact'>Contact</a></li>
+  <!--  Could not figure out CSS scope -->
+  <ul id="header_list"
+  style="padding: 0;
+         list-style: none;
+         background: #333"
+  >
+    <li class='header_li'><a class='white_link' name='home' href='#!home'>Home</a></li>
+    <li class='header_li'><a class='white_link' name='biography' href='#!biography'>Biography</a></li>
+    <li class='header_li'><a class='white_link' name='resume' href='#!resume'>Resume</a></li>
+    <li class='header_li'><a class='white_link' name='projects' href='#!projects'>Tech Projects</a></li>
+
+      <li class='header_li'>
+        <div interests></div>
+      </li>
+
+    <li class='header_li'><a class='white_link' name='contact' href='#!contact'>Contact</a></li>
+
   </ul>
+
 </div>
