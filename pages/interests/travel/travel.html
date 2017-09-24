@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="travelController">
   <h2>Travel</h2>
 
   <p>
@@ -31,4 +31,14 @@
     I also noticed that people seemed to have more genuine interactions with eachother
     because they were not so wrapped up in technology and the media.
   </p>
+
+  <!-- List the clickable flags of countries I visited -->
+  <ul>
+    <div ng-repeat="country in countries">
+      <a href='{{country.href}}'>
+        <img src='{{country.flag}}'>
+      </a>
+    </div>
+  </ul>
+
 </div>
