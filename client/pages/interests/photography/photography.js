@@ -63,7 +63,7 @@ client.controller('photographyController', function($scope, $http) {
   $scope.images = [];
 
   var protocol = 'http';
-  var domain = 'localhost';
+  var domain = 'jabaridash.com';
   var port = '8080';
 
 
