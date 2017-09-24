@@ -1,4 +1,4 @@
-img {
+img[class*='biography'] {
   width: 30%;
   height: 30%;
   float: left;

@@ -33,12 +33,13 @@
   </p>
 
   <!-- List the clickable flags of countries I visited -->
-  <ul>
-    <div ng-repeat="country in countries">
+
+  <div class='bordered' ng-repeat="country in countries">
       <a href='{{country.href}}'>
-        <img src='{{country.flag}}'>
+        <img class='travel_img' src='{{country.flag}}'>
+
+        <h2>{{country.name}}</h2>
       </a>
-    </div>
-  </ul>
+  </div>
 
 </div>

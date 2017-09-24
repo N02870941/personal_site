@@ -1,20 +1,37 @@
+
+/* Align all text center by default, set font*/
 .center {
   text-align: center;
 
+  /* From Google fonts */
   font-family: 'Muli', sans-serif;
 }
 
+/* Align text left */
 .left {
   text-align: left;
 }
 
 
+/* All page templates will fit within this box */
 .partial {
+
+  /* Sets borded for region where templates go */
+  border-style: outset;
+
+  /* padding */
+  padding-left: 10px;
+  padding-right: 10px;
+
+  /* TODO - figure out what this does */
   display: table;
   margin: 0 auto;
+
+  /* Don't want to go all the way to edge of screen */
   width: 80%;
 }
 
+/* Fade in */
 .fade.ng-enter {
   transition:1.0s linear all;
   opacity:0;
@@ -26,6 +43,11 @@
 }
 
 
+/* Keep links with white text */
 .white_link {
   color:white;
   text-decoration:none;
+
+}
+
+/*------------------------------------------------------------------------------*/

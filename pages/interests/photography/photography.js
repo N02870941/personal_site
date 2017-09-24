@@ -1,5 +1,7 @@
 app.controller('photographyController', function($scope) {
 
+  $scope.showAll = false;
+
   $scope.images = [
     {
       src: "pages/interests/photography/img/fireworks.jpg",
@@ -35,6 +37,24 @@ app.controller('photographyController', function($scope) {
     }
   ];
 
+//------------------------------------------------------------------------------
+
+
+  $scope.showAllText = function(id) {
+    var a = document.getElementById(id);
+
+    // Flip the text based off of the current state
+    if (a.innerHTML == 'Read more...') {
+      a.innerHTML = 'Show less...';
+
+    } else {
+      a.innerHTML = 'Read more...';
+    }
+
+    $scope.showAll = !$scope.showAll;
+  }
+
+//------------------------------------------------------------------------------
 
   $scope.setupModal = function(imgID) {
     // Get the modal

@@ -1,19 +1,24 @@
 <div ng-controller="homeController">
   <h2>Get to know me</h2>
 
-  <div>
-    <!-- Portrait -->
-    <img src="/pages/home/img/portrait.jpg" alt="Portrait of Jabari Dash">
 
-    <!-- List of facts that pertain to me -->
-    <ul class='left home_ul' ng-repeat="entry in facts">
-      <li class='about_me_li'>{{entry}}</li>
-    </ul>
-  </div>
+  <!-- Portrait -->
+  <img src="/pages/home/img/portrait.jpg" alt="Portrait of Jabari Dash">
 
   <!-- Inspiring quote -->
   <div class="quote">
-    <h1>"Success is the interesection between preparation and opportunity"</h1>
+    <h1>
+      "Success is the interesection between preparation and opportunity"
+      <br><br>
+      <a class="quote" href="http://abyssinian.org/connect/affiliates/blue-nile-passage-inc/" target="_blank">-Blue Nile Passage</a>
+    </h1>
   </div>
+
+  <h2>Fun facts</h2>
+
+  <!-- List of facts that pertain to me -->
+  <ul class='left home_ul' ng-repeat="entry in facts">
+    <li class='about_me_li'>{{entry}}</li>
+  </ul>
 
 </div>

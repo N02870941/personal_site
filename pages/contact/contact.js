@@ -14,7 +14,7 @@ app.controller("contactController", function ($scope) {
       alt: "linkedin",
       href: "https://www.linkedin.com/in/jabaridash/",
       iconClass: "fa fa-linkedin fa-5x",
-      text: "See my LinkedIn profile to get a more in depth perspective on my professional track record.",
+      text: "See my LinkedIn profile to get a more in depth perspective on my professional background.",
       target: "_blank"
     },
     {

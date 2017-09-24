@@ -3,14 +3,16 @@
 }
 
 .quote {
-  margin-top: 200px;
-  margin-bottom: 200px;
-  margin-right: 150px;
-  margin-left: 80px;
+  color: #333;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  /* Remove underline, etc */
+  text-decoration: none !important;
 }
 
 ul[class*='home'] {
-  list-style-type: none;
+  /*list-style-type: none;*/
 }
 
 li[class*='home'] {
