@@ -2,35 +2,35 @@ app.controller('photographyController', function($scope) {
 
   $scope.images = [
     {
-      src: "src/interests/photography/img/fireworks.jpg",
+      src: "pages/interests/photography/img/fireworks.jpg",
       cap: "Fireworks"
     },
     {
-      src: "src/interests/photography/img/ceazar2.jpg",
+      src: "pages/interests/photography/img/ceazar2.jpg",
       cap: "My dog!"
     },
     {
-      src: "src/interests/photography/img/empire_state_building.jpg",
+      src: "pages/interests/photography/img/empire_state_building.jpg",
       cap: "Empire State Building on Pride Day"
     },
     {
-      src: "src/interests/photography/img/ceazar3.jpg",
+      src: "pages/interests/photography/img/ceazar3.jpg",
       cap: "Ceazar again"
     },
     {
-      src: "src/interests/photography/img/jalia_graduation.jpg",
+      src: "pages/interests/photography/img/jalia_graduation.jpg",
       cap: "Jalia graduating"
     },
     {
-      src: "src/interests/photography/img/bug.jpg",
+      src: "pages/interests/photography/img/bug.jpg",
       cap: "A bug I found in my drawer"
     },
     {
-      src: "src/interests/photography/img/ceazar1.jpg",
+      src: "pages/interests/photography/img/ceazar1.jpg",
       cap: "My puppy :)"
     },
     {
-      src: "src/interests/photography/img/moon.jpg",
+      src: "pages/interests/photography/img/moon.jpg",
       cap: "Blood Moon"
     }
   ];

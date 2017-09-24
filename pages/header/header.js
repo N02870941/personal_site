@@ -1,6 +1,5 @@
 app.controller('headerController', function($scope) {
 
-
   $scope.options = [
     {
         name: "home",
@@ -34,3 +33,9 @@ app.controller('headerController', function($scope) {
     }
   ];
 });
+
+app.directive('header', function() {
+  return {
+    templateUrl: 'pages/header/header.html'
+  };
+})
