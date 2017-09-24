@@ -6,7 +6,7 @@ app.controller('photographyController', function($scope) {
       cap: "Fireworks"
     },
     {
-      src: "pages/interests/photography/img/ceazar2.jpg",
+      src: "pages/interests/photography/img/ceazar_2.jpg",
       cap: "My dog!"
     },
     {
@@ -14,7 +14,7 @@ app.controller('photographyController', function($scope) {
       cap: "Empire State Building on Pride Day"
     },
     {
-      src: "pages/interests/photography/img/ceazar3.jpg",
+      src: "pages/interests/photography/img/ceazar_3.jpg",
       cap: "Ceazar again"
     },
     {
@@ -26,7 +26,7 @@ app.controller('photographyController', function($scope) {
       cap: "A bug I found in my drawer"
     },
     {
-      src: "pages/interests/photography/img/ceazar1.jpg",
+      src: "pages/interests/photography/img/ceazar_1.jpg",
       cap: "My puppy :)"
     },
     {
