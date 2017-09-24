@@ -1,4 +1,4 @@
-app.controller('footerController', function($scope) {
+client.controller('footerController', function($scope) {
 
   $scope.options = [
     // {
@@ -26,9 +26,9 @@ app.controller('footerController', function($scope) {
 });
 
 
-app.directive('footer', function() {
+client.directive('footer', function() {
   return {
-    templateUrl: 'pages/footer/footer.html'
+    templateUrl: 'client/pages/footer/footer.html'
   };
 
 });

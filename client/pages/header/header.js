@@ -1,4 +1,4 @@
-app.controller('headerController', function($scope) {
+client.controller('headerController', function($scope) {
 
   $scope.options = [
     {
@@ -34,8 +34,8 @@ app.controller('headerController', function($scope) {
   ];
 });
 
-app.directive('header', function() {
+client.directive('header', function() {
   return {
-    templateUrl: 'pages/header/header.html'
+    templateUrl: 'client/pages/header/header.html'
   };
 })
