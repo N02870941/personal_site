@@ -1,69 +1,12 @@
-client.service('photographyService', function($http) {
-  var protocol = 'http';
-  var domain = 'jabaridash.com';
-  var port = '8080';
-
-  var success = function(res) {
-    console.log(res);
-  }
-
-  var error = function() {
-
-  }
-
+client.controller('photographyController', function($scope, $http) {
 
   var getPhotoPaths = function() {
-    var url = protocol + "://" + domain + ":" + port + "/photography"
+    var url = protocol + "://" + domain + ":" + port + "/photography";
 
-    $http.get(url).then(success, error);
+    $http.get(url).then(function(res) {
+      $scope.images = res.data;
+    });
   }
-
-  return {
-    getPhotoPaths : getPhotoPaths
-  }
-
-});
-
-client.controller('photographyController', function($scope, photographyService) {
-
-  $scope.showAll = false;
-
-  $scope.images = photographyService.getPhotoPaths();
-
-  $scope.images = [
-    {
-      src: "client/pages/interests/photography/img/fireworks.jpg",
-      cap: "Fireworks"
-    },
-    {
-      src: "client/pages/interests/photography/img/ceazar_2.jpg",
-      cap: "My dog!"
-    },
-    {
-      src: "client/pages/interests/photography/img/empire_state_building.jpg",
-      cap: "Empire State Building on Pride Day"
-    },
-    {
-      src: "client/pages/interests/photography/img/ceazar_3.jpg",
-      cap: "Ceazar again"
-    },
-    {
-      src: "client/pages/interests/photography/img/jalia_graduation.jpg",
-      cap: "Jalia graduating"
-    },
-    {
-      src: "client/pages/interests/photography/img/bug.jpg",
-      cap: "A bug I found in my drawer"
-    },
-    {
-      src: "client/pages/interests/photography/img/ceazar_1.jpg",
-      cap: "My puppy :)"
-    },
-    {
-      src: "client/pages/interests/photography/img/moon.jpg",
-      cap: "Blood Moon"
-    }
-  ];
 
 //------------------------------------------------------------------------------
 
@@ -113,5 +56,17 @@ client.controller('photographyController', function($scope, photographyService) 
       }
     });
   }
+
+//------------------------------------------------------------------------------
+
+  $scope.showAll = false;
+  $scope.images = [];
+
+  var protocol = 'http';
+  var domain = 'localhost';
+  var port = '8080';
+
+
+  getPhotoPaths();
 
 });

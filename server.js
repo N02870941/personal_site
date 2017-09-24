@@ -12,10 +12,11 @@ server.get('/photography', function(req, res) {
   var searchPath = '/client/pages/interests/photography/img/';
   var directory = __dirname + searchPath;
 
-  var response = controller.getFileList(directory, searchPath);
+  res.set('Access-Control-Allow-Origin', '*');
 
-  res.send(response);
+  var body = controller.getFileList(directory, searchPath);
 
+  res.send(body);
 });
 
 
