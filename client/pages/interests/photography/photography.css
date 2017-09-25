@@ -115,35 +115,25 @@ img#img01.modal-content {
     cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
-}
 
-
-
-
-@media (max-width: 1200px) {
-  #photos {
-  -moz-column-count:    4;
-  -webkit-column-count: 4;
-  column-count:         4;
-  }
-}
 @media (max-width: 1000px) {
   #photos {
   -moz-column-count:    1;
   -webkit-column-count: 1;
   column-count:         1;
   }
-}
 
-@media (max-width: 400px) {
-  #photos {
-  -moz-column-count:    1;
-  -webkit-column-count: 1;
-  column-count:         1;
+  .modal-content {
+      width: 100%;
+  }
+
+  .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 150px;
+      font-weight: bold;
+      transition: 0.6s;
   }
 }

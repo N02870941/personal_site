@@ -1,3 +1,7 @@
+html,
+body {
+	height:100%;
+}
 
 /* Align all text center by default, set font*/
 .center {
@@ -14,6 +18,7 @@
 
 /* All page templates will fit within this box */
 .partial {
+  height:100%;
 
   /* Sets borded for region where templates go */
   border-style: outset;
