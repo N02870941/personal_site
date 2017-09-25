@@ -1,24 +1,13 @@
 html,
 body {
+	padding: 0;
+	margin: 0;
 	height:100%;
-}
-
-/* Align all text center by default, set font*/
-.center {
-  text-align: center;
-
-  /* From Google fonts */
-  font-family: 'Muli', sans-serif;
-}
-
-/* Align text left */
-.left {
-  text-align: left;
 }
 
 /* All page templates will fit within this box */
 .partial {
-  height:100%;
+	height:100%;
 
   /* Sets borded for region where templates go */
   border-style: outset;
@@ -35,29 +24,34 @@ body {
   width: 80%;
 }
 
-/* Fade in */
-.fade.ng-enter {
-  transition:1.0s linear all;
-  opacity:0;
-}
-
-/* The finishing CSS styles for the enter animation */
-.fade.ng-enter.ng-enter-active {
-  opacity:1;
-}
-
-/* Keep links with white text */
-.white_link {
-  color:white;
-  text-decoration:none;
-
-}
-
 /*------------------------------------------------------------------------------*/
 
-.spinner-hide .loading{
-  visibility: visible;
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
 }
-.spinner-show .loading{
-  visibility: hidden;
+
+@media (min-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
 }

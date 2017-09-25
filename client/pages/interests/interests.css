@@ -1,7 +1,7 @@
 
-ul li ul.dropdown{
+ul li ul.dropdown {
   padding: 0;
-  min-width: 100%; /* Set width of the dropdown */
+  min-width: 100%;
   background: #333;
   display: none;
   position: absolute;
@@ -13,6 +13,12 @@ ul li:hover ul.dropdown {
     /* Display the dropdown */
     display: block;
 
+}
+
+a.dropdown {
+  display: block;
+  padding: 14px 21px;
+  text-decoration: none;
 }
 
 ul li ul.dropdown li {

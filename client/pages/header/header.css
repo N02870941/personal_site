@@ -1,18 +1,31 @@
-ul li[class*='header'] {
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+ul.header {
+  padding: 0;
+  list-style: none;
+  background: #333;
+}
+
+ul.header > li {
     display: inline-block;
     position: relative;
     line-height: 21px;
     text-align: left;
 }
 
-ul li a {
+ul.header > li  > a {
     display: block;
     padding: 14px 21px;
-    color: #333;
     text-decoration: none;
 }
 
-ul li a:hover {
+ul.header > li a:hover {
     background: #111;
     text-decoration: underline;
 }

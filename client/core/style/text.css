@@ -1,0 +1,19 @@
+html,
+body {
+
+	text-align: center;
+
+  /* From Google fonts */
+  font-family: 'Muli', sans-serif;
+}
+
+/* Keep links with white text */
+.white {
+  color:white;
+  text-decoration:none;
+}
+
+/* Align text left */
+.left {
+  text-align: left;
+}
