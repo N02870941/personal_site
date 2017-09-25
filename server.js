@@ -7,7 +7,7 @@ var controller = require('./server/controller');
 server.use(express.static(path.join(__dirname, '/')));
 
 server.get('/photography', function(req, res) {
-  var searchPath = '/client/pages/interests/photography/img/thumbnail';
+  var searchPath = '/client/pages/interests/photography/img/thumbnail/';
   var directory = __dirname + searchPath;
 
   res.set('Access-Control-Allow-Origin', '*');
