@@ -1,4 +1,4 @@
-client.controller('photographyController', function($scope, $http) {
+client.controller('photographyController', function($scope, $http, preloader) {
 
   var getPhotoPaths = function() {
     var url = protocol + "://" + domain + ":" + port + "/photography";
@@ -72,4 +72,5 @@ client.controller('photographyController', function($scope, $http) {
 
   getPhotoPaths();
 
-});
+  preloader.preloadImages( $scope.images )
+  });
