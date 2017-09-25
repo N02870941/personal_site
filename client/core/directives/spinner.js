@@ -17,3 +17,11 @@ client.directive('imageonload', function() {
         }
     };
 });
+
+
+/*
+<!-- How to use this directive -->
+<!-- <img id={{img}} class="modal-img spinner " ng-src="{{img}}" alt="" imageonLoad>
+<span class="loading"> <img src="https://media.giphy.com/media/210NUQw5BT8c0/source.gif"/></span>
+{{setupModal(img)}} -->
+*/
