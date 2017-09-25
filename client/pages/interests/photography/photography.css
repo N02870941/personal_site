@@ -2,11 +2,11 @@
   /* Prevent vertical gaps */
   line-height: 0;
 
-  -webkit-column-count: 3;
+  -webkit-column-count: 4;
   -webkit-column-gap:   0px;
-  -moz-column-count:    5;
+  -moz-column-count:    4;
   -moz-column-gap:      0px;
-  column-count:         3;
+  column-count:         4;
   column-gap:           0px;
 }
 
@@ -23,12 +23,18 @@ a[class*='photography'] {
 /*----------------------------------------------------------------------------*/
 
 .modal-img {
-    cursor: pointer;
-    transition: 0.3s;
+  cursor: pointer;
+  transition: 1.0s;
 }
 
 .modal-img:hover {
-  opacity: 0.7;
+  opacity: .99;
+
+  -webkit-transform:scale(1.25); /* Safari and Chrome */
+  -moz-transform:scale(1.25); /* Firefox */
+  -ms-transform:scale(1.25); /* IE 9 */
+  -o-transform:scale(1.25); /* Opera */
+   transform:scale(1.25);
 }
 
 /* The Modal (background) */
@@ -56,6 +62,13 @@ a[class*='photography'] {
     display: block;
     width: 80%;
     max-width: 700px;
+
+    /* Fade the photo into the center */
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: fade_in;
+    -webkit-animation-duration: 0.6s;
+    animation-name: fade_in;
+    animation-duration: 0.6s;
 }
 
 img#img01.modal-content {
@@ -64,28 +77,6 @@ img#img01.modal-content {
   top: 50%;
   left: 50%;
   margin-right: -50%;
-}
-
-/* Caption of Modal Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {
-  transform: translate(-50%, -50%);
-
-  -webkit-animation-name: fade_in;
-  -webkit-animation-duration: 0.6s;
-  animation-name: fade_in;
-  animation-duration: 0.6s;
 }
 
 @-webkit-keyframes fade_in {
@@ -129,4 +120,30 @@ img#img01.modal-content {
     .modal-content {
         width: 100%;
     }
+}
+
+
+
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
 }
