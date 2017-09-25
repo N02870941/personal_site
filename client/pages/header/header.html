@@ -1,7 +1,6 @@
-<div ng-controller='headerController'>
+<!-- <div ng-controller='headerController'>
 
-  <!--  Could not figure out CSS scope -->
-  <ul class="header navbar">
+  <ul id="myTopnav" class="header navbar">
     <li class='header'><a class='white header' name='home' href='#!home'>Home</a></li>
     <li class='header'><a class='white header' name='biography' href='#!biography'>Biography</a></li>
     <li class='header'><a class='white header' name='resume' href='#!resume'>Resume</a></li>
@@ -15,4 +14,15 @@
 
   </ul>
 
+</div> -->
+
+
+
+<div class="topnav" id="myTopnav" ng-controller='headerController'>
+  <a class='white header' name='home' href='#!home'>Home</a>
+  <a class='white header' name='biography' href='#!biography'>Biography</a>
+  <a class='white header' name='resume' href='#!resume'>Resume</a>
+  <a class='white header' name='projects' href='#!projects'>Tech Projects</a>
+  <a class='white header' name='contact' href='#!contact'>Contact</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" ng-click="myFunction()">&#9776;</a>
 </div>
