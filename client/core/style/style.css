@@ -12,7 +12,6 @@
   text-align: left;
 }
 
-
 /* All page templates will fit within this box */
 .partial {
 
@@ -42,7 +41,6 @@
   opacity:1;
 }
 
-
 /* Keep links with white text */
 .white_link {
   color:white;
@@ -51,7 +49,6 @@
 }
 
 /*------------------------------------------------------------------------------*/
-
 
 .spinner-hide .loading{
   visibility: visible;

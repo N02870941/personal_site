@@ -1,8 +1,5 @@
 client.controller('photographyController', function($scope, $http, preloader, photographyService) {
 
-  /**
-   *
-   */
   $scope.showAllText = function(id) {
     var a = document.getElementById(id);
 
@@ -52,13 +49,17 @@ client.controller('photographyController', function($scope, $http, preloader, ph
 
 //------------------------------------------------------------------------------
 
+  $scope.init = function() {
+    photographyService.getPhotoPaths().
+      then(function(data) {
+
+        $scope.images = data;
+    });
+  }
+
+//------------------------------------------------------------------------------
+
   $scope.showAll = false;
   $scope.images = [];
-
-  photographyService.getPhotoPaths().
-    then(function(data) {
-
-      $scope.images = data;
-  });
 
 });

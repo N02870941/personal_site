@@ -42,7 +42,13 @@ client.config(function ($routeProvider) {
     })
 
     .when('/photography', {
-      templateUrl: "client/pages/interests/photography/photography.html"
+      templateUrl: "client/pages/interests/photography/photography.html",
+      resolve: {
+        images: function (photographyService) {
+          console.log("loading");
+          return photographyService.getPhotoPaths;
+        }
+      }
     })
 
     .when('/fitness', {

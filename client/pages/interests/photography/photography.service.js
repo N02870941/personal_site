@@ -3,7 +3,6 @@ client.service('photographyService', function($http, preloader) {
   var domain = 'jabaridash.com';
   var port = '8080';
 
-
   function getPhotoPaths() {
     var url = protocol + "://" + domain + ":" + port + "/photography";
 
