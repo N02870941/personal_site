@@ -14,9 +14,9 @@ server.get('/photography', function(req, res) {
 
   res.set('Access-Control-Allow-Origin', '*');
 
-  var body = controller.getFileList(directory, searchPath);
+  // var body = controller.getFileList(directory, searchPath);
 
-  body = os.hostname();
+  var body = os.hostname();
 
   res.send(body);
 });
