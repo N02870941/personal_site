@@ -1,7 +1,5 @@
 var express  = require('express');
 var path = require('path');
-var os = require('os');
-
 var server      = express();
 
 var controller = require('./server/controller');
@@ -14,9 +12,7 @@ server.get('/photography', function(req, res) {
 
   res.set('Access-Control-Allow-Origin', '*');
 
-  // var body = controller.getFileList(directory, searchPath);
-
-  var body = os.hostname();
+  var body = controller.getFileList(directory, searchPath);
 
   res.send(body);
 });
