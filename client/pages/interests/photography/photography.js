@@ -1,14 +1,4 @@
-client.controller('photographyController', function($scope, $http, preloader) {
-
-  var getPhotoPaths = function() {
-    var url = protocol + "://" + domain + ":" + port + "/photography";
-
-    $http.get(url).then(function(res) {
-      $scope.images = res.data;
-    });
-  }
-
-//------------------------------------------------------------------------------
+client.controller('photographyController', function($scope, $http, preloader, photographyService) {
 
   /**
    *
@@ -65,12 +55,10 @@ client.controller('photographyController', function($scope, $http, preloader) {
   $scope.showAll = false;
   $scope.images = [];
 
-  var protocol = 'http';
-  var domain = 'jabaridash.com';
-  var port = '8080';
+  photographyService.getPhotoPaths().
+    then(function(data) {
 
-
-  getPhotoPaths();
-
-  preloader.preloadImages( $scope.images )
+      $scope.images = data;
   });
+
+});

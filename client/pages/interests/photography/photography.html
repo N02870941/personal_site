@@ -73,8 +73,11 @@
   <section id="photos">
 
     <div ng-repeat="img in images">
-      <img id={{img}} class="modal-img" ng-src="{{img}}" alt="">
+      <img id={{img}} class="modal-img spinner " ng-src="{{img}}" alt="" imageonLoad>
+      <span class="loading"> <img src="https://www.yugma.com/images/loading-animation-7.gif"/></span>
       {{setupModal(img)}}
+
+
     </div>
 
   </section>
