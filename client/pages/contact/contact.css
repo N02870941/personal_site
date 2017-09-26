@@ -1,3 +1,24 @@
 .contact-icon {
   color:#333;
 }
+
+
+.entry-title a {
+  font-family: 'Oswald', sans-serif;
+  color: #404040;
+  text-decoration: none;
+  -moz-transition:-moz-transform 0.2s ease-in;
+  -webkit-transition:-webkit-transform 0.2s ease-in;
+  -o-transition:-o-transform 0.2s ease-in;
+  -moz-transition:-moz-transform 0.2s ease-out;
+  -webkit-transition:-webkit-transform 0.2s ease-out;
+  -o-transition:-o-transform 0.2s ease-out;
+}
+.entry-title a:hover {
+  font-family: 'Oswald', sans-serif;
+  color: #000000;
+  text-shadow:1px 0px #555;
+  -moz-transform:scale(1.03);
+  -webkit-transform:scale(1.03);
+  -o-transform:scale(1.03);
+}
