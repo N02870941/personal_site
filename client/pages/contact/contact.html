@@ -4,7 +4,7 @@
     <h2>Contact me</h2>
   </div>
 
-  <span ng-repeat="method in methodsOfContact">
+  <div class='grow' ng-repeat="method in methodsOfContact">
     <a class='contact-icon' href="{{method.href}}" target="{{method.target=='_blank' ? '_blank' : '_self'}}">
       <i class="{{method.iconClass}}"></i>
     </a>
@@ -12,6 +12,6 @@
     <p>
       {{method.text}}
     </p>
-  </span>
+  </div>
 
 </div>

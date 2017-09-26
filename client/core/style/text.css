@@ -19,8 +19,22 @@ body {
 }
 
 
-
 /* Align text left */
 .left {
   text-align: left;
+}
+
+.no-bullets {
+	list-style-type: none;
+}
+
+
+span.grow-text:hover {
+	transition: 1.0s;
+  font-size: 150%;
+}
+
+span.grow-text {
+	transition: 1.0s;
+  font-size: 100%;
 }
