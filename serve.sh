@@ -1,5 +1,4 @@
-
-#Minor change
-git pull
+#Install dependencies
+npm install
 
 node server.js
