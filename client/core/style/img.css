@@ -1,0 +1,19 @@
+.grow:hover {
+  transition: 1.0s;
+
+  -webkit-transform:scale(1.25); /* Safari and Chrome */
+  -moz-transform:scale(1.25); /* Firefox */
+  -ms-transform:scale(1.25); /* IE 9 */
+  -o-transform:scale(1.25); /* Opera */
+   transform:scale(1.25);
+}
+
+.grow {
+  transition: 1.0s;
+
+  -webkit-transform:scale(1); /* Safari and Chrome */
+  -moz-transform:scale(1); /* Firefox */
+  -ms-transform:scale(1); /* IE 9 */
+  -o-transform:scale(1); /* Opera */
+   transform:scale(1);
+}

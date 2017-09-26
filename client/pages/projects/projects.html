@@ -16,4 +16,14 @@
     But below, I have listed a couple of links to projects that I have worked on and
     a small write-up as to what skills I developed and things that I learned from each given project.
   </p>
+
+  <div class='bordered' ng-repeat="project in projects">
+    <hr>
+      <a href='{{project.href}}' class="black">
+        <img class='grow' src='{{project.img}}'>
+
+        <h2>{{project.name}}</h2>
+        <p>{{project.brief}}</p>
+      </a>
+  </div>
 </div>

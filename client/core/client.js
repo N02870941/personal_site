@@ -25,6 +25,26 @@ client.config(function ($routeProvider) {
       templateUrl: "client/pages/projects/projects.html"
     })
 
+    .when('/projects/algorithms', {
+      templateUrl: "client/pages/projects/projects/algorithms.html"
+    })
+    
+    .when('/projects/regression', {
+      templateUrl: "client/pages/projects/projects/regression.html"
+    })
+
+    .when('/projects/target', {
+      templateUrl: "client/pages/projects/projects/target.html"
+    })
+
+    .when('/projects/temperature', {
+      templateUrl: "client/pages/projects/projects/temperature.html"
+    })
+
+    .when('/projects/website', {
+      templateUrl: "client/pages/projects/projects/website.html"
+    })
+
     .when('/travel', {
       templateUrl: "client/pages/interests/travel/travel.html"
     })

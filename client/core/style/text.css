@@ -13,6 +13,13 @@ body {
   text-decoration:none;
 }
 
+.black {
+  color:#333;
+  text-decoration:none;
+}
+
+
+
 /* Align text left */
 .left {
   text-align: left;
