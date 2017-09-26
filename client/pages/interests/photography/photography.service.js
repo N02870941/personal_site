@@ -7,8 +7,7 @@ client.service('photographyService', function($http, preloader) {
     var url = protocol + "://" + domain + ":" + port + "/photography";
 
     return $http.get(url).then(function(res) {
-      preloader.preloadImages(res.data);
-
+      
       return res.data;
     });
   }

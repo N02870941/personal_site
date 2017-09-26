@@ -17,7 +17,7 @@ client.controller('interestsController', function($scope) {
     {
       name: "Photography",
       href:'#!/interests/photography',
-      img: "/client/pages/projects/img/algorithms.png",
+      img: "/client/pages/interests/photography/img/photography.jpg",
       brief: "Check out some of my most recent nation and international journies!"
     },
     {
@@ -32,7 +32,5 @@ client.controller('interestsController', function($scope) {
       img: "/client/pages/projects/img/algorithms.png",
       brief: "Check out some of my most recent nation and international journies!"
     }
-
   ];
-
 });

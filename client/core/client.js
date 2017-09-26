@@ -66,13 +66,13 @@ client.config(function ($routeProvider) {
     })
 
     .when('/interests/photography', {
-      templateUrl: "client/pages/interests/photography/photography.html",
-      resolve: {
-        images: function (photographyService) {
-          console.log("loading");
-          return photographyService.getPhotoPaths;
-        }
-      }
+      templateUrl: "client/pages/interests/photography/photography.html"
+      // resolve: {
+      //   images: function (photographyService) {
+      //     console.log("loading");
+      //     return photographyService.getPhotoPaths;
+      //   }
+      // }
     })
 
     .when('/interests/fitness', {

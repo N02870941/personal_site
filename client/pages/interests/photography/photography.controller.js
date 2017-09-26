@@ -50,10 +50,13 @@ client.controller('photographyController', function($scope, $http, preloader, ph
 //------------------------------------------------------------------------------
 
   $scope.init = function() {
+
     photographyService.getPhotoPaths().
       then(function(data) {
 
         $scope.images = data;
+
+        // preloader.preloadImages($scope.images);
     });
   }
 
