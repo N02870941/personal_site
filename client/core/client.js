@@ -28,7 +28,7 @@ client.config(function ($routeProvider) {
     .when('/projects/algorithms', {
       templateUrl: "client/pages/projects/projects/algorithms.html"
     })
-    
+
     .when('/projects/regression', {
       templateUrl: "client/pages/projects/projects/regression.html"
     })
@@ -45,23 +45,27 @@ client.config(function ($routeProvider) {
       templateUrl: "client/pages/projects/projects/website.html"
     })
 
-    .when('/travel', {
+    .when('/interests', {
+      templateUrl: "client/pages/interests/interests.html"
+    })
+
+    .when('/interests/travel', {
       templateUrl: "client/pages/interests/travel/travel.html"
     })
 
-    .when('/travel/colombia', {
+    .when('/interests/travel/colombia', {
       templateUrl: "client/pages/interests/travel/countries/colombia/colombia.html"
     })
 
-    .when('/travel/ecuador', {
+    .when('/interests/travel/ecuador', {
       templateUrl: "client/pages/interests/travel/countries/ecuador/ecuador.html"
     })
 
-    .when('/travel/peru', {
+    .when('/interests/travel/peru', {
       templateUrl: "client/pages/interests/travel/countries/peru/peru.html"
     })
 
-    .when('/photography', {
+    .when('/interests/photography', {
       templateUrl: "client/pages/interests/photography/photography.html",
       resolve: {
         images: function (photographyService) {
@@ -71,11 +75,11 @@ client.config(function ($routeProvider) {
       }
     })
 
-    .when('/fitness', {
+    .when('/interests/fitness', {
       templateUrl: "client/pages/interests/fitness/fitness.html"
     })
 
-    .when('/culture', {
+    .when('/interests/culture', {
       templateUrl: "client/pages/interests/culture/culture.html"
     })
 

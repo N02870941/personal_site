@@ -2,7 +2,7 @@ var express  = require('express');
 var path = require('path');
 var server      = express();
 
-var controller = require('./server/controller');
+var controller = require('./server/js/controller');
 
 server.use(express.static(path.join(__dirname, '/')));
 

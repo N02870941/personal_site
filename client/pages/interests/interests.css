@@ -24,3 +24,9 @@ a.dropdown {
 ul li ul.dropdown li {
     display: block;
 }
+
+
+img.interest {
+  padding:1px;
+  border:1px solid #021a40;
+}

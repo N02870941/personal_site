@@ -47,6 +47,6 @@ client.controller('headerController', function($scope) {
 
 client.directive('header', function() {
   return {
-    templateUrl: 'client/pages/header/header.html'
+    templateUrl: 'client/core/directives/header/header.html'
   };
 })

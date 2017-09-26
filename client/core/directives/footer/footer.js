@@ -28,7 +28,7 @@ client.controller('footerController', function($scope) {
 
 client.directive('footer', function() {
   return {
-    templateUrl: 'client/pages/footer/footer.html'
+    templateUrl: 'client/core/directives/footer/footer.html'
   };
 
 });
