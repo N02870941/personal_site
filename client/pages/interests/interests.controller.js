@@ -11,7 +11,7 @@ client.controller('interestsController', function($scope) {
     {
       name: "Travel",
       href:'#!/interests/travel',
-      img: "/client/pages/projects/img/algorithms.png",
+      img: "/client/pages/interests/travel/img/travel.jpg",
       brief: "Check out some of my most recent nation and international journies!"
     },
     {
@@ -23,7 +23,7 @@ client.controller('interestsController', function($scope) {
     {
       name: "Fitness",
       href:'#!/interests/fitness',
-      img: "/client/pages/projects/img/algorithms.png",
+      img: "/client/pages/interests/fitness/img/fitness.jpg",
       brief: "Check out some of my most recent nation and international journies!"
     },
     {

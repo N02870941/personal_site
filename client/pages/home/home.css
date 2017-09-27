@@ -18,3 +18,13 @@
 ul.home {
   padding: 0;
 }
+
+
+li.home {
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.circular-square {
+  border-radius: 50%;
+}

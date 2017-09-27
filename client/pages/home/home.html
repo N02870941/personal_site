@@ -1,11 +1,8 @@
 <div ng-controller="homeController">
-  <h2>Get to know me</h2>
+  <h2>Welcome to JabariDash.com</h2>
 
+  <img src="/client/pages/home/img/home.jpg" class=' grow circular-square'>
 
-  <!-- Portrait -->
-  <img class="portrait "src="/client/pages/home/img/portrait.jpg" alt="Portrait of Jabari Dash">
-
-  <!-- Inspiring quote -->
   <div class="quote grow">
     <h1>
       "Success is the interesection between preparation and opportunity"
@@ -14,13 +11,12 @@
     </h1>
   </div>
 
-  <div class='grow'><h2>Fun facts</h2></div>
+  <div class='grow'><h2>Some Fun Facts About Me</h2></div>
 
-  <ul class='home' ng-repeat="entry in facts">
-    <hr>
-
-    <div class='grow'>
-      <li class='no-bullets'>{{entry}}</li>
+  <ul class='home' >
+    <div ng-repeat="entry in facts">
+      <li class='no-bullets home'><h3 class='grow'>{{entry}}</h3></li>
     </div>
   </ul>
+
 </div>
