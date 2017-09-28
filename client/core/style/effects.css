@@ -43,8 +43,21 @@
 
 /*------------------------------------------------------------------------------*/
 
-
 @media (max-width: 1000px) {
 
   /* TODO - DISABLE ZOOM FOR MOBILE */
+
+  .grow:hover {
+    transition: 1.0s;
+
+    -webkit-transform:scale(1); /* Safari and Chrome */
+    -moz-transform:scale(1); /* Firefox */
+    -ms-transform:scale(1); /* IE 9 */
+    -o-transform:scale(1); /* Opera */
+     transform:scale(1);
+  }
+
+  .grow {
+
+  }
 }
