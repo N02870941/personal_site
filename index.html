@@ -2,15 +2,20 @@
 <html ng-app='app'>
 
   <head>
+    <!-- Meta Stuff -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jabari Dash's Personal Website">
     <meta name="keywords" content="HTML,CSS,XML,JavaScript, Jabari, Dash, Software Engineer">
     <meta name="author" content="Jabari Dash">
     <meta charset="UTF-8">
 
+    <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="client/core/style/style.css">
+    <link rel="stylesheet" type="text/css" href="client/core/style/img.css">
+    <link rel="stylesheet" type="text/css" href="client/core/style/border.css">
     <link rel="stylesheet" type="text/css" href="client/core/style/effects.css">
     <link rel="stylesheet" type="text/css" href="client/core/style/text.css">
+    <link rel="stylesheet" type="text/css" href="client/core/style/navbar.css">
     <link rel="stylesheet" type="text/css" href="client/core/directives/header/header.css">
     <link rel="stylesheet" type="text/css" href="client/core/directives/footer/footer.css">
     <link rel="stylesheet" type="text/css" href="client/pages/home/home.css">
@@ -24,29 +29,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="client/core/client.js"></script>
+    <!-- External dependencies -->
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+
+    <!-- Main module 'app' -->
+    <script src="client/core/app/app.module.js"></script>
+    <script src="client/core/app/app.route.js"></script>
+    <script src="client/core/app/app.controller.js"></script>
+    <script src="client/core/app/app.factory.js"></script>
+
+    <!-- Header and Footer -->
     <script src="client/core/directives/header/header.controller.js"></script>
     <script src="client/core/directives/footer/footer.controller.js"></script>
+
+    <!-- Home -->
     <script src="client/pages/home/home.controller.js"></script>
+
+    <!-- Bio -->
     <script src="client/pages/biography/biography.controller.js"></script>
-    <script src="client/pages/contact/contact.controller.js"></script>
+
+    <!-- Projects -->
     <script src="client/pages/projects/projects.controller.js"></script>
+
+    <!-- Interests -->
     <script src="client/pages/interests/interests.controller.js"></script>
     <script src="client/pages/interests/photography/photography.controller.js"></script>
     <script src="client/pages/interests/photography/photography.service.js"></script>
     <script src="client/pages/interests/travel/travel.controller.js"></script>
     <script src="client/pages/interests/fitness/fitness.controller.js"></script>
     <script src="client/pages/interests/culture/culture.controller.js"></script>
+
+    <!-- Contact -->
+    <script src="client/pages/contact/contact.controller.js"></script>
+
+    <!-- Misc -->
     <script src="client/core/directives/loading/spinner.js"></script>
 
+    <!-- Page title -->
     <title>Jabari Dash</title>
   </head>
 
   <body>
+    <!-- Simple single page app -->
     <div header></div>
     <div ng-view class='partial fade'></div>
     <div footer></div>

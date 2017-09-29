@@ -1,11 +1,11 @@
-client.directive('interests', function() {
+app.directive('interests', function() {
   return {
     templateUrl: "client/pages/interests/interests.menu.html"
   }
 });
 
 
-client.controller('interestsController', function($scope) {
+app.controller('interestsController', function($scope) {
 
   $scope.interests = [
     {

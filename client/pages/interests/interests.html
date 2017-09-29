@@ -3,14 +3,14 @@
   <h2>Interests</h2>
 
   <p>
-    INSERT TEXT HERE
+    Below you can find links to some of my hobbies and things that make me, me!
   </p>
 
 
   <div class='bordered' ng-repeat="interest in interests">
     <hr>
       <a href='{{interest.href}}' class="black">
-        <img class='grow interest' src='{{interest.img}}'>
+        <div class='fade'><img class='interest' src='{{interest.img}}'></div>
 
         <h2>{{interest.name}}</h2>
         <p>{{interest.brief}}</p>

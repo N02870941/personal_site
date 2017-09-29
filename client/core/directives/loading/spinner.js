@@ -1,4 +1,4 @@
-client.directive('imageonload', function() {
+app.directive('imageonload', function() {
     return {
         restrict: 'A',
 

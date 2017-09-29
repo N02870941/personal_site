@@ -1,7 +1,9 @@
 var  fs = require('fs');
 
+//------------------------------------------------------------------------------
+
 /**
- *
+ * @return list of files in a given directory
  */
 var getFileList = function(directory, searchPath) {
 
@@ -13,6 +15,8 @@ var getFileList = function(directory, searchPath) {
 
   return fileList;
 }
+
+//------------------------------------------------------------------------------
 
 
 module.exports = {

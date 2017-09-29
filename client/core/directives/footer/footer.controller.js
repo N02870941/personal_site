@@ -1,10 +1,10 @@
-client.controller('footerController', function($scope) {
+app.controller('footerController', function($scope) {
 
   $scope.options = [
-    // {
-    //   href: "mailto:jabari.dash@gmail.com",
-    //   icon_class: "fa fa-envelope fa-3x"
-    // },
+    {
+      href: "mailto:jabari.dash@gmail.com",
+      icon_class: "fa fa-envelope fa-3x"
+    },
     {
       href: "https://www.linkedin.com/in/jabaridash/",
       icon_class: "fa fa-linkedin fa-3x icon"
@@ -26,7 +26,7 @@ client.controller('footerController', function($scope) {
 });
 
 
-client.directive('footer', function() {
+app.directive('footer', function() {
   return {
     templateUrl: 'client/core/directives/footer/footer.html'
   };

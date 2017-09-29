@@ -1,6 +1,6 @@
 
 // Register controllers and directives
-client.controller("contactController", function ($scope) {
+app.controller("contactController", function ($scope) {
 
   $scope.methodsOfContact = [
     {

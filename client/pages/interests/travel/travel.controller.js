@@ -1,4 +1,4 @@
-client.controller('travelController', function($scope) {
+app.controller('travelController', function($scope) {
 
   $scope.countries = [
     {

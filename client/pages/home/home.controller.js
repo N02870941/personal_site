@@ -1,4 +1,4 @@
-client.controller("homeController", function($scope) {
+app.controller("homeController", function($scope) {
 
   $scope.facts = [
     "I can't put a problem down until I solve it",

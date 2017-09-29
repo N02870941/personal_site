@@ -1,4 +1,4 @@
-client.controller('projectsController', function($scope) {
+app.controller('projectsController', function($scope) {
 
 
   $scope.projects = [

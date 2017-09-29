@@ -1,4 +1,4 @@
-client.controller('cultureController', function($scope) {
+app.controller('cultureController', function($scope) {
 
 
 

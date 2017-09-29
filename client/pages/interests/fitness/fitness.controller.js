@@ -1,4 +1,4 @@
-client.controller('fitnessController', function($scope) {
+app.controller('fitnessController', function($scope) {
 
 
 

@@ -1,4 +1,4 @@
-client.controller('photographyController', function($scope, $http, preloader, photographyService) {
+app.controller('photographyController', function($scope, $http, preloader, photographyService) {
 
   $scope.showAllText = function(id) {
     var a = document.getElementById(id);

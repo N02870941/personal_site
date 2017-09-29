@@ -1,0 +1,23 @@
+ul.navbar {
+  padding: 0;
+  list-style: none;
+  background: #333;
+}
+
+ul.navbar > li {
+  display: inline-block;
+  position: relative;
+  line-height: 21px;
+  text-align: left;
+}
+
+ul.navbar > li  > a {
+  display: block;
+  padding: 14px 21px;
+  text-decoration: none;
+}
+
+ul.navbar > li a:hover {
+  background: #111;
+  text-decoration: underline;
+}
