@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Creates thumbnails by shrinking photo by 25%
 shrink_images() {

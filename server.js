@@ -30,7 +30,7 @@ server.get('/photography', function(req, res) {
 
 var port = 8080
 
-util.resizePhotos('~/personal_site/server/scripts/resize_imgs.sh', ' ');
+// util.resizePhotos('./server/scripts/resize_imgs.sh', ' ');
 server.listen(port);
 
 console.log("App listening on port: " + port);
