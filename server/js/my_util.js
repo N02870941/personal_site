@@ -3,6 +3,7 @@
 
 //------------------------------------------------------------------------------
 
+// Trivial change
 /**
  * @description Resize all original photos into thumbnails
  * TODO - Add arguments for photo size, etc
