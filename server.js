@@ -1,7 +1,9 @@
 var controller = require('./server/js/controller');
-var util       = require('./server/js/my_util');
+var util       = require('./server/js/setup');
 var express    = require('express');
 var path       = require('path');
+
+//------------------------------------------------------------------------------
 
 // Create server
 var server     = express();
@@ -30,7 +32,7 @@ server.get('/photography', function(req, res) {
 
 var port = 8080
 
-// util.resizePhotos('./server/scripts/resize_imgs.sh', ' ');
+util.resizePhotos();
 server.listen(port);
 
 console.log("App listening on port: " + port);
