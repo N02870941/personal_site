@@ -1,3 +1,14 @@
 .circular-square {
   border-radius: 50%;
 }
+
+
+.grey-out {
+  transition: 0.5s linear all;
+  opacity: 1.0;
+}
+
+.grey-out:hover {
+  transition: 0.5s linear all;
+  opacity: 0.5;
+}

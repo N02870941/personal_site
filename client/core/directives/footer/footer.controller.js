@@ -14,13 +14,18 @@ app.controller('footerController', function($scope) {
       icon_class: "fa fa-facebook-official fa-3x icon"
     },
     {
+      href: "https://www.instagram.com/jabaridash/",
+      icon_class: "fa fa-instagram fa-3x icon"
+    },
+    {
       href: "https://github.com/N02870941",
       icon_class: "fa fa-github fa-3x icon"
     },
     {
-      href: "https://www.instagram.com/jabaridash/",
-      icon_class: "fa fa-instagram fa-3x icon"
+      href: "https://stackoverflow.com/users/5063151/jabari-dash",
+      icon_class: "fa fa-stack-overflow fa-3x icon"
     }
+
   ];
 
 });

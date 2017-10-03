@@ -1,16 +1,6 @@
 app.controller('photographyController', function($scope, $http, preloader, photographyService) {
 
-  $scope.showAllText = function(id) {
-    var a = document.getElementById(id);
-
-    // Flip the text based off of the current state
-    if (a.innerHTML == 'Read more...') {
-      a.innerHTML = 'Show less...';
-
-    } else {
-      a.innerHTML = 'Read more...';
-    }
-
+  $scope.showAllText = function() {
     $scope.showAll = !$scope.showAll;
   }
 

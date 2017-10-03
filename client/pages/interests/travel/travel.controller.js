@@ -1,5 +1,13 @@
 app.controller('travelController', function($scope) {
 
+  $scope.showAllText = function() {
+    $scope.showAll = !$scope.showAll;
+  }
+
+//------------------------------------------------------------------------------
+
+  $scope.showAll = false;
+
   $scope.countries = [
     {
       name: "Colombia",

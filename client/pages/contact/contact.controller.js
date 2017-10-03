@@ -25,6 +25,13 @@ app.controller("contactController", function ($scope) {
       target: "_blank"
     },
     {
+      alt: "instagram",
+      href: "https://www.instagram.com/jabaridash/",
+      iconClass: "fa fa-instagram fa-5x",
+      text: "Follow me on Instagram to see some of my latest photos!",
+      target: "_blank"
+    },
+    {
       alt: "github",
       href: "https://github.com/N02870941",
       iconClass: "fa fa-github fa-5x",
@@ -32,12 +39,13 @@ app.controller("contactController", function ($scope) {
       target: "_blank"
     },
     {
-      alt: "instagram",
-      href: "https://www.instagram.com/jabaridash/",
-      iconClass: "fa fa-instagram fa-5x",
-      text: "Follow me on Instagram to see some of my latest photos!",
+      alt: "stack-overflow",
+      href: "https://stackoverflow.com/users/5063151/jabari-dash",
+      iconClass: "fa fa-stack-overflow fa-5x",
+      text: "See some of my answers on Stack Overflow",
       target: "_blank"
     }
+
   ];
 
 });
