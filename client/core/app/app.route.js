@@ -55,7 +55,8 @@ app.config(function ($routeProvider) {
     })
 
     .when('/interests/travel/ecuador', {
-      templateUrl: "client/pages/interests/travel/countries/ecuador/ecuador.html"
+      // templateUrl: "client/pages/interests/travel/countries/ecuador/ecuador.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/interests/travel/peru', {

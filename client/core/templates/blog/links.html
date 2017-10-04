@@ -1,0 +1,16 @@
+<div ng-controller='blogController'>
+
+  <h2>{{heading}}</h2>
+
+  <p>{{description}}</p>
+
+  <div class='bordered' ng-repeat="blog in blogs">
+    <hr>
+      <a href='{{blog.href}}' class="black">
+        <div class='grey-out'><img class='blog-link' src='{{blog.img}}'></div>
+
+        <h2>{{blog.name}}</h2>
+        <p>{{blog.brief}}</p>
+      </a>
+  </div>
+</div>

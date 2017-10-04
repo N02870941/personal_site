@@ -1,9 +1,11 @@
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
-
 //------------------------------------------------------------------------------
 
+/**
+ * @desc Resize photos to thumbnail size for faster web page loading
+ */
 function resizePhotos() {
   var folders = [
     'client/pages/home/img',
@@ -19,6 +21,8 @@ function resizePhotos() {
   ];
 
 
+  // Loop through each fild directory and
+  // create its thumbnails
   for (var i = 0; i < folders.length; i++) {
     var dir = __dirname + '/../../' + folders[i]
 
@@ -36,20 +40,25 @@ async function batchEdit(directoryIn, directoryOut) {
   console.log('Creating thumbnails photos...');
 
   try {
+
+    // Run image resize shell script
     const { stdout, stderr } = await exec('bash ./server/scripts/resize_imgs.sh ' + directoryIn + ' ' + directoryOut);
 
+    // Show output
     if (stdout) {
       console.log('stdout:', stdout);
     }
 
-
+    // Catch any erros
   } catch (err) {
     console.log('stderr:', err.stderr);
 
   }
 }
+
 //------------------------------------------------------------------------------
 
+// Export for use in other *.js file
 module.exports = {
   resizePhotos : resizePhotos
 }
