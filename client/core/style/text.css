@@ -1,11 +1,23 @@
 html,
 body {
 
+	/* By default center all text*/
 	text-align: center;
 
   /* From Google fonts */
   font-family: 'Muli', sans-serif;
 }
+
+/* ALIGNMENT */
+/*----------------------------------------------------------------------------*/
+
+/* Align text left */
+.left {
+  text-align: left;
+}
+
+/* COLORING */
+/*----------------------------------------------------------------------------*/
 
 /* Keep links with white text */
 .white {
@@ -18,15 +30,15 @@ body {
   text-decoration:none;
 }
 
-/* Align text left */
-.left {
-  text-align: left;
-}
+/* TEXTS IN LISTS */
+/*----------------------------------------------------------------------------*/
 
 .no-bullets {
 	list-style-type: none;
 }
 
+/* EFFECTS */
+/*----------------------------------------------------------------------------*/
 
 span.grow-text:hover {
 	transition: 1.0s;
@@ -36,4 +48,32 @@ span.grow-text:hover {
 span.grow-text {
 	transition: 1.0s;
   font-size: 100%;
+}
+
+/* FONTS  */
+/*----------------------------------------------------------------------------*/
+
+/* vietnamese */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Muli Regular'), local('Muli-Regular'), url(https://fonts.gstatic.com/s/muli/v10/tg9tUAlnncaBSUvJ5NYofRTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Muli Regular'), local('Muli-Regular'), url(https://fonts.gstatic.com/s/muli/v10/uw51sWa2VJFEFkdnqqMZ1RTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Muli Regular'), local('Muli-Regular'), url(https://fonts.gstatic.com/s/muli/v10/zscZFkjVRGyfQ_Pw-5exXPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
