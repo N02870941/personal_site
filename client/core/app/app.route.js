@@ -23,23 +23,28 @@ app.config(function ($routeProvider) {
     })
 
     .when('/projects/algorithms', {
-      templateUrl: "client/pages/projects/projects/algorithms.html"
+      // templateUrl: "client/pages/projects/projects/algorithms.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/projects/regression', {
-      templateUrl: "client/pages/projects/projects/regression.html"
+      // templateUrl: "client/pages/projects/projects/regression.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/projects/target', {
-      templateUrl: "client/pages/projects/projects/target.html"
+      // templateUrl: "client/pages/projects/projects/target.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/projects/temperature', {
-      templateUrl: "client/pages/projects/projects/temperature.html"
+      // templateUrl: "client/pages/projects/projects/temperature.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/projects/website', {
-      templateUrl: "client/pages/projects/projects/website.html"
+      // templateUrl: "client/pages/projects/projects/website.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/interests', {
@@ -51,7 +56,8 @@ app.config(function ($routeProvider) {
     })
 
     .when('/interests/travel/colombia', {
-      templateUrl: "client/pages/interests/travel/countries/colombia/colombia.html"
+      // templateUrl: "client/pages/interests/travel/countries/colombia/colombia.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/interests/travel/ecuador', {
@@ -60,7 +66,8 @@ app.config(function ($routeProvider) {
     })
 
     .when('/interests/travel/peru', {
-      templateUrl: "client/pages/interests/travel/countries/peru/peru.html"
+      // templateUrl: "client/pages/interests/travel/countries/peru/peru.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/interests/photography', {
@@ -74,11 +81,13 @@ app.config(function ($routeProvider) {
     })
 
     .when('/interests/fitness', {
-      templateUrl: "client/pages/interests/fitness/fitness.html"
+      // templateUrl: "client/pages/interests/fitness/fitness.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/interests/culture', {
-      templateUrl: "client/pages/interests/culture/culture.html"
+      // templateUrl: "client/pages/interests/culture/culture.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/contact', {
