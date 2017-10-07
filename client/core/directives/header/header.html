@@ -1,14 +1,14 @@
 <div ng-controller='headerController'>
 
-  <div class="topnav" id="myTopnav" style="width:100%">
+  <div class="topnav" id="myTopnav" style="width:100%" ng-esc='hideNavBarOptions()'>
     <div style='display: table; margin: 0 auto;'>
-      <a class='white' href="#!home">Home</a>
-      <a class='white' href="#!biography">Biography</a>
-      <a class='white' href="#!resume">Resume</a>
-      <a class='white' href="#!projects">Projects</a>
-      <a class='white' href="#!interests">Interests</a>
-      <a class='white' href="#!contact">Contact</a>
-      <a style='position:absolute;right: 0;'href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a class='white' ng-click='hideNavBarOptions()' href="#!home">Home</a>
+      <a class='white' ng-click='hideNavBarOptions()' href="#!biography">Biography</a>
+      <a class='white' ng-click='hideNavBarOptions()' href="#!resume">Resume</a>
+      <a class='white' ng-click='hideNavBarOptions()' href="#!projects">Projects</a>
+      <a class='white' ng-click='hideNavBarOptions()' href="#!interests">Interests</a>
+      <a class='white' ng-click='hideNavBarOptions()' href="#!contact">Contact</a>
+      <a style='position:absolute;right: 0;'href="javascript:void(0);" class="icon" ng-click="navBar()"><i class="fa fa-bars" aria-hidden="true"></i></a>
     </div>
   </div>
 

@@ -6,15 +6,18 @@
     Below you can find links to some of my hobbies and things that make me who I am.
   </p>
 
+  <div ng-repeat="interest in interests">
 
-  <div class='bordered' ng-repeat="interest in interests">
-    <hr>
+
+    <div class='top-border'>
       <a href='{{interest.href}}' class="black">
-        <div class='fade'><img class='interest' src='{{interest.img}}'></div>
+        <img class='interest' src='{{interest.img}}'>
 
         <h2>{{interest.name}}</h2>
         <p>{{interest.brief}}</p>
       </a>
+    </div>
+
   </div>
 
 </div>
