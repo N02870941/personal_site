@@ -7,14 +7,18 @@
   </p>
 
 
-  <div class='bordered' ng-repeat="interest in interests">
-    <hr>
+  <div ng-repeat="interest in interests">
+
+
+    <div class='top-border'>
       <a href='{{interest.href}}' class="black">
-        <div class='fade'><img class='interest' src='{{interest.img}}'></div>
+        <img class='interest' src='{{interest.img}}'>
 
         <h2>{{interest.name}}</h2>
         <p>{{interest.brief}}</p>
       </a>
+    </div>
+    
   </div>
 
 </div>
