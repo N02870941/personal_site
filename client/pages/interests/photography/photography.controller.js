@@ -54,5 +54,4 @@ app.controller('photographyController', function($scope, $http, preloader, photo
 
   $scope.showAll = false;
   $scope.images = [];
-
 });
