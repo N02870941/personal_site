@@ -22,6 +22,11 @@ app.config(function ($routeProvider) {
       templateUrl: "client/pages/projects/projects.html"
     })
 
+    .when('/projects/mlt', {
+      // templateUrl: "client/pages/projects/projects/mlt.html"
+      templateUrl: "client/core/templates/coming/coming.html"
+    })
+
     .when('/projects/algorithms', {
       // templateUrl: "client/pages/projects/projects/algorithms.html"
       templateUrl: "client/core/templates/coming/coming.html"
