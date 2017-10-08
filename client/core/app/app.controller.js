@@ -1,5 +1,4 @@
-app.controller("mainController", function() {
+app.controller("mainController", function($location) {
 
-  // TODO - Add logic if necessary
 
 });

@@ -10,6 +10,7 @@ app.controller('resumeController', function($scope) {
   }
 
 //------------------------------------------------------------------------------
+
   $scope.showPDF = true;
 
   pdfOrImg();
