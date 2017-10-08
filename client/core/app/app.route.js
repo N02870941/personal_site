@@ -23,8 +23,8 @@ app.config(function ($routeProvider) {
     })
 
     .when('/projects/mlt', {
-      // templateUrl: "client/pages/projects/projects/mlt.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/projects/projects/mlt/mlt.html"
+      // templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/projects/algorithms', {

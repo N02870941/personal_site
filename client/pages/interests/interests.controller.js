@@ -30,7 +30,7 @@ app.controller('interestsController', function($scope) {
       name: "Culture",
       href:'#!/interests/culture#top',
       img: "/client/pages/projects/img/thumbnail/algorithms.png",
-      brief: "INSERT EXPLANATION HERE!"
+      brief: "Follow my hair journey and other cultural experiences."
     }
   ];
 });

@@ -1,0 +1,25 @@
+<div ng-controller='mltController'>
+  <div>
+    <h2>Being Black and Getting Your Foot in the Door</h2>
+  </div>
+
+  <p>
+    As a Software Engineer in the 21st century, it is important that we keep our
+    skillset up to date. Of course, one of the best ways to develop skills is on
+    the job. But, sometimes the work gets repetitive and you don't find yourself
+    learning new things. Another great way to develop skills, challenge yourself,
+    and increase your marketability is to do personal projects.
+  </p>
+
+  <div ng-repeat="seminar in seminars">
+
+    <div class='top-border'>
+      <a href='{{seminar.href}}' class="black">
+        <h2>{{seminar.name}}</h2>
+        <img class='seminar' src='{{seminar.img}}'>
+        <p>{{seminar.brief}}</p>
+      </a>
+    </div>
+
+  </div>
+</div>
