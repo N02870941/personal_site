@@ -1,33 +1,35 @@
 app.controller('mltController', function($scope) {
 
-
   $scope.seminars = [
     {
-      name: "Informational",
-      href:'#!/projects/mlt',
+      name: "Part 1: Informational",
+      href:'#!/projects/mlt/part1#top',
       img: "/client/pages/projects/img/thumbnail/mlt.jpg",
-      brief: "A collaboration with Kadeen Douglas and Dr. Cruz Caridad Bueno of " +
-             "the Black Studies Department at SUNY New Paltz to assist students of " +
-             "color kickstart their professional development"
+      brief: "The first of our series is an informational in which we " +
+             "introduce students to the MLT Career Prep Program (CP), speak about our experiences " +
+             "in the CP, and give an overview on how to apply."
     },
     {
-      name: "Resume Writing Workshop",
-      href:'#!/projects/algorithms#top',
+      name: "Part 2: Resume Writing Workshop",
+      href:'#!/projects/mlt/part2#top',
       img: "/client/pages/projects/img/thumbnail/mlt.jpg",
-      brief: "C++ Implementation of common data structures and associate algorithms and interview questions"
+      brief: "The second in the series is a resume writing workshop where " +
+             "students will work with professionals to strengthen their resumes and short essays " +
+             "for their MLT applications."
     },
     {
-      name: "Keys to Success Panel",
-      href:'#!/projects/regression#top',
+      name: "Part 3: Keys to Success Panel",
+      href:'#!/projects/mlt/part3#top',
       img: "/client/pages/projects/img/thumbnail/mlt.jpg",
-      brief: "Basic Python UI that provided a data set displays best fit functions"
+      brief: "In part 3 there will be a panel discussion where professionals will speak to students " +
+             "about some of the keys to success in the working world."
     },
     {
-      name: "Wrap up",
-      href:'#!/projects/regression#top',
+      name: "Part 4: Wrap up",
+      href:'#!/projects/mlt/part4#top',
       img: "/client/pages/projects/img/thumbnail/mlt.jpg",
-      brief: "Basic Python UI that provided a data set displays best fit functions"
+      brief: "We will close our series with a session in which students will have the opportunity " +
+             "to meet with professionals to make finishing touches to their MLT Career Prep applications."
     }
   ];
-
 });

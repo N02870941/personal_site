@@ -3,6 +3,11 @@
   border-top-width: 1px;
 }
 
+.full-border {
+  border: solid;
+  border-width: 1px;
+}
+
 @media (max-width: 600px) {
 
   /* Remove the border line for mobile */

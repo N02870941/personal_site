@@ -1,0 +1,48 @@
+<div ng-controller='part1Controller'>
+  <div>
+    <h1>Being Black and Getting Your Foot in the Door: Informational</h1>
+
+    <img class='full-border' src='/client/pages/projects/projects/mlt/part1/img/thumbnail/mlt.jpg' alt='informational_flier'>
+
+    <h2>Thursday, October 12, 2017 at 6:00 pm, SUNY New Paltz Lecture Center Room 108</h2>
+
+    <h3>Presenters: Dr. Cruz Caridad Bueno, Jabari Dash, Kadeen Douglas</h3>
+  </div>
+
+  <div class='top-border' ng-show='false'>
+    <p>TEXT ABOUT HOW IT WENT</p>
+  </div>
+
+  <div class='top-border'>
+    <h2>Presentation</h2>
+
+      <!-- Powerpoint slides -->
+
+      <a class='large-font-awesome-icon' href="" target="_blank">
+        <i class="fa fa-file-powerpoint-o fa-5x grow" aria-hidden="true"></i>
+      </a>
+
+      <p>Check out the powerpoint presentation in case you missed us!</p>
+  </div>
+
+  <!-- TODO - format better -->
+  <div class='top-border'>
+    <h2>Sample Resumes</h2>
+
+    <div ng-controller="footerController">
+        <ul class="navbar" style='background-color:#fff;'>
+          <li ng-repeat='resume in resumes'>
+            <div class='' style='display: inline-block;'>
+              <a class='' href="{{resume.href}}">
+                <i class="fa fa-file-text-o fa-5x grow black" aria-hidden="true"></i>
+              </a>
+
+              <p style='clear: left;'>{{resume.name}}</p>
+            </div>
+          </li>
+        </ul>
+    </div>
+
+  </div>
+
+</div>

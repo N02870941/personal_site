@@ -27,6 +27,22 @@ app.config(function ($routeProvider) {
       // templateUrl: "client/core/templates/coming/coming.html"
     })
 
+    .when('/projects/mlt/part1', {
+      templateUrl: "client/pages/projects/projects/mlt/part1/part1.html"
+    })
+
+    .when('/projects/mlt/part2', {
+      templateUrl: "client/pages/projects/projects/mlt/part2/part2.html"
+    })
+
+    .when('/projects/mlt/part3', {
+      templateUrl: "client/pages/projects/projects/mlt/part3/part3.html"
+    })
+
+    .when('/projects/mlt/part4', {
+      templateUrl: "client/pages/projects/projects/mlt/part4/part4.html"
+    })
+
     .when('/projects/algorithms', {
       // templateUrl: "client/pages/projects/projects/algorithms.html"
       templateUrl: "client/core/templates/coming/coming.html"
