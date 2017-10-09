@@ -4,8 +4,11 @@
 }
 
 .full-border {
-  border: solid;
-  border-width: 1px;
+  /*border: solid;
+  border-width: 1px;*/
+
+  padding:1px;
+  border:1px solid #021a40;
 }
 
 @media (max-width: 600px) {

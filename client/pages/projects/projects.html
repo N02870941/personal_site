@@ -17,15 +17,13 @@
     a small write-up as to what skills I developed and things that I learned from each given project.
   </p>
 
-  <div ng-repeat="project in projects">
 
-    <div class='top-border'>
-      <a href='{{project.href}}' class="black">
-        <h2>{{project.name}}</h2>
-        <img class='full-border' src='{{project.img}}'>
-        <p>{{project.brief}}</p>
-      </a>
-    </div>
-
+  <div ng-repeat="project in projects" class='top-border'>
+    <h2>{{project.name}}</h2>
+    <a href='{{project.href}}' class="black">
+      <img class='full-border' src='{{project.img}}'>
+    </a>
+    <p>{{project.brief}}</p>
   </div>
+
 </div>
