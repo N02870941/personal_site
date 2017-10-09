@@ -25,24 +25,28 @@
       <p>Check out the powerpoint presentation in case you missed us!</p>
   </div>
 
-  <!-- TODO - format better -->
   <div class='top-border'>
     <h2>Sample Resumes</h2>
 
-    <div ng-controller="footerController">
-        <ul class="navbar" style='background-color:#fff;'>
-          <li ng-repeat='resume in resumes'>
-            <div class='' style='display: inline-block;'>
-              <a class='' href="{{resume.href}}">
-                <i class="fa fa-file-text-o fa-5x grow black" aria-hidden="true"></i>
-              </a>
+    <div class="section group">
+	     <div ng-repeat='resume in jabari_resumes' class="col span_1_of_4">
+         <a class='' href="{{resume.href}}" target='_blank'>
+           <i class="fa fa-file-text-o fa-5x grow black" aria-hidden="true"></i>
+         </a>
 
-              <p style='clear: left;'>{{resume.name}}</p>
-            </div>
-          </li>
-        </ul>
+         <p style='clear: left;'>{{resume.name}}</p>
+      </div>
     </div>
 
-  </div>
+    <div class="section group">
+	     <div ng-repeat='resume in kadeen_resumes' class="col span_1_of_4">
+         <a class='' href="{{resume.href}}" target='_blank'>
+           <i class="fa fa-file-text-o fa-5x grow black" aria-hidden="true"></i>
+         </a>
+
+         <p style='clear: left;'>{{resume.name}}</p>
+      </div>
+    </div>
+</div>
 
 </div>
