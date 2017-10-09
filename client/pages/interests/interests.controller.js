@@ -29,7 +29,7 @@ app.controller('interestsController', function($scope) {
     {
       name: "Culture",
       href:'#!/interests/culture#top',
-      img: "/client/pages/projects/img/thumbnail/algorithms.png",
+      img: "/client/pages/interests/culture/img/thumbnail/culture.jpg",
       brief: "Follow my hair journey and other cultural experiences."
     }
   ];

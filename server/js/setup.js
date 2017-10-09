@@ -12,6 +12,7 @@ function resizePhotos() {
     'client/pages/biography/img',
     'client/pages/contact/img',
     'client/pages/projects/img',
+    'client/pages/projects/projects/mlt/part1/img',
     'client/pages/resume/img',
     'client/pages/interests/img',
     'client/pages/interests/culture/img',
