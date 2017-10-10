@@ -22,9 +22,17 @@ app.config(function ($routeProvider) {
       templateUrl: "client/pages/projects/projects.html"
     })
 
+    .when('/tech', {
+      templateUrl: "client/pages/tech/tech.html"
+    })
+
     .when('/projects/mlt', {
       templateUrl: "client/pages/projects/projects/mlt/mlt.html"
-      // templateUrl: "client/core/templates/coming/coming.html"
+    })
+
+    .when('/projects/target', {
+      // templateUrl: "client/pages/tech/projects/target.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/projects/mlt/part1', {
@@ -43,26 +51,21 @@ app.config(function ($routeProvider) {
       templateUrl: "client/pages/projects/projects/mlt/part4/part4.html"
     })
 
-    .when('/projects/algorithms', {
-      // templateUrl: "client/pages/projects/projects/algorithms.html"
+    .when('/tech/algorithms', {
+      // templateUrl: "client/pages/tech/projects/algorithms.html"
       templateUrl: "client/core/templates/coming/coming.html"
     })
 
-    .when('/projects/regression', {
-      // templateUrl: "client/pages/projects/projects/regression.html"
+    .when('/tech/regression', {
+      // templateUrl: "client/pages/tech/projects/regression.html"
       templateUrl: "client/core/templates/coming/coming.html"
     })
 
-    .when('/projects/target', {
-      // templateUrl: "client/pages/projects/projects/target.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+    .when('/tech/temperature', {
+      templateUrl: "client/pages/tech/projects/temperature/temperature.html"
     })
 
-    .when('/projects/temperature', {
-      templateUrl: "client/pages/projects/projects/temperature/temperature.html"
-    })
-
-    .when('/projects/website', {
+    .when('/tech/website', {
       // templateUrl: "client/pages/projects/projects/website.html"
       templateUrl: "client/core/templates/coming/coming.html"
     })
