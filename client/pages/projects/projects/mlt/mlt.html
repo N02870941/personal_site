@@ -6,20 +6,19 @@
   <p>
     Being Black and Getting Your Foot in the Door is a four part series dedicated
     to the professional advancement of students of color at SUNY New Paltz. On this
-    project I am working with Dr. Cruz Caridad Bueno, and Kadeen Douglas to help
+    project I am working with Dr. Cruz Caridad Bueno and Kadeen Douglas to help
     students develop their resumes, apply to programs such as MLT Career Prep, and
     take charge of their professional lives.
   </p>
 
-  <div ng-repeat="seminar in seminars">
-
-    <div class='top-border'>
-      <a href='{{seminar.href}}' class="black">
+  <div class='top-border' ng-repeat="seminar in seminars">
+    <a href='{{seminar.href}}' class="black">
+      <div>
         <h2>{{seminar.name}}</h2>
-        <img class='full-border' src='{{seminar.img}}'>
+        <img class='full-border grow' src='{{seminar.img}}'>
         <p>{{seminar.brief}}</p>
-      </a>
-    </div>
-
+      </div>
+    </a>
   </div>
+
 </div>

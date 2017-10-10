@@ -59,8 +59,7 @@ app.config(function ($routeProvider) {
     })
 
     .when('/projects/temperature', {
-      // templateUrl: "client/pages/projects/projects/temperature.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/projects/projects/temperature/temperature.html"
     })
 
     .when('/projects/website', {
