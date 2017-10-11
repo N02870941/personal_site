@@ -4,6 +4,11 @@ var controller = require('./server/js/controller');
 var util       = require('./server/js/setup');
 var express    = require('express');
 var path       = require('path');
+var server     = express();
+
+// TODO - Add message to Slack saying online
+// TODO - Add API key
+// TODO - Clean up for if the server dies (ctrl + c, etc)
 
 //  Start server
 //------------------------------------------------------------------------------
@@ -13,7 +18,6 @@ var path       = require('path');
  */
 function setupServer() {
 
-  // TODO - other setup functions
 
   util.resizePhotos();
 }
@@ -32,24 +36,9 @@ function startServer() {
   console.log("jabaridash.com listening on port: " + port);
 }
 
-//------------------------------------------------------------------------------
-
-
-// Create server
-var server     = express();
-server.use(express.static(path.join(__dirname, '/')));
-
 // Setup HTTP methods on server
 //------------------------------------------------------------------------------
 
-/**
- * @description returns list of relative addresses to thumbnail images.
- * This function is implemented on the back end because the photos may change.
- * and thus I do not want to hard code the list of photos that I will be displaying.
- * @param req HTTP Request from client
- * @param res HTTP Response that will be sent to client
- * @return List of all thumbnails
- */
 server.get('/photography', function(req, res) {
   var searchPath = '/client/pages/interests/photography/img/thumbnail/';
   var directory = __dirname + searchPath;
@@ -63,6 +52,9 @@ server.get('/photography', function(req, res) {
   res.send(body);
 });
 
-setupServer();
+//------------------------------------------------------------------------------
 
+server.use(express.static(path.join(__dirname, '/')));
+
+setupServer();
 startServer();

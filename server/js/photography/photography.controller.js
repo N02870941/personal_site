@@ -1,6 +1,15 @@
 var photographyService = require('./photography.service');
 
+//------------------------------------------------------------------------------
 
+/**
+ * @description returns list of relative addresses to thumbnail images.
+ * This function is implemented on the back end because the photos may change.
+ * and thus I do not want to hard code the list of photos that I will be displaying.
+ * @param req HTTP Request from client
+ * @param res HTTP Response that will be sent to client
+ * @return List of all thumbnails
+ */
 function getThumbnails(req, res) {
   var searchPath = '/client/pages/interests/photography/img/thumbnail/';
   var directory = __dirname + searchPath;
@@ -12,4 +21,10 @@ function getThumbnails(req, res) {
   var body = controller.getFileList(directory, searchPath);
 
   res.send(body);
+}
+
+//------------------------------------------------------------------------------
+
+module.exports = {
+  getThumbnails: getThumbnails
 }

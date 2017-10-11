@@ -13,6 +13,7 @@ RUN npm install
 COPY . .
 
 # Port we want to expose
+# TODO - SSL on port 443?
 EXPOSE 8080
 
 CMD [ "npm", "start" ]

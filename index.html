@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang='en' ng-app='app'>
 
   <head>
@@ -43,9 +43,17 @@
     <script src="client/core/app/app.controller.js"></script>
     <script src="client/core/app/app.factory.js"></script>
 
-    <!-- Header and Footer -->
+    <!-- Header -->
     <script src="client/core/directives/header/header.controller.js"></script>
+    <script src="client/core/directives/header/header.directive.js"></script>
+
+    <!-- Footer -->
     <script src="client/core/directives/footer/footer.controller.js"></script>
+    <script src="client/core/directives/footer/footer.directive.js"></script>
+
+    <!-- Other Directives -->
+    <script src="client/core/directives/escape/escape.directive.js"></script>
+    <script src="client/core/directives/loading/spinner.js"></script>
 
     <!-- Home -->
     <script src="client/pages/home/home.controller.js"></script>
@@ -79,11 +87,10 @@
     <!-- Contact -->
     <script src="client/pages/contact/contact.controller.js"></script>
 
-    <!-- Misc -->
-    <script src="client/core/directives/loading/spinner.js"></script>
-
     <!-- Page title -->
     <title>Jabari Dash</title>
+
+    <!-- TODO - Add favicon -->
   </head>
 
   <body>

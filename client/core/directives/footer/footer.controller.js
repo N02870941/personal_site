@@ -29,11 +29,3 @@ app.controller('footerController', function($scope) {
   ];
 
 });
-
-
-app.directive('footer', function() {
-  return {
-    templateUrl: 'client/core/directives/footer/footer.html'
-  };
-
-});
