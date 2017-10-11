@@ -1,6 +1,5 @@
 html,
 body {
-
 	/* By default center all text*/
 	text-align: center;
 
@@ -35,19 +34,6 @@ body {
 
 .no-bullets {
 	list-style-type: none;
-}
-
-/* EFFECTS */
-/*----------------------------------------------------------------------------*/
-
-span.grow-text:hover {
-	transition: 1.0s;
-  font-size: 150%;
-}
-
-span.grow-text {
-	transition: 1.0s;
-  font-size: 100%;
 }
 
 /* FONTS  */

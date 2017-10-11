@@ -1,24 +1,31 @@
 app.controller('headerController', function($scope) {
 
-//------------------------------------------------------------------------------
-
+  /**
+   * This function changes the class name of the
+   * topnav from "topnav" to "topnav response" and
+   * vice versa. Essentially, when this happens,
+   * the css for the respective configuration will load.
+   * When it is jsut "topnav," it will load it in desktop
+   * mode, when it is "topnav responsive," it will render
+   * itself for mobile devices
+   */
   $scope.navBar = function() {
-    var x = document.getElementById("myTopnav");
+    var topnav = document.getElementById("myTopnav");
 
-    // Switch class to the mobile version
-    if (x.className === "topnav") {
-        x.className += " responsive";
+    // Switch class name to the mobile version
+    if (topnav.className === "topnav") {
+        topnav.className += " responsive";
 
-      // Switch to regular
+      // Switch class name to desktop version
     } else {
-        x.className = "topnav";
+        topnav.className = "topnav";
     }
   }
 
 //------------------------------------------------------------------------------
 
   /**
-   * Hide the topnav options
+   * Hide the topnav options by switching
    */
   $scope.hideNavBarOptions = function() {
     var navBar = document.getElementById("myTopnav");
@@ -26,7 +33,12 @@ app.controller('headerController', function($scope) {
     navBar.className = 'topnav';
   }
 
- // Set up so that that if click outside of topnav, it hides itself
+//------------------------------------------------------------------------------
+
+ /**
+  * If click a click event happens outside of topnav,
+  * hide it
+ */
  $(document).ready(function() {
     $(document).click(function(e) {
         if ($(e.target).is('#myTopnav,#myTopnav *')) {
@@ -37,28 +49,5 @@ app.controller('headerController', function($scope) {
         }
     });
   });
-});
 
-//------------------------------------------------------------------------------
-
-app.directive('header', function() {
-  return {
-    templateUrl: 'client/core/directives/header/header.html'
-  };
-})
-
-//------------------------------------------------------------------------------
-
-app.directive('ngEsc', function () {
-    return function (scope, element, attrs) {
-        element.bind("keydown keypress keyup", function (event) {
-            if(event.which === 27) {
-                scope.$apply(function (){
-                    scope.$eval(attrs.ngEsc);
-                });
-
-                event.preventDefault();
-            }
-        });
-    };
-});
+}); // End of headerController

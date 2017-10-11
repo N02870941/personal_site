@@ -1,6 +1,10 @@
 var exec = require('child_process').exec;
 var gulp = require('gulp');
-var bs = require('browser-sync').create(); // create a browser sync instance.
+var bs = require('browser-sync').create();
+
+// TODO - Add minification
+// TODO - Add linter
+// TODO - add sass -> css
 
 /**
  * Start node app on port 8080

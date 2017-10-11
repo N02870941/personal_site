@@ -1,0 +1,25 @@
+/**
+ * Create custom directive that fires a function when the ecape button
+ * is pressed (and released)
+ */
+app.directive('ngEsc', function () {
+  return function (scope, element, attrs) {
+
+    // Create event listener for the escape button
+    // being pressed then released
+    element.bind("keydown keypress keyup", function (event) {
+
+      // If the escape key (key number 27) is pressed
+      if (event.which === 27) {
+
+        // Call the ng-esc function
+        scope.$apply(function () {
+          scope.$eval(attrs.ngEsc);
+        });
+
+        // TODO - What does this do?
+        event.preventDefault();
+      }
+    });
+  };
+});

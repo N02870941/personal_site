@@ -13,6 +13,7 @@
 .spinner-hide .loading {
   visibility: visible;
 }
+
 .spinner-show .loading {
   visibility: hidden;
 }
@@ -41,10 +42,9 @@
 
 /*------------------------------------------------------------------------------*/
 
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
 
-  /* TODO - DISABLE ZOOM FOR MOBILE */
-
+  /* Disable zoom for mobile */
   .grow:hover {
     transition: 1.0s;
 
