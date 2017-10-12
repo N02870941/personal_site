@@ -1,3 +1,4 @@
+# Change node image to arm
 FROM node:latest
 
 WORKDIR ~/personal_website
