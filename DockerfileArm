@@ -1,5 +1,6 @@
 # THIS IS FOR ARM
-FROM node:latest
+#FROM node:latest
+FROM armhf/node:latest
 
 WORKDIR ~/personal_website
 
