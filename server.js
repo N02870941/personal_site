@@ -6,6 +6,7 @@ var express    = require('express');
 var path       = require('path');
 var server     = express();
 
+// Trivial change
 // TODO - Add message to Slack saying online
 // TODO - Add API key
 // TODO - Clean up for if the server dies (ctrl + c, etc)
