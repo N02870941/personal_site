@@ -7,8 +7,8 @@
   </p>
 
   <div ng-repeat="interest in interests" class='top-border'>
-    <h2>{{interest.name}}</h2>
-    <a href='{{interest.href}}' class="black">
+    <h2>{{interest.title}}</h2>
+    <a id='{{interest.id}}' href='{{interest.href}}' class="black">
       <img class='full-border' src='{{interest.img}}'>
     </a>
     <p>{{interest.brief}}</p>

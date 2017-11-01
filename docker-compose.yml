@@ -1,0 +1,8 @@
+version: '3'
+services:
+  latest:
+    build: .
+    ports:
+     - "8080:8080"
+  redis:
+    image: "node:latest"

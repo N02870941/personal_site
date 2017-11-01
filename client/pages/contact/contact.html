@@ -1,16 +1,13 @@
 <div ng-controller='contactController'>
 
   <div>
-    <h2>Contact me</h2>
+    <h2 name=heading>Contact me</h2>
   </div>
 
   <div ng-repeat="method in methodsOfContact">
-
-    <div class='grow'>
       <a class='large-font-awesome-icon' href="{{method.href}}" target="{{method.target=='_blank' ? '_blank' : '_self'}}">
-        <i class="{{method.iconClass}}"></i>
+        <i class="{{method.iconClass}} grow"></i>
       </a>
-    </div>
 
     <p>
       {{method.text}}
