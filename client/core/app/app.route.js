@@ -31,7 +31,16 @@ app.config(function ($routeProvider) {
     })
 
     .when('/projects/target', {
-      // templateUrl: "client/pages/tech/projects/target.html"
+      templateUrl: "client/pages/projects/projects/target/target.html"
+    })
+
+    .when('/projects/target/2016', {
+      // templateUrl: "client/pages/projects/projects/target/2016.html"
+      templateUrl: "client/core/templates/coming/coming.html"
+    })
+
+    .when('/projects/target/2017', {
+      // templateUrl: "client/pages/projects/projects/target/2017.html"
       templateUrl: "client/core/templates/coming/coming.html"
     })
 
@@ -57,8 +66,8 @@ app.config(function ($routeProvider) {
     })
 
     .when('/tech/regression', {
-      // templateUrl: "client/pages/tech/projects/regression.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/tech/projects/regression/regression.html"
+      // templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/tech/temperature', {

@@ -1,10 +1,12 @@
 
 // Dependencies
-var controller = require('./server/js/controller');
-var util       = require('./server/js/setup');
-var express    = require('express');
-var path       = require('path');
-var server     = express();
+var photography_controller = require('./server/js/photography/photography.controller');
+var photography_service = require('./server/js/photography/photography.service');
+var regression_service = require('./server/js/regression/regression.service');
+var file_io     = require('./server/js/utility/file_io');
+var express     = require('express');
+var path        = require('path');
+var server      = express();
 
 // Trivial change
 // TODO - Add message to Slack saying online
@@ -19,8 +21,9 @@ var server     = express();
  */
 function setupServer() {
 
+  regression_service.downloadReadMe(__dirname);
 
-  util.resizePhotos();
+  photography_service.resizePhotos();
 }
 
 //------------------------------------------------------------------------------
@@ -41,16 +44,9 @@ function startServer() {
 //------------------------------------------------------------------------------
 
 server.get('/photography', function(req, res) {
-  var searchPath = '/client/pages/interests/photography/img/thumbnail/';
-  var directory = __dirname + searchPath;
 
-  // For Cross Origin support
-  res.set('Access-Control-Allow-Origin', '*');
+  photography_controller.getThumbnails(req, res, __dirname);
 
-  // Send the list of files for use on client side
-  var body = controller.getFileList(directory, searchPath);
-
-  res.send(body);
 });
 
 //------------------------------------------------------------------------------
