@@ -34,34 +34,18 @@ To run this app in Docker, or on a server, the only requirement is that your ser
 All of the following instructions assume that you are in the `personal_site` directory
 
 ### Running with Gulp
-This has browser-sync (auto reload) enabled, and will run the app on port 3000. I recommend running the app with gulp when developing to see changes happen in real-time, rather than manually restarting the node server, and reloading the page.
+This has browser-sync (auto reload) enabled, and will run the app on port 3000. I recommend running the app with `gulp` when developing to see changes happen in real-time, rather than manually restarting the node server, and reloading the page for each edit that you make.
 
     gulp start
 
 ### Running with Node  
-If you do not want browser-sync, you can simply run the app via nodeJs. This will run the app on port 8080.
+If you do not want browser-sync, you can simply run the app on port 8080 via `node`.
 
     node server.js
 
 ### Running with Docker Compose
-If you want to run the server using Docker Compose, you may execute the following:
+If you want to run the server on port 8080 using `docker-compose`, you may execute the following:
 
     docker-compose up
 
-### Running with Docker  
-If you want to run the server as a Docker container, you may execute the following:
-
-1. Build the image and tag it as the latest
-
-        docker build -t jabari_dash/personal_website:latest .
-
-2. Get the list of Docker images
-
-        docker images
-
-3. Copy and paste the latest image's id
-Run the latest image on port localhost:8080
-
-        docker run -p 8080:8080 <image id>
-
-**Note:** This application was not developed on, or intended to run on Windows machines. Currently, the server-side script that resizes images is only compatible on Unix-based machines.
+**Note:** This application was not developed on, nor intended to run on Windows machines. Currently, the server-side script that resizes images is only compatible on Unix-based machines.
