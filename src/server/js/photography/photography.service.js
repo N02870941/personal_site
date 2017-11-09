@@ -1,6 +1,8 @@
-var  fs = require('fs');
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+var server   = require('../../server');
+var  fs      = require('fs');
+const util   = require('util');
+const exec   = util.promisify(require('child_process').exec);
+const logger = require('winston');
 
 //------------------------------------------------------------------------------
 
@@ -11,7 +13,6 @@ function resizePhotos() {
   var folders = [
     'client/pages/home/img',
     'client/pages/biography/img',
-    'client/pages/contact/img',
     'client/pages/projects/img',
     'client/pages/projects/projects/target/img',
     'client/pages/projects/projects/mlt/part1/img',
@@ -19,18 +20,19 @@ function resizePhotos() {
     'client/pages/projects/projects/mlt/part3/img',
     'client/pages/projects/projects/mlt/part4/img',
     'client/pages/tech/img',
-    'client/pages/resume/img',
-    'client/pages/interests/img',
     'client/pages/interests/culture/img',
     'client/pages/interests/fitness/img',
     'client/pages/interests/photography/img',
     'client/pages/interests/travel/img'
   ];
 
+  logger.log('info', 'Creating thumbnails for all pages that apply');
+
   // Loop through each fild directory and
   // create its thumbnails
   for (var i = 0; i < folders.length; i++) {
-    var dir = __dirname + '/../../' + folders[i]
+
+    var dir = server.dir + '/' + folders[i];
 
     batchEdit(dir, dir + '/thumbnail');
 
@@ -43,21 +45,26 @@ function resizePhotos() {
  * @description Resize all original photos into thumbnails
  */
 async function batchEdit(directoryIn, directoryOut) {
-  console.log('Creating thumbnails photos...');
+
+  logger.log('info', 'Creating thumbnails for: ' + directoryIn);
+
+  var bashCommand = 'bash ' + server.dir + '/server/scripts/resize_imgs.sh ';
 
   try {
 
     // Run image resize shell script
-    const { stdout, stderr } = await exec('bash ../../scripts/resize_imgs.sh ' + directoryIn + ' ' + directoryOut);
+    const { stdout, stderr } = await exec(bashCommand + directoryIn + ' ' + directoryOut);
 
     // Show output
     if (stdout) {
-      console.log('stdout:', stdout);
+
+      logger.log('info', {'stdout' : stdout});
     }
 
     // Catch any errors
   } catch (err) {
-    console.log('stderr:', err.stderr);
+
+    logger.log('error', {'err' : err.stderr});
 
   }
 }

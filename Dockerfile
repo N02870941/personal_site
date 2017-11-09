@@ -13,9 +13,9 @@ RUN npm install
 COPY . .
 
 # Port we want to expose
-# TODO - SSL on port 443?
 EXPOSE 8080
 
-WORKDIR ~/personal_website/src
+# Switch to the server folder
+WORKDIR src/server
 
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]

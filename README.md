@@ -1,6 +1,6 @@
 # Personal Site
 
-Here you will find all of the code that powers [jabaridash.com](jabaridash.com). If you want to see how I implemented it, you want to use some of the code as a template for your own site, or if you are just interested in downloading the code and playing around it with, keep reading.
+Here you will find all of the code that powers my [jabaridash.com](jabaridash.com). If you want to see how I implemented it, you want to use some of the code as a template for your own site, or if you are just interested in downloading the code and playing around it with, keep reading.
 
 ## Requirements
 Below are all of the required softwares for running the website locally or on a remote server.
@@ -47,5 +47,21 @@ If you do not want browser-sync, you can simply run the app on port 8080 via `no
 If you want to run the server on port 8080 using `docker-compose`, you may execute the following:
 
     docker-compose up
+
+### Running with Docker  
+If you want to run the server on port 8080 via `docker`, you may execute the following:
+
+1. Build the image and tag it as the latest
+
+        docker build -t jabari_dash/personal_website:latest .
+
+2. Get the list of Docker images
+
+        docker images
+
+3. Copy and paste the latest image's id
+Run the latest image on port localhost:8080
+
+        docker run -p 8080:8080 <image id>
 
 **Note:** This application was not developed on, nor intended to run on Windows machines. Currently, the server-side script that resizes images is only compatible on Unix-based machines.

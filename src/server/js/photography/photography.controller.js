@@ -1,4 +1,5 @@
 var photographyService = require('./photography.service');
+const logger           = require('winston');
 
 //------------------------------------------------------------------------------
 

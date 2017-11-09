@@ -2,7 +2,8 @@ var http        = require('http');
 const https     = require('https');
 var  fs         = require('fs');
 var Remarkable  = require('remarkable');
-var markdownpdf = require("markdown-pdf")
+var markdownpdf = require("markdown-pdf");
+const logger    = require('winston');
 
 //------------------------------------------------------------------------------
 
@@ -18,18 +19,17 @@ var markdownpdf = require("markdown-pdf")
   var md_to_html = function(src, dest) {
 
     // Get the markdown
-    var md = fs.readFileSync(src, "utf8");
-
+    var md        = fs.readFileSync(src, "utf8");
     var converter = new Remarkable();
-
-    var html = converter.render(md);
+    var html      = converter.render(md);
 
     fs.writeFile(dest, html, function(err) {
+      
       if (err) {
           return console.log(err);
       }
 
-      console.log(dest + " was saved!");
+      logger.log('info', dest + " was saved!");
     });
   }
 
@@ -40,12 +40,12 @@ var markdownpdf = require("markdown-pdf")
    */
   var download = function(download) {
 
-    var url = download.url;
-    var dest = download.dest;
+    var url      = download.url;
+    var dest     = download.dest;
     var callback = download.callback;
 
-    var file = fs.createWriteStream(dest);
-    var request = https.get(url, function(response) {
+    var file     = fs.createWriteStream(dest);
+    var request  = https.get(url, function(response) {
 
       response.pipe(file);
 

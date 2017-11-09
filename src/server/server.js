@@ -4,6 +4,7 @@ var photography_controller = require('./js/photography/photography.controller');
 var photography_service    = require('./js/photography/photography.service');
 var regression_service     = require('./js/regression/regression.service');
 var file_io                = require('./js/utility/file_io');
+const logger               = require('winston');
 var express                = require('express');
 var path                   = require('path');
 var server                 = express();
@@ -19,11 +20,11 @@ var server                 = express();
 /**
  * @description Set up the server (create thumbnails, etc)
  */
-function setupServer() {
+function setupServer(dir) {
 
-  // regression_service.downloadReadMe(__dirname);
+  regression_service.downloadReadMe();
 
-  // photography_service.resizePhotos();
+  photography_service.resizePhotos();
 }
 
 //------------------------------------------------------------------------------
@@ -37,7 +38,8 @@ function startServer() {
   server.listen(port);
 
   // Notify use the server is up and running
-  console.log("jabaridash.com listening on port: " + port);
+  logger.log('info', "jabaridash.com listening on port: " + port);
+
 }
 
 // Setup HTTP methods on server
@@ -52,9 +54,12 @@ server.get('/photography', function(req, res) {
 //------------------------------------------------------------------------------
 
 // var dir = path.join(__dirname, '../');
-var dir = '../';
+
+var dir = path.resolve('..');
+
+exports.dir = dir;
 
 server.use(express.static(dir));
 
-setupServer();
+setupServer(dir);
 startServer();
