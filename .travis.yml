@@ -1,18 +1,37 @@
 sudo: required
 
-# language: node_js
+# PREPARE ENVIRONMENT
+#-------------------------------------------------------------------------------
 
 services:
   - docker
 
 install:
-  - echo "installing"
+  - echo "TODO - install dependencies (specific version of docker?)"
 
+# TEST
+#-------------------------------------------------------------------------------
+
+# Bring up the application
 before_script:
   - docker-compose up --build -d
 
+# Run the test script
 script:
   - ./test/test.sh
 
+# Bring down the application
 after_script:
   - docker-compose down
+  # TODO - PUSH TO DOCKERHUB
+
+# DEPLOY TO SERVER
+#-------------------------------------------------------------------------------
+
+# If the build succeeds...
+after_success:
+  - echo "It finally worked! :)"
+
+# If the build fails
+after_failure:
+  - echo "It failed :()"
