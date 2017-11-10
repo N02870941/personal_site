@@ -2,17 +2,7 @@ var http        = require('http');
 const https     = require('https');
 var  fs         = require('fs');
 var Remarkable  = require('remarkable');
-var markdownpdf = require("markdown-pdf");
 const logger    = require('winston');
-
-//------------------------------------------------------------------------------
-
-  var md_to_pdf = function(src, dest) {
-
-    fs.createReadStream(src)
-      .pipe(markdownpdf())
-      .pipe(fs.createWriteStream(dest));
-  }
 
 //------------------------------------------------------------------------------
 
@@ -24,7 +14,7 @@ const logger    = require('winston');
     var html      = converter.render(md);
 
     fs.writeFile(dest, html, function(err) {
-      
+
       if (err) {
           return console.log(err);
       }
@@ -82,5 +72,4 @@ module.exports = {
   getFileList: getFileList,
   download : download,
   md_to_html : md_to_html,
-  md_to_pdf : md_to_pdf
 }

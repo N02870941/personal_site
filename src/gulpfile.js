@@ -1,21 +1,58 @@
-var exec    = require('child_process').exec;
-var gulp    = require('gulp');
-var browser = require('browser-sync').create();
-var inject  = require('gulp-inject');
+var exec            = require('child_process').exec;
+var gulp            = require('gulp');
+var browser         = require('browser-sync').create();
+var inject          = require('gulp-inject');
+var runSequence     = require('run-sequence');
 
 // TODO - Add minification
 // TODO - Add linter
 // TODO - add sass -> css
 // TODO - Add inject (automatically inject new file dependencies into index.html)
 
+//------------------------------------------------------------------------------
+
+gulp.task('js', function() {
+    return gulp.src('./index.html').pipe(
+      inject(
+        // specify module first so that following files
+        // can find where the module is defined
+        gulp.src(['./client/core/app/app.module.js', './client/**/*.js'], {read : false}),
+        {
+          relative: true
+        }
+      )
+    ).pipe(gulp.dest('./'));
+});
+
+//------------------------------------------------------------------------------
+
+gulp.task('css', function() {
+  var target = gulp.src('./index.html');
+
+  var css = './client/**/*.css';
+
+  // It's not necessary to read the files (will speed up things), we're only after their paths:
+  var sources = gulp.src(css, {read : false});
+
+  return target.pipe(
+    inject(sources,
+      {
+        relative: true
+      }
+    )
+  ).pipe(gulp.dest('./'));
+});
+
+//------------------------------------------------------------------------------
+
 /**
  * Start node app on port 8080
  */
-gulp.task('server', function (cb) {
+gulp.task('start-server', function (callback) {
   exec('cd server && node server.js', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
-    cb(err);
+    callback(err);
   });
 });
 
@@ -25,12 +62,9 @@ gulp.task('server', function (cb) {
  * Start Browser sync for port 8080
  */
 gulp.task('browser-sync', function() {
-  gulp.start('server');
+  gulp.start('start-server');
 
   browser.init({
-    // server: {
-    //     baseDir: "./"
-    // },
     proxy: "localhost:8080" // makes a proxy for localhost:8080
   });
 });
@@ -49,17 +83,8 @@ gulp.task('start', ['browser-sync'], function () {
 //------------------------------------------------------------------------------
 
 /**
- * Inject new .js and .css dependencies into index.html
+ * Start server in development mode
  */
-gulp.task('index', function () {
-  var target = gulp.src('./index.html');
-
-  var js  = './client/**/*.js';
-  var css = './client/**/*.css';
-
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-  var sources = gulp.src([js, css], {read: false});
-
-  return target.pipe(inject(sources, {relative: true}))
-    .pipe(gulp.dest('./'));
+gulp.task('dev', function() {
+    runSequence('js', 'css', 'start');
 });

@@ -2,6 +2,7 @@ var server   = require('../../server');
 var  fs      = require('fs');
 const util   = require('util');
 const exec   = util.promisify(require('child_process').exec);
+const execSync = require('child_process').execSync;
 const logger = require('winston');
 
 //------------------------------------------------------------------------------
@@ -36,6 +37,7 @@ function resizePhotos() {
 
     batchEdit(dir, dir + '/thumbnail');
 
+    console.log("\n--------------------------------------------------------\n");
   }
 }
 
@@ -50,21 +52,27 @@ async function batchEdit(directoryIn, directoryOut) {
 
   var bashCommand = 'bash ' + server.dir + '/server/scripts/resize_imgs.sh ';
 
+  bashCommand = bashCommand + directoryIn + ' ' + directoryOut;
+
   try {
 
+    logger.log('info', bashCommand);
+
     // Run image resize shell script
-    const { stdout, stderr } = await exec(bashCommand + directoryIn + ' ' + directoryOut);
+    // const { stdout, stderr } = await exec(bashCommand + directoryIn + ' ' + directoryOut);
+
+    const { stdout, stderr } = code = execSync(bashCommand);
 
     // Show output
     if (stdout) {
 
-      logger.log('info', {'stdout' : stdout});
+      logger.log('info', 'stdout: \n' + stdout);
     }
 
     // Catch any errors
   } catch (err) {
 
-    logger.log('error', {'err' : err.stderr});
+    logger.log('error', 'stderr: \n' + err.stderr);
 
   }
 }

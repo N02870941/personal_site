@@ -71,8 +71,8 @@ app.config(function ($routeProvider) {
     })
 
     .when('/tech/regression', {
-      templateUrl: "client/pages/tech/projects/regression/regression.html"
-      // templateUrl: "client/core/templates/coming/coming.html"
+      // templateUrl: "client/pages/tech/projects/regression/regression.html"
+      templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/tech/temperature', {

@@ -21,9 +21,7 @@ var server                 = express();
  * @description Set up the server (create thumbnails, etc)
  */
 function setupServer(dir) {
-
-  regression_service.downloadReadMe();
-
+  
   photography_service.resizePhotos();
 }
 

@@ -19,9 +19,6 @@ var downloadReadMe = function() {
 
         file_io.md_to_html(server.dir + "/client/pages/tech/projects/regression/README.md",
                            server.dir + "/client/pages/tech/projects/regression/regression.html");
-
-        file_io.md_to_pdf(server.dir + "/client/pages/tech/projects/regression/README.md",
-                           server.dir + "/client/pages/tech/projects/regression/regression.pdf");
       }
     }
 
