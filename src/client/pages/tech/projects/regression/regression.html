@@ -1,0 +1,20 @@
+<h1>Least Squares Curve Fit</h1>
+<p>This repository features a C++ and Python implementation of the least squares curve fitting technique.</p>
+<h2>Installation</h2>
+<p>Assuming that you have the <a href="https://gcc.gnu.org/install/binaries.html">GCC Compiler</a> <code>g++</code> installed, take the
+following steps to install the application:</p>
+<p><code>git clone https://github.com/N02870941/least_squares_curve_fit.git</code></p>
+<p><code>cd least_squares_curve_fit</code></p>
+<p><code>./install.sh</code></p>
+<h2>Uninstallation</h2>
+<p>Assuming that you are in the <code>least_squares_curve_fit</code> root directory:</p>
+<p><code>./uninstall.sh</code></p>
+<h2>Starting the application</h2>
+<p>After installing the application, you may follow the following steps:</p>
+<p><code>cd src/py</code></p>
+<p><code>python3 main.py</code></p>
+<h2>User Interface</h2>
+<p>The Graphical User Interface (GUI) is written in <em>Python</em>, using the <a href="https://docs.python.org/2/library/tkinter.html">Tkinter</a> and <a href="http://matplotlib.org/">Matplotlib</a> libraries. I chose to write the UI in Python for simplicity and for the purpose of faster development. A sample photo of the general output of the program follows:</p>
+<p><img src="doc/img/demo.png" alt="GUI"></p>
+<h2>Data Model / Calculations</h2>
+<p>All of the functions that do the least squares calculations are written in <em>C++</em>, and are in the source code. This way, you can step through each phase of the process of the <a href="https://en.wikipedia.org/wiki/Least_squares">least squares</a> algorithm. I am sure that there are libraries out there that can do this better, but I did it myself for fun and because it is a good exercise to know what is going on under the hood.</p>

@@ -1,0 +1,31 @@
+{
+  "name": "personal_site",
+  "version": "0.0.0",
+  "description": "Jabari's personal website",
+  "main": "server.js",
+  "author": "Jabari",
+  "dependencies": {
+    "angular": "1.6.4",
+    "angular-animate": "1.6.4",
+    "angular-route": "1.6.4",
+    "body-parser": "~1.5.2",
+    "bower": "^1.8.2",
+    "express": "~4.7.2",
+    "jquery": "3.2.1",
+    "method-override": "~2.1.2",
+    "mongoose": "~3.6.2",
+    "morgan": "~1.2.2",
+    "remarkable": "^1.7.1",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.3.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "jshint": "^2.9.5",
+    "run-sequence": "^2.2.0"
+  }
+}
