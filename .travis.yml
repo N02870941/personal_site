@@ -23,7 +23,7 @@ script:
 # Bring down the application
 after_script:
   - docker-compose down
-  - ./scripts/upload_docker.sh
+  - ./scripts/push_docker.sh
 
 # DEPLOY TO SERVER
 #-------------------------------------------------------------------------------
