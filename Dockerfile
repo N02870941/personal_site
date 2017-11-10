@@ -12,13 +12,19 @@ WORKDIR /usr/personal_website/src
 # Copy all the source to the container
 COPY src/ ./
 
-# Install app dependencies
+# Install dependencies via npm
 RUN npm install
+
+# install bower via npm
+RUN npm install --global bower
+
+# Install dependencies via bower
 RUN bower install
 
 # Switch to the server folder
 WORKDIR server
 
+# Start te node server
 CMD [ "node", "server.js" ]
 
 # Port we want to expose
