@@ -1,7 +1,8 @@
 FROM node:latest
 
+# Create labels
 LABEL version="0.0.0"
-LABEL description="Docker images of my personal_website"
+LABEL description="Docker image for my personal_website"
 LABEL maintainer "Jabari Dash"
 
 # Create the working directory
@@ -14,9 +15,6 @@ COPY src/ ./
 # Install app dependencies
 RUN npm install
 RUN bower install
-
-# Bundle app source
-#COPY . .
 
 # Switch to the server folder
 WORKDIR server
