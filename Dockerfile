@@ -7,6 +7,8 @@ COPY src/package.json .
 
 COPY src/package.json src/package-lock.json ./
 
+WORKDIR ~/personal_website/src
+
 RUN npm install
 
 # Bundle app source
