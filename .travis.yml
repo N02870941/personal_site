@@ -1,13 +1,18 @@
 sudo: required
 
-language: node_js
+# language: node_js
 
 services:
   - docker
 
 install:
-  - docker build -t jabaridash/personal_website:latest .
-  - docker run -p 8080:8080 jabaridash/personal_website:latest
+  - echo "installing"
+
+before_script:
+  - docker-compose up --build -d
 
 script:
   - ./test/test.sh
+
+after_script:
+  - docker-compose down
