@@ -9,7 +9,7 @@ services:
 install:
   - echo "TODO - install dependencies (specific version of docker?)"
 
-# TEST
+# RUN HEALTHCHECK TEST
 #-------------------------------------------------------------------------------
 
 # Bring up the application

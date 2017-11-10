@@ -1,16 +1,31 @@
 FROM node:latest
 
+# SET UP LABELS
+#-------------------------------------------------------------------------------
+
 # Create labels
-LABEL version="0.0.0"
-LABEL description="Docker image for my personal_website"
+LABEL description="Docker image for my personal_site"
 LABEL maintainer "Jabari Dash"
 
+# SETUP ENVIRONMENT VARIABLES
+#-------------------------------------------------------------------------------
+
+
+
+
+
+# COPY FILES INTO DOCKER IMAGE
+#-------------------------------------------------------------------------------
+
 # Create the working directory
-RUN mkdir -p /usr/personal_website/src
-WORKDIR /usr/personal_website/src
+RUN mkdir -p /usr/personal_site/src
+WORKDIR /usr/personal_site/src
 
 # Copy all the source to the container
 COPY src/ ./
+
+# INSTALL DEPENDENCIES
+#-------------------------------------------------------------------------------
 
 # Install dependencies via npm
 RUN npm install
@@ -20,6 +35,9 @@ RUN npm install --global bower
 
 # Install dependencies via bower
 RUN bower install --allow-root
+
+# START THE APP
+#-------------------------------------------------------------------------------
 
 # Switch to the server folder
 WORKDIR server
