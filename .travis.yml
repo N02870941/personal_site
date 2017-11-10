@@ -7,4 +7,7 @@ services:
 
 install:
   - docker build -t jabaridash/personal_website:latest .
-  # - docker run -p 8080:8080 jabaridash/personal_website:latest
+  - docker run -p 8080:8080 jabaridash/personal_website:latest
+
+script:
+  - ./test/test.sh
