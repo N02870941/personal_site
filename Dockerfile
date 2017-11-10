@@ -19,7 +19,7 @@ RUN npm install
 RUN npm install --global bower
 
 # Install dependencies via bower
-RUN bower install
+RUN bower install --allow-root
 
 # Switch to the server folder
 WORKDIR server
