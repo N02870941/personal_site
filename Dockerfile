@@ -12,8 +12,6 @@ LABEL maintainer "Jabari Dash"
 
 
 
-
-
 # COPY FILES INTO DOCKER IMAGE
 #-------------------------------------------------------------------------------
 

@@ -18,19 +18,12 @@ before_script:
 
 # Run the test script
 script:
-  - ./test/test.sh
+  - ./scripts/test.sh
 
 # Bring down the application
 after_script:
   - docker-compose down
-  - echo "Uploading to Dockerhub..."
-
-  # require the branch name to be master
-  - if [ $TRAVIS_BRANCH == "master" ]; then
-      echo "master"
-    else
-      echo "not master"
-    fi
+  - ./scripts/upload_docker.sh
 
 # DEPLOY TO SERVER
 #-------------------------------------------------------------------------------
