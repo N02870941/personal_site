@@ -1,5 +1,13 @@
-docker ps
 
-# TODO - Find a way to test that the docker 
-# container is up and running
-# curl -i 127.0.0.1:8080
+# Ping losthost
+nc -z localhost 8080
+
+# If the exit status
+# was 0, then test passed
+if [ $? -eq 0 ]; then
+  exit 0
+
+# Otherwise test failed
+else
+  exit 1
+fi
