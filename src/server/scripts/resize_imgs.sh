@@ -33,7 +33,7 @@ JPG_to_jpg() {
       # Convert it's extension
       do
         echo "converting $file to ${file%.JPG}.jpg"
-        cp "$file" "${file%.JPG}.jpg"
+        mv "$file" "${file%.JPG}.jpg"
       done
   fi
 }
@@ -86,6 +86,6 @@ shrink_images() {
   fi
 }
 
-# JPG_to_jpg $1
+JPG_to_jpg $1
 
 shrink_images $1 $2
