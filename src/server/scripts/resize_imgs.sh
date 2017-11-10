@@ -44,15 +44,10 @@ JPG_to_jpg() {
 shrink_images() {
   create_folder $2
 
-  # Change directories into the input directory
-  command cd $1
-
   # Copy all the files from the input
   # directory into the output directory
-  command cp * $2
-
-  # Change directories into the output directory
-  command cd $2
+  # TODO - See why thumbnal (not copied) error shows
+  command cp $1/* $2
 
   # See if there are
   # .JPG files in the directory
@@ -91,6 +86,6 @@ shrink_images() {
   fi
 }
 
-JPG_to_jpg $1
+# JPG_to_jpg $1
 
 shrink_images $1 $2
