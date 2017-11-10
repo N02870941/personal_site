@@ -1,23 +1,27 @@
 FROM node:latest
 
-WORKDIR ~/personal_website
+LABEL version="0.0.0"
+LABEL description="Docker images of my personal_website"
+LABEL maintainer "Jabari Dash"
+
+# Create the working directory
+RUN mkdir -p /usr/personal_website/src
+WORKDIR /usr/personal_website/src
+
+# Copy all the source to the container
+COPY src/ ./
 
 # Install app dependencies
-COPY src/package.json .
-
-COPY src/package.json src/package-lock.json ./
-
-WORKDIR ~/personal_website/src
-
 RUN npm install
+RUN bower install
 
 # Bundle app source
-COPY . .
+#COPY . .
+
+# Switch to the server folder
+WORKDIR server
+
+CMD [ "node", "server.js" ]
 
 # Port we want to expose
 EXPOSE 8080
-
-# Switch to the server folder
-WORKDIR src/server
-
-CMD [ "node", "server.js" ]
