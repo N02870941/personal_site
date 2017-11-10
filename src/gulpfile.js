@@ -7,10 +7,12 @@ var runSequence     = require('run-sequence');
 // TODO - Add minification
 // TODO - Add linter
 // TODO - add sass -> css
-// TODO - Add inject (automatically inject new file dependencies into index.html)
 
 //------------------------------------------------------------------------------
 
+/**
+ * Inserts .js dependencies into index.html
+ */
 gulp.task('js', function() {
     return gulp.src('./index.html').pipe(
       inject(
@@ -26,6 +28,9 @@ gulp.task('js', function() {
 
 //------------------------------------------------------------------------------
 
+/**
+ * Inserts .css dependencies into index.html
+ */
 gulp.task('css', function() {
   var target = gulp.src('./index.html');
 
@@ -59,7 +64,7 @@ gulp.task('start-server', function (callback) {
 //------------------------------------------------------------------------------
 
 /**
- * Start Browser sync for port 8080
+ * Start Browser sync for port 3000
  */
 gulp.task('browser-sync', function() {
   gulp.start('start-server');
@@ -83,7 +88,8 @@ gulp.task('start', ['browser-sync'], function () {
 //------------------------------------------------------------------------------
 
 /**
- * Start server in development mode
+ * Start server in development mode,
+ * running setup scripts first
  */
 gulp.task('dev', function() {
     runSequence('js', 'css', 'start');

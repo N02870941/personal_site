@@ -59,9 +59,9 @@ async function batchEdit(directoryIn, directoryOut) {
     logger.log('info', bashCommand);
 
     // Run image resize shell script
-    // const { stdout, stderr } = await exec(bashCommand + directoryIn + ' ' + directoryOut);
-
-    const { stdout, stderr } = code = execSync(bashCommand);
+    // TODO - Synchronous or Asynchronous?
+    const { stdout, stderr } = await exec(bashCommand);
+    // const { stdout, stderr } = code = execSync(bashCommand);
 
     // Show output
     if (stdout) {

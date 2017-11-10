@@ -6,6 +6,9 @@ const logger    = require('winston');
 
 //------------------------------------------------------------------------------
 
+  /**
+   * @desc Converts markdown to html
+   */
   var md_to_html = function(src, dest) {
 
     // Get the markdown
@@ -13,10 +16,10 @@ const logger    = require('winston');
     var converter = new Remarkable();
     var html      = converter.render(md);
 
-    fs.writeFile(dest, html, function(err) {
+    fs.writeFile(dest, html, function(error) {
 
-      if (err) {
-          return console.log(err);
+      if (error) {
+          return logger.log('error', error);
       }
 
       logger.log('info', dest + " was saved!");
