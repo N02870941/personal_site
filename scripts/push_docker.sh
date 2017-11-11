@@ -54,10 +54,10 @@ check_branch() {
   elif [ "$branch" == "dev" ]; then
 
     # Rename branch so it foes to proper docker.io repo
-    docker tag jabaridash/personal_site:latest jabaridash/personal_site-dev:travis
+    docker tag jabaridash/personal_site:latest jabaridash/personal_site:dev-latest
 
     # Call docker_push()
-    docker_push jabaridash/personal_site-dev:travis
+    docker_push jabaridash/personal_site:dev-latest
 
     check_exit_status
 
