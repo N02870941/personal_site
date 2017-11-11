@@ -1,4 +1,6 @@
 
+# Checks the exit status of
+# the last command that ran
 check_exit_status() {
   # If the previous command was
   # not successful, then the whole
@@ -10,15 +12,18 @@ check_exit_status() {
 
 #-------------------------------------------------------------------------------
 
-
+# Logs into docker
 docker_login() {
   docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 
+  # Make sure that docker
+  # logged in properly
   check_exit_status
 }
 
 #-------------------------------------------------------------------------------
 
+# Push an image to docker.io
 docker_push() {
 
   # Log into docker
@@ -27,11 +32,13 @@ docker_push() {
   echo "Pushing to $branch branch"
   docker push $1
 
+  # Make sure that it was successful
   check_exit_status
 }
 
 #-------------------------------------------------------------------------------
 
+# Determine what to do depending on the branch that we are on
 check_branch() {
 
   echo "Checking which branch we are on..."

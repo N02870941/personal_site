@@ -24,3 +24,6 @@ script:
 after_script:
   - docker-compose down
   - ./scripts/push_docker.sh
+
+deploy:
+  - ./scripts/deploy.sh
