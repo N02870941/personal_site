@@ -21,9 +21,4 @@ script:
   - ./scripts/test.sh
   - docker-compose down
   - ./scripts/push_docker.sh
-
-# TODO - FIGURE THAT OUT LATER
-deploy:
-  # deploy master to production
-  - provider: script
-    script: scripts/deploy.sh
+  - ./scripts/deploy.sh
