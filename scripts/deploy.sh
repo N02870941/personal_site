@@ -29,17 +29,17 @@ deploy_prod() {
 
 deploy() {
 
-  if [ $1 == "master" ]; then
+  if [ "$TRAVIS_BRANCH" == "master" ]; then
     deploy_prod
     exit 0
 
-  elif [ $1 == "dev" ]; then
+  elif [ "$TRAVIS_BRANCH" == "dev" ]; then
     deploy_dev
     exit 0
 
   # If the branch is not dev or master
   else
-    echo "branch '$1' is not supported"
+    echo "branch '$TRAVIS_BRANCH' is not supported"
     exit 1
 
   fi
@@ -47,4 +47,4 @@ deploy() {
 
 #-------------------------------------------------------------------------------
 
-deploy "$1"
+deploy

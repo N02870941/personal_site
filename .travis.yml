@@ -28,11 +28,11 @@ after_script:
 deploy:
   # deploy develop to the staging environment
   - provider: script
-    script: scripts/deploy.sh dev
+    script: scripts/deploy.sh
     on:
       branch: dev
   # deploy master to production
   - provider: script
-    script: scripts/deploy.sh master
+    script: scripts/deploy.sh
     on:
       branch: master
