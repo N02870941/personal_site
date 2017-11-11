@@ -22,5 +22,5 @@ script:
 
 # Bring down the application
 after_script:
-  - ./scripts/push_docker.sh
   - docker-compose down
+  - ./scripts/push_docker.sh
