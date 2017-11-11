@@ -8,6 +8,7 @@ const logger               = require('winston');
 var express                = require('express');
 var path                   = require('path');
 var server                 = express();
+var dir                    = path.resolve('..');
 
 // Trivial change
 // TODO - Add message to Slack saying online
@@ -21,7 +22,7 @@ var server                 = express();
  * @description Set up the server (create thumbnails, etc)
  */
 function setupServer(dir) {
-  
+
   photography_service.resizePhotos();
 }
 
@@ -45,15 +46,13 @@ function startServer() {
 
 server.get('/photography', function(req, res) {
 
-  photography_controller.getThumbnails(req, res, __dirname);
+  photography_controller.getThumbnails(req, res, dir);
 
 });
 
 //------------------------------------------------------------------------------
 
 // var dir = path.join(__dirname, '../');
-
-var dir = path.resolve('..');
 
 exports.dir = dir;
 
