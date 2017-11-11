@@ -1,12 +1,14 @@
 echo "Pushing to Dockerhub..."
 
-if [ [$TRAVIS_BRANCH == "master"] ]; then
-  echo "Pushing to $TRAVIS_BRANCH branch"
+branch=$TRAVIS_BRANCH
 
-elif [ [$TRAVIS_BRANCH == "dev"] ]; then
-  echo "Pushing to $TRAVIS_BRANCH branch"
+if [ "$branch" == "master" ]; then
+  echo "Pushing to $branch branch"
+
+elif [ "$branch" == "dev" ]; then
+  echo "Pushing to $branch branch"
 
 else
-  echo "branch '$TRAVIS_BRANCH' is not supported"
+  echo "branch '$branch' is not supported"
 
 fi

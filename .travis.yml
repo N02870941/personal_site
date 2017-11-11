@@ -24,15 +24,3 @@ script:
 after_script:
   - docker-compose down
   - ./scripts/push_docker.sh
-
-# DEPLOY TO SERVER
-#-------------------------------------------------------------------------------
-
-# If the build succeeds...
-after_success:
-  - echo "It finally worked! :)"
-
-
-# If the build fails
-after_failure:
-  - echo "It failed :()"
