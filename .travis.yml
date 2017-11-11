@@ -1,10 +1,36 @@
 sudo: required
 
-language: node_js
+# PREPARE ENVIRONMENT
+#-------------------------------------------------------------------------------
 
 services:
   - docker
 
-before_install:
-  - docker build -t jabaridash/personal_website:latest .
-  - docker run -p 8080:8080 jabaridash/personal_website:latest
+install:
+  - echo "TODO - install dependencies (specific version of docker?)"
+
+# RUN HEALTHCHECK TEST
+#-------------------------------------------------------------------------------
+
+# Bring up the application
+before_script:
+  - docker-compose up --build -d
+
+# Run the test script
+script:
+  - ./scripts/test.sh
+  - docker-compose down
+  - ./scripts/push_docker.sh
+
+# TODO - FIGURE THAT OUT LATER
+# deploy:
+#   # deploy develop to the staging environment
+#   - provider: script
+#     script: scripts/deploy.sh
+#     on:
+#       branch: dev
+#   # deploy master to production
+#   - provider: script
+#     script: scripts/deploy.sh
+#     on:
+#       branch: master

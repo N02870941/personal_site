@@ -1,5 +1,8 @@
 # Personal Site
 
+[![Build Status](https://travis-ci.org/N02870941/personal_site.svg?branch=dev)](https://travis-ci.org/{n02870941}/{ppersonal_site})
+
+
 Here you will find all of the code that powers my [jabaridash.com](jabaridash.com). If you want to see how I implemented it, you want to use some of the code as a template for your own site, or if you are just interested in downloading the code and playing around it with, keep reading.
 
 ## Requirements
@@ -62,6 +65,6 @@ If you want to run the server on port 8080 via `docker`, you may execute the fol
 3. Copy and paste the latest image's id
 Run the latest image on port localhost:8080
 
-        docker run -p 8080:8080 <image id>
+        docker run --rm -p 8080:8080 <image id>
 
 **Note:** This application was not developed on, nor intended to run on Windows machines. Currently, the server-side script that resizes images is only compatible on Unix-based machines.
