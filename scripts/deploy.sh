@@ -25,6 +25,8 @@ deploy_dev() {
 deploy_prod() {
 
   echo "Deploying to prod"
+
+  curl --request POST 'http://jabaridash.com:8082' --data "data"
 }
 
 #-------------------------------------------------------------------------------
