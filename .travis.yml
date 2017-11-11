@@ -22,14 +22,15 @@ script:
   - docker-compose down
   - ./scripts/push_docker.sh
 
-deploy:
-  # deploy develop to the staging environment
-  - provider: script
-    script: scripts/deploy.sh
-    on:
-      branch: dev
-  # deploy master to production
-  - provider: script
-    script: scripts/deploy.sh
-    on:
-      branch: master
+# TODO - FIGURE THAT OUT LATER
+# deploy:
+#   # deploy develop to the staging environment
+#   - provider: script
+#     script: scripts/deploy.sh
+#     on:
+#       branch: dev
+#   # deploy master to production
+#   - provider: script
+#     script: scripts/deploy.sh
+#     on:
+#       branch: master
