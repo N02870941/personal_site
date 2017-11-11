@@ -26,4 +26,8 @@ after_script:
   - ./scripts/push_docker.sh
 
 deploy:
-  - ./scripts/deploy.sh
+  skip_cleanup: true
+  provider: script
+  script: ./scripts/deploy.sh
+  # on:
+  #   branch: develop
