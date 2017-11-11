@@ -17,6 +17,8 @@ check_exit_status() {
 deploy_dev() {
 
   echo "Deploying to dev"
+
+  curl -H "Content-Type: application/json" -X POST -d '{"tag":"dev-latest"}' http://jabaridash.com:8082
 }
 
 #-------------------------------------------------------------------------------
@@ -26,7 +28,7 @@ deploy_prod() {
 
   echo "Deploying to prod"
 
-  curl --request POST 'http://jabaridash.com:8082' --data "data"
+  curl -H "Content-Type: application/json" -X POST -d '{"tag":"latest"}' http://jabaridash.com:8082
 }
 
 #-------------------------------------------------------------------------------
@@ -35,7 +37,12 @@ deploy() {
 
   branch=$TRAVIS_BRANCH
 
-  if [ "$branch" == "master" ]; then
+  # Don't deploy, it will get deployed when the
+  # pull request is complete
+  if [ "$TRAVIS_PULL_REQUEST" == "true" ]; then
+    exit 0
+
+  elif [ "$branch" == "master" ]; then
     deploy_prod
     exit 0
 
