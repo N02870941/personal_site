@@ -52,7 +52,10 @@ check_branch() {
   # If we are in the master branch
   if [ "$branch" == "master" ]; then
 
-    docker_push jabaridash/personal_site:latest
+    # Rename image so it goes to proper docker.io repo
+    docker tag jabaridash/personal_site:latest jabaridash/personal_website:latest
+
+    docker_push jabaridash/personal_website:latest
 
     check_exit_status
 
@@ -61,7 +64,7 @@ check_branch() {
   # If we are in the dev branch
   elif [ "$branch" == "dev" ]; then
 
-    # Rename branch so it foes to proper docker.io repo
+    # Rename image so it goes to proper docker.io repo
     docker tag jabaridash/personal_site:latest jabaridash/personal_site:dev-latest
 
     # Call docker_push()
