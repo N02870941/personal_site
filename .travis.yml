@@ -19,9 +19,6 @@ before_script:
 # Run the test script
 script:
   - ./scripts/test.sh
-
-# Bring down the application
-after_script:
   - docker-compose down
   - ./scripts/push_docker.sh
 
