@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Checks the exit status of
 # the last command that ran

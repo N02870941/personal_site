@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Ping losthost
 nc -z localhost 8080
