@@ -10,7 +10,7 @@ branch=$TRAVIS_BRANCH
 # If we are in the master branch
 if [ "$branch" == "master" ]; then
   echo "Pushing to $branch branch"
-  docker push jabaridash/personal_website:latest
+  docker push jabaridash/personal_site:latest
 
   # If the previous command was
   # not successful, then the whole
@@ -22,7 +22,8 @@ if [ "$branch" == "master" ]; then
 # If we are in the dev branch
 elif [ "$branch" == "dev" ]; then
   echo "Pushing to $branch branch"
-  docker push jabaridash/personal_website-dev:latest
+  docker tag jabaridash/personal_site:latest jabaridash/personal_site-dev:latest
+  docker push jabaridash/personal_site-dev:latest
 
   # If the previous command was
   # not successful, then the whole
