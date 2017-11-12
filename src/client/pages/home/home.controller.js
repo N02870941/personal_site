@@ -1,7 +1,5 @@
 app.controller("homeController", function($scope, $location, $window) {
 
-  console.log($location.absUrl());
-
   // TODO - Protect against rogue domains
   // if ($location.absUrl() != "http://jabaridash.com/#!/home") {
   //   alert('THIS PAGE IS FAKE');

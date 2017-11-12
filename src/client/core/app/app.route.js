@@ -6,23 +6,23 @@ app.config(function ($routeProvider) {
       templateUrl: "client/pages/home/home.html"
     })
 
-    .when('/home', {
+    .when('/home/', {
       templateUrl: "client/pages/home/home.html"
     })
 
-    .when('/biography', {
+    .when('/biography/', {
       templateUrl: "client/pages/biography/biography.html"
     })
 
-    .when('/resume', {
+    .when('/resume/', {
       templateUrl: "client/pages/resume/resume.html"
     })
 
-    .when('/projects', {
+    .when('/projects/', {
       templateUrl: "client/pages/projects/projects.html"
     })
 
-    .when('/tech', {
+    .when('/tech/', {
       templateUrl: "client/pages/tech/tech.html"
     })
 
@@ -34,12 +34,12 @@ app.config(function ($routeProvider) {
       templateUrl: "client/pages/projects/projects/target/target.html"
     })
 
-    .when('/projects/target/2016', {
+    .when('/projects/target/2016/2016', {
       // templateUrl: "client/pages/projects/projects/target/2016.html"
       templateUrl: "client/core/templates/coming/coming.html"
     })
 
-    .when('/projects/target/2017', {
+    .when('/projects/target/2017/2017', {
       // templateUrl: "client/pages/projects/projects/target/2017.html"
       templateUrl: "client/core/templates/coming/coming.html"
     })
@@ -142,7 +142,7 @@ app.config(function ($routeProvider) {
       templateUrl: "client/core/templates/coming/coming.html"
     })
 
-    .when('/contact', {
+    .when('/contact/', {
       templateUrl: "client/pages/contact/contact.html"
     });
 });

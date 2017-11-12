@@ -18,22 +18,19 @@
     <link rel="stylesheet" href="client/core/style/img.css">
     <link rel="stylesheet" href="client/core/style/style.css">
     <link rel="stylesheet" href="client/core/style/text.css">
-    <link rel="stylesheet" href="client/pages/contact/contact.css">
     <link rel="stylesheet" href="client/pages/biography/biography.css">
+    <link rel="stylesheet" href="client/pages/contact/contact.css">
     <link rel="stylesheet" href="client/pages/home/home.css">
-    <link rel="stylesheet" href="client/pages/interests/interests.css">
-    <link rel="stylesheet" href="client/pages/projects/projects.css">
     <link rel="stylesheet" href="client/pages/resume/resume.css">
+    <link rel="stylesheet" href="client/core/components/header/header.css">
     <link rel="stylesheet" href="client/core/directives/footer/footer.css">
-    <link rel="stylesheet" href="client/core/directives/header/header.css">
-    <link rel="stylesheet" href="client/core/templates/coming/coming.css">
     <link rel="stylesheet" href="client/pages/interests/photography/photography.css">
-    <link rel="stylesheet" href="client/pages/interests/travel/travel.css">
     <link rel="stylesheet" href="client/pages/projects/projects/mlt/part1/part1.css">
     <!-- endinject -->
 
     <!-- External js dependencies -->
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
@@ -47,30 +44,28 @@
     <script src="client/pages/biography/biography.controller.js"></script>
     <script src="client/pages/contact/contact.controller.js"></script>
     <script src="client/pages/home/home.controller.js"></script>
-    <script src="client/pages/interests/interests.controller.js"></script>
-    <script src="client/pages/projects/projects.controller.js"></script>
+    <script src="client/pages/interests/interests.component.js"></script>
+    <script src="client/pages/projects/projects.component.js"></script>
     <script src="client/pages/resume/resume.controller.js"></script>
     <script src="client/pages/tech/tech.controller.js"></script>
     <script src="client/pages/tech/tech.service.js"></script>
+    <script src="client/core/components/header/header.component.js"></script>
+    <script src="client/core/components/list/list.component.js"></script>
     <script src="client/core/directives/escape/escape.directive.js"></script>
     <script src="client/core/directives/footer/footer.controller.js"></script>
     <script src="client/core/directives/footer/footer.directive.js"></script>
-    <script src="client/core/directives/header/header.controller.js"></script>
-    <script src="client/core/directives/header/header.directive.js"></script>
-    <script src="client/core/directives/loading/spinner.js"></script>
-    <script src="client/core/templates/blog/links.controller.js"></script>
     <script src="client/pages/interests/culture/culture.controller.js"></script>
     <script src="client/pages/interests/fitness/fitness.controller.js"></script>
     <script src="client/pages/interests/photography/photography.controller.js"></script>
     <script src="client/pages/interests/photography/photography.service.js"></script>
-    <script src="client/pages/interests/travel/travel.controller.js"></script>
-    <script src="client/pages/projects/projects/mlt/mlt.controller.js"></script>
+    <script src="client/pages/interests/travel/travel.component.js"></script>
+    <script src="client/pages/projects/projects/mlt/mlt.component.js"></script>
+    <script src="client/pages/projects/projects/target/target.component.js"></script>
     <script src="client/pages/tech/projects/algorithms/algorithms.controller.js"></script>
     <script src="client/pages/tech/projects/cluster/cluster.controller.js"></script>
-    <script src="client/pages/tech/projects/temperature/temperature.controller.js"></script>
     <script src="client/pages/tech/projects/regression/regression.controller.js"></script>
+    <script src="client/pages/tech/projects/temperature/temperature.controller.js"></script>
     <script src="client/pages/tech/projects/website/website.controller.js"></script>
-    <script src="client/core/templates/blog/posts/post/post.controller.js"></script>
     <script src="client/pages/interests/travel/countries/ecuador/ecuador.controller.js"></script>
     <script src="client/pages/projects/projects/mlt/part1/part1.controller.js"></script>
     <script src="client/pages/projects/projects/mlt/part2/part2.controller.js"></script>
@@ -86,7 +81,8 @@
 
   <body>
     <!-- Simple single page app -->
-    <div name='top' header></div>
+    <my-header name='top'></my-header>
+
     <div ng-view class='partial fade'></div>
     <div footer></div>
   </body>

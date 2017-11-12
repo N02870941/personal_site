@@ -1,5 +1,13 @@
 app.controller('techController', function($scope) {
 
+  $scope.title = "Tech Projects";
+
+  $scope.description = `
+  I am relatively new to developing personal projects - this website being one of them.
+  But below, I have listed a couple of links to projects that I have worked on and
+  a small write-up as to what skills I developed and things that I learned from each given project.
+
+  `;
 
   $scope.projects = [
     {
