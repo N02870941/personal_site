@@ -1,4 +1,4 @@
-app.component('mlt', {
+app.component('myMlt', {
 
   controller: function() {
     this.title = "Being Black and Getting Your Foot in the Door";

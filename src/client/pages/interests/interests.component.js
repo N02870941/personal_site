@@ -1,4 +1,4 @@
-app.component('interests', {
+app.component('myInterests', {
 
   controller: function() {
     this.title = "Interests";
@@ -40,7 +40,8 @@ app.component('interests', {
   },
 
   template: `
-    <project-list title='{{$ctrl.title}}'
+    <project-list
+      title='{{$ctrl.title}}'
       description="{{$ctrl.description}}"
       links="$ctrl.projects">
     </project-list>

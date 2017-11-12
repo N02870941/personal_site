@@ -1,4 +1,4 @@
-app.component('projects', {
+app.component('myProjects', {
 
   controller: function() {
     this.title = "Projects";

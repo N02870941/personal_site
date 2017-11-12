@@ -1,4 +1,4 @@
-app.component('target', {
+app.component('myTarget', {
 
   controller: function() {
     this.title = "Two Summer Internships at Target";

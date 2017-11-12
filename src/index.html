@@ -18,12 +18,9 @@
     <link rel="stylesheet" href="client/core/style/img.css">
     <link rel="stylesheet" href="client/core/style/style.css">
     <link rel="stylesheet" href="client/core/style/text.css">
-    <link rel="stylesheet" href="client/pages/biography/biography.css">
-    <link rel="stylesheet" href="client/pages/contact/contact.css">
     <link rel="stylesheet" href="client/pages/home/home.css">
-    <link rel="stylesheet" href="client/pages/resume/resume.css">
-    <link rel="stylesheet" href="client/core/components/header/header.css">
     <link rel="stylesheet" href="client/core/directives/footer/footer.css">
+    <link rel="stylesheet" href="client/core/components/header/header.css">
     <link rel="stylesheet" href="client/pages/interests/photography/photography.css">
     <link rel="stylesheet" href="client/pages/projects/projects/mlt/part1/part1.css">
     <!-- endinject -->
@@ -40,32 +37,29 @@
     <script src="client/core/app/app.module.js"></script>
     <script src="client/core/app/app.factory.js"></script>
     <script src="client/core/app/app.route.js"></script>
-    <script src="client/core/app/app.service.js"></script>
-    <script src="client/pages/biography/biography.controller.js"></script>
-    <script src="client/pages/contact/contact.controller.js"></script>
+    <script src="client/pages/biography/biography.componenet.js"></script>
+    <script src="client/pages/contact/contact.component.js"></script>
     <script src="client/pages/home/home.controller.js"></script>
     <script src="client/pages/interests/interests.component.js"></script>
     <script src="client/pages/projects/projects.component.js"></script>
-    <script src="client/pages/resume/resume.controller.js"></script>
-    <script src="client/pages/tech/tech.controller.js"></script>
-    <script src="client/pages/tech/tech.service.js"></script>
-    <script src="client/core/components/header/header.component.js"></script>
-    <script src="client/core/components/list/list.component.js"></script>
+    <script src="client/pages/tech/tech.component.js"></script>
+    <script src="client/pages/resume/resume.component.js"></script>
     <script src="client/core/directives/escape/escape.directive.js"></script>
+    <script src="client/core/components/header/header.component.js"></script>
     <script src="client/core/directives/footer/footer.controller.js"></script>
     <script src="client/core/directives/footer/footer.directive.js"></script>
-    <script src="client/pages/interests/culture/culture.controller.js"></script>
-    <script src="client/pages/interests/fitness/fitness.controller.js"></script>
+    <script src="client/core/components/list/list.component.js"></script>
+    <script src="client/pages/contact/components/contact-method.component.js"></script>
     <script src="client/pages/interests/photography/photography.controller.js"></script>
     <script src="client/pages/interests/photography/photography.service.js"></script>
     <script src="client/pages/interests/travel/travel.component.js"></script>
     <script src="client/pages/projects/projects/mlt/mlt.component.js"></script>
     <script src="client/pages/projects/projects/target/target.component.js"></script>
     <script src="client/pages/tech/projects/algorithms/algorithms.controller.js"></script>
-    <script src="client/pages/tech/projects/cluster/cluster.controller.js"></script>
     <script src="client/pages/tech/projects/regression/regression.controller.js"></script>
-    <script src="client/pages/tech/projects/temperature/temperature.controller.js"></script>
+    <script src="client/pages/tech/projects/cluster/cluster.controller.js"></script>
     <script src="client/pages/tech/projects/website/website.controller.js"></script>
+    <script src="client/pages/tech/projects/temperature/temperature.controller.js"></script>
     <script src="client/pages/interests/travel/countries/ecuador/ecuador.controller.js"></script>
     <script src="client/pages/projects/projects/mlt/part1/part1.controller.js"></script>
     <script src="client/pages/projects/projects/mlt/part2/part2.controller.js"></script>
@@ -82,7 +76,6 @@
   <body>
     <!-- Simple single page app -->
     <my-header name='top'></my-header>
-
     <div ng-view class='partial fade'></div>
     <div footer></div>
   </body>
