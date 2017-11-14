@@ -28,7 +28,8 @@ app.component('myProjects', {
   },
 
   template: `
-    <project-list title='{{$ctrl.title}}'
+    <project-list
+      title='{{$ctrl.title}}'
       description="{{$ctrl.description}}"
       links="$ctrl.projects">
     </project-list>

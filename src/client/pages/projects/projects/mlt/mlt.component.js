@@ -47,11 +47,11 @@ app.component('myMlt', {
               "to meet with professionals to make finishing touches to their MLT Career Prep applications."
       }
     ];
-
   },
 
   template: `
-    <project-list title='{{$ctrl.title}}'
+    <project-list
+      title='{{$ctrl.title}}'
       description="{{$ctrl.description}}"
       links="$ctrl.projects">
     </project-list>

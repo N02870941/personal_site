@@ -51,7 +51,7 @@ app.component('myContact', {
   },
 
   // NOTE - Temporarily sending full object x because
-  // iconClass cannot be resolved
+  // iconClass cannot be resolved for whatever reason
   template: `
     <h2 name=heading>{{$ctrl.title}}</h2>
 
