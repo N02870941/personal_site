@@ -1,6 +1,41 @@
 app.component('myHeader', {
 
+  templateUrl: 'client/core/components/header/header.template.html',
+
   controller: function() {
+
+    this.hrefs = [
+      {
+        text: "Home",
+        href: "#!home"
+      },
+
+      {
+        text: "Biography",
+        href: "#!biography"
+      },
+
+      {
+        text: "Resume",
+        href: "#!resume"
+      },
+      {
+        text: "Projects",
+        href: "#!projects"
+      },
+      {
+        text: "Tech",
+        href: "#!tech"
+      },
+      {
+        text: "Interests",
+        href: "#!interests"
+      },
+      {
+        text: "Contact",
+        href: "#!contact"
+      }
+    ];
 
     this.navBar = function() {
       var topnav = document.getElementById("myTopnav");
@@ -15,25 +50,27 @@ app.component('myHeader', {
       }
     }
 
-    var hideNavBarOptions = function() {
+    this.hideNavBarOptions = function() {
       var navBar = document.getElementById("myTopnav");
 
       navBar.className = 'topnav';
     }
 
-   $(document).ready(function() {
-      $(document).click(function(e) {
-          if ($(e.target).is('#myTopnav,#myTopnav *')) {
-              return;
-          }
-          else {
-              hideNavBarOptions();
-          }
-      });
-    });
-  },
+    this.$onInit= function() {
+
+      $(document).ready(function() {
+         $(document).click(function(e) {
+             if ($(e.target).is('#myTopnav,#myTopnav *')) {
+                 return;
+             }
+             else {
+                 hideNavBarOptions();
+             }
+         });
+       });
+    }
 
 
-  templateUrl: 'client/core/components/header/header.template.html'
+  }
 
 });

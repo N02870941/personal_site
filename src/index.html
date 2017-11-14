@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="client/core/style/style.css">
     <link rel="stylesheet" href="client/core/style/text.css">
     <link rel="stylesheet" href="client/pages/home/home.css">
+    <link rel="stylesheet" href="client/core/components/footer/footer.css">
     <link rel="stylesheet" href="client/core/components/header/header.css">
-    <link rel="stylesheet" href="client/core/directives/footer/footer.css">
     <link rel="stylesheet" href="client/pages/interests/photography/photography.css">
     <link rel="stylesheet" href="client/pages/projects/projects/mlt/part1/part1.css">
     <!-- endinject -->
@@ -39,19 +39,18 @@
     <script src="client/core/app/app.route.js"></script>
     <script src="client/core/app/app.service.js"></script>
     <script src="client/pages/biography/biography.componenet.js"></script>
-    <script src="client/pages/contact/contact.component.js"></script>
     <script src="client/pages/home/home.component.js"></script>
+    <script src="client/pages/contact/contact.component.js"></script>
     <script src="client/pages/interests/interests.component.js"></script>
-    <script src="client/pages/resume/resume.component.js"></script>
     <script src="client/pages/projects/projects.component.js"></script>
+    <script src="client/pages/resume/resume.component.js"></script>
     <script src="client/pages/tech/tech.component.js"></script>
+    <script src="client/core/components/footer/footer.component.js"></script>
     <script src="client/core/components/header/header.component.js"></script>
+    <script src="client/core/components/pdfOrJpg/pdfOrJpg.component.js"></script>
+    <script src="client/core/components/readme/readme.component.js"></script>
     <script src="client/core/components/list/list.component.js"></script>
     <script src="client/core/directives/escape/escape.directive.js"></script>
-    <script src="client/core/components/readme/readme.component.js"></script>
-    <script src="client/core/components/pdfOrJpg/pdfOrJpg.component.js"></script>
-    <script src="client/core/directives/footer/footer.controller.js"></script>
-    <script src="client/core/directives/footer/footer.directive.js"></script>
     <script src="client/pages/contact/components/contact-method.component.js"></script>
     <script src="client/pages/interests/photography/photography.controller.js"></script>
     <script src="client/pages/interests/photography/photography.service.js"></script>
@@ -79,9 +78,11 @@
   </head>
 
   <body>
+
     <!-- Simple single page app -->
     <my-header name='top'></my-header>
     <div ng-view class='partial fade'></div>
-    <div footer></div>
+    <my-footer></my-footer>
+
   </body>
 </html>
