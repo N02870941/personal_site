@@ -39,6 +39,8 @@ app.component('myHeader', {
       }
     ];
 
+//------------------------------------------------------------------------------
+
     this.navBar = function() {
       var topnav = document.getElementById("myTopnav");
 
@@ -52,11 +54,17 @@ app.component('myHeader', {
       }
     }
 
+//------------------------------------------------------------------------------
+
     this.hideNavBarOptions = function() {
+
       var navBar = document.getElementById("myTopnav");
 
       navBar.className = 'topnav';
+
     }
+
+//------------------------------------------------------------------------------
 
     this.$onInit= function() {
 
@@ -72,5 +80,7 @@ app.component('myHeader', {
          });
        });
     }
+
+//------------------------------------------------------------------------------
   }
 });
