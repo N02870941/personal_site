@@ -4,6 +4,8 @@ app.component('myHeader', {
 
   controller: function() {
 
+    var vm = this;
+
     this.hrefs = [
       {
         text: "Home",
@@ -64,13 +66,11 @@ app.component('myHeader', {
                  return;
              }
              else {
-                 hideNavBarOptions();
+
+               vm.hideNavBarOptions();
              }
          });
        });
     }
-
-
   }
-
 });

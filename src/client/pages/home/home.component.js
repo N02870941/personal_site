@@ -18,7 +18,7 @@ app.component('myHome', {
       "I skip leg day and I don't care",
       "I do math in my free time",
       "I pet dogs in the street - domestic or wild",
-      "Struggling to be vegetarian!!!!!!!"
+      "Struggling to be vegetarian"
     ];
 
   },

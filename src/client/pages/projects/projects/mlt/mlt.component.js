@@ -56,5 +56,4 @@ app.component('myMlt', {
       links="$ctrl.projects">
     </project-list>
   `
-
 });

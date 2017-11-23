@@ -3,7 +3,11 @@ app.component('myTarget', {
   controller: function() {
     this.title = "Two Summer Internships at Target";
 
-    this.description = "";
+    this.description = `
+      Throughout my college career, I have intered twice at Target Corporation
+      as a Software Engineer. Below you can find out more about my experience
+      with Target!
+    `;
 
     this.projects = [
       {
