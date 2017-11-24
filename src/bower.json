@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "jquery-gh-readme": "~1.0.0",
-    "angular-css": "^1.0.8"
+    "angular-css": "^1.0.8",
   },
   "private": true
 }

@@ -9,6 +9,7 @@ app.component("myReadme", {
 
     this.$onInit = function() {
 
+      // Gets a README.md from github.com
       $('#readme').readme({
         owner: this.owner,
         repo: this.repo
