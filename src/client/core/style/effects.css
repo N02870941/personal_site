@@ -10,16 +10,6 @@
 
 /*------------------------------------------------------------------------------*/
 
-.spinner-hide .loading {
-  visibility: visible;
-}
-
-.spinner-show .loading {
-  visibility: hidden;
-}
-
-/*------------------------------------------------------------------------------*/
-
 .grow:hover {
   transition: 1.0s;
 
@@ -55,7 +45,4 @@
      transform:scale(1);
   }
 
-  .grow {
-
-  }
 }

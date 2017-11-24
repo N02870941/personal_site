@@ -1,6 +1,6 @@
 html,
 body {
-	/* By default center all text*/
+	/* By default center all text */
 	text-align: center;
 
   /* From Google fonts */
@@ -24,6 +24,7 @@ body {
   text-decoration:none;
 }
 
+/* Keep links with black text */
 .black {
   color:#333;
   text-decoration:none;
