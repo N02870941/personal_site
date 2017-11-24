@@ -9,8 +9,10 @@ app.component('backToTop', {
   `,
 
   controller: function() {
+    // https://codepen.io/kruxor/pen/CwpFq
+
     $(window).scroll(function() {
-      if ($(this).scrollTop() > 50 ) {
+      if ($(this).scrollTop() > 50) {
           $('.scrolltop:hidden').stop(true, true).fadeIn();
       } else {
           $('.scrolltop').stop(true, true).fadeOut();
