@@ -1,12 +1,24 @@
-var exec            = require('child_process').exec;
-var gulp            = require('gulp');
-var browser         = require('browser-sync').create();
-var inject          = require('gulp-inject');
-var runSequence     = require('run-sequence');
+var exec        = require('child_process').exec;
+var gulp        = require('gulp');
+var browser     = require('browser-sync').create();
+var inject      = require('gulp-inject');
+var runSequence = require('run-sequence');
+var download    = require("gulp-download");
+const decompress = require('gulp-decompress');
 
 // TODO - Add minification
 // TODO - Add linter
 // TODO - add sass -> css
+
+//------------------------------------------------------------------------------
+
+gulp.task('fontAwesome', function () {
+  var url = "http://fontawesome.io/assets/font-awesome-4.7.0.zip";
+
+  return download(url)
+   .pipe(decompress())
+   .pipe(gulp.dest("./client/core/style"));
+});
 
 //------------------------------------------------------------------------------
 
@@ -92,5 +104,5 @@ gulp.task('start', ['browser-sync'], function () {
  * running setup scripts first
  */
 gulp.task('dev', function() {
-    runSequence('css', 'js', 'start');
+    runSequence('fontAwesome','css', 'js', 'start');
 });
