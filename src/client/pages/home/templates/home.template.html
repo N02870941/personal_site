@@ -1,0 +1,20 @@
+<h2>Welcome to JabariDash.com!</h2>
+
+<!-- Trivial change -->
+<img src="/client/pages/home/img/home.jpg" class='circular-square'>
+
+<div>
+  <h1>
+    "Success is the intersection between preparation and opportunity"
+    <br><br>
+    <a class="quote" href="http://abyssinian.org/connect/affiliates/blue-nile-passage-inc/" target="_blank">-Blue Nile Passage</a>
+  </h1>
+</div>
+
+<div class=''><h2>Some Fun Facts About Me</h2></div>
+
+<ul id='fun-facts'>
+  <div ng-repeat="entry in $ctrl.facts">
+    <li class='no-bullets top-border'><h3 class=''>{{entry}}</h3></li>
+  </div>
+</ul>

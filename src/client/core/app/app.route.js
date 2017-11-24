@@ -6,23 +6,23 @@ app.config(function ($routeProvider) {
       templateUrl: "client/pages/home/home.html"
     })
 
-    .when('/home', {
+    .when('/home/', {
       templateUrl: "client/pages/home/home.html"
     })
 
-    .when('/biography', {
+    .when('/biography/', {
       templateUrl: "client/pages/biography/biography.html"
     })
 
-    .when('/resume', {
+    .when('/resume/', {
       templateUrl: "client/pages/resume/resume.html"
     })
 
-    .when('/projects', {
+    .when('/projects/', {
       templateUrl: "client/pages/projects/projects.html"
     })
 
-    .when('/tech', {
+    .when('/tech/', {
       templateUrl: "client/pages/tech/tech.html"
     })
 
@@ -34,14 +34,12 @@ app.config(function ($routeProvider) {
       templateUrl: "client/pages/projects/projects/target/target.html"
     })
 
-    .when('/projects/target/2016', {
-      // templateUrl: "client/pages/projects/projects/target/2016.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+    .when('/projects/target/2016/2016', {
+      templateUrl: "client/pages/projects/projects/target/2016/2016.html"
     })
 
-    .when('/projects/target/2017', {
-      // templateUrl: "client/pages/projects/projects/target/2017.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+    .when('/projects/target/2017/2017', {
+      templateUrl: "client/pages/projects/projects/target/2017/2017.html"
     })
 
     .when('/projects/mlt/part1', {
@@ -62,17 +60,14 @@ app.config(function ($routeProvider) {
 
     .when('/tech/algorithms', {
       templateUrl: "client/pages/tech/projects/algorithms/algorithms.html"
-      // templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/tech/cluster', {
       templateUrl: "client/pages/tech/projects/cluster/cluster.html"
-      // templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/tech/regression', {
-      // templateUrl: "client/pages/tech/projects/regression/regression.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/tech/projects/regression/regression.html"
     })
 
     .when('/tech/temperature', {
@@ -81,7 +76,6 @@ app.config(function ($routeProvider) {
 
     .when('/tech/website', {
       templateUrl: "client/pages/tech/projects/website/website.html"
-      // templateUrl: "client/core/templates/coming/coming.html"
     })
 
     .when('/interests', {
@@ -93,56 +87,42 @@ app.config(function ($routeProvider) {
     })
 
     .when('/interests/travel/colombia', {
-      // templateUrl: "client/pages/interests/travel/countries/colombia/colombia.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/interests/travel/countries/colombia/colombia.html"
     })
 
     .when('/interests/travel/ecuador', {
-      // templateUrl: "client/pages/interests/travel/countries/ecuador/ecuador.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/interests/travel/countries/ecuador/ecuador.html"
     })
 
     .when('/interests/travel/peru', {
-      // templateUrl: "client/pages/interests/travel/countries/peru/peru.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/interests/travel/countries/peru/peru.html"
     })
 
     .when('/interests/travel/senegal', {
-      // templateUrl: "client/pages/interests/travel/countries/senegal/senegal.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/interests/travel/countries/senegal/senegal.html"
     })
 
     .when('/interests/travel/gambia', {
-      // templateUrl: "client/pages/interests/travel/countries/gambia/gambia.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/interests/travel/countries/gambia/gambia.html"
     })
 
     .when('/interests/travel/morocco', {
-      // templateUrl: "client/pages/interests/travel/countries/morocoo/morocco.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/interests/travel/countries/morocco/morocco.html"
     })
 
     .when('/interests/photography', {
       templateUrl: "client/pages/interests/photography/photography.html"
-      // resolve: {
-      //   images: function (photographyService) {
-      //     console.log("loading");
-      //     return photographyService.getPhotoPaths;
-      //   }
-      // }
     })
 
     .when('/interests/fitness', {
-      // templateUrl: "client/pages/interests/fitness/fitness.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/interests/fitness/fitness.html"
     })
 
     .when('/interests/culture', {
-      // templateUrl: "client/pages/interests/culture/culture.html"
-      templateUrl: "client/core/templates/coming/coming.html"
+      templateUrl: "client/pages/interests/culture/culture.html"
     })
 
-    .when('/contact', {
+    .when('/contact/', {
       templateUrl: "client/pages/contact/contact.html"
     });
 });

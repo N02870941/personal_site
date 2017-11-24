@@ -34,7 +34,7 @@ gulp.task('js', function() {
 gulp.task('css', function() {
   var target = gulp.src('./index.html');
 
-  var css = './client/**/*.css';
+  var css = './client/core/style/**/*.css';
 
   // It's not necessary to read the files (will speed up things), we're only after their paths:
   var sources = gulp.src(css, {read : false});
@@ -92,5 +92,5 @@ gulp.task('start', ['browser-sync'], function () {
  * running setup scripts first
  */
 gulp.task('dev', function() {
-    runSequence('js', 'css', 'start');
+    runSequence('css', 'js', 'start');
 });

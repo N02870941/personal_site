@@ -1,17 +1,1 @@
-<div ng-controller='interestsController'>
-
-  <h2>Interests</h2>
-
-  <p>
-    Below you can find links to some of my hobbies and things that make me who I am.
-  </p>
-
-  <div ng-repeat="interest in interests" class='top-border'>
-    <h2>{{interest.title}}</h2>
-    <a id='{{interest.id}}' href='{{interest.href}}' class="black">
-      <img class='full-border' src='{{interest.img}}'>
-    </a>
-    <p>{{interest.brief}}</p>
-  </div>
-
-</div>
+<my-interests></my-interests>

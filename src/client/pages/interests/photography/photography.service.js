@@ -1,4 +1,4 @@
-app.service('photographyService', function($http, preloader) {
+app.service('photographyService', function($http) {
   var protocol = 'http';
   var domain = 'jabaridash.com';
   var port = '8080';

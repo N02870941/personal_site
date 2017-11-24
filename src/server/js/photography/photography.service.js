@@ -1,9 +1,9 @@
-var server   = require('../../server');
-var  fs      = require('fs');
-const util   = require('util');
-const exec   = util.promisify(require('child_process').exec);
+var server     = require('../../server');
+var  fs        = require('fs');
+const util     = require('util');
+const exec     = util.promisify(require('child_process').exec);
 const execSync = require('child_process').execSync;
-const logger = require('winston');
+const logger   = require('winston');
 
 //------------------------------------------------------------------------------
 

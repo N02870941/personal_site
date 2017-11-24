@@ -1,3 +1,3 @@
 
 // Create the module
-var app = angular.module("app", ['ngRoute', 'ngAnimate']);
+var app = angular.module("app", ['ngRoute', 'ngAnimate', 'ngSanitize', 'angularCSS']);
