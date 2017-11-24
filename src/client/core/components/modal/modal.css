@@ -100,7 +100,6 @@ img#img01.modal-content {
     cursor: pointer;
 }
 
-
 @media (max-width: 1000px) {
   #photos {
   -moz-column-count:    1;
@@ -112,7 +111,6 @@ img#img01.modal-content {
       width: 100%;
   }
 }
-
 
 @media (min-width: 30em) and (orientation: landscape) {
   #photos {

@@ -1,5 +1,7 @@
 app.component("myFooter", {
 
+  css: "client/core/components/footer/footer.css",
+
   templateUrl: 'client/core/components/footer/footer.template.html',
 
   controller: function() {

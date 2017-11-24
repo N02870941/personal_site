@@ -1,5 +1,7 @@
 app.component('myHeader', {
 
+  css: "client/core/components/header/header.css",
+
   templateUrl: 'client/core/components/header/header.template.html',
 
   controller: function() {

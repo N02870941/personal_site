@@ -5,7 +5,7 @@ app.component('myPdfOrJpg', {
     jpg: "@",
   },
 
-  controller: function(app) {
+  controller: function() {
 
     this.pdfTemplateUrl = "client/core/components/pdfOrJpg/templates/pdf.template.html";
     this.jpgTemplateUrl = "client/core/components/pdfOrJpg/templates/jpg.template.html";

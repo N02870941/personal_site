@@ -52,6 +52,8 @@ zoom:1; /* For IE 6/7 */
 	width: 23.8%;
 }
 
+/*----------------------------------------------------------------------------*/
+
 /*  GO FULL WIDTH BELOW 480 PIXELS */
 @media only screen and (max-width: 600px) {
 	.col {

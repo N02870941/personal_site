@@ -21,6 +21,13 @@ app.component('myHome', {
       "Struggling to be vegetarian"
     ];
 
+    this.$onInit = function() {
+
+      // Fix the padding for the lines
+      // NOTE - find a better fix to get rid of CSS
+      document.getElementById("fun-facts").style.padding = 0;
+    }
+
   },
 
   templateUrl: "client/pages/home/templates/home.template.html"
