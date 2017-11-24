@@ -39,6 +39,9 @@ body {
 	  /*padding-left: 3%;
 	  padding-right: 3%;*/
 
+		padding-left: 0; !important;
+	  padding-right: 0; !important;
+
 		display: table;
 	  margin: 0 auto;
 

@@ -9,6 +9,7 @@ app.component("myReadme", {
 
     this.$onInit = function() {
 
+      // Gets a README.md from github.com
       $('#readme').readme({
         owner: this.owner,
         repo: this.repo
@@ -16,5 +17,8 @@ app.component("myReadme", {
     }
   },
 
-  template: "<div id='readme'></div>"
+  template: `
+    <my-coming></my-coming>
+    <!-- <div id='readme'></div> -->
+  `
 });
