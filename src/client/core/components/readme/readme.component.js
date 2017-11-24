@@ -16,5 +16,8 @@ app.component("myReadme", {
     }
   },
 
-  template: "<div id='readme'></div>"
+  template: `
+    <my-coming></my-coming>
+    <!-- <div id='readme'></div> -->
+  `
 });
