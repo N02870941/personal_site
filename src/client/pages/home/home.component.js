@@ -12,11 +12,10 @@ app.component('myHome', {
 
     this.facts = [
       "I can't put a problem down until I solve it",
-      "Yo aprendí Español para demostrarme a mí mismo que soy capaz de cualquier cosa",
       "I'm a Software Engineer who loves to code",
       "An (aspiring) World traveler",
       "I skip leg day and I don't care",
-      "I do math in my free time",
+      "I do math during my free time",
       "I pet dogs in the street - domestic or wild",
       "Struggling to be vegetarian"
     ];
@@ -25,9 +24,14 @@ app.component('myHome', {
 
       // Fix the padding for the lines
       // NOTE - find a better fix to get rid of CSS
+      document.getElementById("left").style.float = "left";
+      document.getElementById("left").style.width = "65%";
+      document.getElementById("left").style.overflow = "hidden";
+
+      document.getElementById("right").style.overflow = "hidden";
+
       document.getElementById("fun-facts").style.padding = 0;
     }
-
   },
 
   templateUrl: "client/pages/home/templates/home.template.html"

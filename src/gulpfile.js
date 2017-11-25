@@ -1,9 +1,9 @@
-var exec        = require('child_process').exec;
-var gulp        = require('gulp');
-var browser     = require('browser-sync').create();
-var inject      = require('gulp-inject');
-var runSequence = require('run-sequence');
-var download    = require("gulp-download");
+var exec         = require('child_process').exec;
+var gulp         = require('gulp');
+var browser      = require('browser-sync').create();
+var inject       = require('gulp-inject');
+var runSequence  = require('run-sequence');
+var download     = require("gulp-download");
 const decompress = require('gulp-decompress');
 
 // TODO - Add minification
