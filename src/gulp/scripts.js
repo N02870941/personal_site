@@ -1,8 +1,5 @@
 var inject = require('gulp-inject');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var pump   = require('pump');
-var rename = require('gulp-rename');
 var jsmin  = require('gulp-jsmin');
 
 module.exports = function (gulp, plugins) {
@@ -11,12 +8,9 @@ module.exports = function (gulp, plugins) {
     // NOTE - debug
     // pump([gulp.src('./client/**/*.js'), concat('all.js'), uglify(), gulp.dest('./dist/')]);
 
-    return gulp.src('./index.html')
-          .pipe(inject(gulp.src('./client/**/*.js')
-          .pipe(concat('scripts.min.js'))
-          .pipe(jsmin())
-          .pipe(gulp.dest('./dist'))), {relative:true})
-          .pipe(gulp.dest('./'))
-
+    return gulp.src('./client/**/*.js')
+      .pipe(concat('scripts.min.js'))
+      .pipe(jsmin())
+      .pipe(gulp.dest('./dist'));
   }
 };

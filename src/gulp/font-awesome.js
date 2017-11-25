@@ -3,9 +3,8 @@ var download     = require("gulp-download");
 
 module.exports = function (gulp, plugins) {
   return function () {
-    var url = "http://fontawesome.io/assets/font-awesome-4.7.0.zip";
 
-    return download(url)
+    return download("http://fontawesome.io/assets/font-awesome-4.7.0.zip")
      .pipe(decompress())
      .pipe(gulp.dest("./dist"));
   }
