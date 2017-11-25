@@ -8,6 +8,7 @@ module.exports = function (gulp, plugins) {
     // NOTE - debug
     // pump([gulp.src('./client/**/*.js'), concat('all.js'), uglify(), gulp.dest('./dist/')]);
 
+    // Concatenante all JS, minifiy it
     return gulp.src('./client/**/*.js')
       .pipe(concat('scripts.min.js'))
       .pipe(jsmin())
