@@ -1,12 +1,12 @@
 app.component('rogueDomain', {
 
-  controller: function($location) {
+  controller: function($location, domain) {
 
-    this.redirectUrl = "http://jabaridash.com";
+    this.redirectUrl = "http://" + domain;
 
     this.message = $location.host() + ` is not the proper domain for this website.
       It is a rogue domain, which means that it is a domain pointing to the server
-      for jabaridash.com`;
+      for` + domain;
   },
 
   template: `

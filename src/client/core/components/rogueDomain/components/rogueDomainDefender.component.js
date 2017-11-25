@@ -1,5 +1,9 @@
 app.component('rogueDomainDefender', {
 
+  bindings: {
+    domain: "@"
+  },
+
   controller: function($location, $window) {
 
     function redirect() {
@@ -14,7 +18,7 @@ app.component('rogueDomainDefender', {
     this.$onInit = function() {
       var host = $location.host();
 
-      if (host == "localhost" || host == "jabaridash.com") {
+      if (host == "localhost" || host == this.domain) {
         console.log("welcome to " + host);
 
       } else {
