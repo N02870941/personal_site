@@ -106,3 +106,11 @@ gulp.task('start', ['browser-sync'], function () {
 gulp.task('dev', function() {
     runSequence('fontAwesome','css', 'js', 'start');
 });
+
+/**
+ * Start server in production mode,
+ * running setup scripts first
+ */
+gulp.task('prod', function() {
+    runSequence('fontAwesome','css', 'js', 'start-server');
+});
