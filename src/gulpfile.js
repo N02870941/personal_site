@@ -1,13 +1,11 @@
 var exec         = require('child_process').exec;
 var gulp         = require('gulp');
-var sass         = require('gulp-sass');
 var browser      = require('browser-sync').create();
 var runSequence  = require('run-sequence');
 var plugins      = require('gulp-load-plugins')();
+var concat       = require('gulp-concat');
 
-// TODO - Add minification
 // TODO - Add linter
-// TODO - add sass -> css
 
 gulp.task('serve', function() {
 
@@ -37,20 +35,17 @@ function getTask(task) {
 //------------------------------------------------------------------------------
 
 // Dynamically import all the tasks from the separate folder
-gulp.task('font-awesome', getTask('font-awesome'));
-gulp.task('inject-css', getTask('inject-css'));
-gulp.task('inject-js', getTask('inject-js'));
-gulp.task('scripts', getTask('scripts'));
+gulp.task('fonts', getTask('font-awesome'));
 gulp.task('styles', getTask('styles'));
+gulp.task('scripts', getTask('scripts'));
 
 //------------------------------------------------------------------------------
 
 // Default task
 gulp.task('default', function() {
-  runSequence('font-awesome',
+  runSequence('fonts',
               'styles',
-              'inject-css',
-              'inject-js',
+              'scripts',
               'serve'
   );
 });
