@@ -7,6 +7,6 @@ module.exports = function (gulp, plugins) {
 
     return download(url)
      .pipe(decompress())
-     .pipe(gulp.dest("./client/dist"));
+     .pipe(gulp.dest("./dist"));
   }
 };

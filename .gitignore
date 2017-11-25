@@ -2,5 +2,4 @@
 node_modules/
 bower_components
 **/thumbnail
-dist
 **/client/core/style/font-awesome*

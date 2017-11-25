@@ -7,10 +7,10 @@ module.exports = function (gulp, plugins) {
     // Concat all css
     gulp.src('./client/**/*.css')
       .pipe(concat('all.min.css'))
-      .pipe(gulp.dest('./client/dist'));
+      .pipe(gulp.dest('./dist'));
 
     // It's not necessary to read the files (will speed up things), we're only after their paths:
-    var sources = gulp.src('./client/dist/**/*.min.css', {read : false});
+    var sources = gulp.src('./dist/**/*.min.css', {read : false});
 
     return gulp.src('./index.html')
             .pipe(inject(sources, {relative: true}))
