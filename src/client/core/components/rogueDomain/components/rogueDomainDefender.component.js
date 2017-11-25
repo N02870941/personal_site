@@ -16,7 +16,7 @@ app.component('rogueDomainDefender', {
 
       var host = $location.host();
 
-      if (host != "localhost" && host != "jabaridash") {
+      if (host != "localhost" && host != "jabaridash.com") {
 
         console.log("not the right domain");
         redirect();
