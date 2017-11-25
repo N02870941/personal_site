@@ -6,9 +6,9 @@ module.exports = function (gulp, plugins) {
   return function() {
 
     // Concat all css
-    return gulp.src('./client/**/*.css')
+    return gulp.src('./client/core/style/**/*.css')
       .pipe(concat('styles.min.css'))
-      .pipe(minify())
+      // .pipe(minify())
       .pipe(gulp.dest('./dist'));
   }
 };
