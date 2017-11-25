@@ -124,5 +124,13 @@ app.config(function ($routeProvider) {
 
     .when('/contact/', {
       templateUrl: "client/pages/contact/contact.html"
+    })
+
+    .when('/notFound', {
+      templateUrl: "client/core/components/notFound/notFound.html"
+    })
+
+    .otherwise({
+      redirectTo: "/notFound"
     });
 });

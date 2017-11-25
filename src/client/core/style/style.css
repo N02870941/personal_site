@@ -33,14 +33,8 @@ body {
 @media (max-width: 600px) {
 
 	.partial {
-		/* padding */
-
-		/* TODO - Fix so that there is space on sides on mobile */
-	  /*padding-left: 3%;
-	  padding-right: 3%;*/
-
-		padding-left: 0; !important;
-	  padding-right: 0; !important;
+		padding-left:0; !important;
+	  padding-right:0; !important;
 
 		display: table;
 	  margin: 0 auto;

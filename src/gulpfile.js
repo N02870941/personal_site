@@ -1,96 +1,52 @@
-var exec            = require('child_process').exec;
-var gulp            = require('gulp');
-var browser         = require('browser-sync').create();
-var inject          = require('gulp-inject');
-var runSequence     = require('run-sequence');
-
-// TODO - Add minification
-// TODO - Add linter
-// TODO - add sass -> css
+var exec         = require('child_process').exec;
+var gulp         = require('gulp');
+var browser      = require('browser-sync').create();
+var runSequence  = require('run-sequence');
+var plugins      = require('gulp-load-plugins')();
 
 //------------------------------------------------------------------------------
 
-/**
- * Inserts .js dependencies into index.html
- */
-gulp.task('js', function() {
-    return gulp.src('./index.html').pipe(
-      inject(
-        // specify module first so that following files
-        // can find where the module is defined
-        gulp.src(['./client/core/app/app.module.js', './client/**/*.js'], {read : false}),
-        {
-          relative: true
-        }
-      )
-    ).pipe(gulp.dest('./'));
-});
+// Function for dynamically importing tasks
+function getTask(task) {
+    return require('./gulp/' + task)(gulp, plugins);
+}
 
 //------------------------------------------------------------------------------
 
-/**
- * Inserts .css dependencies into index.html
- */
-gulp.task('css', function() {
-  var target = gulp.src('./index.html');
-
-  var css = './client/core/style/**/*.css';
-
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-  var sources = gulp.src(css, {read : false});
-
-  return target.pipe(
-    inject(sources,
-      {
-        relative: true
-      }
-    )
-  ).pipe(gulp.dest('./'));
-});
+// Dynamically import all the tasks from the separate folder
+gulp.task('fonts', getTask('font-awesome'));
+gulp.task('styles', getTask('styles'));
+gulp.task('scripts', getTask('scripts'));
+gulp.task('inject-index', getTask('inject-index'));
 
 //------------------------------------------------------------------------------
 
-/**
- * Start node app on port 8080
- */
-gulp.task('start-server', function (callback) {
+gulp.task('serve', function() {
+
+  // Start node app on port 8080
   exec('cd server && node server.js', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
-    callback(err);
   });
-});
-
-//------------------------------------------------------------------------------
-
-/**
- * Start Browser sync for port 3000
- */
-gulp.task('browser-sync', function() {
-  gulp.start('start-server');
 
   browser.init({
     proxy: "localhost:8080" // makes a proxy for localhost:8080
+
   });
+
+  gulp.watch("./client/**/*.html").on('change', browser.reload);
+  gulp.watch("./client/**/*.js", ['refresh']).on('change', browser.reload);
+  gulp.watch("./client/**/*.css", ['refresh']).on('change', browser.reload);
 });
 
 //------------------------------------------------------------------------------
 
-/**
- * Watch JS, HTML, and CSS files, reload on change
- */
-gulp.task('start', ['browser-sync'], function () {
-  gulp.watch("./**/*.html").on('change', browser.reload);
-  gulp.watch("./**/*.js").on('change', browser.reload);
-  gulp.watch("./**/*.css").on('change', browser.reload);
+gulp.task('refresh', function() {
+  runSequence('styles', 'scripts', 'inject-index');
 });
 
 //------------------------------------------------------------------------------
 
-/**
- * Start server in development mode,
- * running setup scripts first
- */
-gulp.task('dev', function() {
-    runSequence('css', 'js', 'start');
+gulp.task('default', function() {
+  runSequence('fonts', 'styles', 'scripts', 'inject-index', 'serve');
 });
