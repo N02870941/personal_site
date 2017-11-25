@@ -130,6 +130,10 @@ app.config(function ($routeProvider) {
       templateUrl: "client/core/components/notFound/notFound.html"
     })
 
+    .when('/rogueDomain', {
+      templateUrl: "client/core/components/rogueDomain/rogueDomain.html"
+    })
+
     .otherwise({
       redirectTo: "/notFound"
     });

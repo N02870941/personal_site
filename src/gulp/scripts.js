@@ -9,7 +9,7 @@ module.exports = function (gulp, plugins) {
     // pump([gulp.src('./client/**/*.js'), concat('all.js'), uglify(), gulp.dest('./dist/')]);
 
     // Concatenante all JS, minifiy it
-    return gulp.src('./client/**/*.js')
+    return gulp.src(['client/core/app/app.module.js', './client/**/*.js'])
       .pipe(concat('scripts.min.js'))
       .pipe(jsmin())
       .pipe(gulp.dest('./dist'));
