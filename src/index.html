@@ -27,20 +27,16 @@
     <script src="dist/scripts.min.js"></script>
     <!-- endinject -->
 
-    <!-- Page title -->
-    <title>Jabari Dash</title>
+    <title>{{title}}</title>
 
     <!-- TODO - Add favicon -->
   </head>
 
   <body>
-    <rogue-domain-defender></rogue-domain-defender>
-
-    <!-- Simple single page app -->
+    <rogue-domain-defender domain="{{domain}}"></rogue-domain-defender>
     <my-header name='top' class="thetop"></my-header>
     <div ng-view class='partial fade'></div>
     <back-to-top></back-to-top>
     <my-footer></my-footer>
-
   </body>
 </html>

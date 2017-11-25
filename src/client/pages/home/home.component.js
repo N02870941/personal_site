@@ -3,13 +3,6 @@ app.component('myHome', {
   controller: function($location, $window) {
     this.title = "Welcome to JabariDash.com!";
 
-    // TODO - Protect against rogue domains
-    // if ($location.absUrl() != "http://jabaridash.com/#!/home") {
-    //   alert('THIS PAGE IS FAKE');
-    //
-    //   $window.location.href = 'http://google.com'
-    // }
-
     this.facts = [
       "I can't put a problem down until I solve it",
       "I'm a Software Engineer who loves to code",

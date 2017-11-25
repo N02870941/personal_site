@@ -1,6 +1,6 @@
-app.service('photographyService', function($http) {
+app.service('photographyService', function($http, domain) {
   var protocol = 'http';
-  var domain = 'jabaridash.com';
+  var domain = domain;
   var port = '8080';
 
   function getPhotoPaths() {
