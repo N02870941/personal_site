@@ -18,6 +18,7 @@ gulp.task('fonts', getTask('font-awesome'));
 gulp.task('styles', getTask('styles'));
 gulp.task('scripts', getTask('scripts'));
 gulp.task('inject-index', getTask('inject-index'));
+gulp.task('delete-ds-store', getTask('delete-ds-store'));
 
 //------------------------------------------------------------------------------
 
@@ -48,5 +49,5 @@ gulp.task('refresh', function() {
 //------------------------------------------------------------------------------
 
 gulp.task('default', function() {
-  runSequence('fonts', 'styles', 'scripts', 'inject-index', 'serve');
+  runSequence('delete-ds-store', 'fonts', 'styles', 'scripts', 'inject-index', 'serve');
 });
