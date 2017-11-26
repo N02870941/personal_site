@@ -11,3 +11,19 @@
 #fun-facts {
   padding: 0;
 }
+
+@media (max-width: 600px) {
+
+  #left {
+    float: inherit;
+    width: 100%;
+  }
+
+  #right {
+    /*overflow: hidden;*/
+  }
+
+  #fun-facts {
+    /*padding: 0;*/
+  }
+}
