@@ -1,0 +1,13 @@
+#left {
+  float: left;
+  width: 65%;
+  overflow: hidden;;
+}
+
+#right {
+  overflow: hidden;
+}
+
+#fun-facts {
+  padding: 0;
+}

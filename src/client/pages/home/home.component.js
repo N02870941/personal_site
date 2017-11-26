@@ -12,20 +12,8 @@ app.component('myHome', {
       "I pet dogs in the street - domestic or wild",
       "Struggling to be vegetarian"
     ];
-
-    this.$onInit = function() {
-
-      // Fix the padding for the lines
-      // NOTE - find a better fix to get rid of CSS
-      document.getElementById("left").style.float = "left";
-      document.getElementById("left").style.width = "65%";
-      document.getElementById("left").style.overflow = "hidden";
-
-      document.getElementById("right").style.overflow = "hidden";
-
-      document.getElementById("fun-facts").style.padding = 0;
-    }
   },
 
-  templateUrl: "client/pages/home/templates/home.template.html"
+  templateUrl: "client/pages/home/templates/home.template.html",
+  css: "client/pages/home/style/home.style.css"
 });

@@ -3,135 +3,135 @@ app.config(function ($routeProvider) {
 
   $routeProvider
     .when('/', {
-      templateUrl: "client/pages/home/home.html"
+      template: "<my-home></my-home>"
     })
 
     .when('/home/', {
-      templateUrl: "client/pages/home/home.html"
+      template: "<my-home></my-home>"
     })
 
     .when('/biography/', {
-      templateUrl: "client/pages/biography/biography.html"
+      template: "<my-biography><my-biography>"
     })
 
     .when('/resume/', {
-      templateUrl: "client/pages/resume/resume.html"
+      template: "<my-resume><my-resume>"
     })
 
     .when('/projects/', {
-      templateUrl: "client/pages/projects/projects.html"
+      template: "<my-projects></my-projects>"
     })
 
     .when('/tech/', {
-      templateUrl: "client/pages/tech/tech.html"
-    })
-
-    .when('/projects/mlt', {
-      templateUrl: "client/pages/projects/projects/mlt/mlt.html"
+      template: "<my-tech></my-tech>"
     })
 
     .when('/projects/target', {
-      templateUrl: "client/pages/projects/projects/target/target.html"
+      template: "<my-target></my-target>"
     })
 
     .when('/projects/target/2016/2016', {
-      templateUrl: "client/pages/projects/projects/target/2016/2016.html"
+      template: "<my-coming><my-coming>"
     })
 
     .when('/projects/target/2017/2017', {
-      templateUrl: "client/pages/projects/projects/target/2017/2017.html"
+      template: "<my-coming><my-coming>"
+    })
+
+    .when('/projects/mlt', {
+      template: "<my-mlt></my-mlt>"
     })
 
     .when('/projects/mlt/part1', {
-      templateUrl: "client/pages/projects/projects/mlt/part1/part1.html"
+      template: "<part1></part1>"
     })
 
     .when('/projects/mlt/part2', {
-      templateUrl: "client/pages/projects/projects/mlt/part2/part2.html"
+      template: "<part2></part2>"
     })
 
     .when('/projects/mlt/part3', {
-      templateUrl: "client/pages/projects/projects/mlt/part3/part3.html"
+      template: "<part3></part3>"
     })
 
     .when('/projects/mlt/part4', {
-      templateUrl: "client/pages/projects/projects/mlt/part4/part4.html"
+      template: "<part4></part4>"
     })
 
     .when('/tech/algorithms', {
-      templateUrl: "client/pages/tech/projects/algorithms/algorithms.html"
+      template: "<my-algorithms></my-algorithms>"
     })
 
     .when('/tech/cluster', {
-      templateUrl: "client/pages/tech/projects/cluster/cluster.html"
+      template: "<my-cluster></my-cluster>"
     })
 
     .when('/tech/regression', {
-      templateUrl: "client/pages/tech/projects/regression/regression.html"
+      template: "<my-regression></my-regression>"
     })
 
     .when('/tech/temperature', {
-      templateUrl: "client/pages/tech/projects/temperature/temperature.html"
+      template: "<my-temperature></my-temperature>"
     })
 
     .when('/tech/website', {
-      templateUrl: "client/pages/tech/projects/website/website.html"
+      template: "<my-website></my-website>"
     })
 
     .when('/interests', {
-      templateUrl: "client/pages/interests/interests.html"
-    })
-
-    .when('/interests/travel', {
-      templateUrl: "client/pages/interests/travel/travel.html"
-    })
-
-    .when('/interests/travel/colombia', {
-      templateUrl: "client/pages/interests/travel/countries/colombia/colombia.html"
-    })
-
-    .when('/interests/travel/ecuador', {
-      templateUrl: "client/pages/interests/travel/countries/ecuador/ecuador.html"
-    })
-
-    .when('/interests/travel/peru', {
-      templateUrl: "client/pages/interests/travel/countries/peru/peru.html"
-    })
-
-    .when('/interests/travel/senegal', {
-      templateUrl: "client/pages/interests/travel/countries/senegal/senegal.html"
-    })
-
-    .when('/interests/travel/gambia', {
-      templateUrl: "client/pages/interests/travel/countries/gambia/gambia.html"
-    })
-
-    .when('/interests/travel/morocco', {
-      templateUrl: "client/pages/interests/travel/countries/morocco/morocco.html"
-    })
-
-    .when('/interests/photography', {
-      templateUrl: "client/pages/interests/photography/photography.html"
-    })
-
-    .when('/interests/fitness', {
-      templateUrl: "client/pages/interests/fitness/fitness.html"
+      template: "<my-interests></my-interests>"
     })
 
     .when('/interests/culture', {
-      templateUrl: "client/pages/interests/culture/culture.html"
+      template: "<my-culture></my-culture>"
+    })
+
+    .when('/interests/fitness', {
+      template: "<my-fitness></my-fitness>"
+    })
+
+    .when('/interests/photography', {
+      template: "<my-photography></my-photography>"
+    })
+
+    .when('/interests/travel', {
+      template: "<my-travel></my-travel>"
+    })
+
+    .when('/interests/travel/colombia', {
+      template: "<my-colombia></my-colombia>"
+    })
+
+    .when('/interests/travel/ecuador', {
+      template: "<my-ecuador></my-ecuador>"
+    })
+
+    .when('/interests/travel/gambia', {
+      template: "<my-gambia></my-gambia>"
+    })
+
+    .when('/interests/travel/morocco', {
+      template: "<my-morocco></my-morocco>"
+    })
+
+    .when('/interests/travel/peru', {
+      template: "<my-peru></my-peru>"
+    })
+
+    .when('/interests/travel/senegal', {
+      template: "<my-senegal></my-senegal>"
     })
 
     .when('/contact/', {
-      templateUrl: "client/pages/contact/contact.html"
+      template: "<my-contact></my-contact>"
     })
 
     .when('/notFound', {
-      templateUrl: "client/core/components/notFound/notFound.html"
+      template: "<my-not-found></my-not-found>"
     })
 
     .when('/rogueDomain', {
-      templateUrl: "client/core/components/rogueDomain/rogueDomain.html"
+      template: "<rogue-domain></rogue-domain>"
     })
 
     .otherwise({
