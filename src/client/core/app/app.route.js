@@ -31,11 +31,11 @@ app.config(function ($routeProvider) {
     })
 
     .when('/projects/target/2016/2016', {
-      template: "<my-coming><my-coming>"
+      template: "<my-target2016></my-target2016>"
     })
 
     .when('/projects/target/2017/2017', {
-      template: "<my-coming><my-coming>"
+      template: "<my-target2017></my-target2017>"
     })
 
     .when('/projects/mlt', {
