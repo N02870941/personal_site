@@ -26,8 +26,15 @@ gulp.task('serve', function() {
 
   // Start node app on port 8080
   exec('cd server && node server.js', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
+
+    if (stdout) {
+      console.log(stdout);
+    }
+
+    if (stderr) {
+      console.log(stderr);
+    }
+
   });
 
   browser.init({
@@ -36,14 +43,20 @@ gulp.task('serve', function() {
   });
 
   gulp.watch("./client/**/*.html").on('change', browser.reload);
-  gulp.watch("./client/**/*.js", ['refresh']).on('change', browser.reload);
-  gulp.watch("./client/**/*.css", ['refresh']).on('change', browser.reload);
+  gulp.watch("./client/**/*.js", ['refresh']);
+  gulp.watch("./client/**/*.css", ['refresh']);
+});
+
+//------------------------------------------------------------------------------
+
+gulp.task('reload', function() {
+  browser.reload();
 });
 
 //------------------------------------------------------------------------------
 
 gulp.task('refresh', function() {
-  runSequence('styles', 'scripts', 'inject-index');
+  runSequence('styles', 'scripts', 'inject-index', 'reload');
 });
 
 //------------------------------------------------------------------------------
