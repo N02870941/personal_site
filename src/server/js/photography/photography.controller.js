@@ -1,4 +1,5 @@
 var photographyService = require('./photography.service');
+var file_io            = require('../utility/file_io');
 const logger           = require('winston');
 
 //------------------------------------------------------------------------------
@@ -19,7 +20,7 @@ function getThumbnails(req, res, dir) {
   res.set('Access-Control-Allow-Origin', '*');
 
   // Send the list of files for use on client side
-  var body = photographyService.getFileList(directory, searchPath);
+  var body = file_io.getFileList(directory, searchPath);
 
   res.send(body);
 }
