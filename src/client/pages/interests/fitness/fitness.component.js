@@ -1,4 +1,4 @@
 app.component('myFitness', {
 
-  templateUrl: "client/pages/interests/fitness/templates/fitness.template.html"
+  templateUrl: "client/pages/interests/fitness/fitness.template.html"
 });

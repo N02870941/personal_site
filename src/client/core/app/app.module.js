@@ -4,7 +4,6 @@ var app = angular.module("app", ['ngRoute', 'ngAnimate', 'ngSanitize', 'angularC
                  .run(function ($rootScope) {
                    $rootScope.title = "Jabari Dash";
                    $rootScope.domain = "jabaridash.com";
-
                    $rootScope.methodsOfContact = [
                      {
                        alt: "email",

@@ -1,6 +1,6 @@
 app.component('myPhotography', {
 
-  templateUrl: "client/pages/interests/photography/templates/photography.template.html",
+  templateUrl: "client/pages/interests/photography/photography.template.html",
   controllerAs: "vm",
   controller: function(photographyService) {
     var vm = this;

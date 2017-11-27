@@ -14,6 +14,6 @@ app.component('myHome', {
     ];
   },
 
-  templateUrl: "client/pages/home/templates/home.template.html",
-  css: "client/pages/home/style/home.style.css"
+  templateUrl: "client/pages/home/home.template.html",
+  css: "client/pages/home/home.style.css"
 });
