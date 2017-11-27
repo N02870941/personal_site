@@ -22,7 +22,7 @@ app.component('myContactMethod', {
 
   template: `
     <a
-      class='large-font-awesome-icon'
+      class='charcoal-link'
       href="{{$ctrl.href}}"
       target="{{$ctrl.target=='_blank' ? '_blank' : '_self'}}">
 

@@ -1,8 +1,12 @@
+@import "variables";
+
 html,
 body {
 	padding: 0;
 	margin: 0;
 	height:100%;
+	text-align: center;
+  font-family: 'Muli', sans-serif; /* From Google fonts */
 }
 
 /* PARTIAL HTML TERMPLATES */
@@ -30,14 +34,9 @@ body {
 /* MOBILE */
 /*----------------------------------------------------------------------------*/
 
-@media (max-width: 600px) {
+@media (max-width: $mobile) {
 
 	.partial {
-		/*
-		padding-left:0;!important;
-	  padding-right:0;!important;
-		*/
-
 		padding-left:0;
 	  padding-right:0;
 

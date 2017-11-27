@@ -1,3 +1,5 @@
+@import "variables";
+
 .top-border {
   border-top-style: solid;
   border-top-width: 1px;
@@ -8,7 +10,7 @@
   border:1px solid #021a40;
 }
 
-@media (max-width: 600px) {
+@media (max-width: $mobile) {
 
   /* Remove the border line for mobile */
   .top-border {

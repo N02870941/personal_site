@@ -1,3 +1,29 @@
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+}
+
+/*------------------------------------------------------------------------------*/
+
+.grow:hover {
+  transition: 1.0s;
+  @include transform(scale(1.25));
+}
+
+.grow {
+  transition: 1.0s;
+  @include transform(scale(1));
+}
+
+/*------------------------------------------------------------------------------*/
+
 .fade.ng-enter {
   transition:1.0s linear all;
   opacity:0;
@@ -8,27 +34,6 @@
   opacity:1;
 }
 
-/*------------------------------------------------------------------------------*/
-
-.grow:hover {
-  transition: 1.0s;
-
-  -webkit-transform:scale(1.25); /* Safari and Chrome */
-  -moz-transform:scale(1.25); /* Firefox */
-  -ms-transform:scale(1.25); /* IE 9 */
-  -o-transform:scale(1.25); /* Opera */
-   transform:scale(1.25);
-}
-
-.grow {
-  transition: 1.0s;
-
-  -webkit-transform:scale(1); /* Safari and Chrome */
-  -moz-transform:scale(1); /* Firefox */
-  -ms-transform:scale(1); /* IE 9 */
-  -o-transform:scale(1); /* Opera */
-   transform:scale(1);
-}
 
 /*------------------------------------------------------------------------------*/
 
@@ -37,12 +42,6 @@
   /* Disable zoom for mobile */
   .grow:hover {
     transition: 1.0s;
-
-    -webkit-transform:scale(1); /* Safari and Chrome */
-    -moz-transform:scale(1); /* Firefox */
-    -ms-transform:scale(1); /* IE 9 */
-    -o-transform:scale(1); /* Opera */
-     transform:scale(1);
+    @include transform(scale(1));
   }
-
 }
