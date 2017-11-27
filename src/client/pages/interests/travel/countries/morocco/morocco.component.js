@@ -1,4 +1,4 @@
 app.component('myMorocco', {
 
-  template: "<my-coming></my-coming>"
+  template: "<my-coming-soon></my-coming-soon>"
 });

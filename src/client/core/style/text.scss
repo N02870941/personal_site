@@ -1,0 +1,36 @@
+@import "variables";
+
+/* ALIGNMENT */
+/*----------------------------------------------------------------------------*/
+
+/* Align text left */
+.left {
+  text-align: left;
+}
+
+/* COLORING */
+/*----------------------------------------------------------------------------*/
+
+a {
+	color: inherit;
+}
+
+/* Keep links with white text */
+.white-link {
+  color:white;
+  text-decoration:none;
+}
+
+/* Keep links with charcoal text */
+.charcoal-link {
+  color:$charcoal;
+  text-decoration:none;
+}
+
+// MISC
+/*----------------------------------------------------------------------------*/
+
+// Get rid of bullets in <ul>
+.no-bullets {
+	list-style-type: none;
+}
