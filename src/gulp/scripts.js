@@ -12,7 +12,7 @@ module.exports = function (gulp, plugins) {
     // NOTE - temporarily do not minify for test purposes
     return gulp.src(['client/core/app/app.module.js', './client/**/*.js'])
       .pipe(concat('scripts.min.js'))
-      // .pipe(jsmin())
+      .pipe(jsmin())
       .pipe(gulp.dest('./dist'));
   }
 };

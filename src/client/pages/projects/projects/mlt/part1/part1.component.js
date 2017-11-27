@@ -2,7 +2,7 @@ app.component('part1', {
 
   css: "client/pages/projects/projects/mlt/part1/part1.css",
 
-  templateUrl: "/client/pages/projects/projects/mlt/part1/templates/part1.template.html",
+  templateUrl: "/client/pages/projects/projects/mlt/part1/part1.template.html",
 
   controller: function() {
     // TO CONVERT PPTX TO PDF AND PRESERVE HYPER LINKS:

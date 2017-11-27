@@ -23,6 +23,6 @@ app.component('myEcuador', {
 
   },
 
-  templateUrl: "client/pages/interests/travel/countries/ecuador/templates/ecuador.template.html"
+  templateUrl: "client/pages/interests/travel/countries/ecuador/ecuador.template.html"
 
 });

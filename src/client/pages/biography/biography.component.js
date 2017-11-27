@@ -4,5 +4,5 @@ app.component('myBiography', {
     this.title = "Biography";
   },
 
-  templateUrl: "client/pages/biography/templates/biography.template.html"
+  templateUrl: "client/pages/biography/biography.template.html"
 });

@@ -19,6 +19,7 @@ gulp.task('styles', getTask('styles'));
 gulp.task('scripts', getTask('scripts'));
 gulp.task('inject-index', getTask('inject-index'));
 gulp.task('delete-ds-store', getTask('delete-ds-store'));
+gulp.task('delete-dist', getTask('delete-dist'));
 
 //------------------------------------------------------------------------------
 
@@ -27,20 +28,14 @@ gulp.task('serve', function() {
   // Start node app on port 8080
   exec('cd server && node server.js', function (err, stdout, stderr) {
 
-    if (stdout) {
+    if (stdout)
       console.log(stdout);
-    }
 
-    if (stderr) {
+    if (stderr)
       console.log(stderr);
-    }
-
   });
 
-  browser.init({
-    proxy: "localhost:8080" // makes a proxy for localhost:8080
-
-  });
+  browser.init({proxy: "localhost:8080"});
 
   gulp.watch("./client/**/*.html").on('change', browser.reload);
   gulp.watch("./client/**/*.js", ['refresh']);
@@ -62,5 +57,11 @@ gulp.task('refresh', function() {
 //------------------------------------------------------------------------------
 
 gulp.task('default', function() {
-  runSequence('delete-ds-store', 'fonts', 'styles', 'scripts', 'inject-index', 'serve');
+  runSequence('delete-ds-store',
+              'delete-dist',
+              'fonts',
+              'styles',
+              'scripts',
+              'inject-index',
+              'serve');
 });

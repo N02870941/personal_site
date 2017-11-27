@@ -1,7 +1,8 @@
 #!/bin/bash
 
+# Makes a new folder if it
+# does not already exist
 create_folder() {
-  # if the bin folder does not exist
   if [ ! -d $1 ]; then
     mkdir $1
   fi
@@ -86,6 +87,7 @@ shrink_images() {
   fi
 }
 
-JPG_to_jpg $1
+#-------------------------------------------------------------------------------
 
+JPG_to_jpg $1
 shrink_images $1 $2
