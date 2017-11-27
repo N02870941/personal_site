@@ -44,7 +44,7 @@ gulp.task('serve', function() {
 
   gulp.watch("./client/**/*.html").on('change', browser.reload);
   gulp.watch("./client/**/*.js", ['refresh']);
-  gulp.watch("./client/**/*.css", ['refresh']);
+  gulp.watch("./client/**/*.{css,scss}", ['refresh']);
 });
 
 //------------------------------------------------------------------------------

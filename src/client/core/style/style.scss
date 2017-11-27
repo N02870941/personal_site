@@ -33,8 +33,13 @@ body {
 @media (max-width: 600px) {
 
 	.partial {
-		padding-left:0; !important;
-	  padding-right:0; !important;
+		/*
+		padding-left:0;!important;
+	  padding-right:0;!important;
+		*/
+
+		padding-left:0;
+	  padding-right:0;
 
 		display: table;
 	  margin: 0 auto;
