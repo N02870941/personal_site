@@ -18,7 +18,7 @@ app.component("myReadme", {
   },
 
   template: `
-    <my-coming></my-coming>
+    <my-coming-soon></my-coming-soon>
     <!-- <div id='readme'></div> -->
   `
 });

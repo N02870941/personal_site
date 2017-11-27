@@ -1,4 +1,4 @@
 app.component('myCulture', {
 
-  template: `<my-coming></my-coming>`
+  template: `<my-coming-soon></my-coming-soon>`
 });
