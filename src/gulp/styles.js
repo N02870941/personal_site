@@ -12,6 +12,5 @@ module.exports = function (gulp, plugins) {
       .pipe(concat('styles.min.css'))
       .pipe(minify())
       .pipe(gulp.dest('./dist'));
-
   }
 };
