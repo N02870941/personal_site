@@ -6,8 +6,8 @@ app.component("myModal", {
 
   css: "client/core/components/modal/modal.css",
 
-  templateUrl: "client/core/components/modal/templates/modal.template.html",
   controllerAs: "vm",
+
   controller: function() {
 
     var vm = this;
@@ -42,5 +42,22 @@ app.component("myModal", {
         }
       });
     }
-  }
+  },
+
+  template: `
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+    </div>
+
+    <section id="photos">
+
+      <div ng-repeat="img in vm.images">
+
+        <img id={{img}} class="grey-out" ng-src="{{img}}" alt="">
+        {{vm.setupModal(img)}}
+      </div>
+
+    </section>
+  `
 });

@@ -2,8 +2,6 @@ app.component("myFooter", {
 
   css: "client/core/components/footer/footer.css",
 
-  templateUrl: 'client/core/components/footer/footer.template.html',
-
   controller: function() {
 
     this.options = [
@@ -32,5 +30,15 @@ app.component("myFooter", {
         icon_class: ['fa', 'fa-stack-overflow', 'fa-3x', 'icon', 'white-link']
       }
     ];
-  }
+  },
+
+  template: `
+    <ul class="navbar">
+      <li class="grow" ng-repeat="option in $ctrl.options">
+        <a target="_blank" href="{{option.href}}">
+          <i ng-class="{{option.icon_class}}"></i>
+        </a>
+      </li>
+    </ul>
+  `
 });

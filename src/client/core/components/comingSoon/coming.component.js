@@ -1,4 +1,4 @@
 app.component('myComingSoon', {
 
-  templateUrl: "client/core/components/comingSoon/templates/comingSoon.template.html"
+  template: "<h1>Coming Soon</h1>"
 });

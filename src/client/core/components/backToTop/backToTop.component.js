@@ -2,12 +2,6 @@ app.component('backToTop', {
 
   css: "client/core/components/backToTop/backToTop.css",
 
-  template: `
-  <div class='scrolltop'>
-    <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
-  </div>
-  `,
-
   controller: function() {
     // https://codepen.io/kruxor/pen/CwpFq
 
@@ -28,6 +22,14 @@ app.component('backToTop', {
         return false;
       }
     )});
-  }
+  },
+
+  template: `
+  <div class='scrolltop'>
+    <div class='scroll icon'>
+      <i class="fa fa-4x fa-angle-up"></i>
+    </div>
+  </div>
+  `,
 
 });
