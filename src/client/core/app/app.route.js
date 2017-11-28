@@ -6,23 +6,23 @@ app.config(function ($routeProvider) {
       template: "<my-home></my-home>"
     })
 
-    .when('/home/', {
+    .when('/home', {
       template: "<my-home></my-home>"
     })
 
-    .when('/biography/', {
+    .when('/biography', {
       template: "<my-biography><my-biography>"
     })
 
-    .when('/resume/', {
+    .when('/resume', {
       template: "<my-resume><my-resume>"
     })
 
-    .when('/projects/', {
+    .when('/projects', {
       template: "<my-projects></my-projects>"
     })
 
-    .when('/tech/', {
+    .when('/tech', {
       template: "<my-tech></my-tech>"
     })
 
@@ -122,7 +122,7 @@ app.config(function ($routeProvider) {
       template: "<my-senegal></my-senegal>"
     })
 
-    .when('/contact/', {
+    .when('/contact', {
       template: "<my-contact></my-contact>"
     })
 
