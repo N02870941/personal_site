@@ -1,3 +1,9 @@
 .circular-edges {
   border-radius: 50%;
 }
+
+// Don't want imgs to exceed
+// the width of the parent div
+img {
+  max-width: 100%;
+}
