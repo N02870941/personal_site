@@ -3,7 +3,6 @@ var photography_service    = require('./js/photography/photography.service');
 const logger               = require('winston');
 var express                = require('express');
 var path                   = require('path');
-var dir                    = path.resolve('..');
 var server                 = express();
 
 //------------------------------------------------------------------------------
@@ -49,5 +48,5 @@ server.get('/photography', function(req, res) {
 // Start the server
 //------------------------------------------------------------------------------
 
-setupServer(dir);
-startServer(8080);
+setupServer(path.resolve('..'));
+startServer(process.argv[2]);
