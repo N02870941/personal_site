@@ -5,24 +5,14 @@ var runSequence = require('run-sequence');
 
 //------------------------------------------------------------------------------
 
-function js(gulp) {
-  return function() {
+module.exports = function (gulp) {
 
+  return function() {
+    // Concatenante all JS, minifiy it
     // NOTE - temporarily do not minify for test purposes
     return gulp.src(['client/core/app/app.module.js', './client/**/*.js'])
-      .pipe(concat('scripts.min.js'))
-      // .pipe(jsmin())
-      .pipe(gulp.dest('./dist'));
-  }
-}
-
-//------------------------------------------------------------------------------
-
-module.exports = function (gulp) {
-  gulp.task('js', js(gulp));
-
-  // Concatenante all JS, minifiy it
-  return function() {
-    runSequence('js');
+        .pipe(concat('scripts.min.js'))
+        // .pipe(jsmin())
+        .pipe(gulp.dest('./dist'));
   }
 };

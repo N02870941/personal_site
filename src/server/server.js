@@ -6,26 +6,21 @@ var server                 = express();
 
 //------------------------------------------------------------------------------
 
-// Trivial change
-// TODO - Add message to Slack saying online
-// TODO - Add API key
-// TODO - Clean up for if the server dies (ctrl + c, etc)
-
-//------------------------------------------------------------------------------
-
 /**
- * @description Set up the server (create thumbnails, etc)
+ * @description Set up the server
  *
- * @param dir directory to service the index.html from
+ * @param dir directory to serve the index.html from
  */
 function setupServer(dir) {
   server.use(express.static(dir), function(req, res, next) {
 
+    // Allow cross origin from any host
     res.setHeader('Access-Control-Allow-Origin', '*');
 
-    next(); // NOTE - Figure out why this works
+    next(); // NOTE - Figure out what, and why this works
   });
 
+  // Set up the photography REST endpoint
   photography_controller(server, dir);
 }
 

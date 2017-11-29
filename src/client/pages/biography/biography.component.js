@@ -1,6 +1,5 @@
 app.component('myBiography', {
 
-
   controller: function() {
     this.title = "Biography";
   },

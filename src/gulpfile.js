@@ -7,6 +7,7 @@ var bash        = require('./gulp/bash');
 var config      = require('./gulp/config.json');
 var tasks       = ["photos", "fonts", "core-scss", "scoped-scss", "scripts", "inject-index", "cleanup"];
 
+// Dynamically include all the tasks from the above array
 for (var i in tasks) {
   gulp.task(tasks[i], require('./gulp/' + tasks[i])(gulp, plugins));
 }
