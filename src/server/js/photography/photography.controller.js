@@ -1,5 +1,4 @@
 var server             = require('../../server');
-// var photographyService = require('./photography.service');
 var file_io            = require('../utility/file_io');
 const logger           = require('winston');
 
@@ -13,9 +12,6 @@ const logger           = require('winston');
  * @param dir The directory string to serve from
  */
 module.exports = function(server, dir) {
-
-  // TODO - make sure this works
-  // photographyService.resizePhotos();
 
   /**
    * @description returns list of relative addresses to thumbnail images.
