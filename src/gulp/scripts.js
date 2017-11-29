@@ -1,18 +1,18 @@
 var inject = require('gulp-inject');
 var concat = require('gulp-concat');
 var jsmin  = require('gulp-jsmin');
+var runSequence = require('run-sequence');
 
-module.exports = function (gulp, plugins) {
+//------------------------------------------------------------------------------
+
+module.exports = function (gulp) {
+
   return function() {
-
-    // NOTE - debug
-    // pump([gulp.src('./client/**/*.js'), concat('all.js'), uglify(), gulp.dest('./dist/')]);
-
     // Concatenante all JS, minifiy it
     // NOTE - temporarily do not minify for test purposes
     return gulp.src(['client/core/app/app.module.js', './client/**/*.js'])
-      .pipe(concat('scripts.min.js'))
-      .pipe(jsmin())
-      .pipe(gulp.dest('./dist'));
+        .pipe(concat('scripts.min.js'))
+        // .pipe(jsmin())
+        .pipe(gulp.dest('./dist'));
   }
 };

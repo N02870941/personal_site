@@ -1,41 +1,26 @@
-var exec         = require('child_process').exec;
-var gulp         = require('gulp');
-var browser      = require('browser-sync').create();
-var runSequence  = require('run-sequence');
-var plugins      = require('gulp-load-plugins')();
+var exec        = require('child_process').exec;
+var gulp        = require('gulp');
+var browser     = require('browser-sync').create();
+var runSequence = require('run-sequence');
+var plugins     = require('gulp-load-plugins')();
+var bash        = require('./gulp/bash');
+var config      = require('./gulp/config.json');
+var tasks       = ["photos", "fonts", "core-scss", "scoped-scss", "scripts", "inject-index", "cleanup"];
 
-//------------------------------------------------------------------------------
-
-// Function for dynamically importing tasks
-function getTask(task) {
-    return require('./gulp/' + task)(gulp, plugins);
+// Dynamically include all the tasks from the above array
+for (var i in tasks) {
+  gulp.task(tasks[i], require('./gulp/' + tasks[i])(gulp, plugins));
 }
 
 //------------------------------------------------------------------------------
 
-// Dynamically import all the tasks from the separate folder
-gulp.task('fonts', getTask('font-awesome'));
-gulp.task('styles', getTask('styles'));
-gulp.task('scripts', getTask('scripts'));
-gulp.task('inject-index', getTask('inject-index'));
-gulp.task('delete-ds-store', getTask('delete-ds-store'));
-gulp.task('delete-dist', getTask('delete-dist'));
-
-//------------------------------------------------------------------------------
-
 gulp.task('serve', function() {
+  var port = config.devPort;
 
-  // Start node app on port 8080
-  exec('cd server && node server.js', function (err, stdout, stderr) {
+  // Start node app
+  bash.runCommand('cd server && node server.js ' + port);
 
-    if (stdout)
-      console.log(stdout);
-
-    if (stderr)
-      console.log(stderr);
-  });
-
-  browser.init({proxy: "localhost:8080"});
+  browser.init({proxy: "localhost:" + port});
 
   gulp.watch("./client/**/*.html").on('change', browser.reload);
   gulp.watch("./client/**/*.js", ['refresh']);
@@ -51,16 +36,18 @@ gulp.task('reload', function() {
 //------------------------------------------------------------------------------
 
 gulp.task('refresh', function() {
-  runSequence('styles', 'scripts', 'inject-index', 'reload');
+  var sequence = ['core-scss', 'scoped-scss', 'scripts', 'inject-index', 'reload'];
+
+  runSequence(sequence);
 });
 
 //------------------------------------------------------------------------------
 
 gulp.task('default', function() {
-  runSequence('delete-ds-store',
-              'delete-dist',
+  runSequence('cleanup',
               'fonts',
-              'styles',
+              'core-scss',
+              'scoped-scss',
               'scripts',
               'inject-index',
               'serve');

@@ -1,8 +1,8 @@
 app.component('rogueDomain', {
 
-  controller: function($location, domain) {
+  controller: function($location, $rootScope) {
 
-    this.redirectUrl = "http://" + domain;
+    this.redirectUrl = "http://" + $rootScope.domain;
 
     this.message = $location.host() + ` is not the proper domain for this website.
       It is a rogue domain, which means that it is a domain pointing to the server

@@ -1,12 +1,1 @@
-ul.navbar {
-  background: #333;
-}
-
-ul.navbar > li {
-  display: inline-block;
-}
-
-ul.navbar > li  > a {
-  display: block;
-  padding: 14px 21px;
-}
+ul.navbar{background:#333}ul.navbar>li{display:inline-block}ul.navbar>li>a{display:block;padding:14px 21px}
