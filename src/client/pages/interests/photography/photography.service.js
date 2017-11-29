@@ -1,10 +1,6 @@
-app.service('photographyService', function($http, domain) {
-  var protocol = 'http';
-  var domain = domain;
-  var port = '8080';
+app.service('photographyService', function($http) {
 
-  function getPhotoPaths() {
-    var url = protocol + "://" + domain + ":" + port + "/photography";
+  function getPhotoPaths(url) {
 
     return $http.get(url).then(function(res) {
 

@@ -2,7 +2,7 @@ app.component('myContact', {
 
   controller: function($rootScope) {
     this.title = "Contact me";
-    this.class = "fa fa-5x ";
+    this.class = "grow fa fa-5x ";
   },
 
   template: `

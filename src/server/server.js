@@ -1,5 +1,4 @@
 var photography_controller = require('./js/photography/photography.controller');
-var photography_service    = require('./js/photography/photography.service');
 const logger               = require('winston');
 var express                = require('express');
 var path                   = require('path');
@@ -22,7 +21,8 @@ var server                 = express();
 function setupServer(dir) {
   exports.dir = dir;
   server.use(express.static(dir));
-  photography_service.resizePhotos();
+
+  photography_controller.setUpController(server, dir);
 }
 
 //------------------------------------------------------------------------------
@@ -37,13 +37,6 @@ function startServer(port) {
   logger.log('info', "jabaridash.com listening on port: " + port);
 }
 
-// Setup HTTP methods on server
-//------------------------------------------------------------------------------
-
-server.get('/photography', function(req, res) {
-
-  photography_controller.getThumbnails(req, res, dir);
-});
 
 // Start the server
 //------------------------------------------------------------------------------

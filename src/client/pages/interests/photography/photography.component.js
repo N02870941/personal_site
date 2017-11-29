@@ -2,8 +2,13 @@ app.component('myPhotography', {
 
   templateUrl: "client/pages/interests/photography/photography.template.html",
   controllerAs: "vm",
-  controller: function(photographyService) {
+
+  controller: function(photographyService, $location, $rootScope) {
     var vm = this;
+    this.showAll = false;
+    this.images = [];
+
+  //------------------------------------------------------------------------------
 
     vm.showAllText = function() {
       vm.showAll = !vm.showAll;
@@ -11,18 +16,19 @@ app.component('myPhotography', {
 
   //------------------------------------------------------------------------------
 
-  vm.$onInit = function() {
+    vm.$onInit = function() {
 
-    photographyService.getPhotoPaths().then(function(data) {
-      vm.images = data;
-    });
+      var domain = $rootScope.domain;
+      var port = $rootScope.port;
+      var url = $location.protocol() + "://" + domain + ":" + port + "/photography";
 
-  }
+      console.log(url);
 
-  //------------------------------------------------------------------------------
+      photographyService.getPhotoPaths(url).then(function(data) {
+        vm.images = data;
+      });
 
-    this.showAll = false;
-    this.images = [];
+    }
   }
 
 });

@@ -1,6 +1,24 @@
+var server             = require('../../server');
 var photographyService = require('./photography.service');
 var file_io            = require('../utility/file_io');
 const logger           = require('winston');
+
+//------------------------------------------------------------------------------
+
+/**
+ * @description Set up the REST endpoints for the photography controller
+ *
+ * @param server The instance of the express() server object
+ * @param dir The directory string to serve from
+ */
+function setUpController(server, dir) {
+  photographyService.resizePhotos();
+
+  server.get('/photography', function(req, res) {
+
+    getThumbnails(req, res, dir);
+  });
+}
 
 //------------------------------------------------------------------------------
 
@@ -13,20 +31,18 @@ const logger           = require('winston');
  * @return List of all thumbnails
  */
 function getThumbnails(req, res, dir) {
+
   var searchPath = '/client/pages/interests/photography/img/thumbnail/';
-  var directory = dir + searchPath;
 
   // For Cross Origin support
   res.set('Access-Control-Allow-Origin', '*');
 
   // Send the list of files for use on client side
-  var body = file_io.getFileList(directory, searchPath);
-
-  res.send(body);
+  res.send(file_io.getFileList(dir + searchPath, searchPath));
 }
 
 //------------------------------------------------------------------------------
 
 module.exports = {
-  getThumbnails: getThumbnails
+  setUpController : setUpController,
 }
