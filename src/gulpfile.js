@@ -5,7 +5,7 @@ var runSequence = require('run-sequence');
 var plugins     = require('gulp-load-plugins')();
 var bash        = require('./gulp/bash');
 var config      = require('./gulp/config.json');
-var tasks       = ["fonts", "core-scss", "scoped-scss", "scripts", "inject-index", "cleanup"];
+var tasks       = ["photos", "fonts", "core-scss", "scoped-scss", "scripts", "inject-index", "cleanup"];
 
 for (var i in tasks) {
   gulp.task(tasks[i], require('./gulp/' + tasks[i])(gulp, plugins));
@@ -35,7 +35,6 @@ gulp.task('reload', function() {
 //------------------------------------------------------------------------------
 
 gulp.task('refresh', function() {
-
   var sequence = ['core-scss', 'scoped-scss', 'scripts', 'inject-index', 'reload'];
 
   runSequence(sequence);

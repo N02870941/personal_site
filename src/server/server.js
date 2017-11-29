@@ -20,7 +20,14 @@ var server                 = express();
  */
 function setupServer(dir) {
   exports.dir = dir;
-  server.use(express.static(dir));
+
+  server.use(express.static(dir), function(req, res, next) {
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    next(); // NOTE - Figure out why this works
+  });
+
 
   photography_controller(server, dir);
 }
