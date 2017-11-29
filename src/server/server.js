@@ -1,4 +1,4 @@
-var photography_controller = require('./js/photography/photography.controller');
+var photography_controller = require('./photography.controller');
 const logger               = require('winston');
 var express                = require('express');
 var path                   = require('path');
@@ -19,15 +19,12 @@ var server                 = express();
  * @param dir directory to service the index.html from
  */
 function setupServer(dir) {
-  exports.dir = dir;
-
   server.use(express.static(dir), function(req, res, next) {
 
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     next(); // NOTE - Figure out why this works
   });
-
 
   photography_controller(server, dir);
 }

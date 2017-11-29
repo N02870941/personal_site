@@ -1,5 +1,5 @@
-var server             = require('../../server');
-var file_io            = require('../utility/file_io');
+var server             = require('./server');
+var fileList            = require('./file-list');
 const logger           = require('winston');
 
 //------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ module.exports = function(server, dir) {
     var searchPath = '/client/pages/interests/photography/img/thumbnail/';
 
     // Send the list of files for use on client side
-    res.send(file_io.getFileList(dir + searchPath, searchPath));
+    res.send(fileList(dir + searchPath, searchPath));
   });
 
 };
