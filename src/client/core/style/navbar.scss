@@ -1,0 +1,25 @@
+@import "variables";
+
+.navbar {
+ width: auto;
+ overflow: hidden;
+ background-color: $charcoal;
+
+ a {
+   float: left;
+   display: block;
+   text-align: center;
+   text-decoration: none;
+   color: $lightGrey;
+   padding: $navpadding;
+ }
+
+ a:hover {
+   background-color: $black;
+   color: white;
+ }
+
+ .icon {
+   display: none;
+ }
+}

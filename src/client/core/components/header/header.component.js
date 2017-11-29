@@ -44,15 +44,15 @@ app.component('myHeader', {
 //------------------------------------------------------------------------------
 
     this.navBar = function() {
-      var topnav = document.getElementById("myTopnav");
+      var navbar = document.getElementById("myTopnav");
 
       // Switch class name to the mobile version
-      if (topnav.className === "topnav") {
-          topnav.className += " responsive";
+      if (navbar.className === "navbar") {
+          navbar.className += " responsive";
 
         // Switch class name to desktop version
       } else {
-          topnav.className = "topnav";
+          navbar.className = "navbar";
       }
     }
 
@@ -62,8 +62,7 @@ app.component('myHeader', {
 
       var navBar = document.getElementById("myTopnav");
 
-      navBar.className = 'topnav';
-
+      navBar.className = 'navbar';
     }
 
 //------------------------------------------------------------------------------

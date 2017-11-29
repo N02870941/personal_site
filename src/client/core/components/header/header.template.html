@@ -1,20 +1,22 @@
-<div class="topnav" id="myTopnav" style="width:100%" ng-esc='$ctrl.hideNavBarOptions()'>
+<div class='header'>
+  <div class="navbar" id="myTopnav" style="width:100%" ng-esc='$ctrl.hideNavBarOptions()'>
 
-  <div style='display: table; margin: 0 auto;'>
+    <div style='display: table; margin: 0 auto;'>
+        <a
+          ng-repeat="href in $ctrl.hrefs"
+          class="white-link grow"
+          ng-click="$ctrl.hideNavBarOptions()"
+          href="{{href.href}}">{{href.text}}
+        </a>
+
       <a
-        ng-repeat="href in $ctrl.hrefs"
-        class="white-link"
-        ng-click="$ctrl.hideNavBarOptions()"
-        href="{{href.href}}">{{href.text}}
+        style='position:absolute;right: 0;'
+        href="javascript:void(0);"
+        class="icon"
+        ng-click="$ctrl.navBar()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
       </a>
+    </div>
 
-    <a
-      style='position:absolute;right: 0;'
-      href="javascript:void(0);"
-      class="icon"
-      ng-click="$ctrl.navBar()">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </a>
   </div>
-
 </div>

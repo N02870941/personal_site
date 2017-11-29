@@ -1,1 +1,20 @@
-.topnav{width:auto;overflow:hidden;background-color:#333}.topnav a{float:left;display:block;color:#f2f2f2;text-align:center;padding:14px 16px;text-decoration:none}.topnav a:hover{background-color:#111;color:#fff}.topnav .icon{display:none}@media screen and (max-width:600px){.topnav a:hover{background-color:#333;color:#fff}.topnav a:not(:first-child){display:none}.topnav a.icon{float:right;display:block}.topnav.responsive{position:relative}.topnav.responsive .icon{position:absolute;right:0;top:0}.topnav.responsive a{float:none;display:block}}
+@media screen and (max-width: 600px) {
+  .header {
+    /* Effectively, don't change */ }
+    .header .navbar a:hover {
+      background-color: #111;
+      color: white; }
+    .header .navbar a:not(:first-child) {
+      display: none; }
+    .header .navbar a.icon {
+      float: right;
+      display: block; }
+    .header .navbar.responsive {
+      position: relative; }
+    .header .navbar.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0; }
+    .header .navbar.responsive a {
+      float: none;
+      display: block; } }

@@ -36,9 +36,8 @@ gulp.task('reload', function() {
 //------------------------------------------------------------------------------
 
 gulp.task('refresh', function() {
-  var sequence = ['core-scss', 'scoped-scss', 'scripts', 'inject-index', 'reload'];
 
-  runSequence(sequence);
+  runSequence('core-scss', 'scoped-scss', 'scripts', 'inject-index', 'reload');
 });
 
 //------------------------------------------------------------------------------

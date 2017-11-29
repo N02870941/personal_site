@@ -1,57 +1,36 @@
- /*@import "variables";*/
+ @import "../../style/variables";
 
-.topnav {
-  width: auto;
-  overflow: hidden;
-  background-color: #333;
-}
+// Makes the header responsive
+@media screen and (max-width: $mobile) {
+  .header {
+    /* Effectively, don't change */
+    .navbar a:hover {
+      background-color: #111;
+      color: white;
+    }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.topnav a:hover {
-  background-color: #111;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-
-  /* Effectively, don't change */
-  .topnav a:hover {
-    background-color: #333;
-    color: white;
-  }
-
-  .topnav a:not(:first-child) {
+   .navbar a:not(:first-child) {
     display: none;
-  }
+   }
 
-  .topnav a.icon {
+   .navbar a.icon {
     float: right;
     display: block;
-  }
+   }
 
-  .topnav.responsive {
+   .navbar.responsive {
     position: relative;
-  }
+   }
 
-  .topnav.responsive .icon {
+   .navbar.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
-  }
-  .topnav.responsive a {
+   }
+   .navbar.responsive a {
     float: none;
     display: block;
+   }
+ }
+
   }
-}
