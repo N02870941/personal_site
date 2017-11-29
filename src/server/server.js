@@ -22,7 +22,7 @@ function setupServer(dir) {
   exports.dir = dir;
   server.use(express.static(dir));
 
-  photography_controller.setUpController(server, dir);
+  photography_controller(server, dir);
 }
 
 //------------------------------------------------------------------------------
@@ -36,7 +36,6 @@ function startServer(port) {
   server.listen(port);
   logger.log('info', "jabaridash.com listening on port: " + port);
 }
-
 
 // Start the server
 //------------------------------------------------------------------------------

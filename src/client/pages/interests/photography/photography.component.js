@@ -18,7 +18,7 @@ app.component('myPhotography', {
 
     vm.$onInit = function() {
 
-      var domain = $rootScope.domain;
+      var domain = $location.host();
       var port = $rootScope.port;
       var url = $location.protocol() + "://" + domain + ":" + port + "/photography";
 

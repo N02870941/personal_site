@@ -47,15 +47,13 @@ function resizePhotos() {
  * @description Resize all original photos into thumbnails
  */
 async function batchEdit(directoryIn, directoryOut) {
+  var bashCommand = 'bash ' + server.dir + '/server/scripts/resize_imgs.sh ';
 
   logger.log('info', 'Creating thumbnails for: ' + directoryIn);
-
-  var bashCommand = 'bash ' + server.dir + '/server/scripts/resize_imgs.sh ';
 
   bashCommand = bashCommand + directoryIn + ' ' + directoryOut;
 
   try {
-
     logger.log('info', bashCommand);
 
     // Run image resize shell script
@@ -64,16 +62,14 @@ async function batchEdit(directoryIn, directoryOut) {
     // const { stdout, stderr } = code = execSync(bashCommand);
 
     // Show output
-    if (stdout) {
-
+    if (stdout)
       logger.log('info', 'stdout: \n' + stdout);
-    }
+
 
     // Catch any errors
   } catch (err) {
 
     logger.log('error', 'stderr: \n' + err.stderr);
-
   }
 }
 

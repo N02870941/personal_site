@@ -6,23 +6,6 @@ const logger           = require('winston');
 //------------------------------------------------------------------------------
 
 /**
- * @description Set up the REST endpoints for the photography controller
- *
- * @param server The instance of the express() server object
- * @param dir The directory string to serve from
- */
-function setUpController(server, dir) {
-  photographyService.resizePhotos();
-
-  server.get('/photography', function(req, res) {
-
-    getThumbnails(req, res, dir);
-  });
-}
-
-//------------------------------------------------------------------------------
-
-/**
  * @description returns list of relative addresses to thumbnail images.
  * This function is implemented on the back end because the photos may change.
  * and thus I do not want to hard code the list of photos that I will be displaying.
@@ -43,6 +26,18 @@ function getThumbnails(req, res, dir) {
 
 //------------------------------------------------------------------------------
 
-module.exports = {
-  setUpController : setUpController,
-}
+/**
+ * @description Set up the REST endpoints for the photography controller.
+ * resizes all of the photos before setting up the REST end point to serve their URLS
+ *
+ * @param server The instance of the express() server object
+ * @param dir The directory string to serve from
+ */
+module.exports = function(server, dir) {
+  photographyService.resizePhotos();
+
+  server.get('/photography', function(req, res) {
+
+    getThumbnails(req, res, dir);
+  });
+};
