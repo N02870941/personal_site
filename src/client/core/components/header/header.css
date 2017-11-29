@@ -1,20 +1,20 @@
 @media screen and (max-width: 600px) {
-  .header {
+  #header {
     /* Effectively, don't change */ }
-    .header .navbar a:hover {
+    #header .navbar a:hover {
       background-color: #111;
       color: white; }
-    .header .navbar a:not(:first-child) {
+    #header .navbar a:not(:first-child) {
       display: none; }
-    .header .navbar a.icon {
+    #header .navbar a.icon {
       float: right;
       display: block; }
-    .header .navbar.responsive {
+    #header .navbar.responsive {
       position: relative; }
-    .header .navbar.responsive .icon {
+    #header .navbar.responsive .icon {
       position: absolute;
       right: 0;
       top: 0; }
-    .header .navbar.responsive a {
+    #header .navbar.responsive a {
       float: none;
       display: block; } }
