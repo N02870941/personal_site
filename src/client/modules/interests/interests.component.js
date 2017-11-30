@@ -11,28 +11,28 @@ app.component('jdInterests', {
       {
         title: "Travel",
         name: 'travel',
-        href:'#!/interests/travel#top',
+        href:'#!/interests/travel',
         img: "/client/modules/interests/travel/img/thumbnail/travel.jpg",
         brief: "Check out some of my most recent national and international journies!"
       },
       {
         title: "Photography",
         name: 'photography',
-        href:'#!/interests/photography#top',
+        href:'#!/interests/photography',
         img: "/client/modules/interests/photography/img/thumbnail/photography.jpg",
         brief: "See some of my favorite photos that I have taken!"
       },
       {
         title: "Fitness",
         name: 'fitness',
-        href:'#!/interests/fitness#top',
+        href:'#!/interests/fitness',
         img: "/client/modules/interests/fitness/img/thumbnail/fitness.jpg",
         brief: "Here are some of my thoughts on fitness and the role it has played in my life."
       },
       {
         title: "Culture",
         name: 'culture',
-        href:'#!/interests/culture#top',
+        href:'#!/interests/culture',
         img: "/client/modules/interests/culture/img/thumbnail/culture.jpg",
         brief: "Follow my hair journey and other cultural experiences."
       }

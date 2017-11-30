@@ -1,12 +1,13 @@
 iframe.full-screen {
   height: 100vh;
-  width: 100vw;
+  width: 100vh;
 }
 
 /* Override the partial class for this component */
+// NOTE - temporary because I messed up the CSS somehow
 .partial {
   border-style: none;
   padding-left: 0;
   padding-right: 0;
-  margin: 0;
+  // margin: 0;
 }

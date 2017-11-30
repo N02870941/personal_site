@@ -13,7 +13,7 @@ app.component('jdCountDownRedirect', {
     <p>You should be automatically redirected in <span id="seconds"></span> seconds.</p>
   `,
 
-  controller: function($location, $window) {
+  controller: function($location, $window, $state) {
 
     var vm = this;
 
@@ -22,18 +22,6 @@ app.component('jdCountDownRedirect', {
 
     this.$onInit = function() {
       seconds = this.time;
-      console.log(this.redirect);
-
-    }
-
-    vm.reroute = function() {
-      var protocol = $location.protocol();
-      var host = $location.host();
-      var port = $location.port();
-
-      var url = protocol + "://" + host + ":" + port + "/#!/home";
-
-      $window.location.href = this.redirect;
     }
 
     vm.updateSecs = function() {
@@ -41,7 +29,7 @@ app.component('jdCountDownRedirect', {
       seconds--;
       if (seconds == -1) {
         clearInterval(foo);
-        vm.reroute();
+        $state.go('home');
       }
     }
 

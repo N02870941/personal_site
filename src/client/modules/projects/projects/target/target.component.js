@@ -13,7 +13,7 @@ app.component('jdTarget', {
       {
         title: "Summer 2016",
         name: 'summer2016',
-        href:'#!/projects/target/2016/2016#top',
+        href:'#!/projects/target/2016/2016',
         img: "/client/modules/projects/projects/target/img/thumbnail/target.png",
         brief: `
           My first summer at Target in 2016.
@@ -22,7 +22,7 @@ app.component('jdTarget', {
       {
         title: "Summer 2017",
         name: 'summer2017',
-        href:'#!/projects/target/2017/2017#top',
+        href:'#!/projects/target/2017/2017',
         img: "/client/modules/projects/projects/target/img/thumbnail/target.png",
         brief: `
           My second summer at Target in 2017.

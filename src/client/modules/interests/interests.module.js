@@ -1,54 +1,68 @@
 angular.module('interests', ['ui.router'])
   .config(function($stateProvider) {
-
-    $stateProvider
-      .state('culture', {
+    var states = [
+      {
+        name: 'culture',
         url: '/interests/culture',
-        template: "<jd-culture></jd-culture>"
-      })
-
-      .state('fitness', {
+        template: '<jd-culture></jd-culture>'
+      },
+      {
+        name: 'fitnes',
         url: '/interests/fitness',
-        template: "<jd-fitness></jd-fitness>"
-      })
-
-      .state('photography', {
-        url: '/interests/photography',
-        template: "<jd-photography></jd-photography>"
-      })
-
-      .state('travel', {
+        template: '<jd-fitness></jd-fitness>'
+      },
+      {
+        name: 'travel',
         url: '/interests/travel',
-        template: "<jd-travel></jd-travel>"
-      })
-
-      .state('colombia', {
+        template: '<jd-travel></jd-travel>'
+      },
+      {
+        name: 'photography',
+        url: '/interests/photography',
+        template: '<jd-photography></jd-photography>'
+      },
+      {
+        name: 'colombia',
         url: '/interests/travel/colombia',
-        template: "<jd-colombia></jd-colombia>"
-      })
-
-      .state('ecuador', {
+        template: '<jd-colombia></jd-colombia>'
+      },
+      {
+        name: 'ecuador',
         url: '/interests/travel/ecuador',
-        template: "<jd-ecuador></jd-ecuador>"
-      })
-
-      .state('gambia', {
+        template: '<jd-ecuador></jd-ecuador>'
+      },
+      {
+        name: 'gambia',
         url: '/interests/travel/gambia',
-        template: "<jd-gambia></jd-gambia>"
-      })
-
-      .state('morocco', {
+        template: '<jd-gambia></jd-gambia>'
+      },
+      {
+        name: 'morocco',
         url: '/interests/travel/morocco',
-        template: "<jd-morocco></jd-morocco>"
-      })
-
-      .state('peru', {
+        template: '<jd-morocco></jd-morocco>'
+      },
+      {
+        name: 'peru',
         url: '/interests/travel/peru',
-        template: "<jd-peru></jd-peru>"
-      })
-
-      .state('senegal', {
+        template: '<jd-peru></jd-peru>'
+      },
+      {
+        name: 'senegal',
         url: '/interests/travel/senegal',
-        template: "<jd-senegal></jd-senegal>"
-      })
+        template: '<jd-peru></jd-senegal>'
+      }
+    ];
+
+    // TODO - Make this function globally availabel
+    // to all modules and components
+    function initializeStates(states) {
+      for (var i in states) {
+        $stateProvider.state(states[i].name, {
+          url: states[i].url,
+          template: states[i].template
+        });
+      }
+    }
+
+    initializeStates(states);
   });

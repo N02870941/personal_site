@@ -1,21 +1,27 @@
+var modules = [
+  'biography',
+  'contact',
+  'home',
+  'interests',
+  'projects',
+  'resume',
+  'tech'
+];
+
+var dependencies = [
+  'ngRoute',
+  'ngAnimate',
+  'ngSanitize',
+  'angularCSS',
+  'ui.router'
+];
 
 // Create the module
-var app = angular.module("app", [
-'biography',
-'contact',
-'home',
-'interests',
-'projects',
-'resume',
-'tech',
-'ngRoute',
-'ngAnimate',
-'ngSanitize',
-'angularCSS',
-'ui.router']);
+var app = angular.module("app", modules.concat(dependencies));
+
+app.constant('modules', modules);
 
 app.run(function ($rootScope) {
-
   $rootScope.site = {
     title: "Jabari Dash",
     protocol: "http",
@@ -70,5 +76,5 @@ app.run(function ($rootScope) {
       target: "_blank"
     }
 
-    ];
-  });
+  ];
+});

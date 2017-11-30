@@ -2,9 +2,9 @@
 
 html,
 body {
-	padding: 0;
-	margin: 0;
-	height:100%;
+	padding: $defaultPadding;
+	margin: $defaultMargins;
+	height: 100%;
 	text-align: center;
   font-family: $defaultFont /* From Google fonts */
 }
@@ -28,7 +28,7 @@ body {
 
 	/* Center horizontally */
   display: table;
-  margin: 0 auto;
+  margin: $defaultMargins auto;
 
 	margin-top: 2%;
 	margin-bottom: 2%;
