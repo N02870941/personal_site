@@ -9,7 +9,7 @@ module.exports = function(gulp) {
     // SCSS -> CSS, same base folder
     gulp.src(['./client/**/*.scss', '!./client/core/style/**/*.scss'])
         .pipe(sass().on('error', sass.logError))
-        .pipe(minify())
+        // .pipe(minify())
         .pipe(gulp.dest('./client/'));
   }
 }

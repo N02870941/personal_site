@@ -1,6 +1,11 @@
 // Set  up routing for whole site
 app.config(function ($routeProvider) {
 
+  // TODO - Dynamically create states
+  // for main pages (home, bio, etc)
+  // Then manually route for sub-pages
+  // TODO Remember to 'normalise' css so
+  // it looks the same on each browser
   $routeProvider
     .when('/', {
       template: "<my-home></my-home>"

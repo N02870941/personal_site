@@ -32,7 +32,7 @@ app.component('projectList', {
       <a href='{{item.href}}' class="charcoal-link">
         <div id={{item.name}}>
           <h2>{{item.title}}</h2>
-          <img class='full-border grow' ng-src='{{item.img}}'>
+          <img class='grow' ng-src='{{item.img}}'>
           <p>{{item.brief}}</p>
         </div>
       </a>
