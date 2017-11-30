@@ -22,9 +22,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/notFound');
 
-  // TODO - Dynamically create states
-  // for main pages (home, bio, etc)
-  // Then manually route for sub-pages
   // TODO Remember to 'normalise' css so
   // it looks the same on each browser
   $stateProvider
