@@ -1,4 +1,4 @@
-app.component('rogueDomainDefender', {
+app.component('jdRogueDomainDefender', {
 
   bindings: {
     domain: "@"

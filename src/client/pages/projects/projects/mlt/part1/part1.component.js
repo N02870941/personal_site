@@ -1,4 +1,4 @@
-app.component('part1', {
+app.component('jdPart1', {
 
   css: "client/pages/projects/projects/mlt/part1/part1.css",
 

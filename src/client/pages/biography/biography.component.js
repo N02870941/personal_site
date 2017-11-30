@@ -1,4 +1,4 @@
-app.component('myBiography', {
+app.component('jdBiography', {
 
   controller: function() {
     this.title = "Biography";

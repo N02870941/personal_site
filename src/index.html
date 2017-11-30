@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang='en' ng-app='app'>
-
   <head>
     <!-- Meta Stuff -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,17 +26,18 @@
     <script src="dist/scripts.min.js"></script>
     <!-- endinject -->
 
-    <title>{{title}}</title>
+    <title>Jabari Dash</title>
 
-    <!-- TODO - Add favicon -->
     <link rel="shortcut icon" type="image/png" href="client/core/img/favicon.png"/>
   </head>
 
   <body>
-    <rogue-domain-defender domain="{{domain}}"></rogue-domain-defender>
-    <my-header name='top' class="thetop"></my-header>
+    <jd-rogue-domain-defender domain="{{domain}}"></jd-rogue-domain-defender>
+    <jd-back-to-top></jd-back-to-top>
+
+    <!-- Single page app -->
+    <jd-header name='top' class="thetop"></jd-header>
     <div ng-view class='partial fade'></div>
-    <back-to-top></back-to-top>
-    <my-footer></my-footer>
+    <jd-footer></jd-footer>
   </body>
 </html>

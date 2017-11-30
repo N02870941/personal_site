@@ -1,4 +1,4 @@
-app.component('myTarget2016', {
+app.component('jdTarget2016', {
 
-  template: "<my-coming-soon></my-coming-soon>"
+  template: "<jd-coming-soon></jd-coming-soon>"
 })

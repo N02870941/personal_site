@@ -1,4 +1,4 @@
-app.component('myCountDownRedirect', {
+app.component('jdCountDownRedirect', {
 
   bindings: {
     title: "@",
@@ -11,8 +11,7 @@ app.component('myCountDownRedirect', {
     <h1>{{$ctrl.title}}</h1>
     <p>{{$ctrl.message}}</p>
     <p>You should be automatically redirected in <span id="seconds"></span> seconds.</p>
-  `
-  ,
+  `,
 
   controller: function($location, $window) {
 

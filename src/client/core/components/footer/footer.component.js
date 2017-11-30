@@ -1,4 +1,4 @@
-app.component("myFooter", {
+app.component("jdFooter", {
 
   controller: function() {
     this.class = "fa fa-3x ";
@@ -6,7 +6,6 @@ app.component("myFooter", {
 
   template: `
     <div class="navbar" style="width:100%">
-
       <div style='display: table; margin: 0 auto;'>
           <a
             ng-repeat="option in $root.methodsOfContact"
@@ -17,7 +16,6 @@ app.component("myFooter", {
           </a>
 
       </div>
-
     </div>
   `
 });

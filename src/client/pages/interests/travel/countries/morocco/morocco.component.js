@@ -1,4 +1,4 @@
-app.component('myMorocco', {
+app.component('jdMorocco', {
 
-  template: "<my-coming-soon></my-coming-soon>"
+  template: "<jd-coming-soon></jd-coming-soon>"
 });

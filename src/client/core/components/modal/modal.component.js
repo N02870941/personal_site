@@ -1,4 +1,4 @@
-app.component("myModal", {
+app.component("jdModal", {
 
   bindings: {
     images: "<",
@@ -14,7 +14,7 @@ app.component("myModal", {
 
     this.setupModal = function(imgID) {
       // Get the modal
-      var modal = document.getElementById('myModal');
+      var modal = document.getElementById('jdModal');
 
       // Get the image and insert it inside the modal - use its "alt" text as a caption
       var img = document.getElementById(imgID);

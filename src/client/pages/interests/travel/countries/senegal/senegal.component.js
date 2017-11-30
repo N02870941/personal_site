@@ -1,4 +1,4 @@
-app.component('mySenegal', {
+app.component('jdSenegal', {
 
-  template: "<my-coming-soon></my-coming-soon>"
+  template: "<jd-coming-soon></jd-coming-soon>"
 });

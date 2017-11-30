@@ -1,4 +1,4 @@
-app.component('myContactMethod', {
+app.component('jdContactMethod', {
 
   bindings: {
     href: "@",

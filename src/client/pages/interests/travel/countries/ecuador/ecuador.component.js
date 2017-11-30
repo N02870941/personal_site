@@ -1,4 +1,4 @@
-app.component('myEcuador', {
+app.component('jdEcuador', {
 
   controller: function() {
 

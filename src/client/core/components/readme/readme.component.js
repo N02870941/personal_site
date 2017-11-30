@@ -1,4 +1,4 @@
-app.component("myReadme", {
+app.component("jdReadme", {
 
   bindings: {
     owner: "@",
@@ -18,7 +18,7 @@ app.component("myReadme", {
   },
 
   template: `
-    <my-coming-soon></my-coming-soon>
+    <jd-coming-soon></jd-coming-soon>
     <!-- <div id='readme'></div> -->
   `
 });

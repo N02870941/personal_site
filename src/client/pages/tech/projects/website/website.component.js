@@ -1,10 +1,10 @@
-app.component("myWebsite", {
+app.component("jdWebsite", {
 
   template: `
-    <my-readme
+    <jd-readme
       owner="n02870941"
       repo="personal_site"
     >
-    </my-readme>
+    </jd-readme>
   `
 });

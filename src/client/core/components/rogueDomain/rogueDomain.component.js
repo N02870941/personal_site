@@ -1,4 +1,4 @@
-app.component('rogueDomain', {
+app.component('jdRogueDomain', {
 
   controller: function($location, $rootScope) {
 
@@ -10,13 +10,13 @@ app.component('rogueDomain', {
   },
 
   template: `
-  <my-count-down-redirect
+  <jd-count-down-redirect
     title='Rogue Domain'
     message='{{$ctrl.message}}'
     redirect='{{$ctrl.redirectUrl}}'
     time=5
   >
-  </my-count-down-redirect>
+  </jd-count-down-redirect>
   `
 
 });

@@ -1,10 +1,10 @@
-app.component("myCluster", {
+app.component("jdCluster", {
 
   template: `
-    <my-readme
+    <jd-readme
       owner="n02870941"
       repo="discrete_and_continuous_algorithms"
     >
-    </my-readme>
+    </jd-readme>
   `
 });

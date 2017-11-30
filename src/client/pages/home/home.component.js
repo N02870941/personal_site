@@ -1,4 +1,4 @@
-app.component('myHome', {
+app.component('jdHome', {
 
   controller: function($location, $window) {
     this.title = "Welcome to JabariDash.com!";

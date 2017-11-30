@@ -1,4 +1,4 @@
-app.component('myMlt', {
+app.component('jdMlt', {
 
   controller: function() {
     this.title = "Being Black and Getting Your Foot in the Door";
@@ -50,10 +50,10 @@ app.component('myMlt', {
   },
 
   template: `
-    <project-list
+    <jd-project-list
       title='{{$ctrl.title}}'
       description="{{$ctrl.description}}"
       links="$ctrl.projects">
-    </project-list>
+    </jd-project-list>
   `
 });

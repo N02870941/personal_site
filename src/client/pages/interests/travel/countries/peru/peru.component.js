@@ -1,4 +1,4 @@
-app.component('myPeru', {
+app.component('jdPeru', {
 
-  template: "<my-coming-soon></my-coming-soon>"
+  template: "<jd-coming-soon></jd-coming-soon>"
 });

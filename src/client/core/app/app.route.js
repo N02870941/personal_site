@@ -8,135 +8,135 @@ app.config(function ($routeProvider) {
   // it looks the same on each browser
   $routeProvider
     .when('/', {
-      template: "<my-home></my-home>"
+      template: "<jd-home></jd-home>"
     })
 
     .when('/home', {
-      template: "<my-home></my-home>"
+      template: "<jd-home></jd-home>"
     })
 
     .when('/biography', {
-      template: "<my-biography><my-biography>"
+      template: "<jd-biography><jd-biography>"
     })
 
     .when('/resume', {
-      template: "<my-resume><my-resume>"
+      template: "<jd-resume><jd-resume>"
     })
 
     .when('/projects', {
-      template: "<my-projects></my-projects>"
+      template: "<jd-projects></jd-projects>"
     })
 
     .when('/tech', {
-      template: "<my-tech></my-tech>"
+      template: "<jd-tech></jd-tech>"
     })
 
     .when('/projects/target', {
-      template: "<my-target></my-target>"
+      template: "<jd-target></jd-target>"
     })
 
     .when('/projects/target/2016/2016', {
-      template: "<my-target2016></my-target2016>"
+      template: "<jd-target2016></jd-target2016>"
     })
 
     .when('/projects/target/2017/2017', {
-      template: "<my-target2017></my-target2017>"
+      template: "<jd-target2017></jd-target2017>"
     })
 
     .when('/projects/mlt', {
-      template: "<my-mlt></my-mlt>"
+      template: "<jd-mlt></jd-mlt>"
     })
 
     .when('/projects/mlt/part1', {
-      template: "<part1></part1>"
+      template: "<jd-part1></jd-part1>"
     })
 
     .when('/projects/mlt/part2', {
-      template: "<part2></part2>"
+      template: "<jd-part2></jd-part2>"
     })
 
     .when('/projects/mlt/part3', {
-      template: "<part3></part3>"
+      template: "<jd-part3></jd-part3>"
     })
 
     .when('/projects/mlt/part4', {
-      template: "<part4></part4>"
+      template: "<jd-part4></jd-part4>"
     })
 
     .when('/tech/algorithms', {
-      template: "<my-algorithms></my-algorithms>"
+      template: "<jd-algorithms></jd-algorithms>"
     })
 
     .when('/tech/cluster', {
-      template: "<my-cluster></my-cluster>"
+      template: "<jd-cluster></jd-cluster>"
     })
 
     .when('/tech/regression', {
-      template: "<my-regression></my-regression>"
+      template: "<jd-regression></jd-regression>"
     })
 
     .when('/tech/temperature', {
-      template: "<my-temperature></my-temperature>"
+      template: "<jd-temperature></jd-temperature>"
     })
 
     .when('/tech/website', {
-      template: "<my-website></my-website>"
+      template: "<jd-website></jd-website>"
     })
 
     .when('/interests', {
-      template: "<my-interests></my-interests>"
+      template: "<jd-interests></jd-interests>"
     })
 
     .when('/interests/culture', {
-      template: "<my-culture></my-culture>"
+      template: "<jd-culture></jd-culture>"
     })
 
     .when('/interests/fitness', {
-      template: "<my-fitness></my-fitness>"
+      template: "<jd-fitness></jd-fitness>"
     })
 
     .when('/interests/photography', {
-      template: "<my-photography></my-photography>"
+      template: "<jd-photography></jd-photography>"
     })
 
     .when('/interests/travel', {
-      template: "<my-travel></my-travel>"
+      template: "<jd-travel></jd-travel>"
     })
 
     .when('/interests/travel/colombia', {
-      template: "<my-colombia></my-colombia>"
+      template: "<jd-colombia></jd-colombia>"
     })
 
     .when('/interests/travel/ecuador', {
-      template: "<my-ecuador></my-ecuador>"
+      template: "<jd-ecuador></jd-ecuador>"
     })
 
     .when('/interests/travel/gambia', {
-      template: "<my-gambia></my-gambia>"
+      template: "<jd-gambia></jd-gambia>"
     })
 
     .when('/interests/travel/morocco', {
-      template: "<my-morocco></my-morocco>"
+      template: "<jd-morocco></jd-morocco>"
     })
 
     .when('/interests/travel/peru', {
-      template: "<my-peru></my-peru>"
+      template: "<jd-peru></jd-peru>"
     })
 
     .when('/interests/travel/senegal', {
-      template: "<my-senegal></my-senegal>"
+      template: "<jd-senegal></jd-senegal>"
     })
 
     .when('/contact', {
-      template: "<my-contact></my-contact>"
+      template: "<jd-contact></jd-contact>"
     })
 
     .when('/notFound', {
-      template: "<my-not-found></my-not-found>"
+      template: "<jd-not-found></jd-not-found>"
     })
 
     .when('/rogueDomain', {
-      template: "<rogue-domain></rogue-domain>"
+      template: "<jd-rogue-domain></jd-rogue-domain>"
     })
 
     .otherwise({

@@ -1,4 +1,4 @@
-app.component('myPdfOrJpg', {
+app.component('jdPdfOrJpg', {
 
   bindings: {
     pdf: "@",
@@ -17,6 +17,7 @@ app.component('myPdfOrJpg', {
       /**
        * Dynamically choose to display the PDF version or PNG verion
        */
+      //  TODO - see if we cab get 600px from $mobile in variables??
       if (window.matchMedia( "(min-width: 600px)" ).matches) {
 
         this.templateUrl = this.pdfTemplateUrl;

@@ -1,4 +1,4 @@
-app.component('myPhotography', {
+app.component('jdPhotography', {
 
   templateUrl: "client/pages/interests/photography/photography.template.html",
   controllerAs: "vm",
