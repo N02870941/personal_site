@@ -26,6 +26,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   // it looks the same on each browser
   $stateProvider
     .state('default', {
+      url: "",
+      template: "<jd-home></jd-home>"
+    })
+
+    .state('default2', {
       url: "/",
       template: "<jd-home></jd-home>"
     })
