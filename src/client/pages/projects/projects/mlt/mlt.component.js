@@ -15,7 +15,7 @@ app.component('jdMlt', {
       {
        title: "Part 1: Informational",
        name: "part1",
-       href:'#!/projects/mlt/part1#top',
+       href:'#!/projects/mlt/part1',
        img: "/client/pages/projects/img/thumbnail/mlt.jpg",
        brief: "The first of our series is an informational in which we " +
               "introduce students to the MLT Career Prep Program (CP), speak about our experiences " +
@@ -24,7 +24,7 @@ app.component('jdMlt', {
       {
        title: "Part 2: Resume Writing Workshop",
        name: "part2",
-       href:'#!/projects/mlt/part2#top',
+       href:'#!/projects/mlt/part2',
        img: "/client/pages/projects/img/thumbnail/mlt.jpg",
        brief: "The second in the series is a resume writing workshop where " +
               "students will work with professionals to strengthen their resumes and short essays " +
@@ -33,7 +33,7 @@ app.component('jdMlt', {
       {
        title: "Part 3: Keys to Success Panel",
        name: "part3",
-       href:'#!/projects/mlt/part3#top',
+       href:'#!/projects/mlt/part3',
        img: "/client/pages/projects/img/thumbnail/mlt.jpg",
        brief: "In part 3 there will be a panel discussion where professionals will speak to students " +
               "about some of the keys to success in the working world."
@@ -41,7 +41,7 @@ app.component('jdMlt', {
       {
        title: "Part 4: Wrap up",
        name: "part4",
-       href:'#!/projects/mlt/part4#top',
+       href:'#!/projects/mlt/part4',
        img: "/client/pages/projects/img/thumbnail/mlt.jpg",
        brief: "We will close our series with a session in which students will have the opportunity " +
               "to meet with professionals to make finishing touches to their MLT Career Prep applications."

@@ -1,6 +1,18 @@
 
 // Create the module
-var app = angular.module("app", ['ngRoute', 'ngAnimate', 'ngSanitize', 'angularCSS'])
+var app = angular.module("app", [
+'biography',
+'contact',
+'home',
+'interests',
+'projects',
+'resume',
+'tech',
+'ngRoute',
+'ngAnimate',
+'ngSanitize',
+'angularCSS',
+'ui.router']);
 
 app.run(function ($rootScope) {
 
@@ -58,5 +70,5 @@ app.run(function ($rootScope) {
       target: "_blank"
     }
 
-  ];
+    ];
   });
