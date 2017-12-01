@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdTarget', {
+  angular.module('projects').component('jdTarget', {
 
     controller: function() {
       this.title = "Two Summer Internships at Target";

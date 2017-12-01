@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').service('photographyService', function($http) {
+  angular.module('interests').service('photographyService', function($http) {
 
     function getPhotoPaths(url) {
 

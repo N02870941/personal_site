@@ -1,5 +1,5 @@
 (function() {
-  angular.module('tech', ['shared', 'ui.router'])
+  angular.module('tech')
     .config(function($stateProvider, jdStatesProvider) {
 
       var states = [

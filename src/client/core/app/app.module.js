@@ -18,5 +18,13 @@ const config = (function getConfig() {
 
 (function() {
   // Create the module
-  var app = angular.module("app", config.modules.concat(config.dependencies));
+  angular.module("app", config.modules.concat(config.dependencies));
+  angular.module('shared', []);
+
+  // Dynamically create the modules
+  for (var i in config.modules) {
+    angular.module(config.modules[i], ['shared', 'ui.router'])
+  }
+
+
 })();

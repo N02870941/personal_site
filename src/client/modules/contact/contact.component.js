@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdContact', {
+  angular.module('contact').component('jdContact', {
 
     bindings: {
       title: "@"

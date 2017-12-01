@@ -1,4 +1,11 @@
 {
+  "site": {
+      "title": "Jabari Dash",
+      "protocol": "http",
+      "domain": "jabaridash.com",
+      "port": "8080"
+  },
+
   "modules" : [
     "home",
     "biography",
@@ -17,13 +24,6 @@
     "angularCSS",
     "ui.router"
   ],
-
-  "site": {
-      "title": "Jabari Dash",
-      "protocol": "http",
-      "domain": "jabaridash.com",
-      "port": "8080"
-  },
 
   "methodsOfContact": [
     {

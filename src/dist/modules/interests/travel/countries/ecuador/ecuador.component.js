@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdEcuador', {
+  angular.module('interests').component('jdEcuador', {
 
     controller: function() {
 

@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdCulture', {
+  angular.module('interests').component('jdCulture', {
 
     template: `<jd-coming-soon></jd-coming-soon>`
   });

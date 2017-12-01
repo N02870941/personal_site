@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdProjects', {
+  angular.module('projects').component('jdProjects', {
 
     controller: function() {
       this.title = "Projects";

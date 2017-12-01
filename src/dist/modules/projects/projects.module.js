@@ -1,5 +1,5 @@
 (function() {
-  angular.module('projects', ['shared', 'ui.router'])
+  angular.module('projects')
     .config(function(jdStatesProvider, $stateProvider) {
 
       var states = [

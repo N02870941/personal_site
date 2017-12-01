@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdPhotography', {
+  angular.module('interests').component('jdPhotography', {
 
     templateUrl: "client/modules/interests/photography/photography.template.html",
     controllerAs: "vm",
@@ -22,8 +22,6 @@
         var domain = $location.host();
         var port = site.port;
         var url = $location.protocol() + "://" + domain + ":" + port + "/photography";
-
-        console.log(url);
 
         photographyService.getPhotoPaths(url).then(function(data) {
           vm.images = data;

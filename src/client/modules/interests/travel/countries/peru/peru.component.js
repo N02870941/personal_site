@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdPeru', {
+  angular.module('interests').component('jdPeru', {
 
     template: "<jd-coming-soon></jd-coming-soon>"
   });

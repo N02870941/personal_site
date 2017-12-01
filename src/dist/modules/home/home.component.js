@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdHome', {
+  angular.module('home').component('jdHome', {
 
     controller: function($location, $window) {
       this.title = "Welcome to JabariDash.com!";

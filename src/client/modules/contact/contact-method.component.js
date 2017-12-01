@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdContactMethod', {
+  angular.module('contact').component('jdContactMethod', {
 
     bindings: {
       href: "@",
