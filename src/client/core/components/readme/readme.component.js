@@ -1,4 +1,4 @@
-app.component("myReadme", {
+app.component("jdReadme", {
 
   bindings: {
     owner: "@",
@@ -10,15 +10,15 @@ app.component("myReadme", {
     this.$onInit = function() {
 
       // Gets a README.md from github.com
-      $('#readme').readme({
-        owner: this.owner,
-        repo: this.repo
-      });
+      // $('#readme').readme({
+      //   owner: this.owner,
+      //   repo: this.repo
+      // });
     }
   },
 
   template: `
-    <my-coming-soon></my-coming-soon>
+    <jd-coming-soon></jd-coming-soon>
     <!-- <div id='readme'></div> -->
   `
 });

@@ -1,4 +1,4 @@
-app.component('backToTop', {
+app.component('jdBackToTop', {
 
   css: "client/core/components/backToTop/backToTop.css",
 

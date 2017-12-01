@@ -1,6 +1,4 @@
-app.component('projectList', {
-  restrict: 'E',
-  scope: {},
+app.component('jdProjectList', {
 
   bindings: {
     title: "@",

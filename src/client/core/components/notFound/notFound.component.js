@@ -1,4 +1,4 @@
-app.component('myNotFound', {
+app.component('jdNotFound', {
 
   controller: function($location) {
 
@@ -11,13 +11,13 @@ app.component('myNotFound', {
   },
 
   template: `
-  <my-count-down-redirect
+  <jd-count-down-redirect
     title='Page Not Found'
     message='{{$ctrl.message}}'
     redirect='{{$ctrl.redirectUrl}}'
     time=5
   >
-  </my-count-down-redirect>
+  </jd-count-down-redirect>
   `
 
 });

@@ -2,12 +2,12 @@
 
 .top-border {
   border-top-style: solid;
-  border-top-width: 1px;
+  border-top-width: $defaultBorderThickness;
 }
 
 .full-border {
-  padding:1px;
-  border:1px solid $black;
+  padding: $defaultBorderThickness;
+  border: $defaultBorderThickness solid $black;
 }
 
 @media (max-width: $mobile) {

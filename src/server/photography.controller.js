@@ -24,7 +24,7 @@ module.exports = function(server, dir) {
    */
   server.get('/photography', function(req, res) {
 
-    var searchPath = '/client/pages/interests/photography/img/thumbnail/';
+    var searchPath = '/client/modules/interests/photography/img/thumbnail/';
 
     // Send the list of files for use on client side
     res.send(fileList(dir + searchPath, searchPath));

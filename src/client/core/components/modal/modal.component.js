@@ -1,4 +1,4 @@
-app.component("myModal", {
+app.component("jdModal", {
 
   bindings: {
     images: "<",

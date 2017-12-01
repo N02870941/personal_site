@@ -1,12 +1,12 @@
 <div id='header'>
-  <div class="navbar" id="myTopnav" ng-esc='$ctrl.hideNavBarOptions()'>
+  <div class="navbar" id="myTopnav" jd-esc='$ctrl.hideNavBarOptions()'>
 
     <div style='display: table; margin: 0 auto;'>
         <a
-          ng-repeat="href in $ctrl.hrefs"
+          ng-repeat="href in $ctrl.modules"
           class="white-link grow"
           ng-click="$ctrl.hideNavBarOptions()"
-          href="{{href.href}}">{{href.text}}
+          href="{{'#!' + href}}">{{href.charAt(0).toUpperCase() + href.slice(1)}}
         </a>
 
       <a

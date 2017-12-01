@@ -2,7 +2,7 @@
  * Create custom directive that fires a function when the ecape button
  * is pressed (and released)
  */
-app.directive('ngEsc', function () {
+app.directive('jdEsc', function () {
   return function (scope, element, attrs) {
 
     // Create event listener for the escape button
@@ -12,7 +12,7 @@ app.directive('ngEsc', function () {
       // If the escape key (key number 27) is pressed
       if (event.which === 27) {
 
-        // Call the ng-esc function
+        // Call the jd-esc function
         scope.$apply(function () {
           scope.$eval(attrs.ngEsc);
         });

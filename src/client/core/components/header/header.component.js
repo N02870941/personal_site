@@ -1,45 +1,13 @@
-app.component('myHeader', {
+app.component('jdHeader', {
 
   css: "client/core/components/header/header.css",
-
   templateUrl: 'client/core/components/header/header.template.html',
 
-  controller: function() {
+  controller: function(modules) {
+
+    this.modules = modules;
 
     var vm = this;
-
-    this.hrefs = [
-      {
-        text: "Home",
-        href: "#!home"
-      },
-
-      {
-        text: "Biography",
-        href: "#!biography"
-      },
-
-      {
-        text: "Resume",
-        href: "#!resume"
-      },
-      {
-        text: "Projects",
-        href: "#!projects"
-      },
-      {
-        text: "Tech",
-        href: "#!tech"
-      },
-      {
-        text: "Interests",
-        href: "#!interests"
-      },
-      {
-        text: "Contact",
-        href: "#!contact"
-      }
-    ];
 
 //------------------------------------------------------------------------------
 
@@ -81,7 +49,5 @@ app.component('myHeader', {
          });
        });
     }
-
-//------------------------------------------------------------------------------
   }
 });
