@@ -1,29 +1,33 @@
-angular.module('tech', ['ui.router'])
-  .config(function($stateProvider) {
+angular.module('tech', ['shared', 'ui.router'])
+  .config(function($stateProvider, jdStatesProvider) {
 
-    $stateProvider
-      .state('algorithms', {
+    var states = [
+      {
+        name: 'algorithms',
         url: '/tech/algorithms',
         template: "<jd-algorithms></jd-algorithms>"
-      })
-
-      .state('cluster', {
+      },
+      {
+        name: 'cluster',
         url: '/tech/cluster',
         template: "<jd-cluster></jd-cluster>"
-      })
-
-      .state('regression', {
+      },
+      {
+        name: 'regression',
         url: '/tech/regression',
         template: "<jd-regression></jd-regression>"
-      })
-
-      .state('temperature', {
+      },
+      {
+        name: 'temperature',
         url: '/tech/temperature',
         template: "<jd-temperature></jd-temperature>"
-      })
-
-      .state('website', {
+      },
+      {
+        name: 'website',
         url: '/tech/website',
         template: "<jd-website></jd-website>"
-      })
+      }
+    ];
+
+    jdStatesProvider.initStates($stateProvider, states);
   });

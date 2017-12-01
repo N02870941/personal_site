@@ -1,4 +1,4 @@
-angular.module('interests', ['shared'])
+angular.module('interests', ['shared', 'ui.router'])
   .config(function(jdStatesProvider, $stateProvider) {
 
     var states = [

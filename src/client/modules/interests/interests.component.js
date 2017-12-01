@@ -1,8 +1,10 @@
 app.component('jdInterests', {
 
-  controller: function() {
-    this.title = "Interests";
+  bindings: {
+    title: "@"
+  },
 
+  controller: function() {
     this.description = `
       Below you can find links to some of my hobbies and things that make me who I am.
     `

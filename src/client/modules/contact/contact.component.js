@@ -1,7 +1,10 @@
 app.component('jdContact', {
 
+  bindings: {
+    title: "@"
+  },
+
   controller: function(methodsOfContact) {
-    this.title = "Contact me";
     this.class = "grow fa fa-5x ";
     this.methodsOfContact = methodsOfContact;
   },

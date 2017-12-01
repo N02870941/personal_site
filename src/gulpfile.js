@@ -23,7 +23,7 @@ gulp.task('serve', function() {
   browser.init({proxy: "localhost:" + port});
 
   gulp.watch("./client/**/*.html").on('change', browser.reload);
-  gulp.watch("./client/**/*.js", ['refresh']);
+  gulp.watch("./client/**/*.{js,json}", ['refresh']);
   gulp.watch("./client/**/*.{css,scss}", ['refresh']);
 });
 

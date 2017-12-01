@@ -3,13 +3,15 @@ app.provider("modules", function modulesProvider() {
 
     // Dynamically set up each state
     for (var i in modules) {
+      t = "<jd-" + modules[i]+ " title='" + modules[i].charAt(0).toUpperCase() + modules[i].slice(1) +"'>" + "</jd-" + modules[i]+">";
+
       stateProvider
         .state(modules[i], {
           url: "/" + modules[i],
 
           // TODO - Write a function that converts module name so that
           // support for names with more than one word is supported
-          template: "<jd-" + modules[i]+">" + "</jd-" + modules[i]+">"
+          template: t
         })
     }
   };

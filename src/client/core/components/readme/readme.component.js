@@ -10,10 +10,10 @@ app.component("jdReadme", {
     this.$onInit = function() {
 
       // Gets a README.md from github.com
-      $('#readme').readme({
-        owner: this.owner,
-        repo: this.repo
-      });
+      // $('#readme').readme({
+      //   owner: this.owner,
+      //   repo: this.repo
+      // });
     }
   },
 

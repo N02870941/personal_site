@@ -1,7 +1,7 @@
 app.component('jdBiography', {
 
-  controller: function() {
-    this.title = "Biography";
+  bindings: {
+    title: "@"
   },
 
   templateUrl: "client/modules/biography/biography.template.html"
