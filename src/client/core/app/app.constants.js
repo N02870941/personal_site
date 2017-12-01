@@ -1,13 +1,4 @@
-app.constant('modules', [
-  'home',
-  'biography',
-  'resume',
-  'projects',
-  'tech',
-  'interests',
-  'contact',
-  // 'example'  // NOTE - this show the simplicity of adding a new entry
-])
+app.constant('modules', getConfig().modules)
 
 .constant('site', {
   title: "Jabari Dash",

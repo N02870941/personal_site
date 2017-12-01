@@ -1,28 +1,17 @@
-// TODO - Take these out of the global scope!!!
-// Get the from the json file via require()
-var moduless = [
-  'home',
-  'biography',
-  'resume',
-  'projects',
-  'tech',
-  'interests',
-  'contact',
-  // 'example'  // NOTE - this show the simplicity of adding a new entry
-];
+function getConfig() {
+  return JSON.parse(
+    $.ajax({
+      url: "client/core/app/config.json",
+      dataType: 'json',
+      async: false,
+    }).responseText
+  );
+}
 
-//------------------------------------------------------------------------------
-
-var dependencies = [
-  'shared',
-  'ngRoute',
-  'ngAnimate',
-  'ngSanitize',
-  'angularCSS',
-  'ui.router'
-];
-
+var config = getConfig();
+var modules = config.modules;
+var dependencies = config.dependencies;
 //------------------------------------------------------------------------------
 
 // Create the module
-var app = angular.module("app", moduless.concat(dependencies));
+var app = angular.module("app", modules.concat(dependencies));
