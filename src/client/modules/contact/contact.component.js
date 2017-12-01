@@ -1,14 +1,15 @@
 app.component('jdContact', {
 
-  controller: function($rootScope) {
+  controller: function(methodsOfContact) {
     this.title = "Contact me";
     this.class = "grow fa fa-5x ";
+    this.methodsOfContact = methodsOfContact;
   },
 
   template: `
     <h2 name=heading>{{$ctrl.title}}</h2>
 
-    <div ng-repeat="method in $root.methodsOfContact">
+    <div ng-repeat="method in $ctrl.methodsOfContact">
 
       <jd-contact-method
         myclass="{{$ctrl.class + method.iconClass}}"

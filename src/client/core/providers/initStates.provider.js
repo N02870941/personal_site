@@ -1,4 +1,4 @@
-angular.module('app')
+angular.module('shared')
   .provider("jdStates", function jdStatesProvider() {
     this.initStates = function(stateProvider, states) {
 

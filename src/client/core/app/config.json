@@ -1,0 +1,21 @@
+{
+  "modules" : [
+    "home",
+    "biography",
+    "resume",
+    "projects",
+    "tech",
+    "interests",
+    "contact",
+    "example"
+  ],
+
+  "dependencies" : [
+    "shared",
+    "ngRoute",
+    "ngAnimate",
+    "ngSanitize",
+    "angularCSS",
+    "ui.router"
+  ]
+}

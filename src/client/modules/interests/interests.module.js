@@ -1,5 +1,5 @@
-angular.module('interests', ['ui.router'])
-  .config(function($stateProvider) {
+angular.module('interests', ['shared'])
+  .config(function(jdStatesProvider, $stateProvider) {
 
     var states = [
       {
@@ -54,5 +54,5 @@ angular.module('interests', ['ui.router'])
       }
     ];
 
-    initializeStates($stateProvider, states);
+    jdStatesProvider.initStates($stateProvider, states);
   });

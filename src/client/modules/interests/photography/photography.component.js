@@ -3,7 +3,7 @@ app.component('jdPhotography', {
   templateUrl: "client/modules/interests/photography/photography.template.html",
   controllerAs: "vm",
 
-  controller: function(photographyService, $location, $rootScope) {
+  controller: function(photographyService, $location, site) {
     var vm = this;
     this.showAll = false;
     this.images = [];
@@ -19,7 +19,7 @@ app.component('jdPhotography', {
     vm.$onInit = function() {
 
       var domain = $location.host();
-      var port = $rootScope.port;
+      var port = site.port;
       var url = $location.protocol() + "://" + domain + ":" + port + "/photography";
 
       console.log(url);
