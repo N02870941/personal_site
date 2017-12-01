@@ -2,7 +2,10 @@ app.provider("modules", function modulesProvider() {
   this.initModules = function(stateProvider, modules){
 
     // Dynamically set up each state
+    // for each module
     for (var i in modules) {
+
+      // TODO - Convert camel case to hyphenated, etc.
       t = "<jd-" + modules[i]+ " title='" + modules[i].charAt(0).toUpperCase() + modules[i].slice(1) +"'>" + "</jd-" + modules[i]+">";
 
       stateProvider

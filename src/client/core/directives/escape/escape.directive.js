@@ -2,7 +2,7 @@
  * Create custom directive that fires a function when the ecape button
  * is pressed (and released)
  */
-app.directive('jdEsc', function () {
+app.directive('ngEsc', function () {
   return function (scope, element, attrs) {
 
     // Create event listener for the escape button
