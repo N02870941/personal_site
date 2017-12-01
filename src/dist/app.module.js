@@ -17,14 +17,15 @@ const config = (function getConfig() {
 //------------------------------------------------------------------------------
 
 (function() {
-  // Create the module
+
+  // Create the main module and the shared module for exposing providers
   angular.module("app", config.modules.concat(config.dependencies));
   angular.module('shared', []);
 
   // Dynamically create the modules
+  // TODO - abstract the states, and provider dependencies to the config.json file
   for (var i in config.modules) {
     angular.module(config.modules[i], ['shared', 'ui.router'])
   }
-
 
 })();
