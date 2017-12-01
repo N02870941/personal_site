@@ -1,15 +1,6 @@
 // Set  up routing for whole site
 app.config(function ($stateProvider, $urlRouterProvider, modules) {
 
-  function initializeStates(states) {
-    for (var i in states) {
-      $stateProvider.state(states[i].name, {
-        url: states[i].url,
-        template: states[i].template
-      });
-    }
-  }
-
   app.constant('initializeStates', initializeStates);
 
   var states = [
@@ -35,19 +26,8 @@ app.config(function ($stateProvider, $urlRouterProvider, modules) {
     }
   ];
 
-  initializeStates(states);
-
-  // Dynamically set up each state
-  for (var i in modules) {
-    $stateProvider
-      .state(modules[i], {
-        url: "/" + modules[i],
-
-        // TODO - Write a function that converts module name so that
-        // support for names with more than one word is supported
-        template: "<jd-" + modules[i]+">" + "</jd-" + modules[i]+">"
-      })
-  }
+  initializeModules($stateProvider, modules);
+  initializeStates($stateProvider, states);
 
   $urlRouterProvider.otherwise('/notFound');
 });

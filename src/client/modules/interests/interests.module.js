@@ -1,5 +1,6 @@
 angular.module('interests', ['ui.router'])
   .config(function($stateProvider) {
+
     var states = [
       {
         name: 'culture',
@@ -53,16 +54,5 @@ angular.module('interests', ['ui.router'])
       }
     ];
 
-    // TODO - Make this function globally availabel
-    // to all modules and components
-    function initializeStates(states) {
-      for (var i in states) {
-        $stateProvider.state(states[i].name, {
-          url: states[i].url,
-          template: states[i].template
-        });
-      }
-    }
-
-    initializeStates(states);
+    initializeStates($stateProvider, states);
   });
