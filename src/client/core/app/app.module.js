@@ -1,11 +1,12 @@
 var modules = [
-  'biography',
-  'contact',
   'home',
-  'interests',
-  'projects',
+  'biography',
   'resume',
-  'tech'
+  'projects',
+  'tech',
+  'interests',
+  'contact',
+  // 'example'
 ];
 
 //------------------------------------------------------------------------------
