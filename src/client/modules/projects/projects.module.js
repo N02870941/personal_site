@@ -1,5 +1,5 @@
-angular.module('projects', ['ui.router'])
-  .config(function($stateProvider) {
+angular.module('projects', ['app', 'ui.router'])
+  .config([function($stateProvider) {
 
     var states = [
       {
@@ -43,6 +43,6 @@ angular.module('projects', ['ui.router'])
         template: "<jd-target2017></jd-target2017>"
       }
     ];
-    
-    initializeStates($stateProvider, states);
-  });
+
+    // initializeStates($stateProvider, states);
+  }]);

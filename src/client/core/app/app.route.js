@@ -1,8 +1,5 @@
 // Set  up routing for whole site
-app.config(function ($stateProvider, $urlRouterProvider, modules) {
-
-  app.constant('initializeStates', initializeStates);
-
+app.config(function ($stateProvider, $urlRouterProvider, modules, modulesProvider, jdStatesProvider) {
   var states = [
     {
       name: "default",
@@ -26,8 +23,8 @@ app.config(function ($stateProvider, $urlRouterProvider, modules) {
     }
   ];
 
-  initializeModules($stateProvider, modules);
-  initializeStates($stateProvider, states);
+  modulesProvider.initModules($stateProvider, modules);
+  jdStatesProvider.initStates($stateProvider, states);
 
   $urlRouterProvider.otherwise('/notFound');
 });

@@ -1,4 +1,6 @@
-var modules = [
+// TODO - Take these out of the global scope!!!
+
+var moduless = [
   'home',
   'biography',
   'resume',
@@ -6,7 +8,7 @@ var modules = [
   'tech',
   'interests',
   'contact',
-  // 'example'
+  // 'example'  // NOTE - this show the simplicity of adding a new entry
 ];
 
 //------------------------------------------------------------------------------
@@ -32,28 +34,20 @@ var initializeStates = function(stateProvider, states) {
 
 //------------------------------------------------------------------------------
 
-var initializeModules = function(stateProvider, modules) {
-  // Dynamically set up each state
-  for (var i in modules) {
-    stateProvider
-      .state(modules[i], {
-        url: "/" + modules[i],
-
-        // TODO - Write a function that converts module name so that
-        // support for names with more than one word is supported
-        template: "<jd-" + modules[i]+">" + "</jd-" + modules[i]+">"
-      })
-  }
-}
-
-//------------------------------------------------------------------------------
-
 // Create the module
-var app = angular.module("app", modules.concat(dependencies));
+var app = angular.module("app", moduless.concat(dependencies));
 
-app.constant('modules', modules)
-app.constant('initializeModules', initializeModules)
-app.constant('initializeStates', initializeStates)
+app.constant('modules', [
+  'home',
+  'biography',
+  'resume',
+  'projects',
+  'tech',
+  'interests',
+  'contact',
+  // 'example'  // NOTE - this show the simplicity of adding a new entry
+])
+
   .run(function ($rootScope) {
 
     $rootScope.site = {
