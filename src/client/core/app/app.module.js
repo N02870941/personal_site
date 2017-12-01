@@ -1,26 +1,20 @@
 
-// NOTE - This is the only global function
-// in regular JavaScript scope. This allows
+// NOTE - This is the only global variable
+// in regular JavaScript scope (other than app). This allows
 // content from the config file to be accessed
 // from anywhere within the application, independent
 // of AngularJS rules, modules, etc
-function getConfig() {
+const config = (function getConfig() {
   return JSON.parse(
     $.ajax({
-      url: "client/core/app/config.json",
+      url: "client/core/config/config.json",
       dataType: 'json',
       async: false,
     }).responseText
   );
-}
-
-//------------------------------------------------------------------------------
-
-var config = getConfig();
-var modules = config.modules;
-var dependencies = config.dependencies;
+})();
 
 //------------------------------------------------------------------------------
 
 // Create the module
-var app = angular.module("app", modules.concat(dependencies));
+var app = angular.module("app", config.modules.concat(config.dependencies));
