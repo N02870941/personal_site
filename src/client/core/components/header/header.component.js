@@ -10,9 +10,9 @@
         this.modules = (function() {
           var array = [];
 
-          for (var i in config.objects) {
-            if (config.objects[i].header) {
-              array.push(config.objects[i].name);
+          for (var i in config.modules) {
+            if (config.modules[i].header) {
+              array.push(config.modules[i].name);
             }
           }
 

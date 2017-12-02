@@ -41,7 +41,7 @@
     ]
   },
 
-  "objects" : [
+  "modules" : [
     {
       "name" : "example",
       "header" : false,
