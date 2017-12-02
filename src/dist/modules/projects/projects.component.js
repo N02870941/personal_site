@@ -12,6 +12,7 @@
           {
             title: "Being Black and Getting Your Foot in the Door",
             name: 'mlt',
+            sref: 'mlt',
             href:'#!/projects/mlt',
             img: "/client/modules/projects/img/thumbnail/mlt.jpg",
             brief: "A collaboration with Kadeen Douglas and Dr. Cruz Caridad Bueno of " +
@@ -21,6 +22,7 @@
           {
             title: "Two Summer Internships at Target",
             name: 'target',
+            sref: 'target',
             href:'#!/projects/target',
             img: "/client/modules/projects/img/thumbnail/target.png",
             brief: "Get a peek as to how I spent some of my summers at Target"

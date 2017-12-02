@@ -15,28 +15,28 @@
           {
             title: "Discrete and Continuous Algorithms and Data Structures",
             name: "algorithms",
-            href:'#!/tech/algorithms',
+            sref: 'algorithms',
             img: "/client/modules/tech/img/thumbnail/algorithms.png",
             brief: "C++ Implementation of common data structures and associate algorithms and interview questions"
           },
           {
             title: "Linear and Nonlinear Regression",
             name: "regression",
-            href:'#!/tech/regression',
+            sref: 'regression',
             img: "/client/modules/tech/img/thumbnail/regression.png",
             brief: "Basic Python UI that provided a data set displays best fit functions"
           },
           {
             title: "Temperature Collection at SUNY New Paltz",
             name: "temperature",
-            href:'#!/tech/temperature',
+            sref: 'temperature',
             img: "/client/modules/tech/img/thumbnail/temperature.jpg",
             brief: "Distributed Raspberry Pi based project where we collected temperature data and visualized on a website"
           },
           {
             title: "My Personal Website",
             name: "website",
-            href:'#!/tech/website',
+            sref: 'website',
             img: "/client/modules/tech/img/thumbnail/website.jpg",
             brief: "This website was completely written by me!"
           }

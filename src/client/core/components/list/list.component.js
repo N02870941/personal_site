@@ -12,6 +12,17 @@
 
         var vm = this;
 
+        vm.getSREF = function(sref) {
+          return sref;
+
+          // TODO - figure out how to get it to go to top
+          // but when you click back button, back to where
+          // you were
+
+          
+          // return sref + "({'#': 'top'})"
+        }
+
         vm.$onInit = function() {
 
           // vm.title = $sce.trustAsHtml(vm.title);
@@ -29,7 +40,7 @@
 
         <div ng-repeat="item in vm.links" class='top-border'>
 
-          <a href='{{item.href}}' class="charcoal-link">
+          <a ui-sref="{{item.sref}}" class="charcoal-link">
             <div id={{item.name}}>
               <h2>{{item.title}}</h2>
               <img class='grow' ng-src='{{item.img}}'>

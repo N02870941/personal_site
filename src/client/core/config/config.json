@@ -156,7 +156,7 @@
           "template": "<jd-culture></jd-culture>"
         },
         {
-          "name": "fitnes",
+          "name": "fitness",
           "url": "/interests/fitness",
           "template": "<jd-fitness></jd-fitness>"
         },
