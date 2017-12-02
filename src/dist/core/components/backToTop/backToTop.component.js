@@ -1,38 +1,44 @@
 (function() {
-  angular.module('app').component('jdBackToTop', {
+  try {
+    angular.module('app').component('jdBackToTop', {
 
-    css: "client/core/components/backToTop/backToTop.css",
+      css: "client/core/components/backToTop/backToTop.css",
 
-    controller: function() {
-      // https://codepen.io/kruxor/pen/CwpFq
+      controller: function() {
+        // https://codepen.io/kruxor/pen/CwpFq
 
-      $(window).scroll(function() {
-        if ($(this).scrollTop() > 50) {
-            $('.scrolltop:hidden').stop(true, true).fadeIn();
-        } else {
-            $('.scrolltop').stop(true, true).fadeOut();
-        }
-      });
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 50) {
+              $('.scrolltop:hidden').stop(true, true).fadeIn();
+          } else {
+              $('.scrolltop').stop(true, true).fadeOut();
+          }
+        });
 
-      $(function() {
-        $(".scroll").click(function() {
-          $("html,body").animate({
-            scrollTop:$(".thetop").offset().top
-          },"1000");
+        $(function() {
+          $(".scroll").click(function() {
+            $("html,body").animate({
+              scrollTop:$(".thetop").offset().top
+            },"1000");
 
-          return false;
-        }
-      )});
-    },
+            return false;
+          }
+        )});
+      },
 
-    template: `
-      <div class='scrolltop'>
-        <div class='scroll icon'>
-          <i class="fa fa-4x fa-angle-up"></i>
+      template: `
+        <div class='scrolltop'>
+          <div class='scroll icon'>
+            <i class="fa fa-4x fa-angle-up"></i>
+          </div>
         </div>
-      </div>
-    `,
+      `,
 
-  });
+    });
+
+  } catch (err) {
+    console.error(err);
+  }
+
 
 })();

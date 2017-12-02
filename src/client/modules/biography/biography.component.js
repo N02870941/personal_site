@@ -16,7 +16,7 @@
     // module has not being initialized
   } catch (err) {
 
-    console.log(err);
+    console.error(err);
   }
 
 })();

@@ -1,6 +1,12 @@
 (function() {
-  angular.module('interests').component('jdMorocco', {
+  try {
+    angular.module('interests').component('jdMorocco', {
 
-    template: "<jd-coming-soon></jd-coming-soon>"
-  });
+      template: "<jd-coming-soon></jd-coming-soon>"
+    });
+
+  } catch (err) {
+    console.error(err);
+  }
+
 })();

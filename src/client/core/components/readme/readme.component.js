@@ -1,27 +1,32 @@
 (function() {
-  angular.module('app').component("jdReadme", {
+  try {
+    angular.module('app').component("jdReadme", {
 
-    bindings: {
-      owner: "@",
-      repo: "@"
-    },
+      bindings: {
+        owner: "@",
+        repo: "@"
+      },
 
-    controller: function() {
+      controller: function() {
 
-      this.$onInit = function() {
+        this.$onInit = function() {
 
-        // Gets a README.md from github.com
-        // $('#readme').readme({
-        //   owner: this.owner,
-        //   repo: this.repo
-        // });
-      }
-    },
+          // Gets a README.md from github.com
+          // $('#readme').readme({
+          //   owner: this.owner,
+          //   repo: this.repo
+          // });
+        }
+      },
 
-    template: `
-      <jd-coming-soon></jd-coming-soon>
-      <!-- <div id='readme'></div> -->
-    `
-  });
+      template: `
+        <jd-coming-soon></jd-coming-soon>
+        <!-- <div id='readme'></div> -->
+      `
+    });
+
+  } catch (err) {
+    console.error(err);
+  }
 
 })();

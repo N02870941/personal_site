@@ -1,25 +1,30 @@
 (function() {
-  angular.module('app').component('jdNotFound', {
+  try {
+    angular.module('app').component('jdNotFound', {
 
-    controller: function($location) {
+      controller: function($location) {
 
-      var protocol = $location.protocol();
-      var host = $location.host();
-      var port = $location.port();
-      this.redirectUrl = protocol + "://" + host + ":" + port + "/#!/home";
+        var protocol = $location.protocol();
+        var host = $location.host();
+        var port = $location.port();
+        this.redirectUrl = protocol + "://" + host + ":" + port + "/#!/home";
 
-      this.message = "";
-    },
+        this.message = "";
+      },
 
-    template: `
-    <jd-count-down-redirect
-      title='Page Not Found'
-      message='{{$ctrl.message}}'
-      redirect='{{$ctrl.redirectUrl}}'
-      time=5
-    >
-    </jd-count-down-redirect>
-    `
-  });
+      template: `
+      <jd-count-down-redirect
+        title='Page Not Found'
+        message='{{$ctrl.message}}'
+        redirect='{{$ctrl.redirectUrl}}'
+        time=5
+      >
+      </jd-count-down-redirect>
+      `
+    });
 
+  } catch (err) {
+    console.error(err);
+  }
+  
 })();

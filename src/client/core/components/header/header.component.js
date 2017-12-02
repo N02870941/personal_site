@@ -1,66 +1,72 @@
 (function() {
-  angular.module('app').component('jdHeader', {
+  try {
+    angular.module('app').component('jdHeader', {
 
-    css: "client/core/components/header/header.css",
-    templateUrl: 'client/core/components/header/header.template.html',
+      css: "client/core/components/header/header.css",
+      templateUrl: 'client/core/components/header/header.template.html',
 
-    controller: function() {
+      controller: function() {
 
-      this.modules = (function() {
-        var array = [];
+        this.modules = (function() {
+          var array = [];
 
-        for (var i in config.objects) {
-          if (config.objects[i].header) {
-            array.push(config.objects[i].name);
+          for (var i in config.objects) {
+            if (config.objects[i].header) {
+              array.push(config.objects[i].name);
+            }
           }
-        }
 
-        return array;
-      })();
+          return array;
+        })();
 
-      var vm = this;
-
-//------------------------------------------------------------------------------
-
-      this.navBar = function() {
-        var navbar = document.getElementById("myTopnav");
-
-        // Switch class name to the mobile version
-        if (navbar.className === "navbar") {
-            navbar.className += " responsive";
-
-          // Switch class name to desktop version
-        } else {
-            navbar.className = "navbar";
-        }
-      }
-
-//------------------------------------------------------------------------------
-
-      this.hideNavBarOptions = function() {
-
-        var navBar = document.getElementById("myTopnav");
-
-        navBar.className = 'navbar';
-      }
+        var vm = this;
 
   //------------------------------------------------------------------------------
 
-      this.$onInit= function() {
+        this.navBar = function() {
+          var navbar = document.getElementById("myTopnav");
 
-        $(document).ready(function() {
-           $(document).click(function(e) {
-               if ($(e.target).is('#myTopnav,#myTopnav *')) {
-                   return;
-               }
-               else {
+          // Switch class name to the mobile version
+          if (navbar.className === "navbar") {
+              navbar.className += " responsive";
 
-                 vm.hideNavBarOptions();
-               }
+            // Switch class name to desktop version
+          } else {
+              navbar.className = "navbar";
+          }
+        }
+
+  //------------------------------------------------------------------------------
+
+        this.hideNavBarOptions = function() {
+
+          var navBar = document.getElementById("myTopnav");
+
+          navBar.className = 'navbar';
+        }
+
+    //------------------------------------------------------------------------------
+
+        this.$onInit= function() {
+
+          $(document).ready(function() {
+             $(document).click(function(e) {
+                 if ($(e.target).is('#myTopnav,#myTopnav *')) {
+                     return;
+                 }
+                 else {
+
+                   vm.hideNavBarOptions();
+                 }
+             });
            });
-         });
+        }
       }
-    }
-  });
+    });
+
+  } catch (err) {
+    console.error(err);
+  }
+
 
 })();

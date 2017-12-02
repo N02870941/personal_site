@@ -1,31 +1,35 @@
 (function() {
-  angular.module('contact').component('jdContact', {
+  try {
+    angular.module('contact').component('jdContact', {
 
-    bindings: {
-      title: "@"
-    },
+      bindings: {
+        title: "@"
+      },
 
-    controller: function(methodsOfContact) {
-      this.class = "grow fa fa-5x ";
-      this.methodsOfContact = methodsOfContact;
-    },
+      controller: function(methodsOfContact) {
+        this.class = "grow fa fa-5x ";
+        this.methodsOfContact = methodsOfContact;
+      },
 
-    template: `
-      <h2 name=heading>{{$ctrl.title}}</h2>
+      template: `
+        <h2 name=heading>{{$ctrl.title}}</h2>
 
-      <div ng-repeat="method in $ctrl.methodsOfContact">
+        <div ng-repeat="method in $ctrl.methodsOfContact">
 
-        <jd-contact-method
-          myclass="{{$ctrl.class + method.iconClass}}"
-          href="{{method.href}}"
-          target="{{method.target=='_blank' ? '_blank' : '_self'}}"
-          text="{{method.text}}"
-        >
-        </jd-contact-method>
+          <jd-contact-method
+            myclass="{{$ctrl.class + method.iconClass}}"
+            href="{{method.href}}"
+            target="{{method.target=='_blank' ? '_blank' : '_self'}}"
+            text="{{method.text}}"
+          >
+          </jd-contact-method>
 
-      </div>
-    `
-  });
+        </div>
+      `
+    });
 
+  } catch (err) {
+    console.error(err);
+  }
 
 })();

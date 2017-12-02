@@ -1,43 +1,49 @@
 (function() {
-  angular.module('app').component('jdProjectList', {
+  try {
+    angular.module('app').component('jdProjectList', {
 
-    bindings: {
-      title: "@",
-      description: "@",
-      links: "="
-    },
+      bindings: {
+        title: "@",
+        description: "@",
+        links: "="
+      },
 
-    controller: function($sce) {
+      controller: function($sce) {
 
-      var vm = this;
+        var vm = this;
 
-      vm.$onInit = function() {
+        vm.$onInit = function() {
 
-        // vm.title = $sce.trustAsHtml(vm.title);
-        //
-        // // TODO - convert to a component
-        // vm.description = $sce.trustAsHtml(vm.description);
-      }
-    },
+          // vm.title = $sce.trustAsHtml(vm.title);
+          //
+          // // TODO - convert to a component
+          // vm.description = $sce.trustAsHtml(vm.description);
+        }
+      },
 
-    controllerAs: "vm",
+      controllerAs: "vm",
 
-    template: `
-      <h2>{{vm.title}}</h2>
-      <p>{{vm.description}}</p>
+      template: `
+        <h2>{{vm.title}}</h2>
+        <p>{{vm.description}}</p>
 
-      <div ng-repeat="item in vm.links" class='top-border'>
+        <div ng-repeat="item in vm.links" class='top-border'>
 
-        <a href='{{item.href}}' class="charcoal-link">
-          <div id={{item.name}}>
-            <h2>{{item.title}}</h2>
-            <img class='grow' ng-src='{{item.img}}'>
-            <p>{{item.brief}}</p>
-          </div>
-        </a>
+          <a href='{{item.href}}' class="charcoal-link">
+            <div id={{item.name}}>
+              <h2>{{item.title}}</h2>
+              <img class='grow' ng-src='{{item.img}}'>
+              <p>{{item.brief}}</p>
+            </div>
+          </a>
 
-      </div>
-    `
-  });
+        </div>
+      `
+    });
+
+  } catch (err) {
+    console.error(err);
+  }
+
 
 })();
