@@ -4,9 +4,19 @@
     css: "client/core/components/header/header.css",
     templateUrl: 'client/core/components/header/header.template.html',
 
-    controller: function(modules) {
+    controller: function() {
 
-      this.modules = modules;
+      this.modules = (function() {
+        var array = [];
+
+        for (var i in config.objects) {
+          if (config.objects[i].header) {
+            array.push(config.objects[i].name);
+          }
+        }
+
+        return array;
+      })();
 
       var vm = this;
 
