@@ -1,0 +1,43 @@
+ @import "../../style/variables";
+
+$arrowPadding : 5px;
+$arrowMargin: 10px;
+
+.image {
+  height: 500px;
+  position: relative;
+  background-color: $charcoal;
+}
+
+.imageNumber {
+  color: white;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.caption {
+  // position: absolute;
+  // top: 95%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  color : white;
+}
+
+.slideshowArrow {
+  border-radius: 50%;
+  margin: $arrowMargin;
+  padding: $arrowPadding;
+  background-color: $lightGrey;
+  position: absolute;
+  top: 50%;
+  opacity: .5;
+}
+
+.slideshowDecrement {
+  left: 0%;
+}
+
+.slideshowIncrement {
+  right: 0%;
+}

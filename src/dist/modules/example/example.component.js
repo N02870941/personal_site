@@ -12,18 +12,15 @@
         title: '@'
       },
 
+      templateUrl : 'client/modules/example/example.template.html',
+
+      css: 'client/modules/example/example.css',
+
       controller: function() {
         console.log('This is an example');
-      },
 
-      template: `
-        <h1>{{$ctrl.title}}</h1>
+      }
 
-        <p>
-          This is an example page. It is the landing page
-          for a new angular module
-        </p>
-      `
     })
   } catch (err) {
     console.error(err);

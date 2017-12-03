@@ -1,0 +1,19 @@
+
+<div class='image'>
+  <img src="{{$ctrl.imgs[$ctrl.index].src}}">
+
+  <a class='slideshowArrow slideshowDecrement' ng-click='$ctrl.decrement()'>
+    <i class="fa fa-2x fa-arrow-left" aria-hidden="true"></i>
+  </a>
+
+  <a class='slideshowArrow slideshowIncrement'ng-click='$ctrl.increment()'>
+    <i class="fa fa-2x fa-arrow-right" aria-hidden="true"></i>
+  </a>
+
+  <div class='imageNumber'>
+    {{$ctrl.index + 1}} / {{$ctrl.imgs.length}}
+  </div>
+
+  <div class='caption'>{{$ctrl.imgs[$ctrl.index].caption}}</div>
+
+</div>

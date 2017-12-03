@@ -43,6 +43,12 @@
 
   "modules" : [
     {
+      "name" : "slideshow",
+      "header" : false,
+      "dependencies" : [],
+      "states" : []
+    },
+    {
       "name" : "example",
       "header" : false,
       "dependencies" : [],
