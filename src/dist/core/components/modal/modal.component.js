@@ -10,7 +10,7 @@
       css: "client/core/components/modal/modal.css",
       controllerAs: "vm",
 
-      controller: function($location) {
+      controller: function($location, $window) {
         var vm = this;
         var modalImgIndex = 0;
         var modalImgId = 'img01';
@@ -59,6 +59,33 @@
 
 //------------------------------------------------------------------------------
 
+        function setupNextPrevArrowButtons() {
+          $(document).keyup(function(e) {
+            if (e.keyCode == 37) { // left arrow key maps to keycode `37`
+              vm.previous();
+            }
+          });
+
+          $(document).keyup(function(e) {
+            if (e.keyCode == 39) { // right arrow key maps to keycode `39`
+              vm.next();
+            }
+          });
+        }
+
+//------------------------------------------------------------------------------
+
+        function setupButton(keycode, action) {
+          $(document).keyup(function(e) {
+            if (e.keyCode == keycode) {
+              action();
+            }
+          });
+        }
+
+
+//------------------------------------------------------------------------------
+
         function setupCloseButton(modal) {
           // Get the <span> element that closes the modal
           var span = document.getElementsByClassName("close")[0];
@@ -96,11 +123,21 @@
 //------------------------------------------------------------------------------
 
         this.$onInit = function() {
+
+          // TODO - figure out why the array
+          // is empty when this state is loaded
+          // from another state
+          if (this.images.length == 0) {
+            $window.location.reload();
+            console.log('page reloaded');
+          }
+
           var photos = document.getElementById('photos');
           var modal = document.getElementById('myModal');
 
           setupCloseButton(modal);
           setupCloseOnEscape(modal);
+          setupNextPrevArrowButtons();
 
           // Create the HTML for each image
           for (var i in this.images) {
