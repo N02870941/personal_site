@@ -1,16 +1,36 @@
+@import "../../style/variables";
+
+// Mixins
+/*----------------------------------------------------------------------------*/
+
+@mixin columns($columns) {
+  -moz-column-count:    $columns;
+  -webkit-column-count: $columns;
+  column-count:         $columns;
+}
+
+@mixin gap($gap) {
+  -webkit-column-gap:   $gap;
+  -moz-column-gap:      $gap;
+  column-gap:           $gap;
+}
+
+@mixin fadein($duration) {
+  -webkit-animation-name:     fade_in;
+  animation-name:             fade_in;
+  -webkit-animation-duration: $duration;
+  animation-duration:         $duration;
+}
+
+/*----------------------------------------------------------------------------*/
+
 #photos {
   /* Prevent vertical gaps */
   line-height: 0;
 
-  -webkit-column-count: 4;
-  -webkit-column-gap:   0px;
-  -moz-column-count:    4;
-  -moz-column-gap:      0px;
-  column-count:         4;
-  column-gap:           0px;
-}
+  @include columns(3);
+  @include gap(0px)
 
-#photos {
   img {
     width: 100%;
   }
@@ -20,17 +40,20 @@
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  // Full screen, cover everything else
+  @extend .fill;
+  @extend .onTopZ;
+
+  // Hidden, doesnt move
+  display: none;
+  position: fixed;
+  @extend .topLeft;
+
+  /* Black w/ opacity
+   * Fallback color is regular black
+   */
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
 }
 
 /*----------------------------------------------------------------------------*/
@@ -38,89 +61,79 @@
 /* Modal Content (image) */
 .modal-content {
   margin: auto;
-
   display: block;
+
+  // Don't entirely fill it
+  // so that the arrows
+  // are not covered by the img
   width: 80%;
-  max-width: 700px;
+  max-width: 70%;
 
-  /* Fade the photo into the center */
+  // Center the image
   transform: translate(-50%, -50%);
-  -webkit-animation-name: fade_in;
-  -webkit-animation-duration: 0.6s;
-  animation-name: fade_in;
-  animation-duration: 0.6s;
+
+  @include fadein($defaultAnimationDuration);
+}
+
+// Prevent the photos from being (visibly)
+// selected when the button is clicked too fast
+.modal-content::selection {
+  opacity: 0;
 }
 
 /*----------------------------------------------------------------------------*/
 
-img#img01.modal-content {
+// Center the image
+img#modalImg.modal-content {
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   margin-right: -50%;
-}
+  position: absolute;
 
+  @extend .center;
+}
 
 /*----------------------------------------------------------------------------*/
 
+// CSS for any button
+// in the modal
+// (color, size, etc)
 .modalButton {
   position: absolute;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.6s;
+  color: $lightGrey;
+  transition: $defaultAnimationDuration;
 }
 
 .modalButton:hover,
 .modalButton:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.arrow {
-  top: 50%;
-  margin: 5px;
-}
-
-.prev {
-  left: 0%;
-}
-
-.next {
-  right: 0%;
-}
-
-/* The Close Button */
-.close {
-  top: 15px;
-  right: 35px;
-}
-
-.download {
-  // bottom: 15px;
-  // right: 35px;
+  cursor: pointer;
+  color: darken($lightGrey, 30%);
 }
 
 /*----------------------------------------------------------------------------*/
 
-@media (max-width: 1000px) {
-  #photos {
-    -moz-column-count:    1;
-    -webkit-column-count: 1;
-    column-count:         1;
-  }
+$defaultDistanceFromEdge: 3%;
 
-  .modal-content {
-      width: 100%;
-  }
+.arrow {
+  top: 50%;
 }
 
-@media (min-width: 30em) and (orientation: landscape) {
+.prev {
+  left: $defaultDistanceFromEdge;
+}
+
+.next {
+  right: $defaultDistanceFromEdge;
+}
+
+.close {
+  top: $defaultDistanceFromEdge;
+  right: $defaultDistanceFromEdge;
+}
+
+/*----------------------------------------------------------------------------*/
+
+@media (max-width: $mobile) and (orientation: portrait) {
   #photos {
-    -moz-column-count:    3;
-    -webkit-column-count: 3;
-    column-count:         3;
+    @include columns(1);
   }
- }
+}
