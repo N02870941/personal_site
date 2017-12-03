@@ -44,7 +44,7 @@
   "modules" : [
     {
       "name" : "slideshow",
-      "header" : true,
+      "header" : false,
       "dependencies" : [],
       "states" : []
     },
