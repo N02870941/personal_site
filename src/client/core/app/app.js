@@ -18,71 +18,76 @@ const config = (function getConfig() {
 
 (function() {
 
-  /**
-   * Returns the names of the dependencies
-   */
-  var moduleNames = (function() {
-    var array = [];
+  try {
+    /**
+     * Returns the names of the dependencies
+     */
+    var moduleNames = (function() {
+      var array = [];
 
-    for (var i in config.objects) {
-      array.push(config.objects[i].name);
+      for (var i in config.modules) {
+        array.push(config.modules[i].name);
+      }
+
+      return array;
+    })();
+
+  //------------------------------------------------------------------------------
+
+    /**
+     * Creates an angular module
+     *
+     * @param module Module specification
+     */
+    function createModule(module) {
+      angular.module(module.name, module.dependencies)
+      .config(function(jdStatesProvider, $stateProvider) {
+
+        jdStatesProvider.initStates($stateProvider, module.states);
+      });
     }
 
-    return array;
-  })();
+  //------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
+    // Create the main module and the shared module for exposing modules
+    angular.module("app", moduleNames.concat(config.app.dependencies))
+    .config(function ($stateProvider,
+                         jdStatesProvider,
+                         modulesProvider,
+                         moduleNames,
+                         $urlRouterProvider) {
 
-  /**
-   * Creates an angular module
-   *
-   * @param module Module specification
-   */
-  function createModule(module) {
-    angular.module(module.name, module.dependencies)
-    .config(function(jdStatesProvider, $stateProvider) {
-
-      jdStatesProvider.initStates($stateProvider, module.states);
+      // Set up the states off the application
+      modulesProvider.initModules($stateProvider, moduleNames);
+      jdStatesProvider.initStates($stateProvider, config.app.states);
+      $urlRouterProvider.otherwise('/notFound');
     });
-  }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
-  // Create the main module and the shared module for exposing modules
-  angular.module("app", moduleNames.concat(config.app.dependencies))
-  .config(function ($stateProvider,
-                       jdStatesProvider,
-                       modulesProvider,
-                       moduleNames,
-                       $urlRouterProvider) {
+    angular.module('app')
+    .constant('moduleNames', moduleNames)
+    .constant('objects', config.modules)
+    .constant('site', config.site)
+    .constant('methodsOfContact', config.methodsOfContact);
 
-    // Set up the states off the application
-    modulesProvider.initModules($stateProvider, moduleNames);
-    jdStatesProvider.initStates($stateProvider, config.app.states);
-    $urlRouterProvider.otherwise('/notFound');
-  });
+  //------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
+    // Create the modules
+    for (var i in config.modules) {
+      angular.module(config.modules[i].name, config.modules[i].dependencies)
 
-  angular.module('app')
-  .constant('moduleNames', moduleNames)
-  .constant('objects', config.objects)
-  .constant('site', config.site)
-  .constant('methodsOfContact', config.methodsOfContact);
-
-//------------------------------------------------------------------------------
-
-  // Create the modules
-  for (var i in config.objects) {
-    angular.module(config.objects[i].name, config.objects[i].dependencies)
-
-    if (config.objects[i].states.length) {
-      createModule(config.objects[i]);
+      if (config.modules[i].states.length) {
+        createModule(config.modules[i]);
+      }
     }
+
+  //------------------------------------------------------------------------------
+
+    angular.module('shared', []);
+
+  } catch (err) {
+    console.error(err);
   }
-
-//------------------------------------------------------------------------------
-
-  angular.module('shared', []);
 
 })();

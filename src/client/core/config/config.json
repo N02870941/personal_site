@@ -41,7 +41,13 @@
     ]
   },
 
-  "objects" : [
+  "modules" : [
+    {
+      "name" : "slideshow",
+      "header" : false,
+      "dependencies" : [],
+      "states" : []
+    },
     {
       "name" : "example",
       "header" : false,
@@ -156,7 +162,7 @@
           "template": "<jd-culture></jd-culture>"
         },
         {
-          "name": "fitnes",
+          "name": "fitness",
           "url": "/interests/fitness",
           "template": "<jd-fitness></jd-fitness>"
         },

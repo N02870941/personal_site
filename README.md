@@ -15,7 +15,9 @@ These are the base dependencies for JavaScript. The rest will be installed local
 - [npm (Node Package Manager)](https://www.npmjs.com/get-npm)
 
 ### Operating System (Recommended)
-This software is written on and for Unix based systems. It will work on Windows, but the photos will not scale properly because the backend server scripts are written in bash.
+This software is written on and for Unix based systems. It will work (partially) on Windows.
+Developing using gulp will not work nor will the photos scale properly because the scripts
+written to edit the photos are written in bash.
 
 - Unix based Operating System (Linux or Mac)
 
@@ -39,12 +41,12 @@ All of the following instructions assume that you are in the `personal_site` dir
 ### Running with Gulp
 This has browser-sync (auto reload) enabled, and will run the app on port 3000. I recommend running the app with `gulp` when developing to see changes happen in real-time, rather than manually restarting the node server, and reloading the page for each edit that you make.
 
-    gulp start
+    gulp
 
 ### Running with Node  
-If you do not want browser-sync, you can simply run the app on port 8080 via `node`.
+If you do not want browser-sync, you can simply run the app on any port via `node`.
 
-    node server.js
+    node server.js 8080
 
 ### Running with Docker Compose
 If you want to run the server on port 8080 using `docker-compose`, you may execute the following:
