@@ -43,8 +43,7 @@
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 70%;
+  height: 80%;
   transform: translate(-50%, -50%);
   -webkit-animation-name: fade_in;
   animation-name: fade_in;
@@ -90,4 +89,6 @@ img#modalImg.modal-content {
   #photos {
     -moz-column-count: 1;
     -webkit-column-count: 1;
-    column-count: 1; } }
+    column-count: 1; }
+  .modal-content {
+    height: auto; } }

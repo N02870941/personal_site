@@ -62,12 +62,7 @@
 .modal-content {
   margin: auto;
   display: block;
-
-  // Don't entirely fill it
-  // so that the arrows
-  // are not covered by the img
-  width: 80%;
-  max-width: 70%;
+  height: 80%;
 
   // Center the image
   transform: translate(-50%, -50%);
@@ -135,5 +130,9 @@ $defaultDistanceFromEdge: 3%;
 @media (max-width: $mobile) and (orientation: portrait) {
   #photos {
     @include columns(1);
+  }
+
+  .modal-content {
+    height: auto;
   }
 }
