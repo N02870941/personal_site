@@ -19,6 +19,10 @@
       controller: function() {
         console.log('This is an example');
 
+        this.f = function() {
+          console.log('f()');
+        }
+
       }
 
     })

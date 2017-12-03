@@ -1,9 +1,20 @@
 <div id="myModal" class="modal">
-  <span class='modalButton arrow prev' ng-click='vm.previous()'>&larr;</span>
-  <span class='modalButton arrow next' ng-click='vm.next()'>&rarr;</span>
-  <span class="modalButton close">&times;</span>
 
-  <img class="modal-content" id="img01">
+  <img class="modal-content" id="modalImg">
+
+  <span class='modalButton arrow prev' ng-click='vm.previous()'>
+    <i class="fa fa-2x fa-arrow-left"></i>
+  </span>
+
+  <span class='modalButton arrow next' ng-click='vm.next()'>
+    <i class="fa fa-2x fa-arrow-right"></i>
+  </span>
+
+  <span class="modalButton close" ng-click='vm.closeModal()'>
+    <i class="fa fa-2x fa-times"></i>
+  </span>
+
+
 </div>
 
 <div id="photos">
