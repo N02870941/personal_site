@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdCountDownRedirect', {
+    angular.module(config.app.name).component('jdCountDownRedirect', {
 
       bindings: {
         title: "@",

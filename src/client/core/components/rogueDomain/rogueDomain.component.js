@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdRogueDomain', {
+    angular.module(config.app.name).component('jdRogueDomain', {
 
       controller: function($location, site) {
 

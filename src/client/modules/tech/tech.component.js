@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdTech', {
+    angular.module(config.app.name).component('jdTech', {
 
       controller: function() {
         this.title = "Tech Projects";

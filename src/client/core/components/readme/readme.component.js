@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component("jdReadme", {
+    angular.module(config.app.name).component("jdReadme", {
 
       bindings: {
         owner: "@",

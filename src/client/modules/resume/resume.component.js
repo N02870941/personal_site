@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdResume', {
+    angular.module(config.app.name).component('jdResume', {
 
       template: `
         <jd-pdf-or-jpg

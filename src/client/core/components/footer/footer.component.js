@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component("jdFooter", {
+    angular.module(config.app.name).component("jdFooter", {
 
       controller: function() {
         this.class = "fa fa-3x ";

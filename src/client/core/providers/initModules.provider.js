@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').provider("modules", function modulesProvider() {
+    angular.module(config.app.name).provider("modules", function modulesProvider() {
 
       this.f = function() {
         console.log('f()');

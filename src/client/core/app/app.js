@@ -7,7 +7,7 @@
 const config = (function getConfig() {
   return JSON.parse(
     $.ajax({
-      url: "client/core/config/config.json",
+      url: "client/config/config.json",
       dataType: 'json',
       async: false,
     }).responseText
@@ -51,7 +51,7 @@ const config = (function getConfig() {
 //------------------------------------------------------------------------------
 
     // Create the main module and the shared module for exposing modules
-    angular.module(config.site.angularAppName, moduleNames.concat(config.app.dependencies))
+    angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
     .config(function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
 
       // Set up the states off the application

@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app').component('jdRogueDomainDefender', {
+  angular.module(config.app.name).component('jdRogueDomainDefender', {
 
     bindings: {
       domain: "@"

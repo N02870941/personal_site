@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdProjectList', {
+    angular.module(config.app.name).component('jdProjectList', {
 
       bindings: {
         title: "@",

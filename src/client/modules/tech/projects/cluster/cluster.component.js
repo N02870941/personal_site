@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component("jdCluster", {
+    angular.module(config.app.name).component("jdCluster", {
 
       template: `
         <jd-readme

@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component("jdModal", {
+    angular.module(config.app.name).component("jdModal", {
 
       bindings: {
         images: "<",

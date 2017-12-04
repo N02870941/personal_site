@@ -5,7 +5,15 @@ var runSequence = require('run-sequence');
 var plugins     = require('gulp-load-plugins')();
 var bash        = require('./gulp/bash');
 var config      = require('./gulp/config.json');
-var tasks       = ["photos", "fonts", "core-scss", "scoped-scss", "scripts", "inject-index", "cleanup"];
+var tasks       = ["photos",
+                   "fonts",
+                   "core-scss",
+                   "scoped-scss",
+                   "scripts",
+                   "inject-index",
+                   "cleanup",
+                   'minify-css',
+                   'minify-js'];
 
 // Dynamically include all the tasks from the above array
 for (var i in tasks) {
@@ -14,7 +22,7 @@ for (var i in tasks) {
 
 //------------------------------------------------------------------------------
 
-gulp.task('serve', function() {
+gulp.task('serve-dev', function() {
   var port = config.devPort;
 
   // Start node app
@@ -26,6 +34,15 @@ gulp.task('serve', function() {
   gulp.watch("./client/**/*.{js,json}", ['refresh']);
   gulp.watch("./client/**/*.{css,scss}", ['refresh']);
 });
+
+//------------------------------------------------------------------------------
+
+gulp.task('serve-prod', function() {
+  var port = config.devPort;
+
+  // Start node app
+  bash.runCommand('cd server && node server.js ' + port);
+})
 
 //------------------------------------------------------------------------------
 
@@ -42,12 +59,25 @@ gulp.task('refresh', function() {
 
 //------------------------------------------------------------------------------
 
-gulp.task('default', function() {
+gulp.task('prod', function() {
+  runSequence('cleanup',
+              // 'photos',
+              'fonts',
+              'minify-css',
+              'scoped-scss',
+              'minify-js',
+              'inject-index',
+              'serve-prod');
+});
+
+//------------------------------------------------------------------------------
+
+gulp.task('dev', function() {
   runSequence('cleanup',
               'fonts',
               'core-scss',
               'scoped-scss',
               'scripts',
               'inject-index',
-              'serve');
+              'serve-dev');
 });

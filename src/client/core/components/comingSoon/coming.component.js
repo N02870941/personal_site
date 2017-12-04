@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdComingSoon', {
+    angular.module(config.app.name).component('jdComingSoon', {
       template: "<h1>Coming Soon</h1>"
     });
 

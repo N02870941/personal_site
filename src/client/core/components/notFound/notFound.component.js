@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdNotFound', {
+    angular.module(config.app.name).component('jdNotFound', {
 
       controller: function($location) {
 

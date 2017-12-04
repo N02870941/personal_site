@@ -4,7 +4,7 @@
      * Create custom directive that fires a function when the ecape button
      * is pressed (and released)
      */
-     angular.module('app').directive('ngLeft', function () {
+     angular.module(config.app.name).directive('ngLeft', function () {
       return function (scope, element, attrs) {
 
         // Create event listener for the escape button

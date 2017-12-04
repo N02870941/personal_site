@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component("jdAlgorithms", {
+    angular.module(config.app.name).component("jdAlgorithms", {
 
       template: `
         <jd-readme

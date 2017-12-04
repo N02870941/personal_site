@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdTemperature', {
+    angular.module(config.app.name).component('jdTemperature', {
 
       template: `
         <jd-pdf-or-jpg
