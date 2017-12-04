@@ -21,9 +21,9 @@ function setupServer(dir) {
     next(); // NOTE - Figure out what, and why this works
   });
 
-  // Set up the photography REST endpoint
+  // Set up the REST controllers
   photography_controller(server, dir);
-  error_controller(server, dir);
+  error_controller(server);
 }
 
 //------------------------------------------------------------------------------

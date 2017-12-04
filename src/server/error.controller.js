@@ -1,6 +1,6 @@
 const logger = require('winston');
 
-module.exports = function(server, baseDir) {
+module.exports = function(server) {
 
   // catch 404 and forward to error handler
   server.use(function(req, res, next) {

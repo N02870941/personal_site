@@ -2,7 +2,7 @@
   try {
     angular.module('shared')
       .provider("jdStates", function jdStatesProvider() {
-
+        
         this.initStates = function(stateProvider, states) {
 
           // Dynamically set up each state

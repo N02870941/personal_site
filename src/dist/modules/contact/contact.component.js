@@ -6,9 +6,9 @@
         title: "@"
       },
 
-      controller: function(methodsOfContact) {
+      controller: function() {
         this.class = "grow fa fa-5x ";
-        this.methodsOfContact = methodsOfContact;
+        this.methodsOfContact = config.methodsOfContact;
       },
 
       template: `

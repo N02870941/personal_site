@@ -1,4 +1,3 @@
-var server   = require('./server');
 var fileList = require('./file-list');
 const logger = require('winston');
 
