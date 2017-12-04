@@ -1,10 +1,10 @@
 (function() {
   try {
-    angular.module('app').component("jdFooter", {
+    angular.module(config.app.name).component("jdFooter", {
 
-      controller: function(methodsOfContact) {
+      controller: function() {
         this.class = "fa fa-3x ";
-        this.methodsOfContact = methodsOfContact;
+        this.methodsOfContact = config.methodsOfContact;
       },
 
       template: `

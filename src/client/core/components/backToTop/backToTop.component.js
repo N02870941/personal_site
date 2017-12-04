@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdBackToTop', {
+    angular.module(config.app.name).component('jdBackToTop', {
 
       css: "client/core/components/backToTop/backToTop.css",
 

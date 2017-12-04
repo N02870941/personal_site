@@ -7,7 +7,7 @@
 const config = (function getConfig() {
   return JSON.parse(
     $.ajax({
-      url: "client/core/config/config.json",
+      url: "client/config/config.json",
       dataType: 'json',
       async: false,
     }).responseText
@@ -32,14 +32,15 @@ const config = (function getConfig() {
       return array;
     })();
 
-  //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
     /**
      * Creates an angular module
      *
      * @param module Module specification
      */
-    function createModule(module) {
+    function createModuleStates(module) {
+
       angular.module(module.name, module.dependencies)
       .config(function(jdStatesProvider, $stateProvider) {
 
@@ -47,44 +48,34 @@ const config = (function getConfig() {
       });
     }
 
-  //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
     // Create the main module and the shared module for exposing modules
-    angular.module("app", moduleNames.concat(config.app.dependencies))
-    .config(function ($stateProvider,
-                         jdStatesProvider,
-                         modulesProvider,
-                         moduleNames,
-                         $urlRouterProvider) {
+    angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
+    .config(function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
 
       // Set up the states off the application
-      modulesProvider.initModules($stateProvider, moduleNames);
+      modulesProvider.initModules($stateProvider, config.modules);
       jdStatesProvider.initStates($stateProvider, config.app.states);
+
+
+      // If the URL path is not found, reroute to
+      // the /notFound page
       $urlRouterProvider.otherwise('/notFound');
     });
 
-  //------------------------------------------------------------------------------
-
-    angular.module('app')
-    .constant('moduleNames', moduleNames)
-    .constant('objects', config.modules)
-    .constant('site', config.site)
-    .constant('methodsOfContact', config.methodsOfContact);
-
-  //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
     // Create the modules
     for (var i in config.modules) {
       angular.module(config.modules[i].name, config.modules[i].dependencies)
 
       if (config.modules[i].states.length) {
-        createModule(config.modules[i]);
+        createModuleStates(config.modules[i]);
       }
     }
 
-  //------------------------------------------------------------------------------
-
-    angular.module('shared', []);
+//------------------------------------------------------------------------------
 
   } catch (err) {
     console.error(err);

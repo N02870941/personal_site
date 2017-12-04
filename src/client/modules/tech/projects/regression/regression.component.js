@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component("jdRegression", {
+    angular.module(config.app.name).component("jdRegression", {
 
       template: `
         <jd-readme

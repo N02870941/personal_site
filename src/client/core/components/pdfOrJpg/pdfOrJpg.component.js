@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdPdfOrJpg', {
+    angular.module(config.app.name).component('jdPdfOrJpg', {
 
       bindings: {
         pdf: "@",

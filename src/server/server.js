@@ -1,4 +1,5 @@
 var photography_controller = require('./photography.controller');
+var error_controller       = require('./error.controller')
 const logger               = require('winston');
 var express                = require('express');
 var path                   = require('path');
@@ -20,8 +21,9 @@ function setupServer(dir) {
     next(); // NOTE - Figure out what, and why this works
   });
 
-  // Set up the photography REST endpoint
+  // Set up the REST controllers
   photography_controller(server, dir);
+  error_controller(server);
 }
 
 //------------------------------------------------------------------------------

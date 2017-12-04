@@ -1,0 +1,12 @@
+{
+  "sources" : [
+   "node_modules/angular/angular.js",
+   "node_modules/angular-ui-router/release/angular-ui-router.min.js",
+   "node_modules/angular-sanitize/angular-sanitize.js",
+   "node_modules/angular-animate/angular-animate.js",
+   "node_modules/angular-route/angular-route.js",
+   "node_modules/jquery/dist/jquery.js",
+   "node_modules/angular-css/angular-css.min.js",
+   "bower_components/jquery-gh-readme/dist/jquery.gh-readme.min.js"
+  ]
+}

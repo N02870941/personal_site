@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdHeader', {
+    angular.module(config.app.name).component('jdHeader', {
 
       css: "client/core/components/header/header.css",
       templateUrl: 'client/core/components/header/header.template.html',

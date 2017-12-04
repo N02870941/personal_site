@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component('jdSlideshow', {
+    angular.module(config.app.name).component('jdSlideshow', {
 
       templateUrl: 'client/core/components/slideshow/slideshow.template.html',
       css: 'client/core/components/slideshow/slideshow.css',

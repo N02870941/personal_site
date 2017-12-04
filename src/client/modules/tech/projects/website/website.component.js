@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module('app').component("jdWebsite", {
+    angular.module(config.app.name).component("jdWebsite", {
 
       template: `
         <jd-readme
