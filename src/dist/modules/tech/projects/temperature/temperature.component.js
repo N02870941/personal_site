@@ -4,7 +4,7 @@
 
       template: `
         <jd-pdf-or-jpg
-          pdf="client/modules/tech/projects/temperature/img/temperature.pdf#!page=1"
+          pdf="pdf?path=client/modules/tech/projects/temperature/img/temperature.pdf#!page=1"
           jpg="client/modules/tech/projects/temperature/img/temperature.jpg">
         </jd-pdf-or-jpg>
       `
