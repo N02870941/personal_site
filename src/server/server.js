@@ -1,9 +1,18 @@
 var photography_controller = require('./photography.controller');
-var error_controller       = require('./error.controller')
+var error_controller       = require('./error.controller');
+var pdf_controller         = require('./pdf.controller');
+var bodyParser             = require('body-parser')
 const logger               = require('winston');
 var express                = require('express');
 var path                   = require('path');
 var server                 = express();
+
+// Crude mechanism for handling uncaughtExceptions
+// TODO - find a better fix
+process.on('uncaughtException', function (err) {
+  console.error(err);
+  console.log("Node NOT Exiting...");
+});
 
 //------------------------------------------------------------------------------
 
@@ -13,6 +22,13 @@ var server                 = express();
  * @param dir directory to serve the index.html from
  */
 function setupServer(dir) {
+
+  // parse application/x-www-form-urlencoded
+  server.use(bodyParser.urlencoded({ extended: false }))
+
+  // parse application/json
+  server.use(bodyParser.json())
+
   server.use(express.static(dir), function(req, res, next) {
 
     // Allow cross origin from any host
@@ -22,6 +38,7 @@ function setupServer(dir) {
   });
 
   // Set up the REST controllers
+  pdf_controller(server, dir);
   photography_controller(server, dir);
   error_controller(server);
 }
