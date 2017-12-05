@@ -29,6 +29,7 @@ function setupServer(dir) {
   // parse application/json
   server.use(bodyParser.json())
 
+  // Service static page index.html
   server.use(express.static(dir), function(req, res, next) {
 
     // Allow cross origin from any host
