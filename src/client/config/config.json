@@ -12,6 +12,7 @@
       "shared",
       "ngRoute",
       "ngAnimate",
+      "ngMaterial",
       "ngSanitize",
       "angularCSS",
       "ui.router"
@@ -223,13 +224,6 @@
   ],
 
   "methodsOfContact": [
-    {
-      "alt": "email",
-      "href": "mailto:jabari.dash@gmail.com",
-      "iconClass": "fa-envelope",
-      "text": "To reach out personally, send me email at jabari.dash@gmail.com",
-      "target": "_self"
-    },
     {
       "alt": "linkedin",
       "href": "https://www.linkedin.com/in/jabaridash/",
