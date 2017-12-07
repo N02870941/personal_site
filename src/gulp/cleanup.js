@@ -12,6 +12,7 @@ module.exports = function (gulp, plugins) {
     'find . -name "*.DS_Store" -type f -delete'
   ];
 
+  // Run all bash cleanup commands
   for (var i in commands)
     bash.runCommand(commands[i]);
 };
