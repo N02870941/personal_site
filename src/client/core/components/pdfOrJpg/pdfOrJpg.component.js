@@ -11,6 +11,7 @@
 
       controller: function() {
 
+        // Source to the pdf and jpg
         this.pdfTemplateUrl = "client/core/components/pdfOrJpg/templates/pdf.template.html";
         this.jpgTemplateUrl = "client/core/components/pdfOrJpg/templates/jpg.template.html";
 

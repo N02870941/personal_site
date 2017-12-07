@@ -10,6 +10,9 @@
         this.modules = (function() {
           var array = [];
 
+          // Loop through the modules, storing
+          // only their names. This array will be
+          // used to initilize the links in the topnav bar
           for (var i in config.modules) {
             if (config.modules[i].header) {
               array.push(config.modules[i].name);
@@ -23,6 +26,10 @@
 
   //------------------------------------------------------------------------------
 
+        /**
+         * Toggles the navbar between responsive and normal mode
+         * by changing the css class
+         */
         this.navBar = function() {
           var navbar = document.getElementById("myTopnav");
 
@@ -38,6 +45,11 @@
 
   //------------------------------------------------------------------------------
 
+        /**
+         * Hides the options when the topnav is in
+         * responsive mode, and the user has opened
+         * the menu of options
+         */
         this.hideNavBarOptions = function() {
 
           var navBar = document.getElementById("myTopnav");
@@ -47,6 +59,10 @@
 
     //------------------------------------------------------------------------------
 
+        /**
+         * Decide whether or not to load the page
+         * in responsive mode or not
+         */
         this.$onInit= function() {
 
           $(document).ready(function() {

@@ -1,6 +1,7 @@
 <div id='header'>
   <div class="navbar" id="myTopnav" ng-esc='$ctrl.hideNavBarOptions()'>
 
+    <!-- Loop through each module name, and create a link for it -->
     <div style='display: table; margin: 0 auto;'>
         <a
           ng-repeat="href in $ctrl.modules"
@@ -9,6 +10,7 @@
           href="{{'#!' + href}}">{{href.charAt(0).toUpperCase() + href.slice(1)}}
         </a>
 
+      <!-- This link is just for the menu -->
       <a
         style='position:absolute;right: 0;'
         href="javascript:void(0);"

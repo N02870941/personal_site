@@ -26,6 +26,9 @@ const config = (function getConfig() {
     var moduleNames = (function() {
       var array = [];
 
+      // Create an array of just the module
+      // names by iterating through the modules
+      // and only pushing the names onto the new array
       for (var i in config.modules) {
         array.push(config.modules[i].name);
       }
@@ -36,13 +39,13 @@ const config = (function getConfig() {
 //------------------------------------------------------------------------------
 
     /**
-     * Creates an angular module
+     * Initializes the states of a provided modules
      *
      * @param module Module specification
      */
     function createModuleStates(module) {
 
-      angular.module(module.name, module.dependencies)
+      angular.module(module.name)
       .config(function(jdStatesProvider, $stateProvider) {
 
         jdStatesProvider.initStates($stateProvider, module.states);
@@ -51,26 +54,11 @@ const config = (function getConfig() {
 
 //------------------------------------------------------------------------------
 
-    // NOTE - This executes second
-    // Create the main module and the shared module for exposing modules
-    angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
-    .config(function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
-
-      // Set up the states off the application
-      modulesProvider.initModules($stateProvider, config.modules);
-      jdStatesProvider.initStates($stateProvider, config.app.states);
-
-      // If the URL path is not found, reroute to
-      // the /notFound page
-      $urlRouterProvider.otherwise('/notFound');
-    });
-
-//------------------------------------------------------------------------------
-
-    // Create the modules
-    // NOTE - This executes first
+    // Create the modules for the app
     for (var i in config.modules) {
-      angular.module(config.modules[i].name, config.modules[i].dependencies)
+
+      // Instantiate module for the first time, and inject dependencies
+      angular.module(config.modules[i].name, config.modules[i].dependencies);
 
       // If a given module has other states to
       // initialize, initialize them
@@ -78,6 +66,21 @@ const config = (function getConfig() {
         createModuleStates(config.modules[i]);
       }
     }
+
+//------------------------------------------------------------------------------
+
+    // Create the main module for the app
+    angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
+    .config(function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
+
+      // Set up the states of the main modules the application
+      modulesProvider.initMainModulesStates($stateProvider, config.modules);
+      jdStatesProvider.initStates($stateProvider, config.app.states);
+
+      // If the URL path is not found, reroute to
+      // the /notFound page
+      $urlRouterProvider.otherwise('/notFound');
+    });
 
 //------------------------------------------------------------------------------
 
