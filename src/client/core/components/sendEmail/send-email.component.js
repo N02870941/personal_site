@@ -2,10 +2,6 @@
   try {
     angular.module('app').component('jdSendEmail', {
 
-      bindings : {
-        sendto : "@"
-      },
-
       css: "client/core/components/sendEmail/send-email.style.css",
       templateUrl : "client/core/components/sendEmail/send-email.template.html",
 
@@ -23,31 +19,42 @@
 
           if (userForm.$valid) {
 
-            // Submit the form, perhaps alert in the
-            // callback so we can determine whether it
-            // was a success or a failure
-            sendEmailService.sendEmail(this.email);
+            // Send the email
+            sendEmailService.sendEmail(this.email).then(function(res) {
 
-            // Show popup saying thanks
-            alert = $mdDialog.alert({
-              title: 'Message Sent!',
-              textContent: 'Thanks for reaching out, and I\'ll get back to you soon!',
-              ok: 'Close'
+              // Show success dialog
+              $mdDialog.show(
+                $mdDialog.alert({
+                  title: 'Message Sent!',
+                  textContent: 'Thanks for reaching out, and I\'ll get back to you soon!',
+                  ok: 'Close'
+                }))
+                .finally(function() {
+                alert = undefined;
+              });
+
+            }).catch(function(res) {
+
+              // Show error dialog
+              $mdDialog.show(
+                $mdDialog.alert({
+                  title: 'Error!',
+                  textContent: 'Message was not sent, please try again',
+                  ok: 'Close'
+                }))
+                .finally(function() {
+                alert = undefined;
+              });
+
             });
 
-            $mdDialog.show(alert).finally(function() {
-              alert = undefined;
-            });
-
+            // Close the main $mdDialog
             $mdDialog.cancel();
           }
 
         }
-
       }
-
     })
-
 
   } catch (err) {
     console.error(err);

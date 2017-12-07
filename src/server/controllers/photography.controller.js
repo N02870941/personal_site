@@ -1,4 +1,4 @@
-var fileList = require('./file-list');
+var fileList = require('../services/file-list');
 const logger = require('winston');
 
 //------------------------------------------------------------------------------

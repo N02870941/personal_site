@@ -1,10 +1,14 @@
 (function() {
   try {
-    angular.module('app').service('sendEmailService', function() {
+    angular.module('app').service('sendEmailService', function($http) {
 
       function sendEmail(email) {
-        console.log("Sending email");
-        console.log(email);
+        var url = "/contact";
+
+        return $http.post(url, email, {}).then(function(res) {
+
+          return res.data;
+        });
       }
 
       return {

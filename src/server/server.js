@@ -1,6 +1,7 @@
-var photography_controller = require('./photography.controller');
-var error_controller       = require('./error.controller');
-var pdf_controller         = require('./pdf.controller');
+var photography_controller = require('./controllers/photography.controller');
+var error_controller       = require('./controllers/error.controller');
+var email_controller       = require('./controllers/email.controller');
+var pdf_controller         = require('./controllers/pdf.controller');
 var bodyParser             = require('body-parser')
 const logger               = require('winston');
 var express                = require('express');
@@ -39,6 +40,7 @@ function setupServer(dir) {
   });
 
   // Set up the REST controllers
+  email_controller(server);
   pdf_controller(server, dir);
   photography_controller(server, dir);
   error_controller(server);

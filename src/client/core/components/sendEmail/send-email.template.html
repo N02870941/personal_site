@@ -1,5 +1,5 @@
-<md-dialog-content layout-padding>
-  <form name="userForm" id="emailForm">
+<md-dialog-content layout-padding aria-label="sendEmailDialog">
+  <form name="userForm" id="userForm">
 
     <div>
       <h3 class='center-align'>Send me an email</h3>
@@ -48,8 +48,7 @@
         <label>Subject</label>
         <input
           name="subject"
-          ng-model="$ctrl.email.subject"
-          required/>
+          ng-model="$ctrl.email.subject"/>
 
           <div ng-messages="userForm.subject.$error">
             <div ng-message="required">Email subject is required</div>
@@ -65,7 +64,7 @@
           cols="70"
           name="message"
           ng-model="$ctrl.email.message"
-          required></textarea>
+        ></textarea>
 
           <div ng-messages="userForm.message.$error">
             <div ng-message="required">An email message is required</div>
