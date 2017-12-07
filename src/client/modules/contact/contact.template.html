@@ -1,0 +1,25 @@
+<h2 name=heading>{{$ctrl.title}}</h2>
+
+<div>
+  <a
+    class='charcoal-link'
+    href=""
+    ng-click='$ctrl.showDialog()'>
+
+   <i class="fa fa-5x fa-envelope grow"></i>
+  </a>
+
+  <p>To reach out personally, send me email</p>
+</div>
+
+<div ng-repeat="method in $ctrl.methodsOfContact">
+
+  <jd-contact-method
+    myclass="{{$ctrl.class + method.iconClass}}"
+    href="{{method.href}}"
+    target="{{method.target=='_blank' ? '_blank' : '_self'}}"
+    text="{{method.text}}"
+  >
+  </jd-contact-method>
+
+</div>

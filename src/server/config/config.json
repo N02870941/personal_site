@@ -1,0 +1,12 @@
+{
+  "email" : {
+    "from" : {
+      "user" : "email@gmail.com",
+      "pass"  : "********"
+    },
+    "to" : {
+      "user" : "email@gmail.com"
+    }
+
+  }
+}

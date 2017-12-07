@@ -20,7 +20,8 @@ const config = (function getConfig() {
 
   try {
     /**
-     * Returns the names of the dependencies
+     * Returns the names of the modules
+     * to be initialized
      */
     var moduleNames = (function() {
       var array = [];
@@ -50,6 +51,7 @@ const config = (function getConfig() {
 
 //------------------------------------------------------------------------------
 
+    // NOTE - This executes second
     // Create the main module and the shared module for exposing modules
     angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
     .config(function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
@@ -57,7 +59,6 @@ const config = (function getConfig() {
       // Set up the states off the application
       modulesProvider.initModules($stateProvider, config.modules);
       jdStatesProvider.initStates($stateProvider, config.app.states);
-
 
       // If the URL path is not found, reroute to
       // the /notFound page
@@ -67,9 +68,12 @@ const config = (function getConfig() {
 //------------------------------------------------------------------------------
 
     // Create the modules
+    // NOTE - This executes first
     for (var i in config.modules) {
       angular.module(config.modules[i].name, config.modules[i].dependencies)
 
+      // If a given module has other states to
+      // initialize, initialize them
       if (config.modules[i].states.length) {
         createModuleStates(config.modules[i]);
       }
