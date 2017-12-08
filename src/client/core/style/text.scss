@@ -4,12 +4,12 @@
 /*----------------------------------------------------------------------------*/
 
 /* Align text left */
-.left {
+.left-align {
   text-align: left;
 }
 
-.left-align {
-  text-align: left;
+.right-align {
+  text-align: right;
 }
 
 .center-align{
@@ -19,13 +19,13 @@
 /* COLORING */
 /*----------------------------------------------------------------------------*/
 
-a {
-	color: inherit;
+.link-no-color-change {
+  color : inherit;
 }
 
 /* Keep links with white text */
 .white-link {
-  color:white;
+  color : white;
   text-decoration:none;
 }
 
