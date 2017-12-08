@@ -3,7 +3,8 @@
       "title": "Jabari Dash",
       "protocol": "http",
       "domain": "jabaridash.com",
-      "port": "8080"
+      "port": "8080",
+      "author": "Jabari Dash"
   },
 
   "app" : {
