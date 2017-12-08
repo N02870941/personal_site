@@ -5,6 +5,7 @@ var runSequence = require('run-sequence');
 var plugins     = require('gulp-load-plugins')();
 var bash        = require('./gulp/bash');
 var config      = require('./gulp/config.json');
+var include     = require('gulp-html-tag-include');
 
 // List of tasks fro other files to import
 var tasks       = ["photos",
@@ -15,12 +16,24 @@ var tasks       = ["photos",
                    "inject-index",
                    "cleanup",
                    'minify-css',
-                   'minify-js'];
+                   'minify-js',
+                   'minify-html'];
 
 // Dynamically include all the tasks from the above array
 for (var i in tasks) {
   gulp.task(tasks[i], require('./gulp/' + tasks[i])(gulp, plugins));
 }
+
+//------------------------------------------------------------------------------
+
+/**
+ * Build index.html from partial .html files
+ */
+gulp.task('build-index', function() {
+    return gulp.src('./client/core/markup/index.html')
+        .pipe(include())
+        .pipe(gulp.dest('./'));
+});
 
 //------------------------------------------------------------------------------
 
@@ -40,7 +53,7 @@ gulp.task('reload', function() {
  */
 gulp.task('refresh', function() {
 
-  runSequence('core-scss', 'scoped-scss', 'scripts', 'inject-index', 'reload');
+  runSequence('core-scss', 'scoped-scss', 'scripts', 'build-index','inject-index', 'reload');
 });
 
 //------------------------------------------------------------------------------
@@ -59,7 +72,7 @@ gulp.task('serve-dev', function() {
   browser.init({proxy: "localhost:" + port});
 
   // Watch files for changes
-  gulp.watch("./client/**/*.html").on('change', browser.reload);
+  gulp.watch("./client/core/markup/**/*.html", ['refresh']);
   gulp.watch("./client/**/*.{js,json}", ['refresh']);
   gulp.watch("./client/**/*.{css,scss}", ['refresh']);
 });
@@ -88,7 +101,9 @@ gulp.task('prod', function() {
               'minify-css',
               'scoped-scss',
               'minify-js',
+              'build-index',
               'inject-index',
+              'minify-html',
               'serve-prod');
 });
 
@@ -103,6 +118,7 @@ gulp.task('dev', function() {
               'core-scss',
               'scoped-scss',
               'scripts',
+              'build-index',
               'inject-index',
               'serve-dev');
 });

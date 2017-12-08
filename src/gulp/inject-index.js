@@ -17,8 +17,10 @@ module.exports = function (gulp, plugins) {
     // to inject into the index.html
     var sources = dependencies.sources.concat(patterns);
 
+    var index = './index.html';
+
     // NOTE - TEMPORARY
-    return gulp.src('./index.html')
+    return gulp.src(index)
         .pipe(inject(gulp.src(sources, {read : false}), {relative: true}))
         .pipe(gulp.dest('./'));
   }

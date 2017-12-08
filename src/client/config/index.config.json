@@ -1,0 +1,42 @@
+{
+  "title" : "Jabari Dash",
+  "favicon" : {
+    "rel" : "shortcut icon",
+    "type" : "image/png",
+    "href" : "client/core/img/favicon.png"
+  },
+
+  "meta" : {
+    "charset" : "utf-8",
+    "entries" : [
+      {
+        "name" : "description",
+        "content" : ["Jabari Dash's Personal Website"]
+      },
+      {
+        "name" : "author",
+        "content" : ["Jabari Dash"]
+      },
+      {
+        "name" : "keywords",
+        "content" : [
+          "HTML",
+          "CSS",
+          "XML",
+          "JavaScript",
+          "Jabari",
+          "Dash",
+          "Software Engineer"
+        ]
+      },
+      {
+        "name" : "viewport",
+        "content" : [
+          "width=device-width",
+          "initial-scale=1.0"
+        ]
+      }
+    ]
+  }
+
+}
