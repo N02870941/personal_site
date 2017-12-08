@@ -19,8 +19,25 @@
           favicon.rel = indexConfig.favicon.rel;
           favicon.type = indexConfig.favicon.type;
           favicon.href = indexConfig.favicon.href;
-
           head.appendChild(favicon);
+
+          // Insert all css CDNs
+          for (let i in indexConfig.cdn.css) {
+            let link = document.createElement('link');
+            link.rel = indexConfig.cdn.css[i].rel;
+            link.type = indexConfig.cdn.css[i].type;
+            link.href = indexConfig.cdn.css[i].href;
+            head.appendChild(link);
+          }
+
+          // Insert all js CDNs
+          for (let i in indexConfig.cdn.js) {
+            let link = document.createElement('link');
+            link.type = indexConfig.cdn.js[i].type;
+            link.href = indexConfig.cdn.js[i].href;
+            head.appendChild(link);
+          }
+
         });
 
       } catch (err) {
@@ -28,9 +45,6 @@
       }
     })();
   </script>
-
-  <!-- TODO - dynamically download and inject this -->
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 
   <!-- inject:css -->
   <!-- endinject -->

@@ -1,22 +1,15 @@
 #left {
   float: left;
   width: 65%;
-  overflow: hidden;;
-}
+  overflow: hidden; }
 
 #right {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 #fun-facts {
-  padding: 0;
-}
+  padding: 0; }
 
 @media (max-width: 600px) {
-
   #left {
     float: inherit;
-    width: 100%;
-  }
-
-}
+    width: 100%; } }

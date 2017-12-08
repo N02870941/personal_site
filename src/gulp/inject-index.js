@@ -1,5 +1,5 @@
 var inject       = require('gulp-inject');
-var dependencies = require('../client/config/javaScriptDepencies.json');
+var dependencies = require('../client/config/dependencies/js.dependencies.json');
 
 module.exports = function (gulp, plugins) {
 

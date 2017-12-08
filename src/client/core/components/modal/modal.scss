@@ -40,14 +40,10 @@
 
 /* The Modal (background) */
 .modal {
-  // Full screen, cover everything else
-  @extend .fill;
-  @extend .onTopZ;
 
   // Hidden, doesnt move
   display: none;
   position: fixed;
-  @extend .topLeft;
 
   /* Black w/ opacity
    * Fallback color is regular black
@@ -83,8 +79,6 @@ img#modalImg.modal-content {
   margin: 0;
   margin-right: -50%;
   position: absolute;
-
-  @extend .center;
 }
 
 /*----------------------------------------------------------------------------*/
