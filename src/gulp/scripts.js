@@ -8,8 +8,7 @@ var runSequence = require('run-sequence');
 module.exports = function (gulp) {
 
   return function() {
-    // Concatenante all JS, minifiy it
-    // NOTE - temporarily do not minify for test purposes
+    // Copy all .js to ./dist folder for injection into index.html
     return gulp.src(['client/core/app/app.module.js', './client/**/*.js'])
         // .pipe(concat('scripts.min.js'))
         // .pipe(jsmin())

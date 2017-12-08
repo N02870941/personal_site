@@ -2,27 +2,23 @@
   try {
     angular.module(config.app.name).provider("modules", function modulesProvider() {
 
-      this.f = function() {
-        console.log('f()');
-      }
-
       /**
-       * Creates an angular module
+       * Creates the states for the main modules that are in the
+       * top navigation bar of the app. Example, if the page is
+       * sectioned into [home, biography, and resume], This function
+       * creates states for when the url is '/home', '/biography',
+       * and '/resume'. NOTE / TODO - As of right now, main modules must
+       * be composed of one word because automatic conversion from
+       * aSnakeCaseName to a-snake-case-name has not been implemented
        *
-       * @param module Module specification
+       * @param stateProvider Wrapper around the $stateProvider for
+       * instatiating new angular states
+       *
+       * @param modules The list of modules to create states for
        */
-      this.createModuleStates = function(module) {
-        angular.module(module.name, module.dependencies)
-        .config(function(jdStatesProvider, $stateProvider) {
+      this.initMainModulesStates = function(stateProvider, modules) {
 
-          jdStatesProvider.initStates($stateProvider, module.states);
-        });
-      }
-
-      this.initModules = function(stateProvider, modules, jd) {
-
-        // Dynamically set up each state
-        // for each module
+        // Dynamically create a state for each module
         for (var i in modules) {
 
           // if we want to show the module
@@ -40,7 +36,6 @@
                 template: t
               })
           }
-
 
         }
       };

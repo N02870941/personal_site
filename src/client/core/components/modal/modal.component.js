@@ -19,6 +19,12 @@
 // These functions are meant to be called only within the controller
 //------------------------------------------------------------------------------
 
+        /**
+         * Updates the photo that in the modal via index
+         *
+         * @param index The index of the photo that will
+         * be inserted into th modal
+         */
         function updateModalImg(index) {
           document.getElementById(modalImgId).src = vm.images[index];
         }
@@ -71,7 +77,6 @@
           return html;
         }
 
-// The following functions are exposed to HTML template via vm.function() notation
 //------------------------------------------------------------------------------
 
         /**

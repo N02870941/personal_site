@@ -6,7 +6,7 @@ var concat = require('gulp-concat');
 module.exports = function(gulp) {
   return function() {
 
-    // Concat all css and minify it
+    // Concat all scss in the core part of the app
     return gulp.src('./client/core/style/**/*.scss')  // Get all SCSS
       .pipe(sass().on('error', sass.logError))        // SCSS -> CSS
       .pipe(gulp.dest('./dist'));                     // Save in ./dist

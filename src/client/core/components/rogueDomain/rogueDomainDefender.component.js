@@ -1,10 +1,6 @@
 (function() {
   angular.module(config.app.name).component('jdRogueDomainDefender', {
 
-    bindings: {
-      domain: "@"
-    },
-
     controller: function($location, $window) {
 
       function redirect() {
@@ -19,8 +15,8 @@
       this.$onInit = function() {
         var host = $location.host();
 
-        if (host == "localhost" || host == this.domain) {
-          console.log("welcome to " + host);
+        if (host == "localhost" || host == config.site.domain) {
+          console.log("welcome to " + host + " / " + config.site.domain);
 
         } else {
           console.log("not the right domain");

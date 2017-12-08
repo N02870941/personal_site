@@ -7,6 +7,8 @@
 
       controller: function(sendEmailService, $mdDialog) {
 
+        // Field that are two way
+        // binded to the form
         this.email = {
           name    : "",
           email   : "",
