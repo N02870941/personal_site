@@ -1,5 +1,7 @@
 /**
- * Inject title of page via config file
+ * Inject title of page
+ * Inject favicon
+ * Inject .css and .js CDNs
  */
 (function() {
   try {

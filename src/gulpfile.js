@@ -6,7 +6,7 @@ var plugins      = require('gulp-load-plugins')();
 var bash         = require('./gulp/bash');
 var serverConfig = require('./config/server/server.config.json');
 
-// List of tasks from other files to import
+// List of gulp tasks from other files to import
 var tasks = [
   "build-index",
   "compile-core-scss",
@@ -48,13 +48,13 @@ gulp.task('reload', function() {
 gulp.task('refresh', function() {
 
   runSequence(
-    'core-scss',
-    'scoped-scss',
-    'copy-scripts',
-    'build-index',
-    "index-inject-dependencies-external",
-    "index-inject-dependencies-internal",
-    'reload');
+    'compile-core-scss',                    // Compile the core SCSS, move it to ./dist
+    'compile-scoped-scss',                  // Compile custom SCSS, leave it where it is
+    'copy-scripts',                         // Copy all .js script to ./dist
+    'build-index',                          // Put the index.html together form its partials
+    "index-inject-dependencies-external",   // Inject <script> tags for external dependencies such as angular.js
+    "index-inject-dependencies-internal",   // Inject <script> tags for all other .js files in ./dist
+    'reload');                              // Reload the web browser to view the changes
 });
 
 //------------------------------------------------------------------------------
@@ -65,14 +65,14 @@ gulp.task('refresh', function() {
  * edits to make development faster
  */
 gulp.task('serve-dev', function() {
-  var port = serverConfig.ports.devPort;
 
-  // Start node app
-  bash.runCommand('cd server && node server.js ' + port);
+  // Start node app on a given port from the config file
+  bash.runCommand('cd server && node server.js ' + serverConfig.ports.devPort);
 
-  browser.init({proxy: "localhost:" + port});
+  // Proxy browser-sync with the node app running on localhost
+  browser.init({proxy: "localhost:" + serverConfig.ports.devPort});
 
-  // Watch files for changes
+  // Watch files for changes, refresh if any are changed
   gulp.watch("./client/core/markup/**/*.html", ['refresh']);
   gulp.watch("./client/**/*.{js,json}", ['refresh']);
   gulp.watch("./client/**/*.{css,scss}", ['refresh']);
@@ -80,12 +80,13 @@ gulp.task('serve-dev', function() {
 
 //------------------------------------------------------------------------------
 
-// Serve the app in normal mode, without browser-sync
+/**
+ * Serve the app in normal mode, without browser-sync
+ */
 gulp.task('serve-prod', function() {
-  var port = serverConfig.ports.prodPort;
 
-  // Start node app
-  bash.runCommand('cd server && node server.js ' + port);
+  // Start node app on a given port from the config file
+  bash.runCommand('cd server && node server.js ' + serverConfig.ports.prodPort);
 })
 
 //------------------------------------------------------------------------------
@@ -121,7 +122,7 @@ gulp.task('dev', function() {
   runSequence(
     'cleanup',                              // Delete old files
     'fonts',                                // Download fonts
-    'compile-core-scss',                    // Compile common scss (concatenate)
+    'compile-core-scss',                    // Compile common scss
     'compile-scoped-scss',                  // Compile custom scss (dont include in main .css file)
     'copy-scripts',                         // Copy scripts into ./dist for deployment
     'build-index',                          // Put together the index.html file from its partials

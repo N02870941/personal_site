@@ -1,5 +1,3 @@
-//------------------------------------------------------------------------------
-
 /**
  * Get a local (or not local) JSON file and return its contents
  */
