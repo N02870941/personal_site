@@ -4,7 +4,7 @@
 
       css: "client/core/components/backToTop/backToTop.css",
 
-      templateUr: "client/core/components/backToTop/backToTop.template.html",
+      templateUrl: "client/core/components/backToTop/backToTop.template.html",
 
       controller: function() {
         // https://codepen.io/kruxor/pen/CwpFq
