@@ -1,22 +1,20 @@
-<script>
-
 /**
  * Dynamically sets up all of the meta tags
  */
 (function() {
   try {
     loadJSON("./config/client/index.config.json", function(response) {
-      let indexConfig = JSON.parse(response);
-      let head = document.getElementsByTagName('head')[0];
-      let charset = document.createElement('meta');
+      var indexConfig = JSON.parse(response);
+      var head = document.getElementsByTagName('head')[0];
+      var charset = document.createElement('meta');
 
       // Set the charset
       charset.charset = indexConfig.meta.charset;
       head.appendChild(charset);
 
       // Look through and create all meta tags
-      for (let i in indexConfig.meta.entries) {
-        let link = document.createElement('meta');
+      for (var i in indexConfig.meta.entries) {
+        var link = document.createElement('meta');
 
         // Set the attributes
         link.name = indexConfig.meta.entries[i].name,
@@ -31,4 +29,3 @@
     console.error(err);
   }
 })();
-</script>

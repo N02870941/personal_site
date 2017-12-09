@@ -19,6 +19,7 @@ var tasks       = ["photos",
                    "cleanup",
                    'minify-core-css',
                    'minify-app-js',
+                   'minify-inline-js',
                    'minify-html'];
 
 // Dynamically include all the tasks from the above array
@@ -112,9 +113,10 @@ gulp.task('prod', function() {
               'minify-app-js',
               'build-index',
               "index-inject-dependencies-internal",
-              // "index-inject-dependencies-internal-inline",
+              "index-inject-dependencies-internal-inline",
+              "minify-inline-js",
               "index-inject-dependencies-external",
-              // 'minify-html',
+              'minify-html',
               'serve-prod');
 });
 
