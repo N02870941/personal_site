@@ -8,11 +8,16 @@ var exec = require('child_process').exec;
 function runCommand(command) {
   exec(command, function (err, stdout, stderr) {
 
-    if (stdout)
+    // Print stdout of the executed command
+    if (stdout) {
       console.log(stdout);
+    }
 
-    if (stderr)
+    // Log any errors
+    if (stderr) {
       console.log(stderr);
+    }
+
   });
 }
 

@@ -12,6 +12,6 @@ module.exports = function(gulp) {
       .pipe(sass().on('error', sass.logError))        // SCSS -> CSS
       .pipe(concat('styles.min.css'))                 // Concatenate into 1 file
       .pipe(minify())                                 // Minify it
-      .pipe(gulp.dest(gulpConfig.dist));                     // Save in ./dist
+      .pipe(gulp.dest(gulpConfig.dist));              // Save in ./dist
   }
 }
