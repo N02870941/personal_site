@@ -1,0 +1,6 @@
+{
+  "ports" : {
+    "devPort" : "8080",
+    "prodPort" : "8080"
+  }
+}
