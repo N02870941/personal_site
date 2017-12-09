@@ -1,42 +1,33 @@
-var exec        = require('child_process').exec;
-var gulp        = require('gulp');
-var browser     = require('browser-sync').create();
-var runSequence = require('run-sequence');
-var plugins     = require('gulp-load-plugins')();
-var bash        = require('./gulp/bash');
-var include     = require('gulp-html-tag-include');
-var config      = require('./config/gulp/gulp.config.json');
+var exec         = require('child_process').exec;
+var gulp         = require('gulp');
+var browser      = require('browser-sync').create();
+var runSequence  = require('run-sequence');
+var plugins      = require('gulp-load-plugins')();
+var bash         = require('./gulp/bash');
+var serverConfig = require('./config/server/server.config.json');
 
 // List of tasks from other files to import
-var tasks       = ["photos",
-                   "fonts",
-                   "compile-core-scss",
-                   "compile-scoped-scss",
-                   "copy-scripts",
-                   "index-inject-dependencies-external",
-                   "index-inject-dependencies-internal",
-                   "index-inject-dependencies-internal-inline",
-                   "cleanup",
-                   'minify-core-css',
-                   'minify-app-js',
-                   'minify-inline-js',
-                   'minify-html'];
+var tasks = [
+  "build-index",
+  "compile-core-scss",
+  "compile-scoped-scss",
+  "copy-scripts",
+  "cleanup",
+  "fonts",
+  "index-inject-dependencies-external",
+  "index-inject-dependencies-internal",
+  "index-inject-dependencies-internal-inline",
+  'minify-core-css',
+  'minify-app-js',
+  'minify-inline-js',
+  'minify-html',
+  'photos'];
 
-// Dynamically include all the tasks from the above array
+// Dynamically include (require) all the tasks
+// from the above array
 for (var i in tasks) {
   gulp.task(tasks[i], require('./gulp/' + tasks[i])(gulp, plugins));
 }
-
-//------------------------------------------------------------------------------
-
-/**
- * Build index.html from partial .html files
- */
-gulp.task('build-index', function() {
-    return gulp.src('./client/core/markup/index.html')
-        .pipe(include())
-        .pipe(gulp.dest('./'));
-});
 
 //------------------------------------------------------------------------------
 
@@ -74,7 +65,7 @@ gulp.task('refresh', function() {
  * edits to make development faster
  */
 gulp.task('serve-dev', function() {
-  var port = config.devPort;
+  var port = serverConfig.ports.devPort;
 
   // Start node app
   bash.runCommand('cd server && node server.js ' + port);
@@ -91,7 +82,7 @@ gulp.task('serve-dev', function() {
 
 // Serve the app in normal mode, without browser-sync
 gulp.task('serve-prod', function() {
-  var port = config.devPort;
+  var port = serverConfig.ports.prodPort;
 
   // Start node app
   bash.runCommand('cd server && node server.js ' + port);
@@ -105,19 +96,20 @@ gulp.task('serve-prod', function() {
 // minified css, js, concatenated,
 // photos shrunken, etc.
 gulp.task('prod', function() {
-  runSequence('cleanup',
-              // 'photos',
-              'fonts',
-              'minify-core-css',
-              'compile-scoped-scss',
-              'minify-app-js',
-              'build-index',
-              "index-inject-dependencies-internal",
-              "index-inject-dependencies-internal-inline",
-              "minify-inline-js",
-              "index-inject-dependencies-external",
-              'minify-html',
-              'serve-prod');
+  runSequence(
+    'cleanup',                                    // Delete old files
+    // 'photos',                                     // Edit the photos via photo editing scripts
+    'fonts',                                      // Download fonts
+    'minify-core-css',                            // Compile and minify core scss into one file
+    'compile-scoped-scss',                        // Compile custom scss to css, but do not include in ./dist or index.html
+    'minify-app-js',                              // Concatenate and minify all angular code into scripts.min.js
+    'build-index',                                // Build index.html from partials
+    "index-inject-dependencies-internal",         // Inject dependencies (scripts.min.js)
+    "index-inject-dependencies-internal-inline",  // Replace the <script> for scripts.min.js by injecting its contents into index.html
+    "minify-inline-js",                           // Minify all inline JavaScript in index.html
+    "index-inject-dependencies-external",         // Inject <script> tags for external dependencies such as angular.js
+    'minify-html',                                // Minify the index.html by removing whitespace, etc
+    'serve-prod');                                // Serve the page as if were being serve on the web (without browser-sync)
 });
 
 //------------------------------------------------------------------------------
@@ -126,13 +118,14 @@ gulp.task('prod', function() {
  * Set up and run the node app in dev mode
  */
 gulp.task('dev', function() {
-  runSequence('cleanup',
-              'fonts',
-              'compile-core-scss',
-              'compile-scoped-scss',
-              'copy-scripts',
-              'build-index',
-              "index-inject-dependencies-external",
-              "index-inject-dependencies-internal",
-              'serve-dev');
+  runSequence(
+    'cleanup',                              // Delete old files
+    'fonts',                                // Download fonts
+    'compile-core-scss',                    // Compile common scss (concatenate)
+    'compile-scoped-scss',                  // Compile custom scss (dont include in main .css file)
+    'copy-scripts',                         // Copy scripts into ./dist for deployment
+    'build-index',                          // Put together the index.html file from its partials
+    "index-inject-dependencies-external",   // Inject external dependency script tags into index.html
+    "index-inject-dependencies-internal",   // Inject dependencies for files written by developer into index.html
+    'serve-dev');                           // Run the server with browser-sync
 });
