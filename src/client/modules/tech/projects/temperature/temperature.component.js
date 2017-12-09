@@ -2,12 +2,8 @@
   try {
     angular.module(config.app.name).component('jdTemperature', {
 
-      template: `
-        <jd-pdf-or-jpg
-          pdf="pdf?path=client/modules/tech/projects/temperature/img/temperature.pdf#!page=1"
-          jpg="client/modules/tech/projects/temperature/img/temperature.jpg">
-        </jd-pdf-or-jpg>
-      `
+      templateUrl: "client/modules/tech/projects/temperature/temperature.template.html"
+
     });
 
   } catch (err) {

@@ -17,7 +17,9 @@ var tasks = [
   "index-inject-dependencies-external",
   "index-inject-dependencies-internal",
   "index-inject-dependencies-internal-inline",
+  "index-inject-setup",
   'minify-core-css',
+  'minify-setup-js',
   'minify-app-js',
   'minify-inline-js',
   'minify-html',
@@ -103,11 +105,13 @@ gulp.task('prod', function() {
     'fonts',                                      // Download fonts
     'minify-core-css',                            // Compile and minify core scss into one file
     'compile-scoped-scss',                        // Compile custom scss to css, but do not include in ./dist or index.html
+    'minify-setup-js',
     'minify-app-js',                              // Concatenate and minify all angular code into scripts.min.js
     'build-index',                                // Build index.html from partials
+    "index-inject-setup",
     "index-inject-dependencies-internal",         // Inject dependencies (scripts.min.js)
     "index-inject-dependencies-internal-inline",  // Replace the <script> for scripts.min.js by injecting its contents into index.html
-    "minify-inline-js",                           // Minify all inline JavaScript in index.html
+    // "minify-inline-js",                           // Minify all inline JavaScript in index.html
     "index-inject-dependencies-external",         // Inject <script> tags for external dependencies such as angular.js
     'minify-html',                                // Minify the index.html by removing whitespace, etc
     'serve-prod');                                // Serve the page as if were being serve on the web (without browser-sync)
@@ -123,9 +127,11 @@ gulp.task('dev', function() {
     'cleanup',                              // Delete old files
     'fonts',                                // Download fonts
     'compile-core-scss',                    // Compile common scss
+    'minify-setup-js',
     'compile-scoped-scss',                  // Compile custom scss (dont include in main .css file)
     'copy-scripts',                         // Copy scripts into ./dist for deployment
     'build-index',                          // Put together the index.html file from its partials
+    "index-inject-setup",
     "index-inject-dependencies-external",   // Inject external dependency script tags into index.html
     "index-inject-dependencies-internal",   // Inject dependencies for files written by developer into index.html
     'serve-dev');                           // Run the server with browser-sync

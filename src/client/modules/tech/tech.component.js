@@ -2,14 +2,14 @@
   try {
     angular.module(config.app.name).component('jdTech', {
 
+      templateUrl: "client/modules/tech/tech.template.html",
+
       controller: function() {
         this.title = "Tech Projects";
 
-        this.description = `
-           I am relatively new to developing personal projects - this website being one of them.
-           But below, I have listed a couple of links to projects that I have worked on and
-           a small write-up as to what skills I developed and things that I learned from each given project.
-        `;
+        this.description = "I am relatively new to developing personal projects - this website being one of them. " +
+           "But below, I have listed a couple of links to projects that I have worked on and " +
+           "a small write-up as to what skills I developed and things that I learned from each given project.";
 
         this.projects = [
           {
@@ -42,15 +42,8 @@
           }
         ];
 
-      },
+      }
 
-      template: `
-        <jd-project-list
-          title='{{$ctrl.title}}'
-          description="{{$ctrl.description}}"
-          links="$ctrl.projects">
-        </jd-project-list>
-      `
     });
 
   } catch (err) {

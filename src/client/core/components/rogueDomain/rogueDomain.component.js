@@ -6,19 +6,11 @@
 
         this.redirectUrl = "http://" + config.site.domain;
 
-        this.message = $location.host() + ` is not the proper domain for this website.
-          It is a rogue domain, which means that it is a domain pointing to the server
-          for` + domain;
+        this.message = $location.host() + " is not the proper domain for this website. It is a rogue domain, which means that it is a domain pointing to the server for " + domain;
       },
 
-      template:
-      "<jd-count-down-redirect" +
-        "title='Rogue Domain'" +
-        "message='{{$ctrl.message}}'" +
-        "redirect='{{$ctrl.redirectUrl}}'" +
-        "time=5" +
-      ">" +
-      "</jd-count-down-redirect>"
+      templateUrl: "client/core/components/rogueDomain/rogueDomain.template.html"
+
     });
 
   } catch (err) {

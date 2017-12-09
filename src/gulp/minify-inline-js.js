@@ -9,7 +9,7 @@ module.exports = function(gulp) {
     // Concat all css and minify it into one file
     return gulp.src(gulpConfig.indexPath)
     // .pipe(minifyInline())
-    // .pipe(minifyInlineScripts())
-    .pipe(gulp.dest(gulpConfig.dist));
+    .pipe(minifyInlineScripts())
+    .pipe(gulp.dest(gulpConfig.baseDir));
   }
 }

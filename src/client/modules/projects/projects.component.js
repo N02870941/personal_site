@@ -2,6 +2,8 @@
   try {
     angular.module('projects').component('jdProjects', {
 
+      templateUrl: "client/modules/projects/projects.template.html",
+
       controller: function() {
         this.title = "Projects";
 
@@ -29,15 +31,7 @@
           }
         ];
 
-      },
-
-      template: `
-        <jd-project-list
-          title='{{$ctrl.title}}'
-          description="{{$ctrl.description}}"
-          links="$ctrl.projects">
-        </jd-project-list>
-      `
+      }
     });
 
   } catch (err) {

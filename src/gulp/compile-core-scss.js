@@ -10,6 +10,6 @@ module.exports = function(gulp) {
     // Concat all scss in the core part of the app
     return gulp.src('./client/core/style/**/*.scss')  // Get all SCSS
       .pipe(sass().on('error', sass.logError))        // SCSS -> CSS
-      .pipe(gulp.dest(gulpConfig.dist));              // Save in ./dist
+      .pipe(gulp.dest(gulpConfig.dist));   // Save in ./dist
   }
 }

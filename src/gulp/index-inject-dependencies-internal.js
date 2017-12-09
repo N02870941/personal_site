@@ -1,5 +1,4 @@
 var inject       = require('gulp-inject');
-var dependencies = require('../config/client/dependencies.config.json');
 var gulpConfig   = require('../config/gulp/gulp.config.json');
 
 module.exports = function (gulp, plugins) {
@@ -8,8 +7,9 @@ module.exports = function (gulp, plugins) {
 
     // Source patterns to inject into index.html
     var sources = [
+      "!" + gulpConfig.dist + "/setup/*.js",
       gulpConfig.dist + "/**/*.js",
-      gulpConfig.dist + "/**/*.css"
+      gulpConfig.dist + "/*.css"
     ];
 
     // NOTE - TEMPORARY

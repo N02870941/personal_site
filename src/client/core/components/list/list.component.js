@@ -7,6 +7,7 @@
         description: "@",
         links: "="
       },
+      templateUrl: "client/core/components/list/list.template.html",
 
       controller: function($sce) {
 
@@ -19,7 +20,7 @@
           // but when you click back button, back to where
           // you were
 
-          
+
           // return sref + "({'#': 'top'})"
         }
 
@@ -33,23 +34,6 @@
       },
 
       controllerAs: "vm",
-
-      template: `
-        <h2>{{vm.title}}</h2>
-        <p>{{vm.description}}</p>
-
-        <div ng-repeat="item in vm.links" class='top-border'>
-
-          <a ui-sref="{{item.sref}}" class="charcoal-link">
-            <div id={{item.name}}>
-              <h2>{{item.title}}</h2>
-              <img class='grow' ng-src='{{item.img}}'>
-              <p>{{item.brief}}</p>
-            </div>
-          </a>
-
-        </div>
-      `
     });
 
   } catch (err) {

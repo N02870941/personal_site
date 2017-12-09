@@ -1,0 +1,15 @@
+<div class="navbar">
+  <div style='display: table; margin: 0 auto;'>
+      <a
+        ng-repeat="option in $ctrl.methodsOfContact"
+        class="grow"
+        target="_blank"
+        href="{{option.href}}">
+        <i class="{{$ctrl.class + option.iconClass}}"></i>
+      </a>
+  </div>
+</div>
+
+<div id='copyright' class='navbar'>
+ &copy {{$ctrl.year}} {{$ctrl.author}} .
+</div>

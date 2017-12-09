@@ -6,10 +6,10 @@
         title: "@"
       },
 
+      templateUrl: "client/modules/interests/interests.template.html",
+
       controller: function() {
-        this.description = `
-          Below you can find links to some of my hobbies and things that make me who I am.
-        `
+        this.description = "Below you can find links to some of my hobbies and things that make me who I am."
 
         this.projects = [
           {
@@ -41,15 +41,8 @@
             brief: "Follow my hair journey and other cultural experiences."
           }
         ];
-      },
+      }
 
-      template: `
-        <jd-project-list
-          title='{{$ctrl.title}}'
-          description="{{$ctrl.description}}"
-          links="$ctrl.projects">
-        </jd-project-list>
-      `
     });
 
 
