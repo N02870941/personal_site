@@ -2,16 +2,17 @@
   try {
     angular.module('projects').component('jdMlt', {
 
+      templateUrl: "client/modules/projects/projects/mlt/mlt.template.html",
+
       controller: function() {
         this.title = "Being Black and Getting Your Foot in the Door";
 
-        this.description = `
-          Being Black and Getting Your Foot in the Door is a four part series dedicated
-          to the professional advancement of students of color at SUNY New Paltz. On this
-          project I am working with Dr. Cruz Caridad Bueno and Kadeen Douglas to help
-          students develop their resumes, apply to programs such as MLT Career Prep, and
-          take charge of their professional lives.
-        `;
+        this.description = "" +
+          "Being Black and Getting Your Foot in the Door is a four part series dedicated " +
+          "to the professional advancement of students of color at SUNY New Paltz. On this " +
+          "project I am working with Dr. Cruz Caridad Bueno and Kadeen Douglas to help " +
+          "students develop their resumes, apply to programs such as MLT Career Prep, and " +
+          "take charge of their professional lives.";
 
         this.projects = [
           {
@@ -49,15 +50,8 @@
                   "to meet with professionals to make finishing touches to their MLT Career Prep applications."
           }
         ];
-      },
+      }
 
-      template: `
-        <jd-project-list
-          title='{{$ctrl.title}}'
-          description="{{$ctrl.description}}"
-          links="$ctrl.projects">
-        </jd-project-list>
-      `
     });
 
   } catch (err) {

@@ -12,15 +12,7 @@
         this.message = "";
       },
 
-      template: `
-      <jd-count-down-redirect
-        title='Page Not Found'
-        message='{{$ctrl.message}}'
-        redirect='{{$ctrl.redirectUrl}}'
-        time=5
-      >
-      </jd-count-down-redirect>
-      `
+      templateUrl: "client/core/components/notFound/notFound.template.html"
     });
 
   } catch (err) {

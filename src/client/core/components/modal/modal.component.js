@@ -66,13 +66,12 @@
          * @param imgID The designated image id
          */
         function getImageDiv(imgID) {
-          var html = `
-            <img
-              onclick='imgOnClick(this.id)'
-              id="`+ imgID + `"
-              class="grey-out"
-              src="` + imgID + `">
-          `;
+          var html = "" +
+            "<img " +
+              "onclick='imgOnClick(this.id)' " +
+              "id='" + imgID + "' " +
+              "class='grey-out' " +
+              "src='" + imgID + "'>"
 
           return html;
         }

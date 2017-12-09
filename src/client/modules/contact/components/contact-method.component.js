@@ -9,17 +9,8 @@
         text: "@",
       },
 
-      template: `
-        <a
-          class='charcoal-link'
-          href="{{$ctrl.href}}"
-          target="{{$ctrl.target=='_blank' ? '_blank' : '_self'}}">
+      templateUrl: "client/modules/contact/components/contact-method.template.html"
 
-         <i class="{{$ctrl.myclass}}"></i>
-        </a>
-
-        <p>{{$ctrl.text}}</p>
-      `,
     });
 
   } catch (err) {

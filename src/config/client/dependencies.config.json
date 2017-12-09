@@ -1,5 +1,11 @@
 {
   "js" : {
+    "setup" : [
+      "./config/client/scripts/globalFunctions.js",
+      "./config/client/scripts/injectMetaTags.js",
+      "./config/client/scripts/injectCDNs.js"
+    ],
+
     "sources" : [
      "node_modules/angular/angular.js",
      "node_modules/angular-ui-router/release/angular-ui-router.min.js",

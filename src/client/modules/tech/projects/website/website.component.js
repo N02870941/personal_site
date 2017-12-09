@@ -2,13 +2,7 @@
   try {
     angular.module(config.app.name).component("jdWebsite", {
 
-      template: `
-        <jd-readme
-          owner="n02870941"
-          repo="personal_site"
-        >
-        </jd-readme>
-      `
+      template: "<jd-coming-soon></jd-coming-soon>"
     });
 
   } catch (err) {

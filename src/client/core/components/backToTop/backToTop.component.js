@@ -4,6 +4,8 @@
 
       css: "client/core/components/backToTop/backToTop.css",
 
+      templateUr: "client/core/components/backToTop/backToTop.template.html",
+
       controller: function() {
         // https://codepen.io/kruxor/pen/CwpFq
 
@@ -24,14 +26,7 @@
             return false;
           }
         )});
-      },
-
-      template:
-        "<div class='scrolltop'>" +
-          "<div class='scroll icon'>" +
-            "<i class='fa fa-4x fa-angle-up'></i>" +
-          "</div>" +
-        "</div>",
+      }
 
     });
 
