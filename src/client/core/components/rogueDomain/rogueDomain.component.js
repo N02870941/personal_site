@@ -11,16 +11,14 @@
           for` + domain;
       },
 
-      template: `
-      <jd-count-down-redirect
-        title='Rogue Domain'
-        message='{{$ctrl.message}}'
-        redirect='{{$ctrl.redirectUrl}}'
-        time=5
-      >
-      </jd-count-down-redirect>
-      `
-
+      template:
+      "<jd-count-down-redirect" +
+        "title='Rogue Domain'" +
+        "message='{{$ctrl.message}}'" +
+        "redirect='{{$ctrl.redirectUrl}}'" +
+        "time=5" +
+      ">" +
+      "</jd-count-down-redirect>"
     });
 
   } catch (err) {

@@ -19,10 +19,9 @@
         }
       },
 
-      template: `
-        <jd-coming-soon></jd-coming-soon>
-        <!-- <div id='readme'></div> -->
-      `
+      template: 
+        "<jd-coming-soon></jd-coming-soon>" +
+        "<!-- <div id='readme'></div> -->"
     });
 
   } catch (err) {
