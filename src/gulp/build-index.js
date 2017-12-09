@@ -1,4 +1,5 @@
 var include     = require('gulp-html-tag-include');
+var gulpConfig  = require('../config/gulp/gulp.config.json');
 
 module.exports = function (gulp) {
 
@@ -7,6 +8,6 @@ module.exports = function (gulp) {
 
     return gulp.src(partialIndex)
         .pipe(include())
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest(gulpConfig.baseDir));
   }
 };

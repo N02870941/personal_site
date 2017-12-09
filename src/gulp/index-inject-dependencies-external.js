@@ -1,5 +1,6 @@
 var inject       = require('gulp-inject');
 var dependencies = require('../config/client/dependencies.config.json');
+var gulpConfig   = require('../config/gulp/gulp.config.json');
 
 module.exports = function (gulp, plugins) {
 
@@ -9,13 +10,11 @@ module.exports = function (gulp, plugins) {
     // to have a complete list of .js and .css dependencies
     // to inject into the index.html
 
-    var index = './index.html';
-
-    return gulp.src(index)
+    return gulp.src(gulpConfig.indexPath)
       .pipe(inject(gulp.src(dependencies.js.sources, {read : false}), {
         starttag: "<!-- inject:external:{{ext}} -->",
         relative: true,
       }))
-      .pipe(gulp.dest('./'));
+      .pipe(gulp.dest(gulpConfig.baseDir));
   }
 };
