@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang='en' ng-app='app'>
-
-  <head>
-
-    <script><!--
+<!DOCTYPE html><html lang="en" ng-app="app"><head><script><!--
 
 /**
  * Get a local (or not local) JSON file and return its contents
@@ -24,8 +19,7 @@ function loadJSON(url, callback) {
  }
 
 
-//--></script>
-    <script><!--
+//--></script><script><!--
 
 /**
  * Dynamically sets up all of the meta tags
@@ -60,8 +54,7 @@ function loadJSON(url, callback) {
 })();
 
 
-//--></script>
-    <script><!--
+//--></script><script><!--
 
 /**
  * Inject title of page
@@ -109,35 +102,7 @@ function loadJSON(url, callback) {
 })();
 
 
-//--></script>
-
-    <!-- inject:external:css -->
-    <link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- endinject -->
-
-    <!-- inject:external:js -->
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
-    <script src="node_modules/angular-animate/angular-animate.js"></script>
-    <script src="node_modules/angular-route/angular-route.js"></script>
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/angular-css/angular-css.min.js"></script>
-    <script src="node_modules/angular-messages/angular-messages.js"></script>
-    <script src="node_modules/angular-aria/angular-aria.js"></script>
-    <script src="node_modules/angular-material/angular-material.js"></script>
-    <script src="bower_components/jquery-gh-readme/dist/jquery.gh-readme.min.js"></script>
-    <!-- endinject -->
-
-    <!-- inject:internal:css -->
-    <link rel="stylesheet" href="dist/styles.min.css">
-    <link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- endinject -->
-
-
-    <!-- inject:internal:js -->
-    <script><!--
+//--></script><!-- inject:external:css --><link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.min.css"><!-- endinject --><!-- inject:external:js --><script src="node_modules/angular/angular.js"></script><script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script><script src="node_modules/angular-sanitize/angular-sanitize.js"></script><script src="node_modules/angular-animate/angular-animate.js"></script><script src="node_modules/angular-route/angular-route.js"></script><script src="node_modules/jquery/dist/jquery.js"></script><script src="node_modules/angular-css/angular-css.min.js"></script><script src="node_modules/angular-messages/angular-messages.js"></script><script src="node_modules/angular-aria/angular-aria.js"></script><script src="node_modules/angular-material/angular-material.js"></script><script src="bower_components/jquery-gh-readme/dist/jquery.gh-readme.min.js"></script><!-- endinject --><!-- inject:internal:css --><link rel="stylesheet" href="dist/styles.min.css"><link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.css"><link rel="stylesheet" href="dist/font-awesome-4.7.0/css/font-awesome.min.css"><!-- endinject --><!-- inject:internal:js --><script><!--
 
 
 const config=(function getConfig(){return JSON.parse($.ajax({url:"config/client/app.config.json",dataType:'json',async:false,}).responseText);})();(function(){try{var moduleNames=(function(){var array=[];for(var i in config.modules){array.push(config.modules[i].name);}
@@ -362,23 +327,4 @@ this.showAll=false;},template:`
       `});}catch(err){console.error(err);}})();(function(){try{angular.module('interests').component('jdColombia',{templateUrl:"client/modules/interests/travel/countries/colombia/colombia.template.html"});}catch(err){console.error(err);}})();(function(){try{angular.module('interests').component('jdEcuador',{controller:function(){this.toggleLanguage=function(){this.spanish=!this.spanish;if(this.spanish){$("#toggle-button").html('View in English');}else{$("#toggle-button").html('Ver en Español');}}
 this.$onInit=function(){this.spanish=true;this.toggleLanguage();}},templateUrl:"client/modules/interests/travel/countries/ecuador/ecuador.template.html"});}catch(err){console.error(err);}})();(function(){try{angular.module('interests').component('jdGambia',{template:"<jd-coming-soon></jd-coming-soon>"});}catch(err){console.error(err);}})();(function(){try{angular.module('interests').component('jdMorocco',{template:"<jd-coming-soon></jd-coming-soon>"});}catch(err){console.error(err);}})();(function(){try{angular.module('interests').component('jdPeru',{template:"<jd-coming-soon></jd-coming-soon>"});}catch(err){console.error(err);}})();(function(){try{angular.module('interests').component('jdSenegal',{template:"<jd-coming-soon></jd-coming-soon>"});}catch(err){console.error(err);}})();(function(){try{angular.module('projects').component('jdPart1',{css:"client/modules/projects/projects/mlt/part1/part1.css",templateUrl:"/client/modules/projects/projects/mlt/part1/part1.template.html",controller:function(){this.jabari_resumes=[{name:"Freshman Year - Jabari",href:'/client/modules/projects/projects/mlt/part1/downloads/resumes/jabari_dash_resume_freshman_year.pdf'},{name:"Sophomore Year - Jabari",href:'/client/modules/projects/projects/mlt/part1/downloads/resumes/jabari_dash_resume_sophomore_year.pdf'},{name:"Junior Year - Jabari",href:'/client/modules/projects/projects/mlt/part1/downloads/resumes/jabari_dash_resume_junior_year.pdf'},{name:"Senior Year - Jabari",href:'/client/modules/projects/projects/mlt/part1/downloads/resumes/jabari_dash_resume_senior_year.pdf'}];this.kadeen_resumes=[{name:"Sophomore Year - Kadeen",href:'/client/modules/projects/projects/mlt/part1/downloads/resumes/kadeen_douglas_resume_sophomore_year.pdf'},{name:"Junior Year - Kadeen",href:'/client/modules/projects/projects/mlt/part1/downloads/resumes/kadeen_douglas_resume_junior_year.pdf'},{name:"Senior Year - Kadeen",href:'/client/modules/projects/projects/mlt/part1/downloads/resumes/kadeen_douglas_resume_senior_year.pdf'}];}});}catch(err){console.error(err);}})();(function(){try{angular.module('projects').component('jdPart2',{templateUrl:"/client/modules/projects/projects/mlt/part2/part2.template.html"});}catch(err){console.error(err);}})();(function(){try{angular.module('projects').component('jdPart3',{templateUrl:"/client/modules/projects/projects/mlt/part3/part3.template.html"});}catch(err){console.error(err);}})();(function(){try{angular.module('projects').component('jdPart4',{templateUrl:"/client/modules/projects/projects/mlt/part4/part4.template.html"});}catch(err){console.error(err);}})();(function(){try{angular.module('projects').component('jdTarget2016',{template:"<jd-coming-soon></jd-coming-soon>"})}catch(err){console.error(err);}})();(function(){try{angular.module('projects').component('jdTarget2017',{template:"<jd-coming-soon></jd-coming-soon>"});}catch(err){console.error(err);}})();
 
-//--></script>
-    <!-- endinject -->
-
-  </head>
-
-  <body>
-    <jd-rogue-domain-defender></jd-rogue-domain-defender>
-    <jd-back-to-top></jd-back-to-top>
-
-    <jd-header id='top' name='top' class="thetop"></jd-header>
-
-    <div class='partial'>
-      <div ui-view class='fade'></div>
-    </div>
-
-    <jd-footer></jd-footer>
-  </body>
-
-
-</html>
+//--></script><!-- endinject --></head><body><jd-rogue-domain-defender></jd-rogue-domain-defender><jd-back-to-top></jd-back-to-top><jd-header id="top" name="top" class="thetop"></jd-header><div class="partial"><div ui-view class="fade"></div></div><jd-footer></jd-footer></body></html>

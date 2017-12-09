@@ -1,4 +1,5 @@
-var bash = require('./bash');
+var bash        = require('./bash');
+var gulpConfig  = require('../config/gulp/gulp.config.json');
 
 module.exports = function (gulp, plugins) {
 
@@ -8,7 +9,7 @@ module.exports = function (gulp, plugins) {
   //
   // Delete all .DS_Store files created by Finder in OS X
   var commands = [
-    'rm -rf dist',
+    'rm -rf ' + gulpConfig.dist,
     'find . -name "*.DS_Store" -type f -delete'
   ];
 

@@ -1,14 +1,13 @@
-var inject       = require('gulp-inject');
+var inject        = require('gulp-inject');
 var injectScripts = require('gulp-inject-scripts');
-var minifyInline = require('gulp-minify-inline');
+var minifyInline  = require('gulp-minify-inline');
+var gulpConfig    = require('../config/gulp/gulp.config.json');
 
 module.exports = function (gulp, plugins) {
   return function() {
 
-    var index = './index.html';
-
-    return gulp.src(index)
-      .pipe(injectScripts({baseDir: "./"}))
-      .pipe(gulp.dest('./'));
+    return gulp.src(gulpConfig.indexPath)
+      .pipe(injectScripts({baseDir: gulpConfig.baseDir}))
+      .pipe(gulp.dest(gulpConfig.baseDir));
   }
 };

@@ -1,4 +1,4 @@
-const shell = require('gulp-shell')
+const shell = require('gulp-shell');
 
 module.exports = function(gulp) {
 
