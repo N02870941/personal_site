@@ -7,7 +7,7 @@
 const config = (function getConfig() {
   return JSON.parse(
     $.ajax({
-      url: "client/config/app.config.json",
+      url: "config/client/app.config.json",
       dataType: 'json',
       async: false,
     }).responseText

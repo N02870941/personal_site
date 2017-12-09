@@ -1,5 +1,5 @@
 var nodemailer = require('nodemailer');
-var config     = require('../config/config.json');
+var config     = require('../../config/server/email.config.json');
 
 module.exports = function(server) {
   server.post('/contact', function (req, res) {

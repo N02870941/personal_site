@@ -5,7 +5,7 @@
  */
 (function() {
   try {
-    loadJSON("./client/config/index.config.json", function(response) {
+    loadJSON("./config/client/index.config.json", function(response) {
       let indexConfig = JSON.parse(response);
       let head = document.getElementsByTagName('head')[0];
       let charset = document.createElement('meta');

@@ -7,7 +7,7 @@
      */
     (function() {
       try {
-        loadJSON("./client/config/index.config.json", function(response) {
+        loadJSON("./config/client/index.config.json", function(response) {
           let indexConfig = JSON.parse(response);
 
           // Set the title
@@ -46,9 +46,6 @@
     })();
   </script>
 
-  <!-- inject:css -->
-  <!-- endinject -->
-
-  <!-- inject:js -->
-  <!-- endinject -->
+  <include src="external.dependencies.html"></include>
+  <include src="internal.dependencies.html"></include>
 </head>

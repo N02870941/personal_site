@@ -4,19 +4,21 @@ var browser     = require('browser-sync').create();
 var runSequence = require('run-sequence');
 var plugins     = require('gulp-load-plugins')();
 var bash        = require('./gulp/bash');
-var config      = require('./gulp/config.json');
 var include     = require('gulp-html-tag-include');
+var config      = require('./config/gulp/gulp.config.json');
 
-// List of tasks fro other files to import
+// List of tasks from other files to import
 var tasks       = ["photos",
                    "fonts",
-                   "core-scss",
-                   "scoped-scss",
-                   "scripts",
-                   "inject-index",
+                   "compile-core-scss",
+                   "compile-scoped-scss",
+                   "copy-scripts",
+                   "index-inject-dependencies-external",
+                   "index-inject-dependencies-internal",
+                   "index-inject-dependencies-internal-inline",
                    "cleanup",
-                   'minify-css',
-                   'minify-js',
+                   'minify-core-css',
+                   'minify-app-js',
                    'minify-html'];
 
 // Dynamically include all the tasks from the above array
@@ -53,7 +55,14 @@ gulp.task('reload', function() {
  */
 gulp.task('refresh', function() {
 
-  runSequence('core-scss', 'scoped-scss', 'scripts', 'build-index','inject-index', 'reload');
+  runSequence(
+    'core-scss',
+    'scoped-scss',
+    'copy-scripts',
+    'build-index',
+    "index-inject-dependencies-external",
+    "index-inject-dependencies-internal",
+    'reload');
 });
 
 //------------------------------------------------------------------------------
@@ -98,12 +107,14 @@ gulp.task('prod', function() {
   runSequence('cleanup',
               // 'photos',
               'fonts',
-              'minify-css',
-              'scoped-scss',
-              'minify-js',
+              'minify-core-css',
+              'compile-scoped-scss',
+              'minify-app-js',
               'build-index',
-              'inject-index',
-              'minify-html',
+              "index-inject-dependencies-internal",
+              // "index-inject-dependencies-internal-inline",
+              "index-inject-dependencies-external",
+              // 'minify-html',
               'serve-prod');
 });
 
@@ -115,10 +126,11 @@ gulp.task('prod', function() {
 gulp.task('dev', function() {
   runSequence('cleanup',
               'fonts',
-              'core-scss',
-              'scoped-scss',
-              'scripts',
+              'compile-core-scss',
+              'compile-scoped-scss',
+              'copy-scripts',
               'build-index',
-              'inject-index',
+              "index-inject-dependencies-external",
+              "index-inject-dependencies-internal",
               'serve-dev');
 });
