@@ -4,7 +4,7 @@
 // content from the config file to be accessed
 // from anywhere within the application, independent
 // of AngularJS rules, dependencies, etc
-const config = (function getConfig() {
+var config = (function getConfig() {
   return JSON.parse(
     $.ajax({
       url: "config/client/app.config.json",

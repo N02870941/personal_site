@@ -4,9 +4,9 @@ html,
 body {
 	padding: $defaultPadding;
 	margin: $defaultMargins;
+	text-align: $defaultTextAlignment;
+  font-family: $defaultFont;
 	height: 100%;
-	text-align: center;
-  font-family: $defaultFont /* From Google fonts */
 }
 
 /* PARTIAL HTML TERMPLATES */
@@ -15,11 +15,7 @@ body {
 /* All page templates will fit within this box */
 .partial {
 	height: $partialHeight;
-
-	/* Don't want to go all the way to edge of screen */
   width: $partialWidth;
-
-  /* Sets borded for region where templates go */
   border-style: $borderStyle;
 
   /* padding */
@@ -36,13 +32,13 @@ body {
 
 /*----------------------------------------------------------------------------*/
 
-// Sizing
+// Fill the entire screen with div
 .fill {
   width: 100%;
   height: 100%;
 }
 
-// Placing
+// Position
 .onTopZ {
   z-index: 1;
 }
