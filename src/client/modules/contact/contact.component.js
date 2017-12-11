@@ -13,7 +13,7 @@
         this.showDialog = function() {
 
           $mdDialog.show({
-              template : "<jd-send-email></jd-send-email>",
+              template : "<md-dialog><jd-send-email></jd-send-email></md-dialog>",
               clickOutsideToClose: true,
               escapeToClose: true
           });

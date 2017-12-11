@@ -3,7 +3,6 @@
     angular.module(config.app.name).component('jdNotFound', {
 
       controller: function($location) {
-
         var protocol = $location.protocol();
         var host = $location.host();
         var port = $location.port();

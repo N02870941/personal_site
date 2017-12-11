@@ -9,6 +9,7 @@
         redirect: '@',
       },
 
+
       templateUrl: "client/core/components/countDownRedirect/countDownRedirect.template.html",
 
       controller: function($location, $window, $state) {

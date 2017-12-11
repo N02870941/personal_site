@@ -1,21 +1,3 @@
-
-// NOTE - This is the only global variable
-// in regular JavaScript scope (other than app). This allows
-// content from the config file to be accessed
-// from anywhere within the application, independent
-// of AngularJS rules, dependencies, etc
-var config = (function getConfig() {
-  return JSON.parse(
-    $.ajax({
-      url: "config/client/app.config.json",
-      dataType: 'json',
-      async: false,
-    }).responseText
-  );
-})();
-
-//------------------------------------------------------------------------------
-
 (function() {
 
   try {
@@ -46,10 +28,10 @@ var config = (function getConfig() {
     function createModuleStates(module) {
 
       angular.module(module.name)
-      .config(function(jdStatesProvider, $stateProvider) {
+      .config(['jdStatesProvider', '$stateProvider', function(jdStatesProvider, $stateProvider) {
 
         jdStatesProvider.initStates($stateProvider, module.states);
-      });
+      }]);
     }
 
 //------------------------------------------------------------------------------
@@ -71,7 +53,7 @@ var config = (function getConfig() {
 
     // Create the main module for the app
     angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
-    .config(function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
+    .config(['$stateProvider', 'jdStatesProvider', 'modulesProvider', '$urlRouterProvider', function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
 
       // Set up the states of the main modules the application
       modulesProvider.initMainModulesStates($stateProvider, config.modules);
@@ -80,7 +62,7 @@ var config = (function getConfig() {
       // If the URL path is not found, reroute to
       // the /notFound page
       $urlRouterProvider.otherwise('/notFound');
-    });
+    }]);
 
 //------------------------------------------------------------------------------
 

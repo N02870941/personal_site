@@ -18,7 +18,6 @@
 
         // Sends an email to owner of website (me!)
         this.send = function(userForm) {
-
           if (userForm.$valid) {
 
             // Send the email
@@ -51,7 +50,7 @@
             });
 
             // Close the main $mdDialog
-            $mdDialog.cancel();
+            // $mdDialog.cancel();
           }
 
         }
