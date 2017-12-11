@@ -15,3 +15,20 @@ function loadJSON(url, callback) {
 
     xobj.send(null);
  }
+
+//------------------------------------------------------------------------------
+
+ // NOTE - This is the only global variable
+ // in regular JavaScript scope (other than app). This allows
+ // content from the config file to be accessed
+ // from anywhere within the application, independent
+ // of AngularJS rules, dependencies, etc
+ var config = (function getConfig() {
+   return JSON.parse(
+     $.ajax({
+       url: "config/client/app.config.json",
+       dataType: 'json',
+       async: false,
+     }).responseText
+   );
+ })();

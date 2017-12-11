@@ -10,7 +10,6 @@
       templateUrl: "client/core/components/list/list.template.html",
 
       controller: function($sce) {
-
         var vm = this;
 
         vm.getSREF = function(sref) {

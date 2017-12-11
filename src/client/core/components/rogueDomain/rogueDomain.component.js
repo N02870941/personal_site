@@ -5,7 +5,6 @@
       controller: function($location, site) {
 
         this.redirectUrl = "http://" + config.site.domain;
-
         this.message = $location.host() + " is not the proper domain for this website. It is a rogue domain, which means that it is a domain pointing to the server for " + domain;
       },
 

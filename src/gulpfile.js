@@ -54,6 +54,7 @@ gulp.task('refresh', function() {
     'compile-scoped-scss',                  // Compile custom SCSS, leave it where it is
     'copy-scripts',                         // Copy all .js script to ./dist
     'build-index',                          // Put the index.html together form its partials
+    "index-inject-setup",
     "index-inject-dependencies-external",   // Inject <script> tags for external dependencies such as angular.js
     "index-inject-dependencies-internal",   // Inject <script> tags for all other .js files in ./dist
     'reload');                              // Reload the web browser to view the changes
