@@ -1,10 +1,5 @@
 {
   "js" : {
-    "setup" : [
-      "./config/client/scripts/globalFunctions.js",
-      "./config/client/scripts/injectMetaTags.js",
-      "./config/client/scripts/injectCDNs.js"
-    ],
 
     "sources" : [
      "node_modules/angular/angular.js",
@@ -17,14 +12,13 @@
      "node_modules/angular-messages/angular-messages.js",
      "node_modules/angular-aria/angular-aria.js",
      "node_modules/angular-material/angular-material.js",
-     "bower_components/jquery-gh-readme/dist/jquery.gh-readme.min.js",
-     "./dist/font-awesome-4.7.0/**/*.min.css"
+     "bower_components/jquery-gh-readme/dist/jquery.gh-readme.min.js"
     ]
   },
 
   "css" : {
     "sources" : [
-
+      "./dist/font-awesome-4.7.0/**/*.min.css"
     ]
   },
 

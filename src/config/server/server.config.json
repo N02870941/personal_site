@@ -1,4 +1,6 @@
 {
+  "protocol": "http",
+  "domain" : "jabaridash.com",
   "ports" : {
     "devPort" : "8080",
     "prodPort" : "8080"

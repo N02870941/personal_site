@@ -21,7 +21,15 @@
         vm.$onInit = function() {
 
           var domain = $location.host();
-          var port = config.site.port;
+
+          var port = (function() {
+            if (domain == 'localhost')
+              return serverConfig.ports.devPort;
+
+            else
+              return serverConfig.ports.prodPort;
+          })();
+
           var url = $location.protocol() + "://" + domain + ":" + port + "/photography";
 
           photographyService.getPhotoPaths(url).then(function(data) {

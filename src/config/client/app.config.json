@@ -1,16 +1,7 @@
 {
-  "site": {
-      "title": "Jabari Dash",
-      "protocol": "http",
-      "domain": "jabaridash.com",
-      "port": "8080",
-      "author": "Jabari Dash"
-  },
-
   "app" : {
     "name" : "app",
     "dependencies" : [
-      "shared",
       "ngRoute",
       "ngAnimate",
       "ngMaterial",
@@ -65,7 +56,7 @@
     {
       "name" : "home",
       "header" : true,
-      "dependencies" : ["shared", "ui.router"],
+      "dependencies" : ["ui.router"],
       "states" : []
     },
     {
@@ -219,7 +210,9 @@
     {
       "name" : "contact",
       "header" : true,
-      "dependencies" : [],
+      "dependencies" : [
+
+      ],
       "states" : []
     }
   ],

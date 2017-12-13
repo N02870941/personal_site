@@ -11,7 +11,7 @@
 
         // for copyright
         this.year = new Date().getFullYear();
-        this.author = config.site.author;
+        this.author = indexConfig.author;
       }
 
     });

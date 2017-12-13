@@ -11,7 +11,7 @@ module.exports = function(gulp) {
     return gulp.src('./client/core/style/**/*.scss')  // Get all SCSS
       .pipe(sass().on('error', sass.logError))        // SCSS -> CSS
       .pipe(concat('styles.min.css'))                 // Concatenate into 1 file
-      .pipe(minify())                                 // Minify it
+      // .pipe(minify())                                 // Minify it
       .pipe(gulp.dest(gulpConfig.dist));              // Save in ./dist
   }
 }
