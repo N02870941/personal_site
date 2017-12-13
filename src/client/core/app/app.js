@@ -20,9 +20,44 @@
 
 //------------------------------------------------------------------------------
 
+    /**
+     * Detect whether a hashchange came from a back button
+     * click, or a forward (or URL) click
+     */
+    var detectBackOrForward = function(onBack, onForward) {
+      hashHistory = [window.location.hash];
+      historyLength = window.history.length;
+
+      return function() {
+        var hash = window.location.hash, length = window.history.length;
+        if (hashHistory.length && historyLength == length) {
+          if (hashHistory[hashHistory.length - 2] == hash) {
+            hashHistory = hashHistory.slice(0, -1);
+            onBack();
+          } else {
+            hashHistory.push(hash);
+            onForward();
+          }
+        } else {
+          hashHistory.push(hash);
+          historyLength = length;
+        }
+      }
+    };
+
+//------------------------------------------------------------------------------
+
     // Create the main module for the app
     angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
-    .config(['$stateProvider', 'jdStatesProvider', 'modulesProvider', '$urlRouterProvider', function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
+    .config(['$stateProvider',
+             'jdStatesProvider',
+             'modulesProvider',
+             '$urlRouterProvider',
+
+             function ($stateProvider,
+                       jdStatesProvider,
+                       modulesProvider,
+                       $urlRouterProvider) {
 
       // Set up the states of the main modules the application
       modulesProvider.initMainModulesStates($stateProvider, config.modules);
@@ -32,6 +67,33 @@
       // the /notFound page
       $urlRouterProvider.otherwise('/notFound');
     }]);
+
+    angular.module(config.app.name)
+    .run(function($rootScope, $state, $anchorScroll, $location, $timeout) {
+
+      // Scroll to top of screen if and only if the hashchange
+      // came from a forward click
+      window.addEventListener("hashchange", detectBackOrForward(
+        function() {
+          // Do nothing if its from a back button
+        },
+        function() {
+          // If the hashchange came from forward
+          // scroll to top of screen
+          // $anchorScroll();
+
+          (function() {
+            $("html,body").animate({
+              scrollTop:$(".thetop").offset().top
+            },"1000");
+
+            return false;
+          })();
+
+        }
+      ));
+
+    })
 
 //------------------------------------------------------------------------------
 

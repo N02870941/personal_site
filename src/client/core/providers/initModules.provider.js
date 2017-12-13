@@ -1,6 +1,6 @@
 (function() {
   try {
-    angular.module(config.app.name).provider("modules", function modulesProvider() {
+    angular.module(config.app.name).provider("modules", function modulesProvider($anchorScrollProvider) {
 
       /**
        * Creates the states for the main modules that are in the
@@ -34,6 +34,7 @@
                 // TODO - Write a function that converts module name so that
                 // support for names with more than one word is supported
                 template: t
+
               })
           }
 

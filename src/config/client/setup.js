@@ -126,7 +126,26 @@ const serverConfig = (function getConfig() {
 		{
 			var parts = window.name.split('[');
 			window.name = $.trim(parts[0]);
-			window.scrollTo(parseInt(parts[parts.length - 1]), parseInt(parts[parts.length - 2]));
+
+      // Get the coordinates to scroll to
+      var coordinates = {
+        scrollTop : parseInt(parts[parts.length - 1]),
+        scrollLeft : parseInt(parts[parts.length - 2])
+      };
+
+      // Scroll to the proper location
+			// window.scrollTo({
+      //   top: coordinates.scrollTop,
+      //   left: coordinates.scrollLeft,
+      //   behavior: "smooth"
+      // });
+
+      // TODO - Try to implement smooth scrolling
+      (function() {
+        $("html,body").animate(coordinates,"1000");
+        return false;
+      })();
+
 		}
 	};
 	$.maintainscroll();

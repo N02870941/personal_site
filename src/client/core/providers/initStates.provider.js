@@ -20,6 +20,7 @@
             stateProvider.state(states[i].name, {
               url: states[i].url,
               template: states[i].template
+
             });
           }
         };
