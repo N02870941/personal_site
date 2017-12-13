@@ -24,6 +24,7 @@
      * Detect whether a hashchange came from a back button
      * click, or a forward (or URL) click
      */
+    //  TODO - find a better solution
     var detectBackOrForward = function(onBack, onForward) {
       hashHistory = [window.location.hash];
       historyLength = window.history.length;
@@ -76,19 +77,28 @@
       window.addEventListener("hashchange", detectBackOrForward(
         function() {
           // Do nothing if its from a back button
+          console.log('back');
         },
         function() {
+          console.log('forward');
           // If the hashchange came from forward
           // scroll to top of screen
-          // $anchorScroll();
+          // $anchorScroll.yOffset = 0;
+          $anchorScroll();
 
-          (function() {
-            $("html,body").animate({
-              scrollTop:$(".thetop").offset().top
-            },"1000");
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+          });
 
-            return false;
-          })();
+          // (function() {
+          //   $("html,body").animate({
+          //     scrollTop:$(".thetop").offset().top
+          //   },"1000");
+          //
+          //   return false;
+          // })();
 
         }
       ));

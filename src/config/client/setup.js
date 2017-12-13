@@ -116,6 +116,7 @@ const serverConfig = (function getConfig() {
 // Set up page to maintain scroll position
 //------------------------------------------------------------------------------
 
+// TODO - find a better solution
 (function($) {
 	window.onbeforeunload = function(e) {
         window.name += ' [' + $(window).scrollTop().toString() + '[' + $(window).scrollLeft().toString();
@@ -134,17 +135,7 @@ const serverConfig = (function getConfig() {
       };
 
       // Scroll to the proper location
-			// window.scrollTo({
-      //   top: coordinates.scrollTop,
-      //   left: coordinates.scrollLeft,
-      //   behavior: "smooth"
-      // });
-
-      // TODO - Try to implement smooth scrolling
-      (function() {
-        $("html,body").animate(coordinates,"1000");
-        return false;
-      })();
+			window.scrollTo(coordinates.scrollTop, coordinates.scrollLeft);
 
 		}
 	};
