@@ -15,8 +15,8 @@
       this.$onInit = function() {
         var host = $location.host();
 
-        if (host == "localhost" || host == config.site.domain) {
-          console.log("welcome to " + host + " / " + config.site.domain);
+        if (host == "localhost" || host == serverConfig.domain) {
+          console.log("welcome to " + host + " / " + serverConfig.domain);
 
         } else {
           console.log("not the right domain");

@@ -4,12 +4,10 @@ var gulpConfig   = require('../config/gulp/gulp.config.json');
 module.exports = function (gulp, plugins) {
 
   return function() {
-    // inject.transform.html.js = filepath => `<script src="${filepath}" inline></script>`;
-    // inject.transform.html.css = filepath => `<link rel="stylesheet" href="${filepath}" inline>`;
 
     // Source patterns to inject into index.html
     var sources = [
-      "!" + gulpConfig.dist + "/setup/*.js",
+      gulpConfig.dist + "/setup.js",
       gulpConfig.dist + "/**/*.js",
       gulpConfig.dist + "/*.css"
     ];

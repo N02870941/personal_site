@@ -3,7 +3,7 @@
     angular.module('home').component('jdHome', {
 
       controller: function($location, $window) {
-        this.title = "Welcome to JabariDash.com!";
+        this.title = "Welcome to " + indexConfig.author.replace(/\s/g, '') + ".com!";
 
         this.facts = [
           "I am ambidextrous",

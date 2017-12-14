@@ -9,7 +9,7 @@
       templateUrl: "client/modules/interests/interests.template.html",
 
       controller: function() {
-        this.description = "Below you can find links to some of my hobbies and things that make me who I am."
+        this.description = "Below, you will find links to some of my hobbies and things that make me who I am."
 
         this.projects = [
           {

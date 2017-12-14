@@ -21,6 +21,93 @@
 //------------------------------------------------------------------------------
 
     /**
+     * Detect whether a hashchange came from a back button
+     * click, or a forward (or URL) click
+     */
+    //  TODO - find a better solution
+    var detectBackOrForward = function(onBack, onForward) {
+      hashHistory = [window.location.hash];
+      historyLength = window.history.length;
+
+      return function() {
+        var hash = window.location.hash, length = window.history.length;
+        if (hashHistory.length && historyLength == length) {
+          if (hashHistory[hashHistory.length - 2] == hash) {
+            hashHistory = hashHistory.slice(0, -1);
+            onBack();
+          } else {
+            hashHistory.push(hash);
+            onForward();
+          }
+        } else {
+          hashHistory.push(hash);
+          historyLength = length;
+        }
+      }
+    };
+
+//------------------------------------------------------------------------------
+
+    // Create the main module for the app
+    angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
+    .config(['$stateProvider',
+             'jdStatesProvider',
+             'modulesProvider',
+             '$urlRouterProvider',
+
+             function ($stateProvider,
+                       jdStatesProvider,
+                       modulesProvider,
+                       $urlRouterProvider) {
+
+      // Set up the states of the main modules the application
+      modulesProvider.initMainModulesStates($stateProvider, config.modules);
+      jdStatesProvider.initStates($stateProvider, config.app.states);
+
+      // If the URL path is not found, reroute to
+      // the /notFound page
+      $urlRouterProvider.otherwise('/notFound');
+    }]);
+
+    angular.module(config.app.name)
+    .run(function($rootScope, $state, $anchorScroll, $location, $timeout) {
+
+      // Scroll to top of screen if and only if the hashchange
+      // came from a forward click
+      window.addEventListener("hashchange", detectBackOrForward(
+        function() {
+          // Do nothing if its from a back button
+          console.log('back');
+        },
+        function() {
+          console.log('forward');
+          // If the hashchange came from forward
+          // scroll to top of screen
+          // $anchorScroll.yOffset = 0;
+          $anchorScroll();
+
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+          });
+
+          // (function() {
+          //   $("html,body").animate({
+          //     scrollTop:$(".thetop").offset().top
+          //   },"1000");
+          //
+          //   return false;
+          // })();
+
+        }
+      ));
+
+    })
+
+//------------------------------------------------------------------------------
+
+    /**
      * Initializes the states of a provided modules
      *
      * @param module Module specification
@@ -48,21 +135,6 @@
         createModuleStates(config.modules[i]);
       }
     }
-
-//------------------------------------------------------------------------------
-
-    // Create the main module for the app
-    angular.module(config.app.name, moduleNames.concat(config.app.dependencies))
-    .config(['$stateProvider', 'jdStatesProvider', 'modulesProvider', '$urlRouterProvider', function ($stateProvider, jdStatesProvider, modulesProvider, $urlRouterProvider) {
-
-      // Set up the states of the main modules the application
-      modulesProvider.initMainModulesStates($stateProvider, config.modules);
-      jdStatesProvider.initStates($stateProvider, config.app.states);
-
-      // If the URL path is not found, reroute to
-      // the /notFound page
-      $urlRouterProvider.otherwise('/notFound');
-    }]);
 
 //------------------------------------------------------------------------------
 
