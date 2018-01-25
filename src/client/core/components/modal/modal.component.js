@@ -15,6 +15,7 @@
         var modalImgIndex = 0;
         var modalImgId = 'modalImg';
         var modalId = 'myModal';
+        var retries = 0;
 
 // These functions are meant to be called only within the controller
 //------------------------------------------------------------------------------
@@ -151,6 +152,7 @@
           // is empty when this state is loaded
           // from another state
           if (this.images.length == 0) {
+
             $window.location.reload();
           }
 
