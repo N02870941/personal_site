@@ -41,7 +41,7 @@ RUN bower install --allow-root
 WORKDIR server
 
 # Start the node server
-CMD [ "node", "server.js" , "8080"]
+CMD [ "node", "server.js" , "80"]
 
 # Port we want to expose
-EXPOSE 8080
+EXPOSE 80
