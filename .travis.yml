@@ -13,4 +13,3 @@ script:
   - ./scripts/test.sh
   - docker-compose down
   - ./scripts/push_docker.sh
-  - ./scripts/deploy.sh
