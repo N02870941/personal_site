@@ -1,22 +1,14 @@
 sudo: required
 
-# PREPARE ENVIRONMENT
-#-------------------------------------------------------------------------------
-
 services:
   - docker
 
 install:
   - echo "TODO - install dependencies (specific version of docker?)"
 
-# RUN HEALTHCHECK TEST
-#-------------------------------------------------------------------------------
-
-# Bring up the application
 before_script:
   - docker-compose up --build -d
 
-# Run the test script
 script:
   - ./scripts/test.sh
   - docker-compose down

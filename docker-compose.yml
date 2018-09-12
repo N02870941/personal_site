@@ -5,6 +5,6 @@ services:
     container_name: personal_site
     build: ./
     ports:
-     - "8080:8080"
+     - "8080:80"
   redis:
     image: "node:latest"

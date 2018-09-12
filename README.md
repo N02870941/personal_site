@@ -67,6 +67,6 @@ If you want to run the server on port 8080 via `docker`, you may execute the fol
 3. Copy and paste the latest image's id
 Run the latest image on port localhost:8080
 
-        docker run --rm -p 8080:8080 <image id>
+        docker run --rm -p 8080:80 <image id>
 
 **Note:** This application was not developed on, nor intended to run on Windows machines. Currently, the server-side script that resizes images is only compatible on Unix-based machines.
