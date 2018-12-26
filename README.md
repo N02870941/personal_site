@@ -1,6 +1,6 @@
 # Personal Site
 
-[![Build Status](https://travis-ci.org/N02870941/personal_site.svg?branch=dev)](https://travis-ci.org/n02870941/personal_site)
+[![Build Status](https://travis-ci.org/N02870941/personal_site.svg?branch=master)](https://travis-ci.org/N02870941/personal_site)
 
 
 Here you will find all of the code that powers my [jabaridash.com](jabaridash.com). If you want to see how I implemented it, you want to use some of the code as a template for your own site, or if you are just interested in downloading the code and playing around it with, keep reading.
